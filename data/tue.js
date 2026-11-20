@@ -254,6 +254,11 @@ export default {
    "cover": {
     "img": "img/soho.webp",
     "credit": "Beyond My Ken, CC BY-SA 4.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Nei negozi grandi: Bloomingdale's SoHo (504 Broadway) è tra i più consigliati, anche Apple (Prince Street) e Crate & Barrel (secondo piano). I piccoli negozi di solito non li aprono al pubblico.",
+    "cost": "Gratis",
+    "clean": "Bloomingdale's SoHo è citato più volte come ottimo; non verificato di persona"
    }
   },
   {
@@ -344,6 +349,11 @@ export default {
    "cover": {
     "img": "img/washington-sq.webp",
     "credit": "lurkingherern, CC BY 4.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Edificio a sud del parco, vicino a Thompson Street. Aperto di giorno (circa 8–16 o fino al tramonto, controllate in inverno).",
+    "cost": "Gratis",
+    "clean": "Non verificato: ristrutturato nel 2014, ma in passato aveva problemi di pulizia. Meglio un negozio o un caffè se potete."
    }
   },
   {
@@ -434,6 +444,11 @@ export default {
    "cover": {
     "img": "img/chinatown.webp",
     "credit": "Beyond My Ken, CC BY-SA 4.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Columbus Park (Bayard St tra Baxter e Mulberry): ci sono due bagni, nel padiglione e vicino al parco giochi. Se chiusi, chiedete nei ristoranti dove mangiate.",
+    "cost": "Gratis",
+    "clean": "Un'ispezione del Parks Department ha dato \"accettabile\" a una stanza (una sola verifica)"
    }
   },
   {
@@ -502,7 +517,12 @@ export default {
      "text": "Il palazzo di Friends, 90 Bedford Street: 5 minuti da Joe's.",
      "kind": "film"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Da Joe's non risultano bagni per i clienti. Per un bagno: Caffe Reggio o Mamoun's su MacDougal Street, consumando.",
+    "cost": "Gratis se consumate",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "union-sq",
@@ -749,6 +769,11 @@ export default {
    "cover": {
     "img": "img/union-sq.webp",
     "credit": "Mack Male from Edmonton, AB, Canada, CC BY-SA 2.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Whole Foods (14ª strada) con bagni al piano di sopra, o il Union Square Pavilion e il parco giochi di Evelyn's, aperti di giorno. Strand in genere non li apre al pubblico.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
    }
   },
   {
@@ -809,6 +834,11 @@ export default {
    "cover": {
     "img": "img/hotel.webp",
     "credit": "Epicgenius, CC BY-SA 4.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Nell'hotel: fateli prima del taxi per l'aeroporto (il viaggio dura 40–60 minuti).",
+    "cost": "Gratis",
+    "clean": "Non verificato"
    }
   },
   {
@@ -862,7 +892,12 @@ export default {
      "text": "TWA Hotel accanto al Terminal 5: il terminal anni '60 a forma di ali, oggi hotel. Si può entrare a vedere la hall.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "In aeroporto, dopo il check-in. Il taxi non si ferma.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
   }
  ],
  "walks": [

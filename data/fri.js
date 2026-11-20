@@ -67,6 +67,11 @@ export default {
    "cover": {
     "img": "img/arrivo.webp",
     "credit": "Tyler de Noche, CC BY-SA 4.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Bagni nell'area ritiro bagagli dell'aeroporto, prima di uscire.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
    }
   },
   {
@@ -135,6 +140,11 @@ export default {
    "cover": {
     "img": "img/hotel.webp",
     "credit": "Epicgenius, CC BY-SA 4.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Nell'hotel: chiedete alla reception se i bagni della hall sono utilizzabili prima di salire in camera.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
    }
   },
   {
@@ -199,7 +209,12 @@ export default {
      "text": "Come d'incanto: Giselle esce da un tombino in mezzo a Times Square. In Spider-Man (2002) il Goblin attacca una festa proprio qui.",
      "kind": "film"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Nei locali dove mangiate: chiedete prima di sedervi. In Times Square i bagni pubblici sono rari; alternativa: Bryant Park (10 minuti a piedi), ma di sera tardi è chiuso.",
+    "cost": "Gratis se consumate",
+    "clean": "Non verificato"
+   }
   }
  ],
  "walks": [

@@ -202,7 +202,12 @@ export default {
      "text": "Dalla stazione South Ferry parte anche la linea 1: è il modo più semplice per tornare verso Times Square.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Dentro il terminal di Whitehall e a bordo. Fateli prima di salire.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "bull",
@@ -274,7 +279,12 @@ export default {
      "text": "Le strisce di granito nero nel marciapiede di Broadway ricordano le parate con le stelle filanti: si cammina sopra la storia.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Nel parco del Toro non ho trovato bagni. I più vicini: il terminal del traghetto (4 Whitehall Street) e il Battery Comfort Station, a circa 10 minuti a piedi.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "memorial",
@@ -446,7 +456,12 @@ export default {
      "text": "St. Paul's Chapel, su Broadway: la chiesa più antica di Manhattan ancora in uso. Nel 2001 non le si ruppe neanche un vetro e per mesi ospitò i soccorritori.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Nella piazza del Memoriale non ci sono bagni. Si usano quelli dell'Oculus (scendete al livello sotto la piazza), aperti circa dalle 8 alle 20–21.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "seaport",
@@ -532,7 +547,12 @@ export default {
      "text": "Dalla punta del Pier 17 il Ponte di Brooklyn si vede intero, da torre a torre: è il punto per la foto di famiglia.",
      "kind": "view"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Dentro Pier 17, al piano terra. In alternativa Time Out Market (Empire Stores, lato Brooklyn) se passate dopo.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "dumbo",
@@ -729,7 +749,12 @@ export default {
      "text": "Jacques Torres: cioccolata calda densa come un budino, si beve in piedi guardando i ponti.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Pier 1 Pavilion (nuovo, con anche bagni famiglia e neutri) e piano terra di Empire Stores (Time Out Market). Bagni anche all'Education Center in Plymouth Street, vicino al parco giochi della nave pirata.",
+    "cost": "Gratis (orari del parco)",
+    "clean": "Pier 1 è nuovo; per il resto non verificato"
+   }
   },
   {
    "id": "bridge",
@@ -913,7 +938,12 @@ export default {
      "text": "Kate & Leopold: il duca dell'Ottocento cade proprio da questo ponte e si risveglia nella New York di oggi.",
      "kind": "film"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Sul ponte non ci sono bagni. Fateli a DUMBO prima di salire.",
+    "cost": "-",
+    "clean": "-"
+   }
   },
   {
    "id": "home",
@@ -969,7 +999,12 @@ export default {
      "text": "Brooklyn Bridge–City Hall: da qui parte la linea 6 del giro nella stazione fantasma.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Il parco di City Hall dovrebbe avere i bagni vicino alla fontana, ma non sono riuscito a verificarlo. Alternativa sicura: l'Oculus oppure tornare in hotel.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
   }
  ],
  "walks": [

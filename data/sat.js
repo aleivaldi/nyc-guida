@@ -238,7 +238,12 @@ export default {
      "text": "Bow Bridge: Giselle di Come d'incanto ci balla sopra cantando.",
      "kind": "film"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Dal 72° mid-park, quello di Bethesda Terrace è chiuso d'inverno. Aperti tutto l'anno: Loeb Boathouse (74ª–75ª, lato est), Kerbs Boathouse sul laghetto delle barchette (74ª) e il Heckscher Playground (62ª, lato ovest, vicino al parco giochi).",
+    "cost": "Gratis",
+    "clean": "Il Parks Department ha dato una valutazione \"non accettabile\" a un bagno del Loeb Boathouse (data dell'ispezione non verificata). Heckscher è indicato da una guida per famiglie come una scelta ragionevole, ma la pulizia non è verificata."
+   }
   },
   {
    "id": "amnh",
@@ -511,7 +516,12 @@ export default {
      "text": "Shake Shack, sull'angolo di Columbus con la 77ª: il pranzo più vicino all'uscita, di fronte al lato ovest del museo.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Bagni su ogni piano. Bagni famiglia/neutri ai piani 1–4 (Gilder Center) e un bagno multiplo di fronte al Planetario. Fasciatoi nei bagni famiglia.",
+    "cost": "Gratis (compreso nel biglietto)",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "lunch",
@@ -579,6 +589,11 @@ export default {
    "cover": {
     "img": "img/lunch.webp",
     "credit": "Fuzheado, CC BY-SA 4.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Nel locale dove pranzate: chiedete prima di ordinare. In alternativa quelli del museo (se uscite per mangiare, fateli prima).",
+    "cost": "Gratis se consumate",
+    "clean": "Non verificato"
    }
   },
   {
@@ -729,7 +744,12 @@ export default {
      "text": "La 47ª tra la Quinta e la Sixth è la via dei diamanti: vetrine piene di anelli e lampioni a forma di diamante sugli angoli.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Sotto il Rockefeller Center, nel Concourse: bagni pubblici sul lato nord e sul lato sud. Da FAO Schwarz chiedete al personale.",
+    "cost": "Gratis",
+    "clean": "Non verificato, ma sono tra i bagni \"nascosti\" che le guide locali segnalano"
+   }
   },
   {
    "id": "saks",
@@ -769,7 +789,12 @@ export default {
      "text": "Dal centro dei Channel Gardens si vede tutta la facciata di Saks: è il punto migliore per lo spettacolo di lunedì.",
      "kind": "view"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Bagni su quasi tutti i piani del negozio (una guida li indica come affidabili). Salite ai piani alti, dove c'è meno gente.",
+    "cost": "Gratis",
+    "clean": "Generalmente buona secondo guide per famiglie; non verificato di persona"
+   }
   },
   {
    "id": "stpat",
@@ -817,7 +842,12 @@ export default {
      "text": "Atlas, di fronte: mettetevi tra le sue gambe e la cattedrale, la foto con le guglie è da lì.",
      "kind": "view"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "In cattedrale non risultano bagni pubblici: usate Saks (di fronte) o il Rockefeller Center.",
+    "cost": "-",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "fifth",
@@ -857,7 +887,12 @@ export default {
      "text": "Diamond District, la 47ª verso la Sixth: un isolato di gioiellerie, con i lampioni a forma di diamante sugli angoli.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Lungo la Quinta non ci sono bagni pubblici. I più vicini: Saks, Rockefeller Center e la biblioteca (NYPL).",
+    "cost": "Gratis",
+    "clean": "-"
+   }
   },
   {
    "id": "nypl",
@@ -921,7 +956,12 @@ export default {
      "text": "Terrazza sul tetto della biblioteca Stavros Niarchos: gratis, 7° piano, vista sulla Quinta e sulla biblioteca.",
      "kind": "view"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Al piano terra, sul lato sud, dopo il negozio e il caffè della biblioteca. Sono aperti negli orari di visita (sabato 10–18).",
+    "cost": "Gratis",
+    "clean": "Buona: più recensioni parlano di bagni molto puliti e curati"
+   }
   },
   {
    "id": "bryant",
@@ -1001,7 +1041,12 @@ export default {
      "text": "Zucker's Bagels sulla Sixth Avenue alla 40ª: un bagel caldo dopo i pattini.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Dal lato della 42nd Street, a metà isolato dietro la biblioteca (NYPL). I due bagni del parco sono gestiti e puliti tutto il giorno da personale.",
+    "cost": "Gratis",
+    "clean": "Ottima: sono considerati tra i migliori bagni pubblici di New York (fiori freschi, manutenzione continua)"
+   }
   },
   {
    "id": "macys",
@@ -1133,6 +1178,11 @@ export default {
    "cover": {
     "img": "img/macys.webp",
     "credit": "Don Ramey Logan, CC BY 4.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Dentro Macy's: i bagni sono ai piani, può servire salire. Chiedete al personale all'ingresso.",
+    "cost": "Gratis",
+    "clean": "Generalmente affidabili secondo guide locali; non verificato"
    }
   },
   {
@@ -1197,7 +1247,12 @@ export default {
      "text": "Grace Street: bingsu, granita di latte con frutta, da dividere in quattro.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Nei ristoranti della 32nd Street: chiedete prima di ordinare. Alternativa: Macy's a 5 minuti a piedi.",
+    "cost": "Gratis se consumate",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "times",
@@ -1262,7 +1317,12 @@ export default {
      "text": "In Spider-Man (2002) la festa sul palco con il Goblin che attacca è ambientata in mezzo a questa piazza.",
      "kind": "film"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Al Marriott Marquis (1535 Broadway) esistono bagni usati dai visitatori, ma i piani indicati dalle fonti cambiano (4°, 6° o 8°): chiedete alla hall. In alternativa tornate in hotel.",
+    "cost": "Gratis",
+    "clean": "Buona secondo più guide locali; non verificato di persona"
+   }
   }
  ],
  "walks": [

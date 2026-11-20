@@ -52,6 +52,7 @@ export function renderStop(dayId, stopId) {
     h('div', {},
       more('La storia', h('p', { class: 'story' }, stop.story)),
       tips.length ? more('Dritte', chips.length ? h('div', { class: 'pills', style: { marginBottom: '10px' } }, chips) : null, tipList) : null,
+      stop.bagni ? more('Bagni', h('p', {}, stop.bagni.where), h('ul', { class: 'tips' }, h('li', {}, h('b', {}, 'Costo: '), stop.bagni.cost), h('li', {}, h('b', {}, 'Pulizia: '), stop.bagni.clean))) : null,
       stop.nearby?.length ? more('Qui intorno',
         h('ul', { class: 'tips' }, stop.nearby.map((n) => h('li', {}, h('b', { style: { display: 'block', fontSize: '14px', color: 'var(--ink-2)' } }, nearKind(n.kind)), n.text)))) : null),
     h('div', { class: 'btn-row' },

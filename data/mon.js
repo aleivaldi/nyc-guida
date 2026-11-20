@@ -66,7 +66,12 @@ export default {
      "text": "Le scalinate rosse di Times Square (biglietteria TKTS): sedetevi in cima, avete tutta la piazza davanti.",
      "kind": "view"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Nell'hotel o nel locale dove fate colazione.",
+    "cost": "Gratis se consumate",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "mon-moma",
@@ -307,7 +312,12 @@ export default {
      "text": "Radio City Music Hall: in questa stagione ci ballano le Rockettes nello spettacolo di Natale, tutte in fila come soldatini.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Bagni su tutti i piani, con fasciatoi, accanto alle scale mobili. Bagni neutri ai piani 1, 3W, 5 e T1.",
+    "cost": "Gratis (compreso nel biglietto)",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "mon-gct",
@@ -472,7 +482,12 @@ export default {
      "text": "Uscite su Lexington Avenue angolo 42nd e alzate la testa: la punta a squame del Chrysler Building è lì, a un isolato.",
      "kind": "view"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Al livello inferiore (Dining Concourse), due blocchi. Bagni per donne e famiglie anche al piano superiore, nell'ufficio del Station Master vicino al binario 37.",
+    "cost": "Gratis",
+    "clean": "Non verificato; una scheda locale dice \"bagni puliti\""
+   }
   },
   {
    "id": "mon-summit",
@@ -699,7 +714,12 @@ export default {
      "text": "L'Empire State Building, a sud-ovest: stasera il sole scende un pò alla sua destra.",
      "kind": "view"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Bagni solo ai piani alti del SUMMIT. Fateli prima di salire nel Dining Concourse di Grand Central, a pochi minuti, è il bagno pubblico più vicino.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
   },
   {
    "id": "mon-bryant",
@@ -783,7 +803,12 @@ export default {
      "text": "I due leoni della biblioteca sulla Quinta, Pazienza e Fortezza: d'inverno a volte hanno le ghirlande.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Dal lato della 42nd Street, a metà isolato dietro la biblioteca. Attenzione all'orario: una guida locale li dà aperti fino alle 22 lun–mer e fino a mezzanotte gio–dom a dicembre, un'altra fonte dice chiusura alle 19 d'inverno. Se serve di sera, controllate.",
+    "cost": "Gratis",
+    "clean": "Ottima: tra i migliori bagni pubblici di New York"
+   }
   },
   {
    "id": "mon-saks",
@@ -843,7 +868,12 @@ export default {
      "text": "St. Patrick's Cathedral, di fronte a Saks: di sera le vetrate sono illuminate da dentro.",
      "kind": "curio"
     }
-   ]
+   ],
+   "bagni": {
+    "where": "Bagni su quasi tutti i piani. Salite ai piani alti.",
+    "cost": "Gratis",
+    "clean": "Generalmente buona; non verificato di persona"
+   }
   }
  ],
  "walks": [
