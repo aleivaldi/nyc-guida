@@ -299,3 +299,4 @@ details.more > :not(summary) { margin-bottom: 16px; }
 .stars { position: relative; display: inline-block; color: var(--rule); font-size: 18px; letter-spacing: 1px; line-height: 1; }
 .stars::before { content: "★★★★★"; position: absolute; inset: 0; width: var(--pct); overflow: hidden; color: var(--taxi); }
 .buzz { font: italic 17px/1.4 var(--serif); color: var(--ink-2); }
+.vinnie-say { font: 17px/1.4 var(--serif); padding-left: 10px; border-left: 3px solid var(--taxi); margin: 0; }

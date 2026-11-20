@@ -72,6 +72,7 @@ function card(f, d, weekday, minutes, live, gps) {
     f.buzz ? h('p', { class: 'buzz' }, f.buzz) : null,
     h('p', { class: 'order' }, f.order),
     f.note ? h('p', { class: 'hint' }, f.note) : null,
+    f.vinnie ? h('p', { class: 'vinnie-say' }, h('b', {}, 'Vinnie: '), f.vinnie) : null,
     h('div', { class: 'row' }, h('span', {}, f.price), h('span', {}, gps ? distLabel(d) : `${distLabel(d)} dalla tappa`)),
     h('div', { class: 'row' }, status),
     directionsButton(f.pos));

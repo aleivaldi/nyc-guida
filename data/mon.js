@@ -1416,7 +1416,8 @@ export default {
     "count": 9287,
     "source": "Google"
    },
-   "buzz": "Burger succosi e ingresso nascosto divertente; fila frequente, prezzi saliti e patatine giudicate deboli."
+   "buzz": "Burger succosi e ingresso nascosto divertente; fila frequente, prezzi saliti e patatine giudicate deboli.",
+   "vinnie": "Hotel di lusso, lampadari, divani di velluto. E dietro una tenda c'è un posto che sembra la cameretta di un ragazzino. Io ci sono entrato una volta e mi hanno chiesto se avevo prenotato. Ho risposto: sono un piccione di Brooklyn, non prenoto, seguo l'odore. Voi seguite l'insegna a forma di hamburger."
   },
   {
    "id": "mon-f-magnolia",

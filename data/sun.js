@@ -1627,6 +1627,24 @@ export default {
    }
   },
   {
+   "id": "sun-crifdogs",
+   "name": "Crif Dogs (con la cabina del telefono)",
+   "type": "hot dog con porta segreta",
+   "category": "cena",
+   "order": "Un hot dog a testa, classico con senape e crauti, e le tater tots (crocchette di patate) da dividere. Poi cercate la cabina del telefono nel locale: è l'ingresso del bar segreto PDT.",
+   "price": "Economico, prezzi da verificare",
+   "pos": [
+    40.7273,
+    -73.9841
+   ],
+   "near": [
+    "home"
+   ],
+   "note": "113 St Marks Place, East Village, tra First Avenue e Avenue A. Dall'hotel servono circa 25 minuti in metro. Orari non chiari: una fonte dice aperto dalle 17, un'altra da mezzogiorno, controllate prima di partire. Il bar PDT dietro la cabina è un cocktail bar di solito su prenotazione: non ho verificato se ammette bambini, quindi qui il gioco è la cabina, non il bar.",
+   "buzz": "Hot dog con tante farciture e tater tots molto lodate; locale piccolo e stretto, con vecchi videogiochi.",
+   "vinnie": "Questa è roba mia. Una cabina del telefono, in un posto dove nessuno usa un telefono da vent'anni. Sembra niente, e invece in giro lo sanno tutti. Io sono un piccione, so tenere un segreto, quindi non dico altro. Voi fate la foto alla cabina, e se vi chiedono perché, dite che cercavate me."
+  },
+  {
    "id": "sun-ellens",
    "name": "Ellen's Stardust Diner",
    "type": "diner con camerieri che cantano",
