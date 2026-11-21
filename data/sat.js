@@ -1,7 +1,7 @@
 export default {
  "id": "sat",
  "weekday": 6,
- "title": "Dinosauri e Quinta Strada",
+ "title": "Dinosauri, Central Park e Quinta Strada",
  "vinnieMorning": "Buongiorno, squadra. Oggi si viaggia sotto terra, tra ossa giganti e vetrine di Natale: posti perfetti per nascondere pezzi di chiave. La prima sfida è già in metro, quindi occhi aperti dal tornello. Ci vediamo al museo, se arrivate.",
  "stops": [
   {
@@ -429,17 +429,17 @@ export default {
   },
   {
    "id": "lunch",
-   "name": "Pranzo sull'Upper West Side",
+   "name": "Pranzo da Uno Pizzeria & Grill",
    "kind": "key",
    "start": "12:30",
-   "durationMin": 60,
-   "cost": "$50–90 in 4, secondo il posto",
+   "durationMin": 75,
+   "cost": "$60–90 in 4",
    "pos": [
-    40.77996,
-    -73.97717
+    40.7815,
+    -73.9765
    ],
    "radiusM": 120,
-   "hook": "Il quartiere dei newyorkesi veri: bagel, hamburger, il deli dei nonni e il biscotto più grosso della città.",
+   "hook": "Pizza alta alla Chicago e piatti alla griglia a due passi dal museo: si mangia seduti prima di attraversare il parco.",
    "story": "L'Upper West Side è il quartiere delle famiglie di Manhattan: carrozzine, cani con il cappotto, scuole. Zabar's vende pesce affumicato e caffè dagli anni Trenta. Barney Greengrass si chiama da solo il re dello storione. Da Levain fanno biscotti da 170 grammi, così spessi che dentro sono ancora morbidi.",
    "look": [
     "Su Columbus Avenue, i portoni dei palazzi con il portiere in divisa davanti.",
@@ -448,19 +448,23 @@ export default {
    ],
    "tips": [
     {
-     "text": "Veloce e vicino: Shake Shack sulla 77ª o i bagel di PopUp e Zucker's su Columbus. Se volete il deli classico, Barney Greengrass è all'86ª: 10 minuti a piedi e coda il sabato.",
+     "text": "Uno Pizzeria & Grill, 432 Columbus Avenue, tra la 81ª e la 82ª: dal museo si arriva in 3 minuti a piedi. Gli orari sul sito del locale sono 11–24, un'altra fonte dice 11–21: la domenica e gli orari vanno comunque controllati prima.",
      "when": "arrive"
     },
     {
-     "text": "Per andare in centro: metro 1 (rossa) da 79 St su Broadway fino a 50 St, poi 8 minuti a piedi verso est fino al Rockefeller Center. In tutto mezz'ora.",
+     "text": "Ordinate subito la pizza alta (deep dish): di solito richiede più tempo, chiedete al cameriere quanto. Per chi ha fretta c'è la pizza sottile, oppure hamburger e piatti alla griglia.",
      "when": "always"
     },
     {
-     "text": "In ritardo: un hot dog da Gray's Papaya sulla 72ª e Broadway, poi metro 1 dalla stazione di fronte.",
+     "text": "Alternativa veloce: Shake Shack sulla 77ª o i bagel di PopUp e Zucker's su Columbus.",
      "when": "late"
     },
     {
-     "text": "Se piove: Zabar's ha un piccolo caffè accanto al negozio; altrimenti il food court del museo.",
+     "text": "Fate i bagni qui prima di entrare nel parco: nel percorso di oggi ce ne sono pochi.",
+     "when": "always"
+    },
+    {
+     "text": "Se piove: restate da Uno e poi fate il percorso in autobus lungo la Quinta (vedi tappa Quinta Avenue lungo il parco).",
      "when": "rain"
     }
    ],
@@ -495,95 +499,450 @@ export default {
     "credit": "Fuzheado, CC BY-SA 4.0, via Wikimedia Commons"
    },
    "bagni": {
-    "where": "Nel locale dove pranzate: chiedete prima di ordinare. In alternativa quelli del museo (se uscite per mangiare, fateli prima).",
+    "where": "Nel locale, per i clienti. Fateli prima di entrare nel parco.",
     "cost": "Gratis se consumate",
     "clean": "Non verificato"
    }
   },
   {
-   "id": "sat-go-rock",
-   "name": "Dal pranzo al Rockefeller, in metro",
-   "kind": "move",
-   "start": "13:30",
+   "id": "sat-park-belvedere",
+   "name": "Castello del Belvedere e Turtle Pond",
+   "kind": "key",
+   "start": "13:45",
    "durationMin": 30,
-   "cost": "Metro $3 a testa",
+   "cost": "Gratis",
    "pos": [
-    40.78388,
-    -73.97989
+    40.7794,
+    -73.9691
    ],
-   "radiusM": 100,
-   "hook": "La linea rossa, la più vecchia di New York: quattro fermate e si esce davanti a Radio City.",
-   "story": "La linea 1 corre sotto Broadway sul tracciato della prima metropolitana della città, aperta nel 1904: le stazioni 79 St e 50 St sono di quell'anno. Allora il viaggio costava 5 centesimi.",
+   "radiusM": 120,
+   "hook": "Si attraversa Central Park da ovest a est salendo sulla roccia del castello: da lassù si vede mezzo parco.",
+   "story": "Il castello del Belvedere sta sulla seconda roccia più alta del parco: il nome vuol dire bella vista, in italiano. Dal 1919 ospita la stazione meteo ufficiale di Central Park.",
    "look": [
-    "Alla 79 St: le targhe di ceramica con il numero 79 sulle pareti, come cento anni fa.",
-    "Alla 50 St, uscendo: l'insegna verticale rossa di Radio City Music Hall, verso est."
+    "Il castello di pietra grigia sulla roccia, con la torretta.",
+    "Sotto il balcone nord: lo stagno Turtle Pond e il grande prato del Great Lawn.",
+    "All'orizzonte, a est: i palazzi della Quinta Avenue e le due torri del Metropolitan Museum a sinistra."
    ],
    "tips": [
     {
-     "text": "Alcuni ingressi della 79 St portano a una sola direzione: cercate la scritta Downtown & Brooklyn sopra le scale.",
-     "when": "arrive"
-    },
-    {
-     "text": "Alternativa: metro C da 81 St fino a 59 St–Columbus Circle, poi D sulla stessa banchina fino a 47–50 Sts–Rockefeller Ctr. Si esce sotto il Rockefeller Center.",
+     "text": "Il castello è aperto dalle 10 alle 17: oggi si può entrare e salire sul balcone e sulla torretta. La salita della torretta è stretta e può esserci coda.",
      "when": "always"
     },
     {
-     "text": "In ritardo o stanchi: taxi, 15–20 minuti, circa $20–25.",
+     "text": "Se stamattina l'avete visto solo da fuori, ora salite: è il motivo per cui l'abbiamo spostato qui.",
+     "when": "arrive"
+    },
+    {
+     "text": "In ritardo o freddo: salutate il castello dalla base e proseguite verso l'obelisco, risparmiate 15 minuti.",
      "when": "late"
     },
     {
-     "text": "Se piove: con la D si arriva al Rockefeller senza uscire, dal passaggio sotterraneo (Concourse).",
+     "text": "Stanchi: sedetevi sulle panchine intorno al Turtle Pond; da lì l'obelisco è a 10 minuti.",
+     "when": "tired"
+    },
+    {
+     "text": "Se piove: salite nel castello, c'è un po' di riparo; il sentiero può essere scivoloso. Altrimenti prendete un autobus lungo la Quinta dall'uscita della 81ª.",
      "when": "rain"
     }
    ],
    "steps": [
     {
-     "id": "gorock-walk",
-     "title": "A piedi fino a Broadway",
-     "where": "Da Columbus Avenue camminate verso ovest fino a Broadway e la 79ª: due avenue, 5–8 minuti.",
+     "id": "park-in",
+     "title": "Dal ristorante all'ingresso del parco",
+     "where": "Da Columbus Avenue girate verso est sulla 81ª, passate davanti al museo (ingresso del Rose Center) e attraversate Central Park West: il cancello del parco alla 81ª è di fronte.",
      "look": [
-      "Davanti ai portoni: i portieri in divisa e i cani con il cappotto."
+      "Il museo sulla sinistra con la grande facciata di pietra.",
+      "Il cancello del parco con le inferriate scure."
      ],
      "tips": [
-      "È il tratto della scommessa del cane con il cappotto, se non l'avete ancora fatta."
+      "Bagni: usateli da Uno prima di partire."
      ]
     },
     {
-     "id": "gorock-train",
-     "title": "Linea 1 verso sud",
-     "where": "Treno rosso numero 1 verso South Ferry (Downtown). Fermate: 72 St, 66 St, 59 St, 50 St. Si scende alla quarta.",
+     "id": "park-path",
+     "title": "Il sentiero verso il castello",
+     "where": "Entrate e seguite il sentiero in salita verso est, seguendo i cartelli Belvedere Castle: circa 10 minuti. Il castello è sulla roccia a metà parco.",
      "look": [
-      "Ascoltate la voce registrata prima che si chiudano le porte: è la sfida di Vinnie."
+      "Le rocce grigie che affiorano tra gli alberi.",
+      "Il castello che spunta sopra le chiome."
      ],
      "tips": [
-      "Non salite sulla 2 o sulla 3: sono espressi e saltano la 50 St."
+      "Se vi perdete, puntate sempre a est, verso il sole che scende: è il lato della Quinta."
      ]
     },
     {
-     "id": "gorock-50",
-     "title": "Dalla 50 St al Rockefeller",
-     "where": "Uscite sulla 50ª e camminate verso est: Settima Avenue, poi Sesta Avenue con Radio City sull'angolo. Attraversate la Sesta: siete nel Rockefeller Center. 8–10 minuti.",
+     "id": "park-castle",
+     "title": "Dentro il castello",
+     "where": "Salite alla terrazza e poi alla torretta. Dalla terrazza nord si vede il Turtle Pond; da sud il bosco del Ramble.",
      "look": [
-      "Radio City Music Hall: la scritta verticale rossa e le luci al neon.",
-      "Dall'altra parte della Sesta: il grattacielo grigio del 30 Rock, quello con il Top of the Rock in cima."
+      "La stazione meteo sul tetto, con gli strumenti.",
+      "Dal balcone: la città in lontananza sopra gli alberi."
      ],
      "tips": [
-      "Davanti a Radio City c'è la scommessa del lunedì: non bruciatevela oggi."
+      "Il castello non ha bagni."
+     ]
+    },
+    {
+     "id": "park-turtle",
+     "title": "Il Turtle Pond",
+     "where": "Scendete dal lato nord della roccia: il sentiero costeggia lo stagno verso est.",
+     "look": [
+      "Lo stagno basso con le sponde di pietra e l'erba alta.",
+      "Il grande prato del Great Lawn, oltre lo stagno."
+     ],
+     "tips": [
+      "A novembre le tartarughe non si vedono: sono addormentate sul fondo."
      ]
     }
    ],
    "bagni": {
-    "where": "Fateli al ristorante prima di uscire. Al Rockefeller ci sono i bagni pubblici del Concourse, sotto la piazza.",
+    "where": "Il castello non ha bagni. Il più vicino è al Delacorte Theater, sul lato sud-ovest del Great Lawn, aperto tutto l'anno.",
     "cost": "Gratis",
     "clean": "Non verificato"
+   }
+  },
+  {
+   "id": "sat-park-obelisk",
+   "name": "L'obelisco dietro il Metropolitan Museum",
+   "kind": "optional",
+   "start": "14:15",
+   "durationMin": 20,
+   "cost": "Gratis",
+   "pos": [
+    40.7796,
+    -73.9655
+   ],
+   "radiusM": 100,
+   "hook": "Una colonna di pietra rosa venuta dall'Egitto, più vecchia di Roma, in mezzo a un parco di New York.",
+   "story": "Si chiama Cleopatra's Needle, l'ago di Cleopatra, ma non è di Cleopatra: è molto più antico. Fu scolpito in Egitto circa 3.500 anni fa. Nel 1881 il governo egiziano lo regalò agli Stati Uniti e lo portarono a New York per nave: ci vollero mesi.",
+   "look": [
+    "La colonna a punta sopra una collinetta, dietro il museo.",
+    "I segni scolpiti sui lati: uccelli, occhi e figure di animali.",
+    "Il tronco spesso degli alberi intorno, con le foglie che cadono."
+   ],
+   "tips": [
+    {
+     "text": "Dal castello seguite il sentiero verso est costeggiando il lato sud del Turtle Pond; l'obelisco è su una collinetta dietro il museo: se non lo vedete, puntate al retro del Metropolitan Museum.",
+     "when": "arrive"
+    },
+    {
+     "text": "In ritardo: saltate l'obelisco e uscite sulla Quinta, risparmiate 15 minuti.",
+     "when": "late"
+    },
+    {
+     "text": "Stanchi: panchine intorno alla collinetta; l'uscita sulla Quinta è a 5 minuti.",
+     "when": "tired"
+    },
+    {
+     "text": "Se piove: foto veloce e via verso la Quinta; il parco è scivoloso.",
+     "when": "rain"
+    }
+   ],
+   "steps": [
+    {
+     "id": "obe-path",
+     "title": "Dallo stagno all'obelisco",
+     "where": "Seguite il sentiero verso est, passando dietro il Metropolitan Museum, il grande edificio di pietra sul lato est del parco. L'obelisco è su una collinetta.",
+     "look": [
+      "Il retro del museo, con le grandi vetrate."
+     ],
+     "tips": [
+      "Non serve entrare nel museo: la sfida di Vinnie è fuori."
+     ]
+    },
+    {
+     "id": "obe-look",
+     "title": "L'obelisco",
+     "where": "Avvicinatevi alla base: i lati sono coperti di segni.",
+     "look": [
+      "I segni scolpiti in colonna lungo i lati.",
+      "La punta, che luccica quando c'è il sole."
+     ],
+     "tips": [
+      "Non salite sulla base e non toccate la pietra."
+     ]
+    },
+    {
+     "id": "obe-exit",
+     "title": "Uscita sulla Quinta",
+     "where": "Girate verso la Quinta Avenue e uscite dal parco all'altezza del Metropolitan Museum, tra la 79ª e la 82ª: la scalinata del museo è sulla sinistra.",
+     "look": [
+      "La grande scalinata del Metropolitan Museum con la gente seduta."
+     ],
+     "tips": [
+      "Da qui la Quinta Avenue verso sud costeggia il parco per circa 25 minuti."
+     ]
+    }
+   ],
+   "bagni": {
+    "where": "Nessun bagno vicino all'obelisco. Il Metropolitan Museum ne ha, ma bisogna entrare con il biglietto: non verificato. Meglio quelli di Uno, prima.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
+  {
+   "id": "sat-fifth-park",
+   "name": "Quinta Avenue lungo il parco",
+   "kind": "move",
+   "start": "14:35",
+   "durationMin": 40,
+   "cost": "Gratis",
+   "pos": [
+    40.7735,
+    -73.9663
+   ],
+   "radiusM": 150,
+   "hook": "Quaranta minuti a piedi verso sud con il parco a destra e i palazzi con il portiere a sinistra: è la passeggiata dei newyorkesi.",
+   "story": "Questo tratto della Quinta Avenue si chiama Museum Mile, il miglio dei musei: lungo il parco si susseguono molti musei, tra cui il Metropolitan, e le case più care della città. I palazzi qui hanno quasi tutti il portiere in divisa e un tendone sul marciapiede.",
+   "look": [
+    "A sinistra: i tendoni dei palazzi con il numero scritto in grande.",
+    "A destra: il muretto di pietra del parco, con i cani al guinzaglio.",
+    "Alla 72ª, guardando verso il parco: il percorso che porta al laghetto delle barchette.",
+    "Più giù, a destra: i cavalli delle carrozze in attesa."
+   ],
+   "tips": [
+    {
+     "text": "Camminate sul marciapiede lungo il muretto del parco, dritti fino alla 59ª. Sono circa 23 isolati, 25–30 minuti con bambini.",
+     "when": "arrive"
+    },
+    {
+     "text": "Stanchi: autobus M1, M2, M3 o M4 verso sud sulla Quinta, $3 a testa; scendete alla 59ª. Controllate la linea e la fermata sull'app del telefono. Oppure taxi, circa 10 minuti e $15–20.",
+     "when": "tired"
+    },
+    {
+     "text": "In ritardo: saltate l'obelisco e arrivate a Grand Army Plaza direttamente dal castello.",
+     "when": "late"
+    },
+    {
+     "text": "Se piove: autobus M1–M4 verso sud sulla Quinta, restate dentro.",
+     "when": "rain"
+    },
+    {
+     "text": "Pausa: panchine di pietra lungo il muretto, davanti al parco.",
+     "when": "tired"
+    }
+   ],
+   "steps": [
+    {
+     "id": "fp-start",
+     "title": "Giù per la Quinta, lato parco",
+     "where": "Alla Quinta girate a destra, verso sud: il parco è a destra, i palazzi a sinistra. Seguite il marciapiede lungo il muretto.",
+     "look": [
+      "I numeri civici sui tendoni: vi servono per la sfida di Vinnie."
+     ],
+     "tips": [
+      "Attraversate solo agli incroci con il semaforo: qui i taxi corrono."
+     ]
+    },
+    {
+     "id": "fp-72",
+     "title": "La 72ª",
+     "where": "Superata la 72ª, sul lato del parco c'è il vialetto per il laghetto delle barchette. Lunedì ci siete già nel giro di Central Park: non entrate.",
+     "look": [
+      "Le carrozze con i cavalli, spesso ferme qui."
+     ],
+     "tips": []
+    },
+    {
+     "id": "fp-zoo",
+     "title": "Lo zoo e l'avvicinarsi alla 59ª",
+     "where": "Alla 64ª, dentro il parco, lo zoo di Central Park. Continuate dritti, il prossimo grande incrocio è la 59ª.",
+     "look": [
+      "In fondo alla Quinta: un grande palazzo bianco, l'hotel Plaza, con il tetto verde."
+     ],
+     "tips": []
+    }
+   ],
+   "bagni": {
+    "where": "Lungo la Quinta non ci sono bagni pubblici. Il primo sicuro è dopo, nei negozi della 57ª; altrimenti Uno, prima.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
+  {
+   "id": "sat-plaza",
+   "name": "Grand Army Plaza: statua dorata e hotel Plaza",
+   "kind": "optional",
+   "start": "15:15",
+   "durationMin": 20,
+   "cost": "Gratis",
+   "pos": [
+    40.7646,
+    -73.9738
+   ],
+   "radiusM": 100,
+   "hook": "Siete arrivati alla Quinta dei negozi: una fontana, una statua d'oro e il castello bianco dell'hotel Plaza.",
+   "story": "Questa piazza è all'angolo sud-est del parco. Al centro c'è la statua dorata del generale William Sherman a cavallo, guidato da una donna alata che rappresenta la Vittoria. Il vicino hotel Plaza è del 1907: è quello del film Mamma, ho riperso l'aereo.",
+   "look": [
+    "La statua dorata del generale a cavallo, con la donna alata davanti.",
+    "La fontana a gradini con le statue sulla piazza.",
+    "Sul lato sud-ovest: il grande cubo di vetro dell'Apple Store.",
+    "L'hotel Plaza, con il tetto verde e gli stendardi."
+   ],
+   "tips": [
+    {
+     "text": "Da qui comincia la zona dei negozi: Apple (il cubo), Bergdorf Goodman, Tiffany e Trump Tower sono a pochi isolati, poi St. Patrick's alla 50ª.",
+     "when": "always"
+    },
+    {
+     "text": "In ritardo: foto alla statua e via verso St. Patrick's, 10 minuti a piedi.",
+     "when": "late"
+    },
+    {
+     "text": "Stanchi o freddo: l'Apple Store è aperto, scaldatevi dentro; i bagni non sono verificati.",
+     "when": "tired"
+    },
+    {
+     "text": "Se piove: il cubo di vetro dell'Apple Store ha una scala all'interno, ci si ripara.",
+     "when": "rain"
+    }
+   ],
+   "steps": [
+    {
+     "id": "pl-arrive",
+     "title": "La piazza, attraversando",
+     "where": "Alla 59ª attraversate la Quinta verso est o restate sul lato del parco: la piazza è davanti all'hotel Plaza, di fronte al parco.",
+     "look": [
+      "La statua dorata in mezzo alla piazza."
+     ],
+     "tips": [
+      "Attraversate con il semaforo pedonale."
+     ]
+    },
+    {
+     "id": "pl-sherman",
+     "title": "La statua dorata",
+     "where": "Avvicinatevi al piedistallo.",
+     "look": [
+      "Il generale sul cavallo e la donna alata che lo precede.",
+      "Il nome scritto sul piedistallo."
+     ],
+     "tips": [
+      "Chiedete ai bambini: cosa regge la donna? Una palma, simbolo di vittoria."
+     ]
+    },
+    {
+     "id": "pl-apple",
+     "title": "Il cubo di vetro",
+     "where": "Sul lato verso la Quinta, il grande cubo trasparente dell'Apple Store.",
+     "look": [
+      "La scala a spirale di vetro dentro il cubo."
+     ],
+     "tips": [
+      "I bagni non sono verificati: chiedete al personale se servono."
+     ]
+    }
+   ],
+   "bagni": {
+    "where": "Non verificato: chiedete al personale dell'hotel Plaza o dell'Apple Store. Più sicuri i bagni dei negozi grandi della 57ª, come Bergdorf Goodman.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
+  {
+   "id": "stpat",
+   "name": "Cattedrale di St. Patrick",
+   "kind": "optional",
+   "start": "15:40",
+   "durationMin": 20,
+   "cost": "Gratis",
+   "pos": [
+    40.75856,
+    -73.97636
+   ],
+   "radiusM": 45,
+   "hook": "Una cattedrale gotica in mezzo ai grattacieli, con i cappelli dei cardinali appesi al soffitto.",
+   "story": "Quando cominciarono a costruirla, nel 1858, qui c'erano quasi solo campi e la gente pensava fosse una follia metterla così fuori città. Sopra l'altare, in alto, sono appesi i grandi cappelli rossi dei cardinali di New York: per tradizione, quando un cardinale muore, il suo cappello resta lì finché non cade a pezzi. Le porte di bronzo sull'ingresso pesano più di nove tonnellate l'una.",
+   "look": [
+    "Le porte di bronzo sulla Quinta: cercate i santi scolpiti nei riquadri.",
+    "In fondo alla navata, sopra l'altare, alzate gli occhi: i cappelli rossi appesi.",
+    "Tornando verso l'uscita, il rosone colorato sopra l'ingresso."
+   ],
+   "tips": [
+    {
+     "text": "Il sabato c'è messa a mezzogiorno e alle 17:30: alle 15 si gira tranquilli. Durante la messa si resta in fondo o lungo le navate laterali.",
+     "when": "arrive"
+    },
+    {
+     "text": "Si entra gratis, a voce bassa. Bastano 15 minuti.",
+     "when": "always"
+    },
+    {
+     "text": "In ritardo: foto alla facciata da Atlas, dall'altra parte della Quinta, e via.",
+     "when": "late"
+    },
+    {
+     "text": "Le panche sono il posto più tranquillo per far sedere tutti cinque minuti.",
+     "when": "tired"
+    }
+   ],
+   "nearby": [
+    {
+     "pos": [
+      40.75895,
+      -73.97718
+     ],
+     "text": "Atlas, di fronte: mettetevi tra le sue gambe e la cattedrale, la foto con le guglie è da lì.",
+     "kind": "view"
+    }
+   ],
+   "bagni": {
+    "where": "In cattedrale non risultano bagni pubblici: usate Saks (di fronte) o il Rockefeller Center.",
+    "cost": "-",
+    "clean": "Non verificato"
+   }
+  },
+  {
+   "id": "saks",
+   "name": "Saks Fifth Avenue",
+   "kind": "optional",
+   "start": "16:00",
+   "durationMin": 30,
+   "cost": "Gratis",
+   "pos": [
+    40.75802,
+    -73.97695
+   ],
+   "radiusM": 35,
+   "hook": "Sabato la facciata è ancora spenta: lo spettacolo di luci comincia lunedì sera, e lunedì sera voi siete a dieci minuti da qui.",
+   "story": "Ogni sera della stagione la facciata di Saks si accende di luci che si muovono a ritmo di musica, ogni 10 minuti. Nel 2024 il negozio lo cancellò per risparmiare, nel 2025 è tornato. Quest'anno la prima sera è il lunedì prima del Ringraziamento, insieme alle vetrine: sabato vedete solo i lavori in corso.",
+   "look": [
+    "La facciata sulla Quinta tra la 49ª e la 50ª: cercate le strutture delle luci montate sui piani alti.",
+    "Le sei vetrine centrali, ancora coperte: lunedì diventano un viaggio animato per New York.",
+    "Dentro, se è già aperto, il mercatino di Natale con un Babbo Natale a grandezza naturale e pinguini che ballano."
+   ],
+   "tips": [
+    {
+     "text": "Lunedì sera, prima o dopo la cena a Bryant Park: dalla 42ª alla 50ª sulla Quinta sono 10 minuti a piedi. Lo spettacolo gira ogni 10 minuti dal tardo pomeriggio; mettetevi sul marciapiede di fronte, davanti ai Channel Gardens.",
+     "when": "always"
+    },
+    {
+     "text": "Sabato basta passarci davanti: due minuti.",
+     "when": "late"
+    }
+   ],
+   "nearby": [
+    {
+     "pos": [
+      40.75843,
+      -73.97791
+     ],
+     "text": "Dal centro dei Channel Gardens si vede tutta la facciata di Saks: è il punto migliore per lo spettacolo di lunedì.",
+     "kind": "view"
+    }
+   ],
+   "bagni": {
+    "where": "Bagni su quasi tutti i piani del negozio (una guida li indica come affidabili). Salite ai piani alti, dove c'è meno gente.",
+    "cost": "Gratis",
+    "clean": "Generalmente buona secondo guide per famiglie; non verificato di persona"
    }
   },
   {
    "id": "rock",
    "name": "FAO Schwarz e Rockefeller Center",
    "kind": "optional",
-   "start": "14:00",
-   "durationMin": 60,
+   "start": "16:30",
+   "durationMin": 45,
    "cost": "Gratis (giochi e LEGO a parte)",
    "pos": [
     40.75871,
@@ -734,109 +1093,11 @@ export default {
    }
   },
   {
-   "id": "saks",
-   "name": "Saks Fifth Avenue",
-   "kind": "optional",
-   "start": "15:00",
-   "durationMin": 30,
-   "cost": "Gratis",
-   "pos": [
-    40.75802,
-    -73.97695
-   ],
-   "radiusM": 35,
-   "hook": "Sabato la facciata è ancora spenta: lo spettacolo di luci comincia lunedì sera, e lunedì sera voi siete a dieci minuti da qui.",
-   "story": "Ogni sera della stagione la facciata di Saks si accende di luci che si muovono a ritmo di musica, ogni 10 minuti. Nel 2024 il negozio lo cancellò per risparmiare, nel 2025 è tornato. Quest'anno la prima sera è il lunedì prima del Ringraziamento, insieme alle vetrine: sabato vedete solo i lavori in corso.",
-   "look": [
-    "La facciata sulla Quinta tra la 49ª e la 50ª: cercate le strutture delle luci montate sui piani alti.",
-    "Le sei vetrine centrali, ancora coperte: lunedì diventano un viaggio animato per New York.",
-    "Dentro, se è già aperto, il mercatino di Natale con un Babbo Natale a grandezza naturale e pinguini che ballano."
-   ],
-   "tips": [
-    {
-     "text": "Lunedì sera, prima o dopo la cena a Bryant Park: dalla 42ª alla 50ª sulla Quinta sono 10 minuti a piedi. Lo spettacolo gira ogni 10 minuti dal tardo pomeriggio; mettetevi sul marciapiede di fronte, davanti ai Channel Gardens.",
-     "when": "always"
-    },
-    {
-     "text": "Sabato basta passarci davanti: due minuti.",
-     "when": "late"
-    }
-   ],
-   "nearby": [
-    {
-     "pos": [
-      40.75843,
-      -73.97791
-     ],
-     "text": "Dal centro dei Channel Gardens si vede tutta la facciata di Saks: è il punto migliore per lo spettacolo di lunedì.",
-     "kind": "view"
-    }
-   ],
-   "bagni": {
-    "where": "Bagni su quasi tutti i piani del negozio (una guida li indica come affidabili). Salite ai piani alti, dove c'è meno gente.",
-    "cost": "Gratis",
-    "clean": "Generalmente buona secondo guide per famiglie; non verificato di persona"
-   }
-  },
-  {
-   "id": "stpat",
-   "name": "Cattedrale di St. Patrick",
-   "kind": "optional",
-   "start": "15:35",
-   "durationMin": 20,
-   "cost": "Gratis",
-   "pos": [
-    40.75856,
-    -73.97636
-   ],
-   "radiusM": 45,
-   "hook": "Una cattedrale gotica in mezzo ai grattacieli, con i cappelli dei cardinali appesi al soffitto.",
-   "story": "Quando cominciarono a costruirla, nel 1858, qui c'erano quasi solo campi e la gente pensava fosse una follia metterla così fuori città. Sopra l'altare, in alto, sono appesi i grandi cappelli rossi dei cardinali di New York: per tradizione, quando un cardinale muore, il suo cappello resta lì finché non cade a pezzi. Le porte di bronzo sull'ingresso pesano più di nove tonnellate l'una.",
-   "look": [
-    "Le porte di bronzo sulla Quinta: cercate i santi scolpiti nei riquadri.",
-    "In fondo alla navata, sopra l'altare, alzate gli occhi: i cappelli rossi appesi.",
-    "Tornando verso l'uscita, il rosone colorato sopra l'ingresso."
-   ],
-   "tips": [
-    {
-     "text": "Il sabato c'è messa a mezzogiorno e alle 17:30: alle 15 si gira tranquilli. Durante la messa si resta in fondo o lungo le navate laterali.",
-     "when": "arrive"
-    },
-    {
-     "text": "Si entra gratis, a voce bassa. Bastano 15 minuti.",
-     "when": "always"
-    },
-    {
-     "text": "In ritardo: foto alla facciata da Atlas, dall'altra parte della Quinta, e via.",
-     "when": "late"
-    },
-    {
-     "text": "Le panche sono il posto più tranquillo per far sedere tutti cinque minuti.",
-     "when": "tired"
-    }
-   ],
-   "nearby": [
-    {
-     "pos": [
-      40.75895,
-      -73.97718
-     ],
-     "text": "Atlas, di fronte: mettetevi tra le sue gambe e la cattedrale, la foto con le guglie è da lì.",
-     "kind": "view"
-    }
-   ],
-   "bagni": {
-    "where": "In cattedrale non risultano bagni pubblici: usate Saks (di fronte) o il Rockefeller Center.",
-    "cost": "-",
-    "clean": "Non verificato"
-   }
-  },
-  {
    "id": "fifth",
    "name": "Fifth Avenue a piedi verso sud",
    "kind": "optional",
-   "start": "16:00",
-   "durationMin": 25,
+   "start": "17:15",
+   "durationMin": 20,
    "cost": "Gratis",
    "pos": [
     40.75604,
@@ -880,8 +1141,8 @@ export default {
    "id": "nypl",
    "name": "New York Public Library",
    "kind": "optional",
-   "start": "16:30",
-   "durationMin": 25,
+   "start": "17:35",
+   "durationMin": 20,
    "cost": "Gratis",
    "pos": [
     40.75334,
@@ -949,8 +1210,8 @@ export default {
    "id": "bryant",
    "name": "Bryant Park, un giro veloce",
    "kind": "optional",
-   "start": "17:00",
-   "durationMin": 25,
+   "start": "17:55",
+   "durationMin": 20,
    "cost": "Gratis",
    "pos": [
     40.75407,
@@ -1022,8 +1283,8 @@ export default {
    "id": "macys",
    "name": "Macy's Herald Square",
    "kind": "optional",
-   "start": "17:30",
-   "durationMin": 60,
+   "start": "18:15",
+   "durationMin": 45,
    "cost": "Gratis",
    "pos": [
     40.75089,
@@ -1158,8 +1419,8 @@ export default {
    "id": "ktown",
    "name": "Koreatown, cena",
    "kind": "key",
-   "start": "18:45",
-   "durationMin": 90,
+   "start": "19:05",
+   "durationMin": 80,
    "cost": "Circa $90 in 4",
    "pos": [
     40.74771,
@@ -1227,8 +1488,8 @@ export default {
    "id": "times",
    "name": "Times Square, verso l'hotel",
    "kind": "optional",
-   "start": "20:15",
-   "durationMin": 30,
+   "start": "20:25",
+   "durationMin": 25,
    "cost": "Gratis",
    "pos": [
     40.75914,
@@ -1297,7 +1558,7 @@ export default {
    "id": "sat-go-hotel",
    "name": "Rientro in hotel a piedi",
    "kind": "move",
-   "start": "20:45",
+   "start": "20:50",
    "durationMin": 15,
    "cost": "Gratis",
    "pos": [
@@ -1370,19 +1631,115 @@ export default {
    "tips": []
   },
   {
-   "from": "lunch",
-   "to": "sat-go-rock",
+   "from": "amnh",
+   "to": "lunch",
    "minutes": 5,
-   "how": "A piedi fino a Broadway e la 79ª, ingresso della metro 1.",
+   "how": "Dal museo a Uno: 81ª verso ovest fino a Columbus Avenue, ristorante sul lato sinistro.",
    "mapsMode": "walking",
    "tips": []
   },
   {
-   "from": "sat-go-rock",
+   "from": "lunch",
+   "to": "sat-park-belvedere",
+   "minutes": 15,
+   "how": "Da Uno girate a destra su Columbus, poi a sinistra sulla 81ª verso est, attraversate Central Park West ed entrate nel parco; seguite i cartelli Belvedere Castle.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sat-park-belvedere",
+   "to": "sat-park-obelisk",
+   "minutes": 10,
+   "how": "Dal castello verso est lungo il Turtle Pond fino all'obelisco dietro il Metropolitan Museum.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sat-park-obelisk",
+   "to": "sat-fifth-park",
+   "minutes": 5,
+   "how": "Uscita sulla Quinta Avenue all'altezza del Metropolitan Museum; girate a destra, verso sud.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sat-fifth-park",
+   "to": "sat-plaza",
+   "minutes": 30,
+   "how": "A piedi lungo la Quinta verso sud, lato del parco, fino alla 59ª.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sat-plaza",
+   "to": "stpat",
+   "minutes": 10,
+   "how": "A piedi lungo la Quinta verso sud dalla 59ª fino alla 51ª: Trump Tower, Tiffany, poi la cattedrale.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "stpat",
+   "to": "saks",
+   "minutes": 2,
+   "how": "Saks è dall'altro lato della Quinta, davanti alla cattedrale.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "saks",
    "to": "rock",
-   "minutes": 25,
-   "how": "Metro 1 da 79 St fino a 50 St, poi a piedi verso est sulla 50ª.",
-   "mapsMode": "transit",
+   "minutes": 2,
+   "how": "Dal lato est della Quinta ai Channel Gardens, sul lato ovest tra la 49ª e la 50ª.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "rock",
+   "to": "fifth",
+   "minutes": 4,
+   "how": "Tornate sulla Quinta e scendete verso sud.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "fifth",
+   "to": "nypl",
+   "minutes": 8,
+   "how": "Quinta Avenue verso sud fino alla 42ª.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "nypl",
+   "to": "bryant",
+   "minutes": 3,
+   "how": "Dietro la biblioteca: il parco è subito dietro.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "bryant",
+   "to": "macys",
+   "minutes": 12,
+   "how": "Sesta Avenue verso sud fino alla 34ª.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "macys",
+   "to": "ktown",
+   "minutes": 5,
+   "how": "Dalla 34ª verso la 32ª: Koreatown è a un isolato.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "ktown",
+   "to": "times",
+   "minutes": 18,
+   "how": "Verso nord sulla Sesta, poi Broadway fino a Times Square.",
+   "mapsMode": "walking",
    "tips": []
   },
   {
@@ -1392,109 +1749,28 @@ export default {
    "how": "Settima Avenue verso sud fino alla 41ª, poi a destra.",
    "mapsMode": "walking",
    "tips": []
-  },
-  {
-   "from": "amnh",
-   "to": "lunch",
-   "minutes": 5,
-   "how": "Uscite dalla 81ª, girate a sinistra verso Columbus Avenue, poi a sinistra su Columbus: i posti per mangiare sono tra la 76ª e la 77ª.",
-   "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.78158,
-      -73.97464
-     ],
-     "text": "Su Columbus, il palazzo di pietra a onde con le grandi vetrate: è il Gilder Center, la parte nuova del museo, aperta nel 2023."
-    }
-   ]
-  },
-  {
-   "from": "rock",
-   "to": "saks",
-   "minutes": 2,
-   "how": "Risalite i Channel Gardens fino alla Quinta: Saks è proprio lì, sull'angolo con la 49ª e la 50ª.",
-   "mapsMode": "walking",
-   "tips": []
-  },
-  {
-   "from": "saks",
-   "to": "stpat",
-   "minutes": 2,
-   "how": "Sulla Quinta, un isolato verso nord: la cattedrale è tra la 50ª e la 51ª, sullo stesso lato di Saks.",
-   "mapsMode": "walking",
-   "tips": []
-  },
-  {
-   "from": "stpat",
-   "to": "fifth",
-   "minutes": 4,
-   "how": "Attraversate la Quinta verso Atlas e scendete verso sud sul lato ovest.",
-   "mapsMode": "walking",
-   "tips": []
-  },
-  {
-   "from": "fifth",
-   "to": "nypl",
-   "minutes": 8,
-   "how": "Sempre dritti sulla Quinta verso sud fino alla 42ª: i leoni sono sulla scalinata a destra.",
-   "mapsMode": "walking",
-   "tips": [
-    {
-     "text": "Agli angoli i carretti di pretzel e caldarroste: il pretzel gigante con il sale grosso si mangia in due."
-    }
-   ]
-  },
-  {
-   "from": "nypl",
-   "to": "bryant",
-   "minutes": 3,
-   "how": "Girate intorno alla biblioteca dal lato della 42ª: Bryant Park è subito dietro, la pista è al centro.",
-   "mapsMode": "walking",
-   "tips": []
-  },
-  {
-   "from": "bryant",
-   "to": "macys",
-   "minutes": 12,
-   "how": "Sixth Avenue verso sud dalla 40ª fino a Herald Square, alla 34ª: Macy's è l'isolato tra Broadway e la Seventh Avenue, dalla 34ª alla 35ª.",
-   "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.7483,
-      -73.9856
-     ],
-     "text": "Verso la 35ª, guardate a sinistra lungo le vie: compare l'Empire State Building."
-    }
-   ]
-  },
-  {
-   "from": "macys",
-   "to": "ktown",
-   "minutes": 5,
-   "how": "Da Herald Square scendete su Broadway fino alla 32ª e girate a sinistra: siete su Korea Way.",
-   "mapsMode": "walking",
-   "tips": []
-  },
-  {
-   "from": "ktown",
-   "to": "times",
-   "minutes": 18,
-   "how": "Broadway verso nord dalla 32ª alla 47ª. Se i bambini sono stanchi, taxi fino all'hotel (circa $15) e Times Square domani.",
-   "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.75476,
-      -73.98694
-     ],
-     "text": "Sulla Broadway alla 40ª, Joe's Pizza: fetta al taglio fino a tardi, se qualcuno ha ancora fame."
-    }
-   ]
   }
  ],
  "food": [
+  {
+   "id": "sat-uno",
+   "name": "Uno Pizzeria & Grill",
+   "type": "pizza alla Chicago e griglia",
+   "category": "pranzo",
+   "order": "Una pizza alta (deep dish) da dividere, oppure la sottile per fare prima; per chi non vuole pizza, hamburger e piatti dal menù grill.",
+   "price": "$60–90 in 4, da verificare",
+   "pos": [
+    40.7815,
+    -73.9765
+   ],
+   "near": [
+    "amnh",
+    "lunch"
+   ],
+   "note": "432 Columbus Avenue, tra la 81ª e la 82ª. Orari: 11–24 secondo il sito del locale, 11–21 secondo un'altra fonte. Catena americana: non è un posto tipico di New York, ma è comodo, seduti e adatto ai bambini.",
+   "buzz": "Catena nota per la pizza alta alla Chicago; recensioni sul locale di Columbus Avenue discordanti, con un servizio a volte lento nei momenti di punta.",
+   "vinnie": "Una torta di pizza così alta che io ci faccio il nido. Ordinatela subito, perché cuoce un'eternità: io intanto vi aspetto fuori, a controllare le briciole."
+  },
   {
    "id": "sat-shakeshack-uws",
    "name": "Shake Shack",
@@ -2196,17 +2472,67 @@ export default {
    }
   },
   {
-   "id": "sat-go-porte",
-   "stopId": "sat-go-rock",
+   "id": "sat-uno-attesa",
+   "stopId": "lunch",
    "type": "bet",
-   "title": "La voce delle porte",
-   "read": "Prima che le porte si chiudano, una voce dice sempre la stessa frase, in inglese. Vinnie scommette che non riuscite a ripeterla insieme, tutta giusta, prima della 50 St. Uno impara la prima metà, l'altro la seconda. All'ultima fermata la dite insieme, una metà dopo l'altra, senza fermarvi.",
+   "title": "Quanto ci mette la pizza?",
+   "read": "Vinnie qui. Appena ordinate, decidete insieme quanti minuti ci metterà ad arrivare la pizza alta. Uno guarda l'orologio e dice il tempo quando la pizza arriva, l'altro guarda la porta della cucina. Vinnie scommette dieci minuti. Chi è più vicino al tempo vero si prende il pezzo.",
    "roles": [
-    "Impara e dice la prima metà",
-    "Impara e dice la seconda metà"
+    "Guarda l'orologio e dice il tempo",
+    "Guarda la porta della cucina e avvisa"
    ],
-   "vinnieBet": "Non la ripetete giusta",
-   "parentHint": "La frase è: «Stand clear of the closing doors, please». Prima metà: stand clear of the; seconda: closing doors, please. A volte la dice il conducente con parole sue: vale anche quella."
+   "vinnieBet": "Dieci minuti",
+   "parentHint": "La pizza alta di solito ci mette più della sottile: se il tempo vero supera i dieci minuti, vince la squadra. Segnate l'ora d'ordine."
+  },
+  {
+   "id": "sat-park-meteo",
+   "stopId": "sat-park-belvedere",
+   "type": "bet",
+   "title": "La temperatura del castello",
+   "read": "Io lo so: quando la televisione di New York dice la temperatura di Central Park, la misurano qui, sul tetto del castello. Prima di guardare il telefono, uno di voi dice la temperatura in gradi Celsius, l'altro in Fahrenheit, come qui. Poi il genitore controlla. Vinnie dice che sono almeno 20 gradi. Ma è novembre.",
+   "roles": [
+    "Dice la temperatura in gradi Celsius",
+    "Dice la temperatura in gradi Fahrenheit"
+   ],
+   "vinnieBet": "Almeno 20 gradi",
+   "parentHint": "Per convertire: Fahrenheit = Celsius × 9 ÷ 5 + 32. Per esempio 10 °C sono 50 °F, 15 °C sono 59 °F, 20 °C sono 68 °F. Controllate il meteo sul telefono: a novembre è difficile che siano 20 °C."
+  },
+  {
+   "id": "sat-park-geroglifici",
+   "stopId": "sat-park-obelisk",
+   "type": "describe",
+   "title": "I segni sulla colonna",
+   "read": "Questa colonna di pietra rosa è più vecchia di Roma: ha circa 3.500 anni e viene dall'Egitto. Uno di voi si ferma davanti a un lato e descrive ad alta voce, per bene, tre segni scolpiti: un uccello, un occhio e una figura con le zampe. L'altro, di spalle, deve disegnarli sul telefono o su un foglio senza guardare. Poi controllate insieme. Se i tre segni ci sono, il pezzo è vostro.",
+   "roles": [
+    "Descrive tre segni ad alta voce",
+    "Disegna senza guardare"
+   ],
+   "parentHint": "I segni sono geroglifici egizi; ci sono molte figure di uccelli e animali e tanti occhi. Se un segno non si trova, accettate una forma simile. Non toccate la pietra e non salite sulla base."
+  },
+  {
+   "id": "sat-fifth-numeri",
+   "stopId": "sat-fifth-park",
+   "type": "bet",
+   "title": "Su o giù?",
+   "read": "Quando camminate lungo la Quinta verso il centro, i palazzi sul lato sinistro hanno un numero scritto grande sui tendoni. Vinnie scommette che i numeri salgono mentre camminate verso sud. Uno legge il primo numero che vede, l'altro un altro dopo dieci minuti. Salgono o scendono? Dite insieme.",
+   "roles": [
+    "Legge il primo numero sul tendone",
+    "Legge un secondo numero dopo dieci minuti"
+   ],
+   "vinnieBet": "I numeri salgono",
+   "parentHint": "Sulla Quinta Avenue i numeri civici scendono andando verso sud: il Metropolitan Museum è al numero 1000, l'hotel Plaza vicino al 768, Saks al 611. Se i numeri scendono, vince la squadra."
+  },
+  {
+   "id": "sat-plaza-sherman",
+   "stopId": "sat-plaza",
+   "type": "describe",
+   "title": "Il generale e la donna alata",
+   "read": "Nella piazza c'è una statua d'oro che un generale a cavallo, e davanti a lui una donna con le ali che lo guida. Uno di voi si mette al piedistallo e legge ad alta voce il nome del generale. L'altro dice cosa regge in mano la donna. Se uno solo dei due ci riesce, il pezzo è di Vinnie.",
+   "roles": [
+    "Legge il nome sul piedistallo",
+    "Dice cosa tiene in mano la donna alata"
+   ],
+   "parentHint": "È la statua del generale William Tecumseh Sherman. La donna alata è la Vittoria e tiene un ramo di palma. Il nome dovrebbe essere scritto sul piedistallo: controllate sul posto."
   },
   {
    "id": "sat-prometheus",

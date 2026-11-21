@@ -372,7 +372,7 @@ export default {
       "L'hotel Plaza, il castello bianco del film Mamma ho riperso l'aereo."
      ],
      "tips": [
-      "Bagni puliti al piano inferiore del Plaza, secondo le guide per famiglie."
+      "Bagni non verificati al Plaza: più sicuri il MoMA o la Loeb Boathouse prima di uscire dal parco."
      ]
     },
     {
