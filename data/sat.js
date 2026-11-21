@@ -432,7 +432,7 @@ export default {
    "name": "Pranzo da Uno Pizzeria & Grill",
    "kind": "key",
    "start": "12:30",
-   "durationMin": 75,
+   "durationMin": 90,
    "cost": "$60–90 in 4",
    "pos": [
     40.7815,
@@ -508,7 +508,7 @@ export default {
    "id": "sat-park-belvedere",
    "name": "Castello del Belvedere e Turtle Pond",
    "kind": "key",
-   "start": "13:45",
+   "start": "14:15",
    "durationMin": 30,
    "cost": "Gratis",
    "pos": [
@@ -605,8 +605,8 @@ export default {
    "id": "sat-park-obelisk",
    "name": "L'obelisco dietro il Metropolitan Museum",
    "kind": "optional",
-   "start": "14:15",
-   "durationMin": 20,
+   "start": "14:50",
+   "durationMin": 10,
    "cost": "Gratis",
    "pos": [
     40.7796,
@@ -684,7 +684,7 @@ export default {
    "id": "sat-fifth-park",
    "name": "Quinta Avenue lungo il parco",
    "kind": "move",
-   "start": "14:35",
+   "start": "15:00",
    "durationMin": 40,
    "cost": "Gratis",
    "pos": [
@@ -763,8 +763,8 @@ export default {
    "id": "sat-plaza",
    "name": "Grand Army Plaza: statua dorata e hotel Plaza",
    "kind": "optional",
-   "start": "15:15",
-   "durationMin": 20,
+   "start": "15:40",
+   "durationMin": 15,
    "cost": "Gratis",
    "pos": [
     40.7646,
@@ -843,7 +843,7 @@ export default {
    "id": "stpat",
    "name": "Cattedrale di St. Patrick",
    "kind": "optional",
-   "start": "15:40",
+   "start": "16:00",
    "durationMin": 20,
    "cost": "Gratis",
    "pos": [
@@ -896,8 +896,8 @@ export default {
    "id": "saks",
    "name": "Saks Fifth Avenue",
    "kind": "optional",
-   "start": "16:00",
-   "durationMin": 30,
+   "start": "16:20",
+   "durationMin": 20,
    "cost": "Gratis",
    "pos": [
     40.75802,
@@ -941,8 +941,8 @@ export default {
    "id": "rock",
    "name": "FAO Schwarz e Rockefeller Center",
    "kind": "optional",
-   "start": "16:30",
-   "durationMin": 45,
+   "start": "16:40",
+   "durationMin": 30,
    "cost": "Gratis (giochi e LEGO a parte)",
    "pos": [
     40.75871,
@@ -1096,8 +1096,8 @@ export default {
    "id": "fifth",
    "name": "Fifth Avenue a piedi verso sud",
    "kind": "optional",
-   "start": "17:15",
-   "durationMin": 20,
+   "start": "17:10",
+   "durationMin": 10,
    "cost": "Gratis",
    "pos": [
     40.75604,
@@ -1141,8 +1141,8 @@ export default {
    "id": "nypl",
    "name": "New York Public Library",
    "kind": "optional",
-   "start": "17:35",
-   "durationMin": 20,
+   "start": "17:20",
+   "durationMin": 15,
    "cost": "Gratis",
    "pos": [
     40.75334,
@@ -1210,8 +1210,8 @@ export default {
    "id": "bryant",
    "name": "Bryant Park, un giro veloce",
    "kind": "optional",
-   "start": "17:55",
-   "durationMin": 20,
+   "start": "17:35",
+   "durationMin": 15,
    "cost": "Gratis",
    "pos": [
     40.75407,
@@ -1283,8 +1283,8 @@ export default {
    "id": "macys",
    "name": "Macy's Herald Square",
    "kind": "optional",
-   "start": "18:15",
-   "durationMin": 45,
+   "start": "17:55",
+   "durationMin": 50,
    "cost": "Gratis",
    "pos": [
     40.75089,
@@ -2498,6 +2498,18 @@ export default {
    "parentHint": "Per convertire: Fahrenheit = Celsius × 9 ÷ 5 + 32. Per esempio 10 °C sono 50 °F, 15 °C sono 59 °F, 20 °C sono 68 °F. Controllate il meteo sul telefono: a novembre è difficile che siano 20 °C."
   },
   {
+   "id": "sat-park-torretta",
+   "stopId": "sat-park-belvedere",
+   "type": "describe",
+   "title": "Il palazzo lontano",
+   "read": "Dal balcone del castello scegliete in segreto un palazzo lontano e descrivetelo all'altro: forma, colore, cosa c'è in cima. L'altro deve indovinare quale è. Una volta a testa. Se indovinate entrambi, io mi siedo sulla torretta e non mi lamento più.",
+   "roles": [
+    "Sceglie e descrive il palazzo",
+    "Indovina quale è"
+   ],
+   "parentHint": "Dal castello si vedono i palazzi della Quinta e dell'Upper East Side, a est, e il bordo sud del parco con i grattacieli di Midtown. Non servono nomi, vanno bene forma e colore."
+  },
+  {
    "id": "sat-park-geroglifici",
    "stopId": "sat-park-obelisk",
    "type": "describe",
@@ -2617,6 +2629,97 @@ export default {
    ],
    "vinnieBet": "Meno di 3 insegne prima dell'incrocio",
    "parentHint": "Il cerchio è la lettera coreana ㅇ, una delle più frequenti: è su quasi tutte le insegne della 32ª tra Broadway e la Quinta, anche ai piani alti."
+  },
+  {
+   "id": "sat-park-scoiattoli",
+   "stopId": null,
+   "type": "bet",
+   "title": "Scoiattoli contro piccioni",
+   "read": "Vinnie qui. Da quando entrate nel parco fino all'obelisco contate gli scoiattoli: uno conta i grigi che salgono sugli alberi, l'altro quelli che corrono per terra. Io scommetto che ne vedete cinque in tutto. E non fatemi parlare dei piccioni: li avete già battuti in simpatia, ma non in numero.",
+   "roles": [
+    "Conta gli scoiattoli sugli alberi",
+    "Conta quelli per terra"
+   ],
+   "vinnieBet": "Cinque in tutto",
+   "parentHint": "A novembre gli scoiattoli sono molto attivi e cercano ghiande. Se arrivano a cinque o più, vince la squadra."
+  },
+  {
+   "id": "sat-park-lingue",
+   "stopId": null,
+   "type": "bet",
+   "title": "Quante lingue?",
+   "read": "Camminando nel parco e poi sulla Quinta ascoltate le persone che passano. Uno cerca di sentire quante lingue diverse riconosce, l'altro le segna con le dita. Vinnie scommette che ne sentite tre. Se le lingue sono di più, il pezzo di cioccolata è vostro.",
+   "roles": [
+    "Ascolta le lingue",
+    "Segna con le dita"
+   ],
+   "vinnieBet": "Tre lingue",
+   "parentHint": "Basta riconoscere inglese, spagnolo, francese, italiano, cinese, giapponese. Accettate le risposte dei bambini anche se sono incerte."
+  },
+  {
+   "id": "sat-fifth-portieri",
+   "stopId": null,
+   "type": "bet",
+   "title": "Il portiere in divisa",
+   "read": "Sulla Quinta i palazzi hanno quasi tutti un portiere in divisa e cappello. Uno conta i portieri che vede sul marciapiede a sinistra, l'altro i tendoni verdi o blu. Vinnie scommette che arrivate a quattro portieri prima della 59ª.",
+   "roles": [
+    "Conta i portieri",
+    "Conta i tendoni colorati"
+   ],
+   "vinnieBet": "Quattro portieri",
+   "parentHint": "Nelle strade residenziali vicino al parco il portiere è molto comune. Se la zona è tranquilla e non ne vedete, la scommessa la vince Vinnie."
+  },
+  {
+   "id": "sat-plaza-carrozze",
+   "stopId": null,
+   "type": "bet",
+   "title": "Cavalli in fila",
+   "read": "Quando arrivate in piazza, contate le carrozze con i cavalli ferme in fila: uno le conta, l'altro scrive il numero sul telefono. Io dico otto, ma i cavalli non sanno contare, quindi vale la vostra parola.",
+   "roles": [
+    "Conta le carrozze",
+    "Scrive il numero sul telefono"
+   ],
+   "vinnieBet": "Otto carrozze",
+   "parentHint": "Le carrozze si fermano di solito sul lato sud-ovest del parco, tra la 59ª e la 58ª. Se le carrozze non ci sono, contate le auto gialle."
+  },
+  {
+   "id": "sat-stpat-guglie",
+   "stopId": null,
+   "type": "bet",
+   "title": "Le guglie",
+   "read": "Alla cattedrale di St. Patrick's guardate in alto, tra i grattacieli. Uno conta le punte della facciata, l'altro dice di che colore è la pietra. Vinnie dice che di punte ce ne sono tre. Ma io le ho viste volare via con un uccello.",
+   "roles": [
+    "Conta le punte",
+    "Dice il colore della pietra"
+   ],
+   "vinnieBet": "Tre punte",
+   "parentHint": "La facciata ha due guglie alte, che sono le più visibili; la pietra è marmo chiaro, a volte grigia per lo smog. Se contate due guglie, vince la squadra."
+  },
+  {
+   "id": "sat-bryant-caffe",
+   "stopId": null,
+   "type": "bet",
+   "title": "Il caffè in mano",
+   "read": "Nel parco della biblioteca stanno tutti con un bicchiere in mano. Uno conta le persone con un bicchiere di carta, l'altro le persone che usano il telefono. Vinnie dice che i bicchieri vincono 10 a 5.",
+   "roles": [
+    "Conta i bicchieri di carta",
+    "Conta i telefoni"
+   ],
+   "vinnieBet": "Bicchieri 10 a 5",
+   "parentHint": "Si fa in un minuto, guardando intorno. Vince chi arriva prima a dieci."
+  },
+  {
+   "id": "sat-macys-scale",
+   "stopId": null,
+   "type": "bet",
+   "title": "La scala di legno",
+   "read": "Dentro Macy's c'è una scala mobile molto speciale. Vinnie scommette che è tutta di metallo come quelle dell'aeroporto. Uno di voi sale a controllare, l'altro filma. Se è di legno, vince la squadra.",
+   "roles": [
+    "Sale e controlla il materiale",
+    "Filma la salita"
+   ],
+   "vinnieBet": "Tutta di metallo",
+   "parentHint": "Macy's Herald Square conserva alcune scale mobili in legno storiche, soprattutto ai piani alti: verificate sul posto, potrebbero essere chiuse."
   }
  ]
 };
