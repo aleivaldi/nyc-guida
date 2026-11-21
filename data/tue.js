@@ -1,14 +1,119 @@
 export default {
  "id": "tue",
  "weekday": 2,
- "title": "SoHo, Village o Chinatown, Union Square",
+ "title": "SoHo, Washington Square e Union Square",
  "vinnieMorning": "Ultimo giorno, squadra. Oggi si cammina su strade di ferro e si passa sotto un arco di marmo, e stasera io prendo il volo con la Chiave. A meno che non mi fermiate prima del taxi.",
  "stops": [
+  {
+   "id": "tue-checkout",
+   "name": "Colazione e check-out",
+   "kind": "key",
+   "start": "08:30",
+   "durationMin": 45,
+   "cost": "Gratis",
+   "pos": [
+    40.75561,
+    -73.98861
+   ],
+   "radiusM": 60,
+   "hook": "Valigie chiuse, in deposito alla reception, e via leggeri per l'ultimo giorno.",
+   "story": "Il deposito bagagli negli hotel di New York è quasi sempre gratuito per gli ospiti del giorno, ma si lascia una mancia: di solito qualche dollaro a valigia quando la ritirate.",
+   "look": [
+    "Il tagliandino del deposito bagagli: fotografatelo."
+   ],
+   "tips": [
+    {
+     "text": "Chiedete conferma del deposito bagagli e dell'orario per ritirarli: non è già organizzato.",
+     "when": "arrive"
+    },
+    {
+     "text": "Tenete fuori dalle valigie passaporti, caricabatterie e una giacca in più per l'aereo.",
+     "when": "always"
+    },
+    {
+     "text": "Chiedete alla reception un taxi per JFK alle 16:00.",
+     "when": "always"
+    }
+   ],
+   "steps": [],
+   "bagni": {
+    "where": "In hotel.",
+    "cost": "Gratis",
+    "clean": "-"
+   }
+  },
+  {
+   "id": "tue-go-soho",
+   "name": "Dall'hotel a SoHo, in metro",
+   "kind": "move",
+   "start": "09:15",
+   "durationMin": 45,
+   "cost": "Metro $3 a testa",
+   "pos": [
+    40.75731,
+    -73.98979
+   ],
+   "radiusM": 100,
+   "hook": "Cinque fermate verso sud sotto l'Ottava Avenue, e si esce tra i palazzi di ghisa.",
+   "story": "SoHo vuol dire South of Houston, a sud di Houston Street, che i newyorkesi pronunciano Hau-ston e non come la città del Texas. Una volta era il quartiere delle fabbriche; poi ci sono venuti a vivere gli artisti, e dopo di loro i negozi.",
+   "look": [
+    "Sopra i binari: Downtown & Brooklyn.",
+    "Uscendo a Spring St: le scale antincendio di ferro sulle facciate."
+   ],
+   "tips": [
+    {
+     "text": "Il martedì mattina c'è ancora la gente che va al lavoro: tenete i bambini vicini in carrozza.",
+     "when": "arrive"
+    },
+    {
+     "text": "Alternativa: linee R o W (gialle) da Times Sq–42 St fino a Prince St. Non la Q: è espressa e non ferma lì.",
+     "when": "always"
+    },
+    {
+     "text": "In ritardo: taxi fino a Spring Street, 15–25 minuti.",
+     "when": "late"
+    }
+   ],
+   "steps": [
+    {
+     "id": "gosoho-station",
+     "title": "Stazione 42 St–Port Authority",
+     "where": "Sulla 41ª verso l'Ottava Avenue, 2 minuti. Linee A C E, direzione Downtown & Brooklyn.",
+     "look": [],
+     "tips": [
+      "Prendete la E o la C. La A è espressa: va bene lo stesso solo se il cartello dice che ferma a Spring St."
+     ]
+    },
+    {
+     "id": "gosoho-train",
+     "title": "La E fino a Spring St",
+     "where": "Fermate: 34 St–Penn Station, 23 St, 14 St, W 4 St–Washington Sq, Spring St. Si scende alla quinta.",
+     "look": [
+      "Contate le fermate e dite i nomi: è la sfida di Vinnie."
+     ],
+     "tips": []
+    },
+    {
+     "id": "gosoho-exit",
+     "title": "Fuori a Spring Street",
+     "where": "Uscite su Spring Street e camminate verso est: da qui parte il giro di SoHo.",
+     "look": [
+      "Le facciate di ghisa con le colonne."
+     ],
+     "tips": []
+    }
+   ],
+   "bagni": {
+    "where": "In hotel prima di partire. A SoHo: Bloomingdale's (504 Broadway) e i negozi grandi.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
   {
    "id": "soho",
    "name": "SoHo e Greene Street",
    "kind": "key",
-   "start": "09:30",
+   "start": "10:00",
    "durationMin": 150,
    "cost": "Gratis. Colazione $35–60 in 4",
    "pos": [
@@ -262,265 +367,77 @@ export default {
    }
   },
   {
-   "id": "washington-sq",
-   "name": "Washington Square Park",
-   "kind": "choice",
-   "choiceGroup": "tue-midday",
-   "start": "12:00",
-   "durationMin": 40,
+   "id": "tue-go-union",
+   "name": "A piedi per Washington Square fino a Union Square",
+   "kind": "move",
+   "start": "12:30",
+   "durationMin": 30,
    "cost": "Gratis",
    "pos": [
-    40.73123,
-    -73.9971
+    40.73122,
+    -73.99712
    ],
-   "radiusM": 200,
-   "hook": "Un arco di marmo dove una volta passavano gli autobus, e tavoli di pietra dove si gioca a scacchi contro il tempo.",
-   "story": "Nel 1889 per i cento anni dell'insediamento di George Washington costruirono un arco di legno e gesso, solo per la festa. Piacque così tanto che lo rifecero in marmo, poco più a sud, dove lo vedete oggi. Dentro c'è una scala a chiocciola e una stanza segreta alta cinque metri, chiusa al pubblico. Fino alla fine degli anni '50 le auto attraversavano il parco, e gli autobus della Quinta Strada facevano inversione intorno all'arco. E sotto il prato, prima del parco, c'era un cimitero: circa ventimila persone sono ancora lì sotto.",
+   "radiusM": 120,
+   "hook": "Mezz'ora a piedi passando sotto l'arco di marmo di Washington Square: è sulla strada, e c'è una sfida di Vinnie.",
+   "story": "L'arco di Washington Square è stato costruito per i cento anni dell'insediamento di George Washington come primo presidente. Prima era di legno; piacque così tanto che lo rifecero in marmo, inaugurato nel 1895.",
    "look": [
-    "Le due statue di Washington sul lato nord dell'arco: guardandolo dalla Quinta Strada, a sinistra in divisa da generale (in guerra), a destra da presidente (in pace).",
-    "I tavoli degli scacchi nell'angolo sud-ovest: giocatori con l'orologio, partite da cinque minuti, si sfidano anche i passanti.",
-    "L'olmo nell'angolo nord-ovest, verso Washington Square West: ha circa 300 anni, è più vecchio degli Stati Uniti."
+    "L'arco bianco con le due statue di George Washington.",
+    "La fontana al centro della piazza e i musicisti di strada.",
+    "Su University Place, guardando avanti: gli alberi di Union Square."
    ],
    "tips": [
     {
-     "text": "Arrivate da Washington Square South (dalla strada di SoHo): avete l'arco davanti con la fontana in mezzo, è la vista migliore.",
-     "when": "arrive"
-    },
-    {
-     "text": "Agli scacchi alcuni giocano per soldi: guardare è gratis, giocare costa qualche dollaro. Chiedete prima.",
+     "text": "Invece della metro, che il programma prevedeva: sono 25–30 minuti a piedi e passate dall'arco. Se sono stanchi o piove: metro R o W da Prince St fino a 14 St–Union Sq, due fermate.",
      "when": "always"
     },
     {
-     "text": "In ritardo: arco, fontana e via verso il pranzo. Il palazzo di Friends lo saltate.",
+     "text": "Strand, la grande libreria, è su Broadway alla 12ª: una deviazione di un isolato a destra prima di Union Square.",
+     "when": "always"
+    },
+    {
+     "text": "In ritardo: metro R o W da Prince St, 2 fermate.",
      "when": "late"
     },
     {
-     "text": "Se piove: il parco non ha riparo. Andate dritti al pranzo e passate davanti all'arco solo per la missione.",
+     "text": "Se piove: metro, il parco non ha riparo.",
      "when": "rain"
-    },
-    {
-     "text": "Panchine tutto intorno alla fontana: è il punto dove sedersi e guardare i musicisti di strada.",
-     "when": "tired"
     }
    ],
-   "missionId": "tue-wsq",
-   "nearby": [
+   "steps": [
     {
-     "pos": [
-      40.73236,
-      -74.0053
+     "id": "gounion-broadway",
+     "title": "Su Broadway verso nord",
+     "where": "Da Prince Street salite Broadway verso nord fino a Washington Place, poi a sinistra fino alla piazza: circa 12 minuti.",
+     "look": [
+      "Le bandiere viola della New York University sui palazzi intorno alla piazza."
      ],
-     "text": "Il palazzo di Friends, 90 Bedford Street all'angolo con Grove Street: è la facciata che si vede nella serie. 10 minuti a ovest.",
-     "kind": "film"
+     "tips": []
     },
     {
-     "pos": [
-      40.73197,
-      -73.99861
+     "id": "gounion-arch",
+     "title": "L'arco di Washington Square",
+     "where": "Attraversate la piazza fino all'arco, sul lato nord, dove comincia la Quinta Avenue.",
+     "look": [
+      "Le due statue di Washington sui pilastri.",
+      "Sotto l'arco, guardando la Quinta verso nord: in fondo si vede l'Empire State."
      ],
-     "text": "L'olmo dell'impiccato: la leggenda dice impiccagioni, la storia dice di no. È comunque l'albero più vecchio di Manhattan.",
-     "kind": "curio"
+     "tips": [
+      "Qui c'è la sfida di Vinnie con la foto di cento anni fa."
+     ]
     },
     {
-     "pos": [
-      40.73032,
-      -74.00036
+     "id": "gounion-univ",
+     "title": "University Place fino a Union Square",
+     "where": "Dal lato nord della piazza andate verso est fino a University Place e salitela fino alla 14ª: Union Square è di fronte. Circa 10 minuti.",
+     "look": [
+      "Alla 14ª: le bancarelle rosse del mercatino di Natale."
      ],
-     "text": "Caffe Reggio, 119 MacDougal: dicono di aver servito il primo cappuccino d'America, nel 1927. La macchina del caffè originale è ancora dentro.",
-     "kind": "curio"
-    },
-    {
-     "pos": [
-      40.73082,
-      -73.99745
-     ],
-     "text": "La fontana: nel restauro del 2007-2009 l'hanno spostata per metterla in fila con l'arco e la Quinta Strada.",
-     "kind": "view"
-    },
-    {
-     "pos": [
-      40.73057,
-      -74.00209
-     ],
-     "text": "Joe's Pizza, 7 Carmine Street: in Spider-Man 2 Peter Parker fa le consegne per Joe's e viene licenziato perché arriva sempre tardi.",
-     "kind": "film"
+     "tips": []
     }
    ],
-   "cover": {
-    "img": "img/washington-sq.webp",
-    "credit": "lurkingherern, CC BY 4.0, via Wikimedia Commons"
-   },
    "bagni": {
-    "where": "Edificio a sud del parco, vicino a Thompson Street. Aperto di giorno (circa 8–16 o fino al tramonto, controllate in inverno).",
+    "where": "Washington Square: edificio sul lato sud, aperto di giorno, pulizia non verificata. Meglio un caffè su MacDougal Street o Whole Foods a Union Square.",
     "cost": "Gratis",
-    "clean": "Non verificato: ristrutturato nel 2014, ma in passato aveva problemi di pulizia. Meglio un negozio o un caffè se potete."
-   }
-  },
-  {
-   "id": "chinatown",
-   "name": "Chinatown: Mott, Doyers e Columbus Park",
-   "kind": "choice",
-   "choiceGroup": "tue-midday",
-   "start": "12:00",
-   "durationMin": 60,
-   "cost": "Gratis. Dumpling $40–70 in 4",
-   "pos": [
-    40.71435,
-    -73.9981
-   ],
-   "radiusM": 250,
-   "hook": "Una via che fa una curva a gomito, un ristorante del 1920 e nonni che giocano a scacchi cinesi sotto gli alberi.",
-   "story": "Doyers Street è lunga sessanta metri e piega a metà. Cento anni fa la chiamavano «l'angolo insanguinato»: si diceva che le bande si nascondessero dietro la curva. Gli storici oggi pensano che fosse esagerato, ma il nome è rimasto. Al numero 13 c'è Nom Wah, aperto nel 1920 come pasticceria e diventato il primo posto di dim sum della città. Columbus Park, due isolati più in là, era il quartiere più povero di New York, Mulberry Bend: lo fotografò Jacob Riis e la città lo rase al suolo per farne un parco.",
-   "look": [
-    "La curva di Doyers Street: mettetevi proprio nel gomito e guardate, non si vede né l'inizio né la fine della via.",
-    "A Columbus Park, i tavoli dello xiangqi: pedine rotonde di legno con ideogrammi, al posto di re e regine.",
-    "Wing On Wo & Co. al 26 di Mott Street: il negozio più vecchio di Chinatown, porcellane in vetrina dal 1890."
-   ],
-   "tips": [
-    {
-     "text": "Molti posti accettano solo contanti: tenete $40–60 in banconote piccole.",
-     "when": "always"
-    },
-    {
-     "text": "Da Nom Wah date il nome all'ingresso e fate il giro di Doyers e Pell mentre aspettate.",
-     "when": "arrive"
-    },
-    {
-     "text": "In ritardo: solo Doyers Street, un piatto di dumpling e metro Q da Canal Street.",
-     "when": "late"
-    },
-    {
-     "text": "Se piove: Nom Wah è al coperto e si sta stretti ma al caldo. Columbus Park lo saltate.",
-     "when": "rain"
-    },
-    {
-     "text": "Columbus Park ha panchine e un bagno pubblico nell'edificio del parco.",
-     "when": "tired"
-    }
-   ],
-   "missionId": "tue-china",
-   "nearby": [
-    {
-     "pos": [
-      40.71446,
-      -73.9982
-     ],
-     "text": "Nom Wah Tea Parlor, 13 Doyers: dal 1920. Ordinate gli involtini all'uovo originali.",
-     "kind": "curio"
-    },
-    {
-     "pos": [
-      40.71341,
-      -73.99803
-     ],
-     "text": "Kimlau Square, in fondo a Doyers: l'arco cinese dedicato ai soldati sino-americani.",
-     "kind": "view"
-    },
-    {
-     "pos": [
-      40.71531,
-      -73.9982
-     ],
-     "text": "Chinatown Ice Cream Factory, 65 Bayard: gelato al sesamo nero, lychee, tè verde. Anche con il freddo c'è la fila.",
-     "kind": "curio"
-    },
-    {
-     "pos": [
-      40.71486,
-      -74.00006
-     ],
-     "text": "Columbus Park: la mattina tai chi, il pomeriggio carte e scacchi cinesi.",
-     "kind": "curio"
-    },
-    {
-     "pos": [
-      40.71459,
-      -73.99855
-     ],
-     "text": "Wing On Wo & Co., 26 Mott Street: il negozio più vecchio di Chinatown.",
-     "kind": "curio"
-    }
-   ],
-   "cover": {
-    "img": "img/chinatown.webp",
-    "credit": "Beyond My Ken, CC BY-SA 4.0, via Wikimedia Commons"
-   },
-   "bagni": {
-    "where": "Columbus Park (Bayard St tra Baxter e Mulberry): ci sono due bagni, nel padiglione e vicino al parco giochi. Se chiusi, chiedete nei ristoranti dove mangiate.",
-    "cost": "Gratis",
-    "clean": "Un'ispezione del Parks Department ha dato \"accettabile\" a una stanza (una sola verifica)"
-   }
-  },
-  {
-   "id": "pranzo",
-   "name": "Pranzo nel Village",
-   "kind": "key",
-   "start": "13:30",
-   "durationMin": 50,
-   "cost": "$25–60 in 4",
-   "pos": [
-    40.73057,
-    -74.00209
-   ],
-   "radiusM": 250,
-   "hook": "Una fetta piegata in due all'angolo dove Spider-Man consegnava pizze.",
-   "story": "Joe Pozzuoli era di Napoli e nel 1975 aprì una pizzeria all'angolo tra Bleecker e Carmine Street. La fetta di Joe è il modello della pizza al taglio newyorkese: sottile, grande, da piegare a metà e mangiare in piedi. Nel film Spider-Man 2 Peter Parker lavora per Joe's e lo licenziano perché arriva sempre in ritardo. Il locale si è spostato di pochi metri, al 7 di Carmine Street, ma è sempre della famiglia.",
-   "look": [
-    "Le foto sui muri di Joe's: attori, sindaci, sportivi, tutti con la fetta in mano.",
-    "La chiesa di Our Lady of Pompeii, di fronte: è la chiesa degli emigrati italiani del quartiere.",
-    "Father Demo Square, il triangolo con la fontana davanti alla chiesa: lì si mangia la fetta in piedi."
-   ],
-   "tips": [
-    {
-     "text": "Se avete scelto Chinatown, mangiate lì: dumpling da Nom Wah o Joe's Shanghai, poi metro Q da Canal Street a Union Square.",
-     "when": "always"
-    },
-    {
-     "text": "Da Joe's non ci sono quasi tavoli: si ordina al banco e si mangia in piedi o sulle panchine di Father Demo Square.",
-     "when": "arrive"
-    },
-    {
-     "text": "In ritardo: fetta da Joe's e via, il resto lo saltate.",
-     "when": "late"
-    },
-    {
-     "text": "Se piove o volete sedervi: Caffe Reggio o Mamoun's su MacDougal Street, al chiuso.",
-     "when": "rain"
-    },
-    {
-     "text": "Per sedersi al caldo con calma: Caffe Reggio, cioccolata calda e cannolo.",
-     "when": "tired"
-    }
-   ],
-   "nearby": [
-    {
-     "pos": [
-      40.7305,
-      -74.00282
-     ],
-     "text": "Our Lady of Pompeii, 25 Carmine Street: la parrocchia degli italiani del Village.",
-     "kind": "curio"
-    },
-    {
-     "pos": [
-      40.73589,
-      -74.005
-     ],
-     "text": "Magnolia Bakery, 401 Bleecker: la pasticceria resa famosa da Sex and the City. Il banana pudding è la cosa da prendere.",
-     "kind": "film"
-    },
-    {
-     "pos": [
-      40.73236,
-      -74.0053
-     ],
-     "text": "Il palazzo di Friends, 90 Bedford Street: 5 minuti da Joe's.",
-     "kind": "film"
-    }
-   ],
-   "bagni": {
-    "where": "Da Joe's non risultano bagni per i clienti. Per un bagno: Caffe Reggio o Mamoun's su MacDougal Street, consumando.",
-    "cost": "Gratis se consumate",
     "clean": "Non verificato"
    }
   },
@@ -528,15 +445,15 @@ export default {
    "id": "union-sq",
    "name": "Union Square, Strand e Flatiron",
    "kind": "key",
-   "start": "14:30",
-   "durationMin": 60,
+   "start": "13:00",
+   "durationMin": 80,
    "cost": "Gratis. Mercatino e libri solo se comprate",
    "pos": [
     40.73607,
     -73.99019
    ],
    "radiusM": 300,
-   "hook": "Un mercatino di Natale sotto un orologio che conta all'indietro, e alla fine il palazzo a forma di ferro da stiro.",
+   "hook": "Pranzo tra le bancarelle del mercatino di Natale, sotto un orologio che conta all'indietro.",
    "story": "Union Square non c'entra con la guerra civile: si chiama così perché qui si univano le due strade principali dell'isola, Broadway e la vecchia Bowery. La statua di Washington a cavallo, del 1856, è la prima statua equestre in bronzo fatta in America. Sul palazzo di fronte c'è il Metronome: un muro con un buco che sbuffa vapore e un orologio enorme che oggi conta il tempo che resta per fermare il riscaldamento del pianeta. In fondo a Broadway c'è il Flatiron, del 1902: nella punta è largo meno di due metri.",
    "look": [
     "Il Metronome, sul lato sud della 14ª: il buco dorato al centro del muro, la grande mano di bronzo e i numeri rossi che scorrono.",
@@ -544,6 +461,10 @@ export default {
     "La punta del Flatiron dalla piazzetta pedonale sulla 23ª: nei film di Spider-Man è la sede del Daily Bugle, il giornale dove lavora Peter Parker."
    ],
    "tips": [
+    {
+     "text": "Il mercatino apre alle 11 il martedì: si pranza lì, tra le bancarelle, o da Whole Foods sul lato sud della 14ª, al chiuso.",
+     "when": "arrive"
+    },
     {
      "text": "Il mercatino di Natale è nell'angolo sud-ovest della piazza, verso la 14ª e Union Square West. Il martedì apre alle 11 e chiude alle 20.",
      "when": "arrive"
@@ -565,7 +486,7 @@ export default {
      "when": "tired"
     },
     {
-     "text": "Alle 16 si riparte: dal Flatiron la metro R/W della 23ª porta a Times Square in 10 minuti, poi 5 a piedi all'hotel.",
+     "text": "Alle 14:20 si riparte verso l'hotel: metro N, Q, R o W da 14 St–Union Sq. Se andate al Flatiron, R o W dalla 23ª.",
      "when": "always"
     }
    ],
@@ -777,18 +698,115 @@ export default {
    }
   },
   {
+   "id": "tue-go-hotel",
+   "name": "Rientro verso l'hotel, in metro",
+   "kind": "move",
+   "start": "14:20",
+   "durationMin": 30,
+   "cost": "Metro $3 a testa",
+   "pos": [
+    40.73588,
+    -73.9906
+   ],
+   "radiusM": 120,
+   "hook": "Dritti verso Times Square: N, Q, R o W, tutte vanno bene.",
+   "story": "Union Square è uno dei nodi più grandi della metro: si incrociano otto linee. Sotto la piazza passano treni per Brooklyn, Queens e tutta Manhattan.",
+   "look": [
+    "I cartelli gialli N Q R W, direzione Uptown & Queens."
+   ],
+   "tips": [
+    {
+     "text": "La Q è espressa: da 14 St ferma a 34 St e poi a Times Sq, più veloce.",
+     "when": "always"
+    },
+    {
+     "text": "Se avete deciso di passare da Macy's: scendete a 34 St–Herald Sq, è sopra la stazione.",
+     "when": "always"
+    },
+    {
+     "text": "Dal Flatiron: R o W dalla 23ª fino a Times Sq–42 St.",
+     "when": "arrive"
+    }
+   ],
+   "steps": [
+    {
+     "id": "goht-station",
+     "title": "14 St–Union Sq",
+     "where": "Ingresso all'angolo sud-ovest della piazza, vicino al mercatino. Linee N Q R W, direzione Uptown & Queens.",
+     "look": [],
+     "tips": []
+    },
+    {
+     "id": "goht-train",
+     "title": "Fino a Times Sq–42 St",
+     "where": "Con la Q due fermate (34 St, Times Sq). Con R o W qualcuna in più.",
+     "look": [
+      "A 34 St–Herald Sq: Macy's è proprio sopra."
+     ],
+     "tips": []
+    },
+    {
+     "id": "goht-walk",
+     "title": "Dalla metro all'hotel",
+     "where": "Uscite verso la Settima Avenue e la 41ª, poi sulla 41ª verso l'Ottava: l'hotel è al 220.",
+     "look": [],
+     "tips": []
+    }
+   ],
+   "bagni": {
+    "where": "Whole Foods sul lato sud della 14ª, prima di scendere in metro.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
+  {
+   "id": "tue-libero",
+   "name": "Ultima ora libera vicino all'hotel",
+   "kind": "optional",
+   "start": "14:50",
+   "durationMin": 50,
+   "cost": "Gratis",
+   "pos": [
+    40.75362,
+    -73.98323
+   ],
+   "radiusM": 150,
+   "hook": "Un'ora senza programma a due isolati dall'hotel: ultima cioccolata, ultimo souvenir, o Macy's se sabato l'avete saltato.",
+   "story": "In un'ora a piedi dall'hotel si arriva a Bryant Park (3 minuti), alla biblioteca coi leoni (5 minuti) o a Macy's (10 minuti).",
+   "look": [
+    "Bryant Park: le casette del mercatino, aperte il martedì dalle 11 alle 20.",
+    "La biblioteca: la sala di lettura, se volete rivederla."
+   ],
+   "tips": [
+    {
+     "text": "Alle 15:40 tutti in hotel per le valigie: il taxi è alle 16:00.",
+     "when": "always"
+    },
+    {
+     "text": "Stanchi: restate nella hall dell'hotel e riposate.",
+     "when": "tired"
+    }
+   ],
+   "steps": [],
+   "bagni": {
+    "where": "Bryant Park, lato 42ª: tra i migliori bagni pubblici della città. Oppure in hotel.",
+    "cost": "Gratis",
+    "clean": "Ottima secondo più guide"
+   }
+  },
+  {
    "id": "hotel",
    "name": "Hotel: bagagli",
    "kind": "key",
-   "start": "16:15",
-   "durationMin": 60,
+   "start": "15:40",
+   "durationMin": 20,
    "cost": "Gratis",
    "pos": [
     40.75561,
     -73.98861
    ],
    "radiusM": 120,
-   "hook": "Un'ora per ritirare le valigie, cambiare i bambini e fare l'ultimo bagno con calma.",
+   "hook": "Venti minuti per ritirare le valigie, fare l'ultimo bagno e salire sul taxi.",
    "story": "La 41ª tra la Settima e l'Ottava è una strada di teatri: il Nederlander, accanto all'hotel, ha aperto nel 1921. Di fronte, sull'Ottava Avenue, c'è la sede del New York Times. Il giornale si era già trasferito qui vicino nel 1904, e la piazza prese il suo nome: Times Square. È la stessa piazza dove ogni anno a mezzanotte scende la palla di Capodanno.",
    "look": [
     "La facciata del Nederlander Theatre, accanto all'hotel: insegna luminosa e locandina dello spettacolo.",
@@ -801,7 +819,7 @@ export default {
      "when": "always"
     },
     {
-     "text": "Chiedete alla reception un taxi per le 17:15: di solito un taxi giallo passa sull'Ottava Avenue in pochi minuti.",
+     "text": "Il taxi è alle 16:00: un'ora prima di quanto proponeva il programma, perché è la settimana del Ringraziamento e il traffico verso JFK sarà pesante.",
      "when": "arrive"
     },
     {
@@ -844,9 +862,9 @@ export default {
   {
    "id": "partenza",
    "name": "Taxi per JFK",
-   "kind": "key",
-   "start": "17:15",
-   "durationMin": 90,
+   "kind": "move",
+   "start": "16:00",
+   "durationMin": 120,
    "cost": "Taxi $70 fisso + circa $15 tra supplementi e pedaggio + mancia: $95–105",
    "pos": [
     40.64295,
@@ -861,6 +879,10 @@ export default {
     "L'Empire State Building: la cima cambia colore quasi ogni sera."
    ],
    "tips": [
+    {
+     "text": "Partenza alle 16:00 per il volo delle 22:20: con il traffico della settimana del Ringraziamento il viaggio può durare anche più di un'ora e mezza. Meglio aspettare in aeroporto che in coda sulla Van Wyck.",
+     "when": "always"
+    },
     {
      "text": "Mettete in conto 60–90 minuti: il martedì pomeriggio dopo le 16 il traffico verso Queens è lento.",
      "when": "always"
@@ -897,150 +919,104 @@ export default {
     "where": "In aeroporto, dopo il check-in. Il taxi non si ferma.",
     "cost": "Gratis",
     "clean": "Non verificato"
-   }
+   },
+   "steps": [
+    {
+     "id": "part-taxi",
+     "title": "Il taxi",
+     "where": "Davanti all'hotel, sulla 41ª, o sulla Ottava Avenue. Valigie nel bagagliaio, passaporti in mano.",
+     "look": [
+      "Lo schermo sul retro del sedile: lì si vede il conto e si paga con la carta."
+     ],
+     "tips": [
+      "Dite subito il terminal: «JFK, Terminal …, please». Controllatelo sulla carta d'imbarco."
+     ]
+    },
+    {
+     "id": "part-road",
+     "title": "Verso Queens",
+     "where": "Il taxi esce da Manhattan da un tunnel o un ponte e attraversa Queens. È il momento della sfida finale di Vinnie.",
+     "look": [
+      "Dal lunotto posteriore: lo skyline di Manhattan che si allontana."
+     ],
+     "tips": []
+    },
+    {
+     "id": "part-jfk",
+     "title": "A JFK",
+     "where": "Al terminal: check-in e consegna dei bagagli, poi i controlli.",
+     "look": [],
+     "tips": [
+      "Pagate con la carta sullo schermo e scegliete lì la mancia."
+     ]
+    }
+   ]
   }
  ],
  "walks": [
   {
-   "from": "hotel",
+   "from": "tue-checkout",
+   "to": "tue-go-soho",
+   "minutes": 3,
+   "how": "Sulla 41ª verso l'Ottava Avenue, ingresso della metro 42 St–Port Authority.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "tue-go-soho",
    "to": "soho",
-   "minutes": 25,
-   "how": "Metro C o E da 42 St–Port Authority (3 minuti dall'hotel, ingresso sull'Ottava) fino a Spring St. Cinque fermate.",
+   "minutes": 20,
+   "how": "Metro E da 42 St–Port Authority fino a Spring St.",
    "mapsMode": "transit",
-   "tips": [
-    {
-     "pos": [
-      40.75731,
-      -73.98973
-     ],
-     "text": "Prendete il treno con la scritta Downtown. C ed E vanno bene tutti e due."
-    },
-    {
-     "text": "Toccate il lettore OMNY con la carta contactless o il telefono. Meglio una carta per ogni adulto, così il tetto settimanale vale per ciascuno. I bambini sotto i 112 cm passano gratis."
-    }
-   ]
+   "tips": []
   },
   {
    "from": "soho",
-   "to": "washington-sq",
-   "minutes": 15,
-   "how": "A piedi: su per Greene Street o Wooster, attraversate Houston Street e proseguite su LaGuardia Place fino al parco.",
+   "to": "tue-go-union",
+   "minutes": 12,
+   "how": "Broadway verso nord fino a Washington Place, poi a sinistra fino alla piazza.",
    "mapsMode": "walking",
-   "tips": [
-    {
-     "text": "Houston Street si pronuncia «Hàuston», non come la città del Texas."
-    },
-    {
-     "text": "A nord di Houston cominciano i palazzi della New York University: le bandiere viola sono loro."
-    }
-   ]
+   "tips": []
   },
   {
-   "from": "soho",
-   "to": "chinatown",
-   "minutes": 20,
-   "how": "A piedi: Prince Street verso est fino a Mulberry, poi giù per Mulberry attraverso Little Italy fino a Bayard Street, a sinistra su Mott e a destra su Pell fino a Doyers.",
-   "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.72308,
-      -73.99454
-     ],
-     "text": "Prince Street Pizza, 27 Prince: la fetta quadrata con i pepperoni a coppetta. Una in quattro per merenda."
-    },
-    {
-     "text": "Su Mulberry, tra Broome e Canal, le insegne passano dall'italiano al cinese nel giro di un isolato."
-    }
-   ]
-  },
-  {
-   "from": "washington-sq",
-   "to": "pranzo",
-   "minutes": 8,
-   "how": "A piedi: dall'angolo sud-ovest del parco su West 4th Street, attraversate la Sesta Avenue e scendete su Carmine Street.",
-   "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.73236,
-      -74.0053
-     ],
-     "text": "Se avete 15 minuti in più: deviazione al palazzo di Friends, 90 Bedford Street, e poi Joe's Pizza."
-    },
-    {
-     "pos": [
-      40.73164,
-      -74.00099
-     ],
-     "text": "All'angolo tra la Sesta Avenue e West 4th Street ci sono i campi da basket chiusi dalla rete, «The Cage»: si gioca anche d'inverno."
-    }
-   ]
-  },
-  {
-   "from": "pranzo",
+   "from": "tue-go-union",
    "to": "union-sq",
-   "minutes": 22,
-   "how": "A piedi: Bleecker Street verso est, poi su per la Quinta Strada o University Place fino alla 12ª e a destra fino a Broadway (Strand).",
+   "minutes": 12,
+   "how": "Dal lato nord della piazza a University Place, poi dritti fino alla 14ª.",
    "mapsMode": "walking",
-   "tips": [
-    {
-     "text": "Se le gambe sono finite: metro F o M da West 4th St fino a 14 St, poi due isolati a est. Ma a piedi è quasi uguale."
-    }
-   ]
-  },
-  {
-   "from": "chinatown",
-   "to": "union-sq",
-   "minutes": 20,
-   "how": "Metro Q da Canal Street (ingressi su Canal Street tra Broadway e Centre Street) fino a 14 St–Union Square: una sola fermata, è un espresso.",
-   "mapsMode": "transit",
-   "tips": [
-    {
-     "pos": [
-      40.71809,
-      -73.99989
-     ],
-     "text": "A Canal Street prendete il treno Uptown. Va bene anche il N, sulla stessa banchina. R e W partono da un'altra banchina e fanno più fermate."
-    },
-    {
-     "text": "Uscite verso Union Square South: siete già davanti alla statua di Washington."
-    }
-   ]
+   "tips": []
   },
   {
    "from": "union-sq",
-   "to": "hotel",
-   "minutes": 25,
-   "how": "Metro R o W da 23 St (angolo Broadway, accanto al Flatiron) fino a Times Sq–42 St, poi 5 minuti a piedi: uscita sulla 41ª e a ovest verso l'Ottava.",
+   "to": "tue-go-hotel",
+   "minutes": 3,
+   "how": "Ingresso della metro all'angolo sud-ovest della piazza.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "tue-go-hotel",
+   "to": "tue-libero",
+   "minutes": 20,
+   "how": "Metro N, Q, R o W fino a Times Sq–42 St, poi 5 minuti a piedi verso est fino a Bryant Park.",
    "mapsMode": "transit",
-   "tips": [
-    {
-     "pos": [
-      40.7413,
-      -73.98934
-     ],
-     "text": "Ingresso Uptown sul lato ovest di Broadway. Tre fermate."
-    },
-    {
-     "text": "A Times Sq seguite le uscite per la 41ª Strada: siete a un isolato dall'hotel."
-    }
-   ]
+   "tips": []
+  },
+  {
+   "from": "tue-libero",
+   "to": "hotel",
+   "minutes": 6,
+   "how": "Sulla 41ª verso ovest fino al numero 220.",
+   "mapsMode": "walking",
+   "tips": []
   },
   {
    "from": "hotel",
    "to": "partenza",
    "minutes": 75,
-   "how": "Taxi giallo dall'hotel: tariffa fissa per JFK. Il percorso lo sceglie il tassista (tunnel di Midtown o ponte di Queensboro).",
-   "mapsMode": "transit",
-   "tips": [
-    {
-     "text": "In un taxi normale stanno 4 passeggeri. Se le valigie non entrano, chiedete alla reception un minivan o un'auto più grande."
-    },
-    {
-     "text": "Dopo il tunnel o il ponte, girate i bambini verso il lunotto: è il momento della missione di Vinnie."
-    }
-   ]
+   "how": "Taxi fino a JFK.",
+   "mapsMode": "driving",
+   "tips": []
   }
  ],
  "food": [
@@ -1294,8 +1270,7 @@ export default {
     ]
    },
    "near": [
-    "soho",
-    "chinatown"
+    "soho"
    ],
    "note": "Aperto fino a tardi, nei weekend fino alle 3–5. Si mangia in piedi. Orari del martedì da verificare.",
    "rating": {
@@ -1435,8 +1410,7 @@ export default {
     ]
    },
    "near": [
-    "pranzo",
-    "washington-sq"
+    "tue-go-union"
    ],
    "note": "Aperto fino a notte fonda. Pochissimi posti a sedere.",
    "rating": {
@@ -1506,8 +1480,7 @@ export default {
     ]
    },
    "near": [
-    "pranzo",
-    "washington-sq"
+    "tue-go-union"
    ],
    "note": "Dal 1971. Locale minuscolo, qualche sgabello. Salsa piccante solo per gli adulti.",
    "rating": {
@@ -1573,8 +1546,7 @@ export default {
     ]
    },
    "near": [
-    "pranzo",
-    "washington-sq"
+    "tue-go-union"
    ],
    "note": "Dal 1927, dicono il primo cappuccino d'America. Al caldo e seduti. Orari da verificare.",
    "rating": {
@@ -1586,484 +1558,6 @@ export default {
    "img": {
     "src": "img/food-tue-f-reggio.webp",
     "credit": "Joe Mabel, CC BY-SA 3.0, via Wikimedia Commons"
-   }
-  },
-  {
-   "id": "tue-f-magnolia",
-   "name": "Magnolia Bakery Bleecker",
-   "type": "pasticceria americana",
-   "category": "snack",
-   "order": "Banana pudding in vaschetta, un cupcake glassato a testa.",
-   "price": "$20–30 in 4",
-   "pos": [
-    40.73589,
-    -74.005
-   ],
-   "hours": {
-    "0": [
-     [
-      "09:00",
-      "22:00"
-     ]
-    ],
-    "1": [
-     [
-      "09:00",
-      "22:00"
-     ]
-    ],
-    "2": [
-     [
-      "09:00",
-      "22:00"
-     ]
-    ],
-    "3": [
-     [
-      "09:00",
-      "22:00"
-     ]
-    ],
-    "4": [
-     [
-      "09:00",
-      "22:00"
-     ]
-    ],
-    "5": [
-     [
-      "09:00",
-      "23:00"
-     ]
-    ],
-    "6": [
-     [
-      "09:00",
-      "23:00"
-     ]
-    ]
-   },
-   "near": [
-    "pranzo"
-   ],
-   "note": "Da asporto, nessun tavolo. Orari da verificare.",
-   "rating": {
-    "stars": 4.3,
-    "count": 5143,
-    "source": "Google"
-   },
-   "buzz": "Banana pudding lodato da quasi tutti, cupcake per molti troppo dolci; coda nel weekend, niente posti.",
-   "img": {
-    "src": "img/food-tue-f-magnolia.webp",
-    "credit": "Ajay Suresh, CC BY 4.0, via Wikimedia Commons"
-   }
-  },
-  {
-   "id": "tue-f-murrays",
-   "name": "Murray's Cheese",
-   "type": "formaggeria",
-   "category": "pranzo",
-   "order": "Grilled cheese al banco o un panino da portar via; assaggi di cheddar americano.",
-   "price": "$40–60 in 4",
-   "pos": [
-    40.731,
-    -74.00303
-   ],
-   "hours": {
-    "0": [
-     [
-      "09:00",
-      "19:00"
-     ]
-    ],
-    "1": [
-     [
-      "08:00",
-      "20:00"
-     ]
-    ],
-    "2": [
-     [
-      "08:00",
-      "20:00"
-     ]
-    ],
-    "3": [
-     [
-      "08:00",
-      "20:00"
-     ]
-    ],
-    "4": [
-     [
-      "08:00",
-      "20:00"
-     ]
-    ],
-    "5": [
-     [
-      "08:00",
-      "20:00"
-     ]
-    ],
-    "6": [
-     [
-      "08:00",
-      "20:00"
-     ]
-    ]
-   },
-   "near": [
-    "pranzo"
-   ],
-   "note": "Negozio con banco panini, pochi posti. Orari da verificare.",
-   "rating": {
-    "stars": 4.6,
-    "count": 1473,
-    "source": "Google"
-   },
-   "buzz": "Assortimento di formaggi enorme e assaggi offerti volentieri; grilled cheese del banco molto lodato, prezzi da negozio gourmet.",
-   "img": {
-    "src": "img/food-tue-f-murrays.webp",
-    "credit": "Ajay Suresh, CC BY 4.0, via Wikimedia Commons"
-   }
-  },
-  {
-   "id": "tue-f-nomwah",
-   "name": "Nom Wah Tea Parlor",
-   "type": "dim sum",
-   "category": "pranzo",
-   "order": "Involtini all'uovo originali, ravioli di gamberi, bao al maiale, rice roll. Si ordina dal foglietto.",
-   "price": "$50–80 in 4",
-   "pos": [
-    40.71446,
-    -73.9982
-   ],
-   "hours": {
-    "0": [
-     [
-      "10:30",
-      "21:00"
-     ]
-    ],
-    "1": [
-     [
-      "10:30",
-      "21:00"
-     ]
-    ],
-    "2": [
-     [
-      "10:30",
-      "21:00"
-     ]
-    ],
-    "3": [
-     [
-      "10:30",
-      "21:00"
-     ]
-    ],
-    "4": [
-     [
-      "10:30",
-      "21:00"
-     ]
-    ],
-    "5": [
-     [
-      "10:30",
-      "22:00"
-     ]
-    ],
-    "6": [
-     [
-      "10:30",
-      "22:00"
-     ]
-    ]
-   },
-   "near": [
-    "chinatown"
-   ],
-   "note": "Dal 1920. Date il nome e aspettate, di solito 15–30 minuti a pranzo.",
-   "rating": {
-    "stars": 4.2,
-    "count": 5391,
-    "source": "Google"
-   },
-   "buzz": "Atmosfera storica e prezzi giusti, involtini enormi; dim sum per alcuni nella media, coda frequente a pranzo.",
-   "img": {
-    "src": "img/food-tue-f-nomwah.webp",
-    "credit": "Bagelpigeon, CC0, via Wikimedia Commons"
-   }
-  },
-  {
-   "id": "tue-f-joesshanghai",
-   "name": "Joe's Shanghai",
-   "type": "ravioli in brodo",
-   "category": "pranzo",
-   "order": "Soup dumpling al maiale e granchio: si mordono piano, dentro c'è il brodo bollente. Riso fritto per i bambini.",
-   "price": "$60–90 in 4",
-   "pos": [
-    40.71568,
-    -73.99666
-   ],
-   "hours": {
-    "0": [
-     [
-      "11:00",
-      "23:00"
-     ]
-    ],
-    "1": [
-     [
-      "11:00",
-      "23:00"
-     ]
-    ],
-    "2": [
-     [
-      "11:00",
-      "23:00"
-     ]
-    ],
-    "3": [
-     [
-      "11:00",
-      "23:00"
-     ]
-    ],
-    "4": [
-     [
-      "11:00",
-      "23:00"
-     ]
-    ],
-    "5": [
-     [
-      "11:00",
-      "23:00"
-     ]
-    ],
-    "6": [
-     [
-      "11:00",
-      "23:00"
-     ]
-    ]
-   },
-   "near": [
-    "chinatown"
-   ],
-   "note": "Tavoli grandi condivisi. Insegnate ai bambini: cucchiaio sotto, piccolo morso, si beve il brodo, poi si mangia.",
-   "rating": {
-    "stars": 4.2,
-    "count": 6316,
-    "source": "Google"
-   },
-   "buzz": "Soup dumpling lodati, servizio rapido anche quando è pieno; tavoli condivisi, solo contanti, altri piatti meno convincenti."
-  },
-  {
-   "id": "tue-f-tasty",
-   "name": "Tasty Hand-Pulled Noodles",
-   "type": "noodle tirati a mano",
-   "category": "pranzo",
-   "order": "Noodle tirati a mano in brodo di manzo, ravioli fritti al maiale. Guardate il cuoco che tira la pasta.",
-   "price": "$30–45 in 4",
-   "pos": [
-    40.71419,
-    -73.99787
-   ],
-   "hours": {
-    "0": [
-     [
-      "10:30",
-      "22:00"
-     ]
-    ],
-    "1": [
-     [
-      "10:30",
-      "22:00"
-     ]
-    ],
-    "2": [
-     [
-      "10:30",
-      "22:00"
-     ]
-    ],
-    "3": [
-     [
-      "10:30",
-      "22:00"
-     ]
-    ],
-    "4": [
-     [
-      "10:30",
-      "22:00"
-     ]
-    ],
-    "5": [
-     [
-      "10:30",
-      "22:00"
-     ]
-    ],
-    "6": [
-     [
-      "10:30",
-      "22:00"
-     ]
-    ]
-   },
-   "near": [
-    "chinatown"
-   ],
-   "note": "Solo contanti. Piccolo e semplice, sull'angolo di Doyers Street. Verificate che sia ancora aperto.",
-   "rating": {
-    "stars": 4.4,
-    "count": 1319,
-    "source": "Google"
-   },
-   "buzz": "Noodle e ravioli fritti a prezzi bassissimi, porzioni generose e servizio veloce; locale spartano, stretto e solo contanti."
-  },
-  {
-   "id": "tue-f-xian",
-   "name": "Xi'an Famous Foods",
-   "type": "noodle piccanti",
-   "category": "pranzo",
-   "order": "Noodle larghi strappati a mano con agnello al cumino per gli adulti, noodle freddi non piccanti per i bambini.",
-   "price": "$45–60 in 4",
-   "pos": [
-    40.71505,
-    -73.99737
-   ],
-   "hours": {
-    "0": [
-     [
-      "11:00",
-      "21:00"
-     ]
-    ],
-    "1": [
-     [
-      "11:00",
-      "21:00"
-     ]
-    ],
-    "2": [
-     [
-      "11:00",
-      "21:00"
-     ]
-    ],
-    "3": [
-     [
-      "11:00",
-      "21:00"
-     ]
-    ],
-    "4": [
-     [
-      "11:00",
-      "21:00"
-     ]
-    ],
-    "5": [
-     [
-      "11:00",
-      "21:00"
-     ]
-    ],
-    "6": [
-     [
-      "11:00",
-      "21:00"
-     ]
-    ]
-   },
-   "near": [
-    "chinatown"
-   ],
-   "note": "Chiedete «not spicy» per i bambini: qui il piccante è vero.",
-   "rating": {
-    "stars": 4.5,
-    "count": 2300,
-    "source": "Google"
-   },
-   "buzz": "Noodle strappati a mano lodati, porzioni grandi per il prezzo; si ordina al chiosco, pochi posti, piccante deciso."
-  },
-  {
-   "id": "tue-f-icecream",
-   "name": "Chinatown Ice Cream Factory",
-   "type": "gelateria",
-   "category": "snack",
-   "order": "Sesamo nero, lychee, tè verde. Se avete coraggio, il durian.",
-   "price": "$25–35 in 4",
-   "pos": [
-    40.71531,
-    -73.9982
-   ],
-   "hours": {
-    "0": [
-     [
-      "11:00",
-      "22:00"
-     ]
-    ],
-    "1": [
-     [
-      "11:00",
-      "22:00"
-     ]
-    ],
-    "2": [
-     [
-      "11:00",
-      "22:00"
-     ]
-    ],
-    "3": [
-     [
-      "11:00",
-      "22:00"
-     ]
-    ],
-    "4": [
-     [
-      "11:00",
-      "22:00"
-     ]
-    ],
-    "5": [
-     [
-      "11:00",
-      "22:00"
-     ]
-    ],
-    "6": [
-     [
-      "11:00",
-      "22:00"
-     ]
-    ]
-   },
-   "near": [
-    "chinatown"
-   ],
-   "note": "Dal 1978. Si fanno assaggiare i gusti.",
-   "rating": {
-    "stars": 4.4,
-    "count": 2293,
-    "source": "Google"
-   },
-   "buzz": "Gusti asiatici originali molto apprezzati, assaggi concessi; coppette care per la quantità, spesso un po' di coda.",
-   "img": {
-    "src": "img/food-tue-f-icecream.webp",
-    "credit": "Rorschach, CC BY 4.0, via Wikimedia Commons"
    }
   },
   {
@@ -2341,6 +1835,19 @@ export default {
  ],
  "missions": [
   {
+   "id": "tue-go-fermate",
+   "stopId": "tue-go-soho",
+   "type": "bet",
+   "title": "I nomi delle fermate",
+   "read": "Vinnie qui. Oggi la sfida è con la memoria. Durante il viaggio leggete ad alta voce il nome di ogni fermata. Quando scendete a Spring St, dovete ripetere tutte le fermate in ordine, a turno, senza guardare. Vinnie scommette che ne dimenticate almeno una.",
+   "roles": [
+    "Legge i nomi durante il viaggio",
+    "Ripete per primo tutte le fermate a Spring St"
+   ],
+   "vinnieBet": "Ne dimenticate almeno una",
+   "parentHint": "Con la E: 34 St–Penn Station, 23 St, 14 St, W 4 St–Washington Sq, Spring St. Se prendete la C, sono le stesse."
+  },
+  {
    "id": "tue-soho",
    "stopId": "soho",
    "type": "describe",
@@ -2354,7 +1861,7 @@ export default {
   },
   {
    "id": "tue-wsq",
-   "stopId": "washington-sq",
+   "stopId": "tue-go-union",
    "type": "then-now",
    "title": "L'arco del bisnonno",
    "read": "Questa foto ha più di cento anni. Stesso arco, stesso posto. Ma qualcosa non torna, e io lo so, perché il mio bis-bis-nonno piccione stava lassù in cima. Trovate tre differenze tra la foto e quello che vedete. Le dovete trovare insieme: una la trova uno, una l'altro, la terza la decidete in due. Scommetto che vi fermate a due.",
@@ -2367,22 +1874,6 @@ export default {
    "img": {
     "src": "img/tue-wsq.webp",
     "credit": "Scan by NYPL, Public domain, via Wikimedia Commons"
-   }
-  },
-  {
-   "id": "tue-china",
-   "stopId": "chinatown",
-   "type": "describe",
-   "title": "La porta del 1920",
-   "read": "Questa strada fa una curva, e dietro la curva una volta si nascondevano i cattivi. Io no, io mi nascondo in bella vista. Uno di voi guarda questa foto per cinque secondi: è una porta di questa via. La descrive all'altro: colori, scritte, finestre, ma niente nomi. L'altro la trova e ci si mette davanti, poi la indicate insieme. Scommetto che vi perdete nella curva.",
-   "roles": [
-    "Guarda la foto 5 secondi e descrive colori e forme",
-    "Non vede la foto: guida la squadra lungo la via"
-   ],
-   "parentHint": "È Nom Wah Tea Parlor, 13 Doyers Street, nel primo tratto della via venendo da Pell Street, prima della curva. Insegna e vetrine all'antica.",
-   "img": {
-    "src": "img/tue-china.webp",
-    "credit": "Bagelpigeon, CC0, via Wikimedia Commons"
    }
   },
   {
@@ -2400,6 +1891,19 @@ export default {
     "src": "img/tue-flatiron.webp",
     "credit": "Tdorante10, CC BY-SA 4.0, via Wikimedia Commons"
    }
+  },
+  {
+   "id": "tue-finale",
+   "stopId": "partenza",
+   "type": "bet",
+   "title": "Ciao, New York",
+   "read": "Va bene, squadra. Ci siamo. Io ho le ali, voi un taxi. Ecco l'ultima: dopo il tunnel o il ponte, girate la testa verso il lunotto. Scommetto che non riuscite a vedere l'Empire State Building acceso prima che spariscano i grattacieli. Se lo vedete, lo salutate insieme, ad alta voce: «Ciao, New York». E allora, forse, vi dico dove ho messo la Chiave.",
+   "roles": [
+    "Guarda dal lunotto a sinistra",
+    "Guarda dal lunotto a destra"
+   ],
+   "vinnieBet": "Lo skyline sparisce prima che lo salutiate.",
+   "parentHint": "Uscendo dal tunnel di Midtown sulla Long Island Expressway, o scendendo dal ponte di Queensboro, lo skyline resta dietro per qualche minuto. L'Empire State è il più alto con l'antenna, cima illuminata a colori. Alle 17:30 è già buio. Dopo la missione aprite la schermata di Vinnie per il finale."
   },
   {
    "id": "tue-bet-cisterna",
@@ -2443,19 +1947,6 @@ export default {
     "src": "img/tue-bet-orologio.webp",
     "credit": "Jim.henderson, CC0, via Wikimedia Commons"
    }
-  },
-  {
-   "id": "tue-finale",
-   "stopId": "partenza",
-   "type": "bet",
-   "title": "Ciao, New York",
-   "read": "Va bene, squadra. Ci siamo. Io ho le ali, voi un taxi. Ecco l'ultima: dopo il tunnel o il ponte, girate la testa verso il lunotto. Scommetto che non riuscite a vedere l'Empire State Building acceso prima che spariscano i grattacieli. Se lo vedete, lo salutate insieme, ad alta voce: «Ciao, New York». E allora, forse, vi dico dove ho messo la Chiave.",
-   "roles": [
-    "Guarda dal lunotto a sinistra",
-    "Guarda dal lunotto a destra"
-   ],
-   "vinnieBet": "Lo skyline sparisce prima che lo salutiate.",
-   "parentHint": "Uscendo dal tunnel di Midtown sulla Long Island Expressway, o scendendo dal ponte di Queensboro, lo skyline resta dietro per qualche minuto. L'Empire State è il più alto con l'antenna, cima illuminata a colori. Alle 17:30 è già buio. Dopo la missione aprite la schermata di Vinnie per il finale."
   }
  ]
 };

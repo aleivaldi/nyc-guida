@@ -1,15 +1,93 @@
 export default {
  "id": "sun",
  "weekday": 0,
- "title": "Traghetto, memoria e il Ponte",
+ "title": "Traghetto, Memoriale, Century 21 e il Ponte",
  "vinnieMorning": "Oggi si va per mare, poi sotto i ponti, poi sopra un ponte. Io questi moli li conosco da quando ero un uovo, e il traghetto arancione lo saluto ogni mattina. Se volete riprendervi un pezzo di chiave, guardate bene e contate meglio di me.",
  "stops": [
+  {
+   "id": "sun-go-ferry",
+   "name": "Dall'hotel al traghetto, in metro",
+   "kind": "move",
+   "start": "08:45",
+   "durationMin": 30,
+   "cost": "Metro $3 a testa",
+   "pos": [
+    40.75529,
+    -73.98707
+   ],
+   "radiusM": 90,
+   "hook": "La linea rossa dall'inizio alla fine di Manhattan: tredici fermate e si sbuca davanti al mare.",
+   "story": "South Ferry è il capolinea più a sud della linea 1. La stazione di oggi è stata costruita dopo il 2009 e rifatta dopo l'uragano Sandy del 2012, quando l'acqua del porto l'aveva riempita fino al soffitto.",
+   "look": [
+    "Sopra i binari: la scritta Downtown & Brooklyn.",
+    "Alla fermata WTC Cortlandt, dal finestrino: le pareti bianche piene di lettere in rilievo.",
+    "All'uscita: il terminal arancione e blu del traghetto, proprio sopra la stazione."
+   ],
+   "tips": [
+    {
+     "text": "Colazione e bagno in hotel: il primo bagno dopo è nel terminal del traghetto.",
+     "when": "always"
+    },
+    {
+     "text": "La domenica la metro ha spesso lavori: controllate Google Maps. Alternativa: linea R da Times Sq–42 St fino a Whitehall St, che esce davanti al terminal.",
+     "when": "always"
+    },
+    {
+     "text": "Puntate alla corsa delle 9:30: arrivate al terminal verso le 9:15.",
+     "when": "arrive"
+    },
+    {
+     "text": "In ritardo: taxi dall'hotel al terminal di Whitehall, 20–25 minuti la domenica mattina, circa $30–35.",
+     "when": "late"
+    }
+   ],
+   "steps": [
+    {
+     "id": "goferry-out",
+     "title": "Alla metro Times Sq–42 St",
+     "where": "Dall'hotel camminate sulla 41ª verso la Settima Avenue (verso Times Square). Gli ingressi della metro sono agli angoli della Settima tra la 40ª e la 42ª. Cercate la linea 1, cerchio rosso, direzione Downtown & Brooklyn.",
+     "look": [
+      "Le scale con i globi verdi della metro sugli angoli."
+     ],
+     "tips": [
+      "Ogni persona tocca il lettore OMNY una volta, anche i bambini."
+     ]
+    },
+    {
+     "id": "goferry-train",
+     "title": "Linea 1 fino al capolinea",
+     "where": "Treno 1 verso South Ferry: è il capolinea, circa 25 minuti. Si scende quando scendono tutti.",
+     "look": [
+      "Alla penultima fermata prima di Rector St, WTC Cortlandt: le pareti bianche con le parole. È la sfida di Vinnie, preparatevi."
+     ],
+     "tips": [
+      "Non salite sulla 2 o sulla 3: sono espressi e non arrivano a South Ferry."
+     ]
+    },
+    {
+     "id": "goferry-exit",
+     "title": "Dalla stazione al terminal",
+     "where": "Uscite seguendo i cartelli Staten Island Ferry: il terminal di Whitehall è proprio sopra la stazione.",
+     "look": [
+      "Il grande orologio e la scritta Staten Island Ferry sulla facciata."
+     ],
+     "tips": [
+      "Dentro la sala d'attesa mettetevi davanti alle porte: si aprono pochi minuti prima della partenza."
+     ]
+    }
+   ],
+   "bagni": {
+    "where": "In metro non ci sono bagni. Il primo è nel terminal di Whitehall.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
   {
    "id": "ferry",
    "name": "Staten Island Ferry",
    "kind": "key",
-   "start": "09:00",
-   "durationMin": 90,
+   "start": "09:15",
+   "durationMin": 95,
    "cost": "Gratis",
    "pos": [
     40.70055,
@@ -29,11 +107,11 @@ export default {
    ],
    "tips": [
     {
-     "text": "Dall'hotel: linea 1 (rossa) da Times Sq–42 St fino a South Ferry, il capolinea, circa 25 minuti. Uscite dall'hotel verso le 8:10. Alternativa: linea R fino a Whitehall St.",
+     "text": "Dall'hotel: linea 1 (rossa) da Times Sq–42 St fino a South Ferry, il capolinea, circa 25 minuti. Alternativa: linea R fino a Whitehall St.",
      "when": "always"
     },
     {
-     "text": "Arrivate per le 8:45. Nella sala d'attesa mettetevi davanti alle porte: si aprono pochi minuti prima della partenza. Appena a bordo andate a destra e uscite sul ponte all'aperto.",
+     "text": "Puntate alla corsa delle 9:30. Nella sala d'attesa mettetevi davanti alle porte: si aprono pochi minuti prima della partenza. Appena a bordo andate a destra e uscite sul ponte all'aperto.",
      "when": "arrive"
     },
     {
@@ -57,7 +135,7 @@ export default {
      "when": "tired"
     },
     {
-     "text": "Se perdete la corsa delle 9:00, prendete quella delle 9:30: tutto il giro slitta di mezz'ora. Poi saltate il toro e andate dritti al Memoriale.",
+     "text": "Se perdete la corsa delle 9:30, prendete quella delle 10:00: poi saltate il toro e andate dritti al Memoriale.",
      "when": "late"
     }
    ],
@@ -213,7 +291,7 @@ export default {
    "id": "bull",
    "name": "Il toro di Wall Street",
    "kind": "optional",
-   "start": "10:30",
+   "start": "10:50",
    "durationMin": 15,
    "cost": "Gratis",
    "pos": [
@@ -290,7 +368,7 @@ export default {
    "id": "memorial",
    "name": "Memoriale dell'11 settembre",
    "kind": "key",
-   "start": "11:00",
+   "start": "11:15",
    "durationMin": 45,
    "cost": "Gratis (il museo non è in programma)",
    "pos": [
@@ -341,6 +419,10 @@ export default {
     {
      "text": "Seduti: le panchine di pietra sotto gli alberi del piazzale, fra le due vasche.",
      "when": "tired"
+    },
+    {
+     "text": "Breve passaggio, solo le vasche esterne: fermatevi quanto volete. Se uscite prima, anche il pranzo e Century 21 iniziano prima.",
+     "when": "always"
     }
    ],
    "steps": [
@@ -464,102 +546,180 @@ export default {
    }
   },
   {
-   "id": "seaport",
-   "name": "South Street Seaport e pranzo",
-   "kind": "optional",
-   "choiceGroup": "pranzo-seaport",
+   "id": "sun-pranzo",
+   "name": "Pranzo tra Oculus e Brookfield Place",
+   "kind": "key",
    "start": "12:00",
-   "durationMin": 60,
-   "cost": "Gratis (pranzo a parte)",
+   "durationMin": 45,
+   "cost": "$40–80 in 4, secondo il posto",
    "pos": [
-    40.70575,
-    -74.00291
+    40.7115,
+    -74.011
    ],
-   "radiusM": 250,
-   "cover": {
-    "img": "img/seaport.webp",
-    "credit": "Jim.henderson, CC0, via Wikimedia Commons"
-   },
-   "hook": "La vecchia via delle navi, con un veliero vero ormeggiato davanti al Ponte di Brooklyn.",
-   "story": "Nell'Ottocento South Street era la strada dei velieri: i bompressi sporgevano sopra la strada e sotto passavano i carri. Qui c'è stato per quasi due secoli il mercato del pesce più grande d'America, poi trasferito nel Bronx nel 2005. Il veliero Peking, ormeggiato qui per quarant'anni, nel 2017 è tornato ad Amburgo caricato su un'altra nave. È rimasto il Wavertree, una nave a vela del 1885 con lo scafo di ferro.",
+   "radiusM": 150,
+   "hook": "Si mangia seduti e al caldo, sotto le ali bianche dell'Oculus o in un food court con le vetrate sul fiume.",
+   "story": "L'Oculus è la stazione dei treni del World Trade Center, disegnata da Santiago Calatrava e aperta nel 2016: le costole bianche dovevano ricordare una colomba che si alza in volo dalle mani di un bambino.",
    "look": [
-    "Il Wavertree al Pier 16: contate gli alberi, sono tre, e guardate quante corde servono per governarlo.",
-    "Accanto, la nave rossa con la scritta AMBROSE: era un faro galleggiante, guidava le navi all'ingresso del porto.",
-    "In cima a Fulton Street, all'incrocio con Pearl Street, un piccolo faro bianco: ricorda le vittime del Titanic ed è del 1913."
+    "Dentro l'Oculus: la grande sala bianca senza colonne, con la fessura di vetro sul soffitto.",
+    "A Brookfield Place: il Winter Garden, la serra di vetro con le palme vere."
    ],
    "tips": [
     {
-     "text": "Scelta del pranzo (la decidono i bambini se hanno battuto Vinnie): Pier 17 se è asciutto e avete tempo, Front Street se piove, fa molto freddo o siete in ritardo.",
+     "text": "Due scelte vicine: il food court di Brookfield Place (Hudson Eats, al piano di sopra, vista sul fiume Hudson) oppure i posti dentro l'Oculus. Dall'Oculus a Brookfield si passa sotto terra, senza uscire al freddo.",
      "when": "arrive"
     },
     {
-     "text": "Pier 17 con il bel tempo: la vista sul ponte è gratis dalla passeggiata in fondo al molo, al piano terra. La terrazza sul tetto d'inverno non è garantita: è una sala concerti da maggio a ottobre, nei mesi freddi a volte ospita eventi a pagamento. Se la porta per il tetto è chiusa, non perdete tempo.",
+     "text": "Per un pranzo veloce: un trancio da Joe's Pizza su Fulton Street, a 2 minuti.",
      "when": "always"
     },
     {
-     "text": "Pranzo a Pier 17: The Fulton fa il brunch la domenica fino alle 15, pesce e vista ponte, ma è caro. Per spendere meno, comprate i tranci da Joe's Pizza su Fulton Street lungo la strada dal Memoriale e mangiateli sulle panchine del Pier 16, davanti al veliero.",
+     "text": "Gli orari della domenica dei negozi di Brookfield Place e dell'Oculus vanno controllati: alcuni aprono a mezzogiorno.",
      "when": "always"
     },
     {
-     "text": "Front Street, con freddo o pioggia: Il Brigante, pizzeria e trattoria del Sud a 3 minuti dalle navi, sala piccola e calda. Oppure Cowgirl SeaHorse, Tex-Mex rumoroso e allegro, i bambini si trovano bene.",
-     "when": "rain"
-    },
-    {
-     "text": "Il Tin Building non è più un mercato del cibo: ha chiuso e dentro ora c'è il Balloon Museum, installazioni gonfiabili. Solo se diluvia: costa circa 40 dollari gli adulti e 26 i bambini e vuole almeno un'ora.",
-     "when": "rain"
-    },
-    {
-     "text": "Il Seaport Museum apre la domenica dalle 11 alle 17 e il biglietto comprende la visita al Wavertree. Venti minuti a bordo bastano.",
-     "when": "always"
-    },
-    {
-     "text": "In ritardo: saltate il pranzo seduti. Un trancio da Joe's Pizza camminando, uno sguardo al veliero, e via verso il Pier 11 per il traghetto di DUMBO.",
+     "text": "In ritardo: trancio da Joe's e dritti da Century 21.",
      "when": "late"
     },
     {
-     "text": "Bagni: dentro Pier 17, al piano terra.",
-     "when": "always"
+     "text": "Stanchi: il Winter Garden di Brookfield Place ha gradini e panchine sotto le palme.",
+     "when": "tired"
     }
    ],
-   "missionId": "sun-velieri",
-   "nearby": [
+   "steps": [],
+   "bagni": {
+    "where": "Dentro l'Oculus e a Brookfield Place, nei centri commerciali.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
+  {
+   "id": "century21",
+   "name": "Century 21",
+   "kind": "key",
+   "start": "12:45",
+   "durationMin": 90,
+   "cost": "Gratis entrare; vestiti e scarpe di marca a prezzo scontato",
+   "pos": [
+    40.71028,
+    -74.01048
+   ],
+   "radiusM": 80,
+   "hook": "Il grande magazzino delle firme scontate, proprio di fronte al Memoriale: un'ora e mezza tutta per voi.",
+   "story": "Century 21 è nato nel 1961 a Brooklyn ed è famoso per vendere marche note a prezzi bassi. Il negozio di Cortlandt Street fu danneggiato l'11 settembre 2001 e riaprì pochi mesi dopo. Nel 2020 la catena chiuse tutti i negozi; questo ha riaperto nel 2023.",
+   "look": [
+    "Le etichette con due prezzi: quello pieno e quello di Century 21, più basso.",
+    "I reparti bambini: guardate le taglie americane (per età) prima di provare.",
+    "Uscendo, verso ovest: il grattacielo di vetro One World Trade Center."
+   ],
+   "tips": [
     {
-     "pos": [
-      40.7074,
-      -74.00388
-     ],
-     "text": "Il Titanic Memorial Lighthouse: un faro vero, del 1913. Prima stava in cima a un palazzo e la sua luce verde segnava mezzogiorno alle navi.",
-     "kind": "curio"
+     "text": "La domenica apre alle 11 e chiude alle 20, secondo il sito ufficiale.",
+     "when": "always"
     },
     {
-     "pos": [
-      40.70435,
-      -74.00298
-     ],
-     "text": "Al Pier 15 il bar Watermark d'inverno diventa Santa's Winter Wonderland: tunnel di bastoncini di zucchero e casette di vetro riscaldate, a pagamento.",
-     "kind": "curio"
+     "text": "Decidete un punto d'incontro appena entrati, per esempio l'ingresso principale: è grande e la domenica è pieno di gente.",
+     "when": "arrive"
     },
     {
-     "pos": [
-      40.70552,
-      -74.00157
+     "text": "I camerini hanno spesso coda: se avete dubbi sulla taglia, comprate e tenete lo scontrino.",
+     "when": "always"
+    },
+    {
+     "text": "In ritardo: mezz'ora e via, il ponte non aspetta il tramonto.",
+     "when": "late"
+    },
+    {
+     "text": "Se piove o tira vento forte: invece di DUMBO e ponte, Complete Playground, 30 Broad Street, a pochi minuti a piedi. È un grande parco giochi al coperto su più livelli, adatto anche a 7 e 11 anni. Sessioni di due ore, nel weekend circa $100 per la famiglia più i calzini antiscivolo: prezzi e posti vanno verificati e prenotati sul sito.",
+     "when": "rain"
+    }
+   ],
+   "steps": [],
+   "bagni": {
+    "where": "Non verificato: chiedete al personale. In alternativa l'Oculus, a 2–3 minuti.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
+  {
+   "id": "sun-go-dumbo",
+   "name": "A DUMBO in metro, sotto il fiume",
+   "kind": "move",
+   "start": "14:15",
+   "durationMin": 30,
+   "cost": "Metro $3 a testa",
+   "pos": [
+    40.71021,
+    -74.00766
+   ],
+   "radiusM": 90,
+   "hook": "Una sola fermata, ma passa sotto l'East River: si entra a Manhattan e si esce a Brooklyn.",
+   "story": "Il tunnel sotto il fiume che fanno la A e la C è degli anni Trenta. Prima dei tunnel e dei ponti, per andare a Brooklyn si prendeva il traghetto, proprio dal molo dove arriverete fra poco: Fulton Ferry Landing.",
+   "look": [
+    "A Fulton St: i cartelli A e C, cerchio blu, direzione Brooklyn.",
+    "Dal finestrino, tra le due fermate: il buio del tunnel sotto il fiume.",
+    "Uscendo a Brooklyn: il Ponte di Brooklyn che spunta in fondo alla discesa."
+   ],
+   "tips": [
+    {
+     "text": "Dall'Oculus si arriva al Fulton Center sotto terra, seguendo i cartelli Fulton St.",
+     "when": "arrive"
+    },
+    {
+     "text": "In ritardo: taxi da Century 21 a DUMBO, 10–15 minuti, circa $20–25.",
+     "when": "late"
+    },
+    {
+     "text": "Se piove forte o tira vento: restate a Manhattan e andate a Complete Playground (30 Broad Street) invece di DUMBO e ponte.",
+     "when": "rain"
+    }
+   ],
+   "steps": [
+    {
+     "id": "godumbo-fulton",
+     "title": "Alla metro Fulton St",
+     "where": "Da Cortlandt Street andate su Broadway e salite di due isolati fino a Fulton Street: ingresso della metro con le linee A e C.",
+     "look": [
+      "Il Fulton Center: la cupola di vetro con la spirale di luce, se entrate da lì."
      ],
-     "text": "Dalla punta del Pier 17 il Ponte di Brooklyn si vede intero, da torre a torre: è il punto per la foto di famiglia.",
-     "kind": "view"
+     "tips": [
+      "Direzione Brooklyn, non Uptown."
+     ]
+    },
+    {
+     "id": "godumbo-train",
+     "title": "A o C verso Brooklyn",
+     "where": "Si scende alla prima fermata: High St–Brooklyn Bridge. In mezzo, il treno passa sotto l'East River.",
+     "look": [
+      "Contate i secondi sotto il fiume: è la sfida di Vinnie."
+     ],
+     "tips": [
+      "Con la C o con la A va bene uguale: tutte e due fermano a High St."
+     ]
+    },
+    {
+     "id": "godumbo-walk",
+     "title": "Da High St al molo",
+     "where": "Uscite su Cadman Plaza West e scendete verso il fiume lungo Old Fulton Street, in discesa, fino a Fulton Ferry Landing: circa 10 minuti. Seguite Google Maps per l'uscita giusta.",
+     "look": [
+      "In fondo alla discesa: il ponte enorme sopra le case e il fiume."
+     ],
+     "tips": [
+      "Lungo Old Fulton Street ci sono le pizzerie Juliana's e Grimaldi's, con la coda fuori."
+     ]
     }
    ],
    "bagni": {
-    "where": "Dentro Pier 17, al piano terra. In alternativa Time Out Market (Empire Stores, lato Brooklyn) se passate dopo.",
+    "where": "In metro non ci sono bagni. A DUMBO: Pier 1 Pavilion e Empire Stores (Time Out Market).",
     "cost": "Gratis",
-    "clean": "Non verificato"
+    "clean": "Pier 1 è nuovo; il resto non verificato"
    }
   },
   {
    "id": "dumbo",
    "name": "DUMBO e Brooklyn Bridge Park",
    "kind": "key",
-   "start": "14:15",
-   "durationMin": 55,
+   "start": "14:45",
+   "durationMin": 60,
    "cost": "Gratis (carosello $4 a giro)",
    "pos": [
     40.70427,
@@ -947,8 +1107,8 @@ export default {
   },
   {
    "id": "home",
-   "name": "City Hall e rientro in hotel",
-   "kind": "key",
+   "name": "Rientro in hotel in metro",
+   "kind": "move",
    "start": "17:00",
    "durationMin": 35,
    "cost": "Metro $3 a testa con carta contactless",
@@ -971,10 +1131,6 @@ export default {
     },
     {
      "text": "Si paga toccando il tornello con la carta contactless o il telefono: $3 a testa, anche i bambini sopra i 112 cm.",
-     "when": "always"
-    },
-    {
-     "text": "Se hanno ancora energie, il treno fantasma: alla stazione Brooklyn Bridge–City Hall prendete la 6 verso sud fino al capolinea e restate a bordo. Il treno fa il giro nella vecchia stazione illuminata e riparte verso nord. Scendete a Grand Central e prendete la navetta S fino a Times Square.",
      "when": "always"
     },
     {
@@ -1004,7 +1160,42 @@ export default {
     "where": "Il parco di City Hall dovrebbe avere i bagni vicino alla fontana, ma non sono riuscito a verificarlo. Alternativa sicura: l'Oculus oppure tornare in hotel.",
     "cost": "Gratis",
     "clean": "Non verificato"
-   }
+   },
+   "steps": [
+    {
+     "id": "home-park",
+     "title": "Dal ponte al municipio",
+     "where": "Scesi dalla rampa del ponte, attraversate il parco di City Hall verso Broadway.",
+     "look": [
+      "Il municipio di New York, il palazzo bianco con la cupola dentro il parco."
+     ],
+     "tips": [
+      "Bagni: il parco non li ha sicuri. Meglio aspettare l'hotel o fermarsi in un bar."
+     ]
+    },
+    {
+     "id": "home-r",
+     "title": "Linea R alla stazione City Hall",
+     "where": "Ingresso su Broadway, sul lato ovest del parco. Linea R (gialla), direzione Uptown & Queens, fino a Times Sq–42 St.",
+     "look": [
+      "Nella carrozza: cartelli e pubblicità in tante lingue. È la sfida di Vinnie."
+     ],
+     "tips": [
+      "Sono 8 fermate, circa 20 minuti."
+     ]
+    },
+    {
+     "id": "home-hotel",
+     "title": "Da Times Square all'hotel",
+     "where": "Uscite verso la Settima Avenue e la 41ª o la 42ª. Poi sulla 41ª verso l'Ottava: l'hotel è al 220, accanto al Nederlander Theatre.",
+     "look": [
+      "Times Square di sera, accesa, a un isolato."
+     ],
+     "tips": [
+      "Se cenate fuori, i posti vicini all'hotel sono nella pagina Mangiare."
+     ]
+    }
+   ]
   }
  ],
  "walks": [
@@ -1048,59 +1239,6 @@ export default {
    ]
   },
   {
-   "from": "memorial",
-   "to": "seaport",
-   "minutes": 15,
-   "how": "A piedi lungo Fulton Street verso est, fino al fiume, circa 1,2 km.",
-   "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.71139,
-      -74.00944
-     ],
-     "text": "St. Paul's Chapel, all'incrocio con Broadway: entrate due minuti, è calda e silenziosa."
-    },
-    {
-     "pos": [
-      40.71012,
-      -74.00775
-     ],
-     "text": "Joe's Pizza, al 124 di Fulton Street: tranci da portare via se il pranzo va fatto in fretta."
-    },
-    {
-     "pos": [
-      40.7074,
-      -74.00388
-     ],
-     "text": "Il piccolo faro bianco del Titanic segna l'ingresso del Seaport."
-    }
-   ]
-  },
-  {
-   "from": "seaport",
-   "to": "dumbo",
-   "minutes": 25,
-   "how": "NYC Ferry: 8 minuti a piedi lungo il fiume fino al Pier 11, traghetto East River fino a DUMBO, 10 minuti, $5 a testa. In alternativa metro A o C da Fulton St a High St, una fermata, poi 10 minuti a piedi in discesa.",
-   "mapsMode": "transit",
-   "tips": [
-    {
-     "pos": [
-      40.70245,
-      -74.0055
-     ],
-     "text": "Pier 11 / Wall St: il biglietto si compra alle macchinette sul molo o con l'app NYC Ferry. Le corse del weekend partono circa ogni mezz'ora: controllate l'orario sul tabellone."
-    },
-    {
-     "pos": [
-      40.70245,
-      -74.0055
-     ],
-     "text": "Poco più a sud c'è l'eliporto: scommessa di Vinnie sugli elicotteri."
-    }
-   ]
-  },
-  {
    "from": "dumbo",
    "to": "bridge",
    "minutes": 6,
@@ -1131,6 +1269,46 @@ export default {
      "text": "Il parco di City Hall ha i bagni pubblici vicino alla fontana, se servono prima della metro."
     }
    ]
+  },
+  {
+   "from": "sun-go-ferry",
+   "to": "ferry",
+   "minutes": 25,
+   "how": "Linea 1 da Times Sq–42 St fino a South Ferry, il capolinea.",
+   "mapsMode": "transit",
+   "tips": []
+  },
+  {
+   "from": "memorial",
+   "to": "sun-pranzo",
+   "minutes": 5,
+   "how": "L'Oculus è la costruzione bianca a forma di ali sul lato est del piazzale; Brookfield Place è a ovest, oltre West Street, raggiungibile anche dal passaggio sotterraneo.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sun-pranzo",
+   "to": "century21",
+   "minutes": 4,
+   "how": "Century 21 è al 22 di Cortlandt Street, sul lato est del World Trade Center, tra Church Street e Broadway.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "century21",
+   "to": "sun-go-dumbo",
+   "minutes": 4,
+   "how": "Su Broadway verso nord fino a Fulton Street, ingresso della metro A e C.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sun-go-dumbo",
+   "to": "dumbo",
+   "minutes": 20,
+   "how": "Metro A o C fino a High St, poi a piedi in discesa per Old Fulton Street fino al fiume.",
+   "mapsMode": "transit",
+   "tips": []
   }
  ],
  "food": [
@@ -1186,7 +1364,7 @@ export default {
    },
    "near": [
     "memorial",
-    "seaport"
+    "sun-pranzo"
    ],
    "note": "Si mangia in piedi o si porta via: ideale se siete in ritardo.",
    "rating": {
@@ -1220,7 +1398,8 @@ export default {
     ]
    },
    "near": [
-    "memorial"
+    "memorial",
+    "sun-pranzo"
    ],
    "note": "Caldo, bagni puliti, 5 minuti dal Memoriale passando per il ponte coperto.",
    "rating": {
@@ -1229,106 +1408,6 @@ export default {
     "source": "Google"
    },
    "buzz": "Tanta scelta, ognuno trova qualcosa; tavoli pieni all'ora di pranzo ma girano in fretta, prezzi da centro."
-  },
-  {
-   "id": "sun-brigante",
-   "name": "Il Brigante",
-   "type": "pizzeria e trattoria",
-   "category": "pranzo",
-   "order": "Margherita e pizza Brigante, arancine da dividere. Per i bambini la focaccia all'aglio è una merenda.",
-   "price": "$90–130 in 4",
-   "pos": [
-    40.70738,
-    -74.00263
-   ],
-   "hours": {
-    "0": [
-     [
-      "12:00",
-      "22:30"
-     ]
-    ]
-   },
-   "near": [
-    "seaport"
-   ],
-   "note": "Sala piccola: con il freddo si riempie, conviene arrivare alle 12.",
-   "rating": {
-    "stars": 4.4,
-    "count": 1200,
-    "source": "Google"
-   },
-   "buzz": "Cucina del Sud curata e servizio cordiale; sala raccolta, nel weekend conviene prenotare. Apprezzati rigatoni e calamari fritti."
-  },
-  {
-   "id": "sun-cowgirl",
-   "name": "Cowgirl SeaHorse",
-   "type": "Tex-Mex e cucina del Sud",
-   "category": "pranzo",
-   "order": "Nachos da dividere, burrito o tacos di pesce; quesadilla per i bambini.",
-   "price": "$80–120 in 4",
-   "pos": [
-    40.70823,
-    -74.00053
-   ],
-   "hours": {},
-   "near": [
-    "seaport"
-   ],
-   "note": "Locale rumoroso e allegro, decorazioni da cowboy e cavallucci marini.",
-   "rating": {
-    "stars": 4.3,
-    "count": 1427,
-    "source": "Google"
-   },
-   "buzz": "Ambiente allegro e chiassoso, nachos e tacos di pesce promossi; servizio lento quando è pieno, soprattutto la domenica."
-  },
-  {
-   "id": "sun-the-fulton",
-   "name": "The Fulton (Pier 17)",
-   "type": "pesce con vista",
-   "category": "pranzo",
-   "order": "Brunch: fish and chips o lobster roll, con il ponte dalla vetrata.",
-   "price": "$180–260 in 4",
-   "pos": [
-    40.70535,
-    -74.00105
-   ],
-   "hours": {
-    "0": [
-     [
-      "11:30",
-      "15:00"
-     ]
-    ]
-   },
-   "near": [
-    "seaport"
-   ],
-   "note": "Il più caro della giornata: vale per la vista. Meglio prenotare.",
-   "rating": {
-    "stars": 4.1,
-    "count": 1385,
-    "source": "Google"
-   },
-   "buzz": "Si paga soprattutto la vista sul ponte; pesce fresco ma cucina giudicata altalenante, conto alto."
-  },
-  {
-   "id": "sun-sadies",
-   "name": "Sadie's Bakery",
-   "type": "forno",
-   "category": "snack",
-   "order": "Cinnamon bun ancora tiepido e una cioccolata.",
-   "price": "$20–35 in 4",
-   "pos": [
-    40.7071,
-    -74.00338
-   ],
-   "hours": {},
-   "near": [
-    "seaport"
-   ],
-   "note": "Appena aperto, al 203 di Front Street: apre alle 7."
   },
   {
    "id": "sun-juliana",
@@ -1762,6 +1841,19 @@ export default {
  ],
  "missions": [
   {
+   "id": "sun-go-parole",
+   "stopId": "sun-go-ferry",
+   "type": "bet",
+   "title": "Le parole sul muro",
+   "read": "Vinnie qui. Quando il treno si ferma a WTC Cortlandt, le pareti sono bianche e piene di parole scritte in rilievo. Vinnie scommette che non riuscite a leggerne una intera prima che il treno riparta. Uno guarda il muro a destra, l'altro a sinistra. Ogni parola vale solo se la dite tutti e due ad alta voce.",
+   "roles": [
+    "Guarda il muro a destra",
+    "Guarda il muro a sinistra"
+   ],
+   "vinnieBet": "Nessuna parola letta prima che il treno riparta",
+   "parentHint": "WTC Cortlandt è la terza fermata prima del capolinea. Le pareti sono un'opera di marmo bianco con le lettere in rilievo dei testi della Dichiarazione d'Indipendenza americana e della Dichiarazione universale dei diritti umani. Basta una parola intera, anche in inglese: per esempio people, rights, free."
+  },
+  {
    "id": "sun-statua",
    "stopId": "ferry",
    "type": "describe",
@@ -1778,20 +1870,17 @@ export default {
    "parentHint": "Fiaccola nella mano destra, alzata. Nella sinistra una tavoletta con la data dell'indipendenza americana scritta in numeri romani. La Statua compare a destra circa 10 minuti dopo la partenza da Whitehall."
   },
   {
-   "id": "sun-velieri",
-   "stopId": "seaport",
-   "type": "then-now",
-   "title": "La via delle navi",
-   "read": "Questa foto ha più di cento anni ed è stata scattata proprio qui. C'era il mio bis-bis-bis-nonno, sul tetto di un magazzino. Guardatela bene e trovatemi tre cose che oggi sono diverse. Una alla volta, e ognuna la dite insieme. Se ne trovate tre prima che io finisca le mie briciole, il pezzo di chiave è vostro.",
+   "id": "sun-go-tunnel",
+   "stopId": "sun-go-dumbo",
+   "type": "bet",
+   "title": "Quanto dura il fiume?",
+   "read": "Io il fiume lo attraverso in volo in un minuto. Voi ci passate sotto. Prima di partire decidete insieme quanti secondi resterete sotto l'acqua, tra Fulton St e High St. Uno fa partire il cronometro quando le porte si chiudono, l'altro lo ferma quando si riaprono a High St. Vinnie dice cinque minuti. Chi va più vicino si prende il pezzo.",
    "roles": [
-    "Tiene la foto a mente e dice cosa c'era una volta",
-    "Guarda la strada di oggi e dice cosa c'è adesso"
+    "Fa partire il cronometro",
+    "Ferma il cronometro e legge il tempo"
    ],
-   "img": {
-    "src": "img/sun-velieri.webp",
-    "credit": "Unknown authorUnknown author, Public domain, via Wikimedia Commons"
-   },
-   "parentHint": "Mettetevi su South Street all'altezza del Pier 16, vicino al veliero, guardando verso il Ponte di Brooklyn. Differenze facili: nella foto tantissimi alberi di veliero e bompressi sopra la strada, carri e cavalli, nessuna strada sopraelevata. Oggi sopra le teste passa la FDR Drive, c'è il palazzo di vetro del Pier 17 e i grattacieli dietro."
+   "vinnieBet": "5 minuti",
+   "parentHint": "Tra Fulton St e High St è una sola tratta, quasi tutta sotto l'East River: di solito dura intorno a 2–3 minuti. Vince chi si avvicina di più al tempo misurato."
   },
   {
    "id": "sun-arco",
@@ -1821,6 +1910,19 @@ export default {
    ],
    "vinnieBet": "100 passi",
    "parentHint": "Fatela nel primo tratto dopo la torre di Brooklyn, tenendo la destra, dove c'è meno gente. La somma dei due conteggi è il numero vero: vince chi aveva detto il numero più vicino, la squadra o Vinnie."
+  },
+  {
+   "id": "sun-go-lingue",
+   "stopId": "home",
+   "type": "bet",
+   "title": "Tre lingue in carrozza",
+   "read": "Ultima sfida della domenica. In metro i cartelli e le pubblicità sono scritti in tante lingue, perché a New York si parlano centinaia di lingue. Vinnie scommette che prima di Times Square non trovate tre lingue diverse scritte nella vostra carrozza. Uno cerca, l'altro controlla e tiene il conto.",
+   "roles": [
+    "Cerca le scritte",
+    "Controlla che siano lingue diverse e tiene il conto"
+   ],
+   "vinnieBet": "Meno di 3 lingue prima di Times Square",
+   "parentHint": "Gli avvisi della metro sono spesso in inglese e spagnolo; nelle pubblicità si trovano spesso cinese, coreano, russo, bengalese. Valgono tutte, anche se non sapete leggerle: basta riconoscere che è un'altra scrittura o lingua."
   },
   {
    "id": "sun-bet-targhe",

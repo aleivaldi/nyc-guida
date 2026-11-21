@@ -1,9 +1,82 @@
 export default {
  "id": "mon",
  "weekday": 1,
- "title": "Quadri, specchi e luci",
+ "title": "Parco, quadri, specchi e luci",
  "vinnieMorning": "Ehi, squadra. Oggi si va dove la gente passa il tempo a guardare in alto: quadri, soffitti, e un palazzo così alto che i piccioni normali non ci arrivano. Io sì. Tenete gli occhi aperti e pure le orecchie: oggi conta anche quello che si sente.",
  "stops": [
+  {
+   "id": "mon-go-cp",
+   "name": "Dall'hotel a Central Park, in metro",
+   "kind": "move",
+   "start": "08:30",
+   "durationMin": 25,
+   "cost": "Metro $3 a testa",
+   "pos": [
+    40.75731,
+    -73.98979
+   ],
+   "radiusM": 100,
+   "hook": "Tre fermate sotto l'Ottava e si esce davanti agli alberi del parco.",
+   "story": "Sopra la fermata 72 St, sull'angolo di Central Park West, c'è il Dakota, uno dei palazzi più famosi di New York: ci abitava John Lennon. Strawberry Fields, la prima tappa nel parco, è dedicato a lui.",
+   "look": [
+    "Uscendo a 72 St: il palazzo scuro con i tetti a punta, il Dakota.",
+    "Di fronte: il cancello del parco alla 72ª."
+   ],
+   "tips": [
+    {
+     "text": "Colazione e bagno in hotel prima di uscire: il bagno di Bethesda è chiuso d'inverno. Nel parco usate la Loeb Boathouse.",
+     "when": "always"
+    },
+    {
+     "text": "Il lunedì la metro è regolare, ma controllate comunque Google Maps.",
+     "when": "arrive"
+    },
+    {
+     "text": "Se piove forte: accorciate il parco (Strawberry Fields e Bethesda coperta) e andate prima al MoMA, che apre alle 10:30.",
+     "when": "rain"
+    },
+    {
+     "text": "In ritardo: taxi fino a Central Park West e 72ª, 10–15 minuti.",
+     "when": "late"
+    }
+   ],
+   "steps": [
+    {
+     "id": "gocp-station",
+     "title": "Stazione 42 St–Port Authority",
+     "where": "Dall'hotel sulla 41ª verso l'Ottava Avenue, 2 minuti. Linee A C E, direzione Uptown & The Bronx.",
+     "look": [
+      "I cartelli blu A C E."
+     ],
+     "tips": [
+      "La C e la B fermano a 72 St; la A no, è espressa."
+     ]
+    },
+    {
+     "id": "gocp-train",
+     "title": "La C fino a 72 St",
+     "where": "Fermate: 50 St, 59 St–Columbus Circle, 72 St. Si scende alla terza.",
+     "look": [
+      "A 59 St salgono e scendono in tanti: è Columbus Circle, l'angolo sud-ovest del parco."
+     ],
+     "tips": []
+    },
+    {
+     "id": "gocp-exit",
+     "title": "Fuori, nel parco",
+     "where": "Uscite su Central Park West alla 72ª. Attraversate: il cancello del parco è di fronte, Strawberry Fields è a pochi passi dentro.",
+     "look": [
+      "Il Dakota, il palazzo scuro con i tetti a punta, sull'angolo."
+     ],
+     "tips": []
+    }
+   ],
+   "bagni": {
+    "where": "Fateli in hotel. Nel parco: Loeb Boathouse (aperta tutto l'anno).",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
   {
    "id": "cp",
    "name": "Central Park dalla 72ª",
@@ -33,7 +106,7 @@ export default {
      "when": "always"
     },
     {
-     "text": "Giro consigliato: Strawberry Fields, Bethesda, Alice, poi indietro al Bow Bridge e fuori sulla 77ª. Finite a 5 minuti dal museo invece che dall'altra parte del parco.",
+     "text": "Giro consigliato: Strawberry Fields, Bethesda, Alice, poi indietro al Bow Bridge e ritorno a Bethesda.",
      "when": "arrive"
     },
     {
@@ -49,7 +122,7 @@ export default {
      "when": "rain"
     },
     {
-     "text": "Panchine con vista: sulla terrazza di Bethesda, rivolte verso il lago. Il sabato mattina il viale è pieno di runner: tenete i bambini sul marciapiede.",
+     "text": "Panchine con vista: sulla terrazza di Bethesda, rivolte verso il lago.",
      "when": "tired"
     }
    ],
@@ -176,15 +249,13 @@ export default {
     },
     {
      "id": "cp-exit",
-     "title": "Verso il MoMA",
-     "where": "Dal Bow Bridge tornate alla terrazza di Bethesda e scendete lungo il Mall, il viale dritto con gli olmi, verso sud fino all'uscita della Quinta Avenue alla 59ª. Poi giù per la Quinta fino alla 53ª, a destra: il MoMA è al numero 11. Circa 25–30 minuti.",
+     "title": "Ritorno a Bethesda",
+     "where": "Dal Bow Bridge tornate alla terrazza di Bethesda, 5 minuti lungo il lago. Da lì parte la passeggiata verso il MoMA.",
      "look": [
-      "Il Mall: gli olmi formano una galleria sopra il viale, con le statue degli scrittori in fondo.",
-      "All'uscita sulla 59ª: l'hotel Plaza a destra e il cubo di vetro dell'Apple Store a sinistra."
+      "Dalla terrazza: il lago con le barche ferme d'inverno e i palazzi della Quinta sullo sfondo."
      ],
      "tips": [
-      "Se piove o sono stanchi: dal cancello della 72ª su Central Park West prendete la metro C o B fino a 50 St / 47–50 Sts e camminate fino alla 53ª.",
-      "Bagni: quello di Bethesda è chiuso d'inverno. Usate la Loeb Boathouse prima di uscire dal parco."
+      "Bagni: Loeb Boathouse, sulla riva est del lago, prima di andare."
      ]
     }
    ],
@@ -240,9 +311,86 @@ export default {
     }
    ],
    "bagni": {
-    "where": "Dal 72° mid-park, quello di Bethesda Terrace è chiuso d'inverno. Aperti tutto l'anno: Loeb Boathouse (74ª–75ª, lato est), Kerbs Boathouse sul laghetto delle barchette (74ª) e il Heckscher Playground (62ª, lato ovest, vicino al parco giochi).",
+    "where": "Quello di Bethesda Terrace è chiuso d'inverno. Aperti tutto l'anno: Loeb Boathouse (74ª–75ª, lato est) e Kerbs Boathouse sul laghetto delle barchette (74ª), vicino ad Alice.",
     "cost": "Gratis",
-    "clean": "Il Parks Department ha dato una valutazione \"non accettabile\" a un bagno del Loeb Boathouse (data dell'ispezione non verificata). Heckscher è indicato da una guida per famiglie come una scelta ragionevole, ma la pulizia non è verificata."
+    "clean": "Il Parks Department ha dato una valutazione \"non accettabile\" a un bagno del Loeb Boathouse (data dell'ispezione non verificata)."
+   }
+  },
+  {
+   "id": "mon-go-moma",
+   "name": "Dal parco al MoMA, a piedi",
+   "kind": "move",
+   "start": "10:15",
+   "durationMin": 45,
+   "cost": "Gratis",
+   "pos": [
+    40.77005,
+    -73.97268
+   ],
+   "radiusM": 150,
+   "hook": "Il viale degli olmi con gli scrittori di bronzo, la piazza del Plaza e poi giù per la Quinta Avenue.",
+   "story": "Il Mall è l'unico viale dritto di Central Park: i progettisti lo vollero come una passeggiata elegante. Gli olmi americani che lo coprono sono tra gli ultimi grandi gruppi rimasti, perché una malattia li ha fatti sparire da quasi tutte le altre città.",
+   "look": [
+    "Sul Mall: la galleria di olmi e le statue degli scrittori in fondo, il Literary Walk.",
+    "Uscendo alla 59ª: la fontana dorata della piazza davanti all'hotel Plaza.",
+    "Sulla Quinta: le vetrine dei grandi negozi."
+   ],
+   "tips": [
+    {
+     "text": "Sono circa 25–30 minuti a piedi; tenete il margine per una sosta e per i controlli del museo.",
+     "when": "always"
+    },
+    {
+     "text": "Se piove o sono stanchi: uscite dal parco alla 72ª, metro C o B fino a 50 St, poi 5 minuti a piedi fino alla 53ª.",
+     "when": "rain"
+    },
+    {
+     "text": "In ritardo: taxi da Fifth Avenue e 60ª fino al MoMA, 5–10 minuti.",
+     "when": "late"
+    },
+    {
+     "text": "Il MoMA il lunedì apre alle 10:30.",
+     "when": "always"
+    }
+   ],
+   "steps": [
+    {
+     "id": "gomoma-mall",
+     "title": "Il Mall",
+     "where": "Dalla terrazza di Bethesda salite la scalinata: siete in fondo al Mall. Camminate verso sud sotto gli olmi.",
+     "look": [
+      "Le statue in fondo al viale: è la zona della sfida di Vinnie."
+     ],
+     "tips": []
+    },
+    {
+     "id": "gomoma-plaza",
+     "title": "Uscita sulla Quinta alla 59ª",
+     "where": "In fondo al Mall continuate verso sud-est fino all'uscita della Quinta Avenue alla 59ª: la Grand Army Plaza.",
+     "look": [
+      "La fontana con la statua dorata.",
+      "L'hotel Plaza, il castello bianco del film Mamma ho riperso l'aereo."
+     ],
+     "tips": [
+      "Bagni puliti al piano inferiore del Plaza, secondo le guide per famiglie."
+     ]
+    },
+    {
+     "id": "gomoma-fifth",
+     "title": "Giù per la Quinta fino alla 53ª",
+     "where": "Scendete la Quinta Avenue verso sud fino alla 53ª, poi a destra: il MoMA è al numero 11, sulla destra.",
+     "look": [
+      "Le vetrine dei negozi di lusso tra la 57ª e la 53ª."
+     ],
+     "tips": [
+      "Biglietti sul telefono di papà, bambini gratis."
+     ]
+    }
+   ],
+   "bagni": {
+    "where": "Loeb Boathouse prima di uscire dal parco; poi il MoMA, che ha bagni su ogni piano.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
    }
   },
   {
@@ -492,11 +640,131 @@ export default {
    }
   },
   {
+   "id": "mon-pranzo",
+   "name": "Pranzo vicino al MoMA",
+   "kind": "key",
+   "start": "13:00",
+   "durationMin": 50,
+   "cost": "$40–80 in 4",
+   "pos": [
+    40.76397,
+    -73.97848
+   ],
+   "radiusM": 120,
+   "hook": "Un hamburger dietro una tenda in un hotel di lusso, oppure il caffè del museo: si mangia seduti, senza correre.",
+   "story": "Midtown è il quartiere degli uffici: a pranzo i newyorkesi mangiano in fretta, spesso in piedi o dai carretti per strada. Voi invece vi sedete.",
+   "look": [
+    "Davanti ai grattacieli: i carretti del cibo halal con il fumo che sale.",
+    "Se andate al Burger Joint: la tenda e il piccolo hamburger luminoso nella hall dell'hotel."
+   ],
+   "tips": [
+    {
+     "text": "Burger Joint, 119 West 56th Street, nell'hotel ex Parker Meridien: 5 minuti a piedi dal MoMA. Orari e pagamento vanno verificati prima.",
+     "when": "arrive"
+    },
+    {
+     "text": "Restare dentro: Café 2, al secondo piano del MoMA, pranzo all'italiana adatto ai bambini.",
+     "when": "always"
+    },
+    {
+     "text": "Veloce: piatto halal da un carretto e si mangia sulle panchine del giardino pubblico dietro il museo.",
+     "when": "late"
+    },
+    {
+     "text": "Se piove: Café 2 senza uscire dal museo.",
+     "when": "rain"
+    }
+   ],
+   "steps": [],
+   "bagni": {
+    "where": "Nel locale dove mangiate, oppure al MoMA prima di uscire.",
+    "cost": "Gratis se consumate",
+    "clean": "Non verificato"
+   }
+  },
+  {
+   "id": "mon-go-gct",
+   "name": "A piedi verso Grand Central",
+   "kind": "move",
+   "start": "13:55",
+   "durationMin": 30,
+   "cost": "Gratis",
+   "pos": [
+    40.75866,
+    -73.97785
+   ],
+   "radiusM": 120,
+   "hook": "Radio City, il Rockefeller, Atlante con il cielo sulle spalle e la biblioteca coi leoni: mezz'ora di passeggiata da cartolina.",
+   "story": "La Quinta Avenue è la strada dei negozi più famosa di New York. Tra la 50ª e la 51ª, davanti alla cattedrale, c'è Atlante, la statua di bronzo del Rockefeller Center: regge non la Terra, ma il cielo.",
+   "look": [
+    "Sulla Sesta: Radio City Music Hall, con la scritta rossa verticale.",
+    "Sulla Quinta, davanti a St. Patrick's: la statua di Atlante.",
+    "Alla 42ª: i leoni di pietra della biblioteca."
+   ],
+   "tips": [
+    {
+     "text": "Sono circa 25–30 minuti. Se sono stanchi: taxi fino a Grand Central, 10–15 minuti.",
+     "when": "always"
+    },
+    {
+     "text": "Ingresso del SUMMIT alle 15:00: non fermatevi troppo per strada.",
+     "when": "late"
+    },
+    {
+     "text": "Se piove: metro E o M da 5 Av/53 St fino a Lexington Av/53 St, poi linea 6 fino a Grand Central.",
+     "when": "rain"
+    }
+   ],
+   "steps": [
+    {
+     "id": "gogct-radio",
+     "title": "Giù per la Sesta",
+     "where": "Dalla 56ª scendete la Sesta Avenue verso sud fino alla 50ª.",
+     "look": [
+      "All'angolo della 50ª: Radio City Music Hall."
+     ],
+     "tips": []
+    },
+    {
+     "id": "gogct-rock",
+     "title": "Attraverso il Rockefeller",
+     "where": "Alla 50ª girate a sinistra ed entrate nel Rockefeller Center: passate accanto alla pista e risalite i Channel Gardens fino alla Quinta.",
+     "look": [
+      "L'albero di Natale già montato sopra la pista, ancora spento."
+     ],
+     "tips": []
+    },
+    {
+     "id": "gogct-atlas",
+     "title": "Atlante e la Quinta",
+     "where": "Sulla Quinta, guardate a sinistra tra la 50ª e la 51ª: c'è Atlante. Poi scendete la Quinta verso sud fino alla 42ª.",
+     "look": [
+      "Atlante: cosa regge? È la sfida di Vinnie."
+     ],
+     "tips": []
+    },
+    {
+     "id": "gogct-42",
+     "title": "Sulla 42ª fino a Grand Central",
+     "where": "Alla 42ª, davanti alla biblioteca, girate a sinistra verso est: Grand Central è dopo Madison Avenue, l'ingresso principale è all'angolo con Vanderbilt Avenue.",
+     "look": [
+      "L'orologio e le statue sulla facciata di Grand Central."
+     ],
+     "tips": []
+    }
+   ],
+   "bagni": {
+    "where": "Lungo la strada: Rockefeller Center (Concourse, sotto la piazza). Poi Grand Central, al piano di sotto.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
+  {
    "id": "mon-gct",
    "name": "Grand Central Terminal",
    "kind": "optional",
-   "start": "14:15",
-   "durationMin": 45,
+   "start": "14:25",
+   "durationMin": 35,
    "cost": "Gratis",
    "pos": [
     40.75269,
@@ -666,7 +934,7 @@ export default {
    "name": "SUMMIT One Vanderbilt",
    "kind": "key",
    "start": "15:00",
-   "durationMin": 90,
+   "durationMin": 135,
    "booked": "Biglietti presi · ingresso 15:00",
    "cost": "Già pagato",
    "pos": [
@@ -897,7 +1165,7 @@ export default {
    "id": "mon-bryant",
    "name": "Bryant Park di sera: Winter Village",
    "kind": "key",
-   "start": "18:00",
+   "start": "17:30",
    "durationMin": 90,
    "cost": "Mercatino gratis · cena $60–100 in 4 · giostra $6 a giro",
    "pos": [
@@ -986,7 +1254,7 @@ export default {
    "id": "mon-saks",
    "name": "Saks: luci e vetrine",
    "kind": "optional",
-   "start": "19:40",
+   "start": "19:05",
    "durationMin": 25,
    "cost": "Gratis",
    "pos": [
@@ -1019,7 +1287,7 @@ export default {
      "when": "tired"
     },
     {
-     "text": "Dopo, in taxi o a piedi verso l'hotel: circa 17 minuti, giù per la Sesta Avenue e poi a destra sulla 41st.",
+     "text": "Dopo: a piedi verso l'hotel, circa 20 minuti, giù per la Sesta Avenue e poi a destra sulla 41ª. Oppure taxi.",
      "when": "late"
     }
    ],
@@ -1046,49 +1314,119 @@ export default {
     "cost": "Gratis",
     "clean": "Generalmente buona; non verificato di persona"
    }
+  },
+  {
+   "id": "mon-go-hotel",
+   "name": "Rientro in hotel a piedi",
+   "kind": "move",
+   "start": "19:35",
+   "durationMin": 25,
+   "cost": "Gratis",
+   "pos": [
+    40.75689,
+    -73.98273
+   ],
+   "radiusM": 120,
+   "hook": "L'ultima passeggiata della sera giù per la Sesta, contando le strade in inglese.",
+   "story": "A Manhattan le strade sono numerate: le Street vanno da est a ovest e salgono di numero andando verso nord, le Avenue vanno da nord a sud. Per questo è quasi impossibile perdersi: basta leggere l'angolo.",
+   "look": [
+    "Ai semafori: i cartelli verdi con il numero della strada.",
+    "Alla 42ª: il buio di Bryant Park con la pista illuminata."
+   ],
+   "tips": [
+    {
+     "text": "Sono circa 20 minuti: Sesta Avenue verso sud fino alla 41ª, poi a destra fino all'hotel.",
+     "when": "always"
+    },
+    {
+     "text": "Stanchi: taxi, 5–10 minuti.",
+     "when": "tired"
+    }
+   ],
+   "steps": [
+    {
+     "id": "gohm-6th",
+     "title": "Verso la Sesta",
+     "where": "Da Saks camminate verso ovest sulla 49ª o la 50ª fino alla Sesta Avenue, poi girate a sinistra verso sud.",
+     "look": [
+      "Radio City illuminata all'angolo della 50ª."
+     ],
+     "tips": []
+    },
+    {
+     "id": "gohm-down",
+     "title": "Giù per la Sesta, contando",
+     "where": "Sulla Sesta verso sud dalla 49ª alla 41ª.",
+     "look": [
+      "I numeri delle strade: è la sfida di Vinnie."
+     ],
+     "tips": []
+    },
+    {
+     "id": "gohm-41",
+     "title": "Sulla 41ª fino all'hotel",
+     "where": "Alla 41ª girate a destra (verso ovest): passate Broadway e la Settima, l'hotel è al 220, accanto al Nederlander Theatre.",
+     "look": [
+      "Times Square accesa sulla destra, all'incrocio con la Settima."
+     ],
+     "tips": []
+    }
+   ],
+   "bagni": {
+    "where": "In hotel.",
+    "cost": "Gratis",
+    "clean": "-"
+   }
   }
  ],
  "walks": [
   {
+   "from": "mon-go-cp",
+   "to": "cp",
+   "minutes": 15,
+   "how": "Metro C da 42 St–Port Authority fino a 72 St, poi attraversate Central Park West.",
+   "mapsMode": "transit",
+   "tips": []
+  },
+  {
    "from": "cp",
+   "to": "mon-go-moma",
+   "minutes": 5,
+   "how": "Da Bow Bridge tornate alla terrazza di Bethesda e salite la scalinata verso il Mall.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "mon-go-moma",
    "to": "mon-moma",
    "minutes": 30,
-   "how": "A piedi: lungo il Mall fino alla Quinta e la 59ª, poi giù per la Quinta fino alla 53ª, a destra fino al museo.",
+   "how": "Lungo il Mall fino alla Quinta e la 59ª, poi giù per la Quinta fino alla 53ª, a destra fino al museo.",
    "mapsMode": "walking",
    "tips": []
   },
   {
    "from": "mon-moma",
-   "to": "mon-gct",
-   "minutes": 22,
-   "how": "A piedi: sulla 53rd verso est fino alla Quinta, giù per la Quinta fino alla 42nd, poi a sinistra fino a Grand Central. Pranzo lungo il percorso o nel food court della stazione.",
+   "to": "mon-pranzo",
+   "minutes": 5,
+   "how": "Burger Joint: 119 West 56th Street, tra la Sesta e la Settima. Café 2 è dentro il museo, al secondo piano.",
    "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.75895,
-      -73.97718
-     ],
-     "text": "Quinta tra 51st e 50th, a destra: la statua di Atlante. Scommessa di Vinnie."
-    },
-    {
-     "pos": [
-      40.75856,
-      -73.97636
-     ],
-     "text": "Di fronte ad Atlante, a sinistra: la cattedrale di St. Patrick. Si entra gratis, cinque minuti bastano."
-    },
-    {
-     "pos": [
-      40.75845,
-      -73.97796
-     ],
-     "text": "Tra 50th e 49th, a destra: i Channel Gardens portano alla pista e all'albero del Rockefeller Center."
-    },
-    {
-     "text": "Se siete in ritardo per il SUMMIT: taxi sulla Quinta verso sud, scendete a Grand Central (42nd e Vanderbilt)."
-    }
-   ]
+   "tips": []
+  },
+  {
+   "from": "mon-pranzo",
+   "to": "mon-go-gct",
+   "minutes": 5,
+   "how": "Sulla Sesta Avenue verso sud.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "mon-go-gct",
+   "to": "mon-gct",
+   "minutes": 25,
+   "how": "Sesta fino alla 50ª, Rockefeller Center, Quinta fino alla 42ª, poi a sinistra fino a Grand Central.",
+   "mapsMode": "walking",
+   "tips": []
   },
   {
    "from": "mon-gct",
@@ -1129,6 +1467,14 @@ export default {
      "text": "Camminate sul lato sinistro della Quinta: arrivate già sul marciapiede giusto per vedere la facciata intera."
     }
    ]
+  },
+  {
+   "from": "mon-saks",
+   "to": "mon-go-hotel",
+   "minutes": 5,
+   "how": "Verso ovest fino alla Sesta Avenue.",
+   "mapsMode": "walking",
+   "tips": []
   }
  ],
  "food": [
@@ -1183,7 +1529,7 @@ export default {
     ]
    },
    "near": [
-    "cp"
+    "mon-go-cp"
    ],
    "note": "Piccolo, si mangia in piedi o da portare via. 225 West 35th Street, a 8 minuti dall'hotel.",
    "rating": {
@@ -1249,7 +1595,7 @@ export default {
     ]
    },
    "near": [
-    "cp",
+    "mon-go-cp",
     "mon-moma"
    ],
    "note": "1650 Broadway angolo 51st. Niente prenotazioni: al mattino si entra quasi subito, la sera c'è fila. Da qui al MoMA 10 minuti a piedi.",
@@ -1320,7 +1666,7 @@ export default {
     ]
    },
    "near": [
-    "cp",
+    "mon-go-cp",
     "mon-bryant"
    ],
    "note": "Sulla 45th Street angolo Broadway. Buono anche per il dolce tornando in hotel la sera.",
@@ -1391,7 +1737,7 @@ export default {
     ]
    },
    "near": [
-    "cp"
+    "mon-go-cp"
    ],
    "note": "155 West 43rd Street, a 4 minuti dall'hotel. Tavoli e divanetti, comodo con i bambini.",
    "rating": {
@@ -1461,7 +1807,8 @@ export default {
     ]
    },
    "near": [
-    "mon-moma"
+    "mon-moma",
+    "mon-pranzo"
    ],
    "note": "Secondo piano del museo, senza prenotazione, serve il biglietto del MoMA. Comodo se volete pranzare prima di uscire.",
    "buzz": "Cucina italiana buona ma cara, tavoli comuni e poche finestre; caffè e dolci molto lodati."
@@ -1522,7 +1869,8 @@ export default {
     ]
    },
    "near": [
-    "mon-moma"
+    "mon-moma",
+    "mon-pranzo"
    ],
    "note": "Angolo 53rd Street e Sesta Avenue, a 2 minuti dal MoMA. Il carretto originale ha le insegne gialle: diffidate delle imitazioni accanto. Si mangia in piedi o sulle panchine dei cortili vicini.",
    "rating": {
@@ -1592,7 +1940,8 @@ export default {
     ]
    },
    "near": [
-    "mon-moma"
+    "mon-moma",
+    "mon-pranzo"
    ],
    "note": "Dentro la hall del Thompson Central Park Hotel, 119 West 56th: cercate la tenda e l'insegna a forma di hamburger. Piccolo, a mezzogiorno c'è fila. Portate contanti per sicurezza.",
    "rating": {
@@ -1659,7 +2008,8 @@ export default {
     ]
    },
    "near": [
-    "mon-moma"
+    "mon-moma",
+    "mon-pranzo"
    ],
    "note": "Sesta Avenue angolo 49th, sulla strada tra hotel e museo.",
    "rating": {
@@ -1981,7 +2331,7 @@ export default {
    },
    "near": [
     "mon-bryant",
-    "cp"
+    "mon-go-cp"
    ],
    "note": "1435 Broadway angolo 40th, a 5 minuti da Bryant Park e a 3 dall'hotel. Si mangia al bancone in piedi.",
    "rating": {
@@ -2048,7 +2398,7 @@ export default {
    },
    "near": [
     "mon-bryant",
-    "cp"
+    "mon-go-cp"
    ],
    "note": "229 West 43rd Street. Si ordina al banco e si mangia in piedi: veloce.",
    "rating": {
@@ -2064,6 +2414,19 @@ export default {
   }
  ],
  "missions": [
+  {
+   "id": "mon-go-fermate",
+   "stopId": "mon-go-cp",
+   "type": "bet",
+   "title": "Il palazzo-castello",
+   "read": "Vinnie qui. Quando uscite dalla metro alla 72ª, sull'angolo c'è un palazzo scuro e vecchissimo, con i tetti a punta come un castello. Vinnie scommette che non trovate il suo nome scritto da qualche parte sulla facciata prima di entrare nel parco. Uno guarda in alto, l'altro guarda il portone e le inferriate. Quando lo trovate, leggetelo insieme.",
+   "roles": [
+    "Guarda in alto, sulla facciata",
+    "Guarda il portone, le inferriate e il cancello"
+   ],
+   "vinnieBet": "Non trovate il nome",
+   "parentHint": "È il Dakota, all'angolo tra Central Park West e la 72ª, sul lato nord-ovest. Il nome è scritto sopra l'ingresso su 72nd Street. Se non lo trovate, il pezzo va a Vinnie."
+  },
   {
    "id": "sat-alice",
    "stopId": "cp",
@@ -2081,6 +2444,18 @@ export default {
    "parentHint": "È il Ghiro (Dormouse): un topolino che rosicchia un semino, molto più piccolo degli altri personaggi, in basso nel gruppo. Ingrandite la foto su di lui prima di mostrarla. Intorno ci sono Alice sul fungo con la gatta Dinah, il Cappellaio Matto, il Leprotto, lo Stregatto e un coniglio con l'orologio."
   },
   {
+   "id": "mon-go-shakespeare",
+   "stopId": "mon-go-moma",
+   "type": "describe",
+   "title": "Lo scrittore col libro",
+   "read": "Su questo viale di olmi ci sono statue di scrittori famosi. Vinnie ne ha scelto uno: è in piedi, tiene un libro e ha la barbetta a punta. Uno legge ad alta voce questa descrizione all'altro, che cammina avanti e cerca. Quando lo trovate, toccate il piedistallo insieme e leggete il nome scritto sotto. Se arrivate in fondo al viale senza trovarlo, il pezzo è mio.",
+   "roles": [
+    "Legge la descrizione e controlla",
+    "Cammina avanti e cerca la statua"
+   ],
+   "parentHint": "È William Shakespeare, all'estremità sud del Mall (Literary Walk), il primo gruppo di statue che si incontra in fondo al viale venendo da Bethesda. Lì vicino ci sono anche Cristoforo Colombo e, seduti, Robert Burns e Walter Scott."
+  },
+  {
    "id": "mon-m-moma",
    "stopId": "mon-moma",
    "type": "describe",
@@ -2095,6 +2470,19 @@ export default {
     "credit": "Vincent van Gogh, Public domain, via Wikimedia Commons"
    },
    "parentHint": "In basso, al centro del quadro: il paesino. Il campanile appuntito è la cosa più alta tra i tetti, a destra del grande cipresso nero che sale sul lato sinistro."
+  },
+  {
+   "id": "mon-bet-atlas",
+   "stopId": "mon-go-gct",
+   "type": "bet",
+   "title": "Il gigante col cielo sulle spalle",
+   "read": "Scommessa! Sulla Quinta Avenue c'è un gigante di bronzo che regge sulle spalle una cosa enorme, tutta anelli. Uno di voi guarda i cortili dei palazzi a destra, l'altro le chiese e le vetrine a sinistra. Trovatelo e poi ditemi insieme cosa regge, guardando bene: non è un pallone. Scommetto che lo scambiate per un portiere.",
+   "roles": [
+    "Guarda i cortili dei palazzi a destra",
+    "Guarda chiese e vetrine a sinistra"
+   ],
+   "vinnieBet": "Che non indovinate cosa regge",
+   "parentHint": "La statua di Atlante, davanti all'International Building del Rockefeller Center, Quinta Avenue tra 51st e 50th, lato destro scendendo verso sud, di fronte a St. Patrick's. È alta più di 4 metri e regge una sfera fatta di anelli (una sfera armillare: il cielo, non la Terra)."
   },
   {
    "id": "mon-m-gct",
@@ -2127,6 +2515,19 @@ export default {
    "parentHint": "Il Chrysler è a est, verso l'East River, a meno di 300 metri. Si vede già dalla prima stanza a specchi al piano 91 (Transcendence 1): mettetevi contro le vetrate del lato est. La foto è verticale e il Chrysler occupa quasi tutta l'altezza."
   },
   {
+   "id": "mon-go-strade",
+   "stopId": "mon-go-hotel",
+   "type": "bet",
+   "title": "Le strade in inglese",
+   "read": "Ultima sfida di lunedì. Ogni volta che attraversate una strada, guardate il cartello verde e dite il numero in inglese, insieme: forty-ninth, forty-eighth... Vinnie scommette che sbagliate almeno una volta prima della 41ª. Uno legge il cartello, l'altro dice il numero in inglese, poi lo ripetete in coro.",
+   "roles": [
+    "Legge il numero sul cartello",
+    "Lo dice in inglese per primo"
+   ],
+   "vinnieBet": "Almeno uno sbagliato",
+   "parentHint": "49th forty-ninth, 48th forty-eighth, 47th forty-seventh, 46th forty-sixth, 45th forty-fifth, 44th forty-fourth, 43rd forty-third, 42nd forty-second, 41st forty-first."
+  },
+  {
    "id": "mon-bet-radio",
    "stopId": null,
    "type": "bet",
@@ -2138,19 +2539,6 @@ export default {
    ],
    "vinnieBet": "Che arrivate alla 51st senza averlo visto",
    "parentHint": "Radio City Music Hall, Sesta Avenue angolo 50th Street, sul lato destro salendo verso nord. L'insegna verticale RADIO CITY è sull'angolo del palazzo."
-  },
-  {
-   "id": "mon-bet-atlas",
-   "stopId": null,
-   "type": "bet",
-   "title": "Il gigante col cielo sulle spalle",
-   "read": "Scommessa! Sulla Quinta Avenue c'è un gigante di bronzo che regge sulle spalle una cosa enorme, tutta anelli. Uno di voi guarda i cortili dei palazzi a destra, l'altro le chiese e le vetrine a sinistra. Trovatelo e poi ditemi insieme cosa regge, guardando bene: non è un pallone. Scommetto che lo scambiate per un portiere.",
-   "roles": [
-    "Guarda i cortili dei palazzi a destra",
-    "Guarda chiese e vetrine a sinistra"
-   ],
-   "vinnieBet": "Che non indovinate cosa regge",
-   "parentHint": "La statua di Atlante, davanti all'International Building del Rockefeller Center, Quinta Avenue tra 51st e 50th, lato destro scendendo verso sud, di fronte a St. Patrick's. È alta più di 4 metri e regge una sfera fatta di anelli (una sfera armillare: il cielo, non la Terra)."
   },
   {
    "id": "mon-bet-soffitto",
