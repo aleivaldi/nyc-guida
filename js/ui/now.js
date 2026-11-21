@@ -78,7 +78,7 @@ function kidsRow(dayId, stop) {
 
 function walkingBet(dayId) {
   const results = gameState(ctx.raw).results;
-  return (ctx.day(dayId).missions ?? []).find((m) => m.type === 'bet' && !results[m.id]);
+  return (ctx.day(dayId).missions ?? []).find((m) => m.type === 'bet' && !m.stopId && !results[m.id]);
 }
 
 export function vinnieIcon() {

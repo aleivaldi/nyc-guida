@@ -1,248 +1,108 @@
 export default {
  "id": "sat",
  "weekday": 6,
- "title": "Parco, dinosauri e pattini",
- "vinnieMorning": "Buongiorno, squadra. Oggi giriamo tra statue di bronzo, ossa giganti e ghiaccio: posti perfetti per nascondere pezzi di chiave, e io li conosco tutti dall'alto. Voi avete solo le gambe e un genitore col telefono. Ci vediamo al parco, se arrivate.",
+ "title": "Dinosauri e Quinta Strada",
+ "vinnieMorning": "Buongiorno, squadra. Oggi si viaggia sotto terra, tra ossa giganti e vetrine di Natale: posti perfetti per nascondere pezzi di chiave. La prima sfida è già in metro, quindi occhi aperti dal tornello. Ci vediamo al museo, se arrivate.",
  "stops": [
   {
-   "id": "cp",
-   "name": "Central Park dalla 72ª",
-   "kind": "key",
-   "start": "08:45",
-   "durationMin": 75,
-   "cost": "Gratis",
+   "id": "sat-go-amnh",
+   "name": "Dall'hotel al Museo, in metro",
+   "kind": "move",
+   "start": "09:15",
+   "durationMin": 40,
+   "cost": "Metro $3 a testa, si paga toccando il lettore OMNY",
    "pos": [
-    40.77574,
-    -73.97522
+    40.75731,
+    -73.98979
    ],
-   "radiusM": 450,
-   "cover": {
-    "img": "img/cp.webp",
-    "credit": "Jakub Hałun, CC BY 4.0, via Wikimedia Commons"
-   },
-   "hook": "Un'ora e un quarto di parco prima che si riempia: un mosaico regalato da Napoli, un angelo, un ponte di ghisa e una statua su cui si può salire.",
-   "story": "Sembra un bosco rimasto lì per caso, ma è quasi tutto costruito: laghi e colline sono stati scavati e modellati a mano dal 1858, dove prima c'erano paludi e baracche. Il mosaico con la scritta Imagine, a Strawberry Fields, l'ha regalato la città di Napoli: è copiato da un mosaico antico di Pompei. La signora dei piccioni di Mamma ho riperso l'aereo dava da mangiare ai suoi uccelli in fondo a questo parco. Vinnie giura che era sua zia.",
+   "radiusM": 100,
+   "hook": "Primo viaggio in metro: quattro fermate sotto l'Ottava Avenue e si sbuca dentro il museo.",
+   "story": "La metro di New York ha aperto nel 1904, funziona giorno e notte e ha quasi 500 stazioni, più di qualsiasi altra metropolitana al mondo. Le linee hanno un colore e una lettera o un numero: oggi prendete la C, blu.",
    "look": [
-    "Appena entrati dalla 72ª, a pochi passi a destra del sentiero: il cerchio di mosaico bianco e nero con la scritta Imagine. Spesso qualcuno ci lascia fiori.",
-    "Sulla terrazza di Bethesda, al centro della fontana: l'angelo di bronzo con le ali aperte. Poi scendete le scale e alzate gli occhi nel portico: il soffitto è fatto di migliaia di piastrelle colorate.",
-    "Dal centro del Bow Bridge, guardate verso ovest: sopra gli alberi spuntano le due torri del San Remo e, più a sinistra, i tetti a punta del Dakota."
+    "Sulle scale della stazione: i cartelli blu con le lettere A, C, E dentro i cerchi.",
+    "Sopra i binari: la scritta Uptown & The Bronx, cioè verso nord.",
+    "Alla fermata 81 St: le pareti decorate a mosaico con animali e fossili."
    ],
    "tips": [
     {
-     "text": "Dall'hotel: metro C da 42 St–Port Authority a 72 St (Central Park West), circa 15 minuti. Uscite e attraversate: l'ingresso del parco è davanti a voi.",
+     "text": "Colazione e bagno in hotel prima di uscire: in metro non ci sono bagni.",
      "when": "always"
     },
     {
-     "text": "Giro consigliato: Strawberry Fields, Bethesda, Alice, poi indietro al Bow Bridge e fuori sulla 77ª. Finite a 5 minuti dal museo invece che dall'altra parte del parco.",
+     "text": "Ogni persona tocca il lettore OMNY una volta: anche i bambini pagano. Toccate tutti con la stessa carta, uno dopo l'altro.",
      "when": "arrive"
     },
     {
-     "text": "In ritardo: saltate Alice. Da Bethesda andate dritti al Bow Bridge (5 minuti a ovest lungo il lago) e uscite sulla 77ª.",
-     "when": "late"
-    },
-    {
-     "text": "Bagni: alla Loeb Boathouse (sulla riva est del lago) e al chiosco Kerbs Boathouse sul laghetto delle barchette, vicino ad Alice. Quelli di Bethesda d'inverno sono spesso chiusi.",
+     "text": "Il sabato la metro ha spesso lavori: guardate Google Maps prima di scendere. Se la C non passa, prendete la 1 (rossa) da Times Sq–42 St fino a 79 St e camminate 8 minuti verso est fino a Central Park West.",
      "when": "always"
     },
     {
-     "text": "Se piove: Strawberry Fields, poi il portico coperto di Bethesda (ci si ripara e spesso c'è un musicista), Bow Bridge e via verso il museo.",
-     "when": "rain"
+     "text": "In ritardo: taxi dall'hotel al museo, 15–20 minuti, circa $20–25 con la mancia.",
+     "when": "late"
     },
     {
-     "text": "Panchine con vista: sulla terrazza di Bethesda, rivolte verso il lago. Il sabato mattina il viale è pieno di runner: tenete i bambini sul marciapiede.",
-     "when": "tired"
+     "text": "Se piove: la strada coperta è quasi tutta. Dalla stazione 81 St si entra nel museo senza uscire.",
+     "when": "rain"
     }
    ],
    "steps": [
     {
-     "id": "cp-straw",
-     "title": "Strawberry Fields",
-     "where": "Ingresso di Central Park West all'altezza della 72ª, dentro di pochi passi.",
+     "id": "goamnh-out",
+     "title": "Fuori dall'hotel",
+     "where": "Sulla 41ª camminate verso l'Ottava Avenue (verso ovest, il lato opposto a Times Square): 2 minuti.",
      "look": [
-      "Il mosaico Imagine, a terra: è una copia di un mosaico di Pompei, regalata da Napoli.",
-      "Dall'altra parte della strada, il palazzo scuro con i tetti a punta e i balconi: il Dakota, dove abitava John Lennon.",
-      "Le panchine intorno: ognuna ha una targhetta con una dedica. Fate leggere ai bambini la più strana."
+      "Le insegne dei teatri sulla 41ª.",
+      "All'angolo con l'Ottava: il grande terminal degli autobus, Port Authority."
      ],
      "tips": [
-      "La mattina presto c'è poca gente: è il momento per la foto dall'alto del mosaico.",
-      "Dal mosaico seguite il sentiero che scende verso est (verso il centro del parco): in 7 minuti siete a Bethesda."
+      "Tenete la mano dei bambini agli incroci: qui i taxi girano veloci."
      ]
     },
     {
-     "id": "cp-bethesda",
-     "title": "Terrazza e fontana di Bethesda",
-     "where": "Al centro del parco, all'altezza della 72ª, affacciata sul lago.",
+     "id": "goamnh-station",
+     "title": "Stazione 42 St–Port Authority",
+     "where": "Ingresso all'angolo tra l'Ottava Avenue e la 41ª o la 42ª. Seguite i cartelli A C E e scegliete Uptown & The Bronx.",
      "look": [
-      "L'angelo della fontana.",
-      "Il portico sotto la scala con il soffitto di piastrelle.",
-      "Il lago con le barche, dietro la fontana."
+      "I tornelli: il lettore OMNY è il rettangolo nero, si appoggia la carta finché dice GO."
      ],
      "tips": [
-      "Kevin di Mamma ho riperso l'aereo scappa dai due ladri proprio qui.",
-      "Nella Come d'incanto la principessa Giselle canta e balla tra questa fontana e il Bow Bridge."
+      "Uno alla volta: carta, GO, si passa. Poi la stessa carta per il successivo."
+     ]
+    },
+    {
+     "id": "goamnh-train",
+     "title": "In treno: la C verso nord",
+     "where": "Salite sulla C (lettera C, cerchio blu). Fermate: 50 St, 59 St–Columbus Circle, 72 St, 81 St. Si scende alla quarta.",
+     "look": [
+      "La mappa sopra le porte: la vostra linea è la riga blu.",
+      "Contate le fermate: è la sfida di Vinnie."
      ],
-     "steps": [
+     "tips": [
+      "Non salite sulla A: è un espresso e salta la 81ª. Se l'avete presa per sbaglio, scendete a 59 St e prendete la C sulla stessa banchina."
+     ],
+     "options": [
       {
-       "id": "cp-bethesda-arcade",
-       "title": "Il portico",
-       "where": "Scendete la grande scala dalla strada: il portico è sotto, prima della fontana.",
-       "look": [
-        "Alzate gli occhi: il soffitto è fatto di quasi 16.000 piastrelle colorate, restaurate una per una.",
-        "Le colonne e gli archi: qui il suono rimbomba, e i musicisti lo sanno."
-       ],
-       "tips": [
-        "Si sta all'asciutto anche se piove."
-       ]
-      },
-      {
-       "id": "cp-bethesda-angel",
-       "title": "L'angelo",
-       "where": "Al centro della fontana, sulla piazza davanti al lago.",
-       "look": [
-        "L'angelo tiene un giglio in una mano e benedice l'acqua con l'altra.",
-        "Sotto di lui, quattro angioletti: sono la salute, la purezza, la temperanza e la pace."
-       ],
-       "tips": [
-        "L'ha scolpito Emma Stebbins: fu la prima donna a cui New York affidò una grande opera pubblica."
-       ],
-       "options": [
-        {
-         "label": "Se avete poco tempo",
-         "text": "Foto all'angelo e via verso il Bow Bridge, a ovest lungo la riva."
-        }
-       ]
+       "label": "Se la C non passa",
+       "text": "Linea 1 (rossa) da Times Sq–42 St fino a 79 St, poi a piedi sulla 79ª verso est fino a Central Park West: 8 minuti."
       }
      ]
     },
     {
-     "id": "cp-alice",
-     "title": "Alice nel paese delle meraviglie",
-     "where": "Lato est, sul laghetto delle barchette (Conservatory Water), all'estremità nord. Da Bethesda: 8 minuti verso est passando dietro la Loeb Boathouse.",
+     "id": "goamnh-81",
+     "title": "81 St: si entra nel museo",
+     "where": "Scendete a 81 St–Museum of Natural History. Seguite i cartelli Museum: dal mezzanino della stazione c'è un ingresso diretto al piano inferiore del museo. Se è chiuso, uscite sulla 81ª: l'ingresso del Rose Center è a pochi passi.",
      "look": [
-      "Alice seduta su un fungo gigante, con la gatta Dinah in grembo.",
-      "Intorno a lei il Cappellaio Matto, il Leprotto, lo Stregatto, un coniglio con l'orologio da taschino e un topolino minuscolo.",
-      "Il bronzo lucidissimo sulle teste e sui funghi: è consumato dalle mani e dalle scarpe di sessant'anni di bambini arrampicati."
+      "Le pareti della stazione: mosaici di animali e fossili, perfino sotto i piedi."
      ],
      "tips": [
-      "Qui si sale, è fatta apposta: è una delle poche statue di New York su cui si può arrampicarsi.",
-      "La missione di Vinnie è qui."
-     ],
-     "steps": [
-      {
-       "id": "cp-alice-statue",
-       "title": "La statua",
-       "where": "Sul lato nord del laghetto, in mezzo a una piazzetta tonda.",
-       "look": [
-        "Sulle placche di bronzo intorno alla base: frasi del libro e la poesia Jabberwocky, la preferita della signora a cui è dedicata.",
-        "Il nome Margarita inciso e dorato alla base: il marito la fece fare per lei nel 1959."
-       ],
-       "tips": [
-        "La statua è alta più di 3 metri: il più piccolo sale sul fungo basso, il più grande fino ad Alice."
-       ]
-      },
-      {
-       "id": "cp-alice-pond",
-       "title": "Il laghetto delle barchette",
-       "where": "Davanti alla statua.",
-       "look": [
-        "Il laghetto dove in Stuart Little il topolino vince la regata.",
-        "Sul lato ovest del laghetto, la statua di Hans Christian Andersen con il libro aperto e un anatroccolo ai piedi."
-       ],
-       "tips": [
-        "Bagni e caffè caldo al Kerbs Boathouse, il chiosco sul lato est del laghetto."
-       ],
-       "options": [
-        {
-         "label": "Se sono stanchi",
-         "text": "Cioccolata al Kerbs Boathouse e panchina sul laghetto: 10 minuti, poi via al Bow Bridge."
-        }
-       ]
-      }
+      "Biglietti pronti sul telefono di papà: si scansionano all'ingresso."
      ]
-    },
-    {
-     "id": "cp-bow",
-     "title": "Bow Bridge",
-     "where": "Tornate verso ovest lungo il lago (10 minuti): il ponte bianco basso che attraversa il lago verso il bosco.",
-     "look": [
-      "Il ponte è di ghisa, non di pietra: fu il primo così nel parco, finito nel 1862.",
-      "Le decorazioni a spirale e i vasi di ghisa sulla ringhiera.",
-      "Dal centro, verso ovest: le due torri del San Remo sopra gli alberi."
-     ],
-     "tips": [
-      "È lungo 27 metri: in Come d'incanto Giselle ci balla sopra.",
-      "Attraversate: dall'altra parte comincia il Ramble, il bosco del parco."
-     ]
-    },
-    {
-     "id": "cp-exit",
-     "title": "Uscita sulla 77ª",
-     "where": "Dall'uscita nord del ponte prendete il sentiero a sinistra che segue la riva verso nord fino al ponticello Oak Bridge; attraversatelo e uscite sulla West Drive, al cancello della 77ª.",
-     "look": [
-      "L'Oak Bridge, il ponticello sopra la baia di Bank Rock.",
-      "Il cancello dei Naturalisti sulla 77ª: da lì il museo è di fronte, sull'altro lato di Central Park West."
-     ],
-     "tips": [
-      "Nel Ramble i sentieri si incrociano: se vi perdete, puntate sempre a sinistra (ovest), verso i palazzi.",
-      "Dal cancello della 77ª all'ingresso della 81ª del museo: 5 minuti a piedi verso nord."
-     ]
-    }
-   ],
-   "missionId": "sat-alice",
-   "nearby": [
-    {
-     "pos": [
-      40.77667,
-      -73.97639
-     ],
-     "text": "Il Dakota, il palazzo di fronte a Strawberry Fields: ci abitava John Lennon, e ci vivono ancora attori e musicisti.",
-     "kind": "famous"
-    },
-    {
-     "pos": [
-      40.7747,
-      -73.97271
-     ],
-     "text": "La fontana di Cherry Hill, sulla collinetta tra Strawberry Fields e Bethesda: da lì si vede il lago dall'alto.",
-     "kind": "view"
-    },
-    {
-     "pos": [
-      40.77533,
-      -73.96874
-     ],
-     "text": "Loeb Boathouse: bagni aperti tutto l'anno e il bar della rimessa delle barche.",
-     "kind": "curio"
-    },
-    {
-     "pos": [
-      40.77421,
-      -73.96715
-     ],
-     "text": "Il laghetto delle barchette: qui Stuart Little vince la regata con la sua barchetta.",
-     "kind": "film"
-    },
-    {
-     "pos": [
-      40.77448,
-      -73.96773
-     ],
-     "text": "Hans Christian Andersen di bronzo, seduto con il libro aperto: ai piedi l'anatroccolo brutto.",
-     "kind": "curio"
-    },
-    {
-     "pos": [
-      40.77576,
-      -73.97177
-     ],
-     "text": "Bow Bridge: Giselle di Come d'incanto ci balla sopra cantando.",
-     "kind": "film"
     }
    ],
    "bagni": {
-    "where": "Dal 72° mid-park, quello di Bethesda Terrace è chiuso d'inverno. Aperti tutto l'anno: Loeb Boathouse (74ª–75ª, lato est), Kerbs Boathouse sul laghetto delle barchette (74ª) e il Heckscher Playground (62ª, lato ovest, vicino al parco giochi).",
+    "where": "In metro non ci sono bagni. Fateli in hotel; il primo bagno dopo è dentro il museo.",
     "cost": "Gratis",
-    "clean": "Il Parks Department ha dato una valutazione \"non accettabile\" a un bagno del Loeb Boathouse (data dell'ispezione non verificata). Heckscher è indicato da una guida per famiglie come una scelta ragionevole, ma la pulizia non è verificata."
+    "clean": "-"
    }
   },
   {
@@ -597,10 +457,88 @@ export default {
    }
   },
   {
+   "id": "sat-go-rock",
+   "name": "Dal pranzo al Rockefeller, in metro",
+   "kind": "move",
+   "start": "13:30",
+   "durationMin": 30,
+   "cost": "Metro $3 a testa",
+   "pos": [
+    40.78388,
+    -73.97989
+   ],
+   "radiusM": 100,
+   "hook": "La linea rossa, la più vecchia di New York: quattro fermate e si esce davanti a Radio City.",
+   "story": "La linea 1 corre sotto Broadway sul tracciato della prima metropolitana della città, aperta nel 1904: le stazioni 79 St e 50 St sono di quell'anno. Allora il viaggio costava 5 centesimi.",
+   "look": [
+    "Alla 79 St: le targhe di ceramica con il numero 79 sulle pareti, come cento anni fa.",
+    "Alla 50 St, uscendo: l'insegna verticale rossa di Radio City Music Hall, verso est."
+   ],
+   "tips": [
+    {
+     "text": "Alcuni ingressi della 79 St portano a una sola direzione: cercate la scritta Downtown & Brooklyn sopra le scale.",
+     "when": "arrive"
+    },
+    {
+     "text": "Alternativa: metro C da 81 St fino a 59 St–Columbus Circle, poi D sulla stessa banchina fino a 47–50 Sts–Rockefeller Ctr. Si esce sotto il Rockefeller Center.",
+     "when": "always"
+    },
+    {
+     "text": "In ritardo o stanchi: taxi, 15–20 minuti, circa $20–25.",
+     "when": "late"
+    },
+    {
+     "text": "Se piove: con la D si arriva al Rockefeller senza uscire, dal passaggio sotterraneo (Concourse).",
+     "when": "rain"
+    }
+   ],
+   "steps": [
+    {
+     "id": "gorock-walk",
+     "title": "A piedi fino a Broadway",
+     "where": "Da Columbus Avenue camminate verso ovest fino a Broadway e la 79ª: due avenue, 5–8 minuti.",
+     "look": [
+      "Davanti ai portoni: i portieri in divisa e i cani con il cappotto."
+     ],
+     "tips": [
+      "È il tratto della scommessa del cane con il cappotto, se non l'avete ancora fatta."
+     ]
+    },
+    {
+     "id": "gorock-train",
+     "title": "Linea 1 verso sud",
+     "where": "Treno rosso numero 1 verso South Ferry (Downtown). Fermate: 72 St, 66 St, 59 St, 50 St. Si scende alla quarta.",
+     "look": [
+      "Ascoltate la voce registrata prima che si chiudano le porte: è la sfida di Vinnie."
+     ],
+     "tips": [
+      "Non salite sulla 2 o sulla 3: sono espressi e saltano la 50 St."
+     ]
+    },
+    {
+     "id": "gorock-50",
+     "title": "Dalla 50 St al Rockefeller",
+     "where": "Uscite sulla 50ª e camminate verso est: Settima Avenue, poi Sesta Avenue con Radio City sull'angolo. Attraversate la Sesta: siete nel Rockefeller Center. 8–10 minuti.",
+     "look": [
+      "Radio City Music Hall: la scritta verticale rossa e le luci al neon.",
+      "Dall'altra parte della Sesta: il grattacielo grigio del 30 Rock, quello con il Top of the Rock in cima."
+     ],
+     "tips": [
+      "Davanti a Radio City c'è la scommessa del lunedì: non bruciatevela oggi."
+     ]
+    }
+   ],
+   "bagni": {
+    "where": "Fateli al ristorante prima di uscire. Al Rockefeller ci sono i bagni pubblici del Concourse, sotto la piazza.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
+  },
+  {
    "id": "rock",
    "name": "FAO Schwarz e Rockefeller Center",
    "kind": "optional",
-   "start": "13:45",
+   "start": "14:00",
    "durationMin": 60,
    "cost": "Gratis (giochi e LEGO a parte)",
    "pos": [
@@ -755,8 +693,8 @@ export default {
    "id": "saks",
    "name": "Saks Fifth Avenue",
    "kind": "optional",
-   "start": "14:50",
-   "durationMin": 10,
+   "start": "15:00",
+   "durationMin": 30,
    "cost": "Gratis",
    "pos": [
     40.75802,
@@ -800,7 +738,7 @@ export default {
    "id": "stpat",
    "name": "Cattedrale di St. Patrick",
    "kind": "optional",
-   "start": "15:00",
+   "start": "15:35",
    "durationMin": 20,
    "cost": "Gratis",
    "pos": [
@@ -853,8 +791,8 @@ export default {
    "id": "fifth",
    "name": "Fifth Avenue a piedi verso sud",
    "kind": "optional",
-   "start": "15:20",
-   "durationMin": 15,
+   "start": "16:00",
+   "durationMin": 25,
    "cost": "Gratis",
    "pos": [
     40.75604,
@@ -898,7 +836,7 @@ export default {
    "id": "nypl",
    "name": "New York Public Library",
    "kind": "optional",
-   "start": "15:35",
+   "start": "16:30",
    "durationMin": 25,
    "cost": "Gratis",
    "pos": [
@@ -965,11 +903,11 @@ export default {
   },
   {
    "id": "bryant",
-   "name": "Bryant Park, Winter Village",
-   "kind": "key",
-   "start": "16:00",
-   "durationMin": 90,
-   "cost": "Ingresso pista gratis; noleggio pattini $19–64 a testa, il sabato pomeriggio verso la cifra alta",
+   "name": "Bryant Park, un giro veloce",
+   "kind": "optional",
+   "start": "17:00",
+   "durationMin": 25,
+   "cost": "Gratis",
    "pos": [
     40.75407,
     -73.98425
@@ -979,7 +917,7 @@ export default {
     "img": "img/bryant.webp",
     "credit": "Rhododendrites, CC BY-SA 4.0, via Wikimedia Commons"
    },
-   "hook": "Si pattina al tramonto in mezzo ai grattacieli, poi cioccolata calda tra le casette di legno.",
+   "hook": "Uno sguardo alla pista e alle casette mentre si accendono le luci, poi via verso Macy's. Lunedì sera ci tornate per cena.",
    "story": "Sotto il prato di Bryant Park ci sono chilometri di scaffali della biblioteca: il parco è il tetto del magazzino dei libri. D'inverno il prato diventa una pista di 1.600 metri quadri dove si entra gratis, con 180 casette di legno intorno. Il sole tramonta verso le 16:30: se entrate in pista alle 16:15, i grattacieli si accendono mentre pattinate.",
    "look": [
     "Dal bordo della pista, verso sud: il grattacielo nero e oro sulla 40ª, l'American Radiator Building.",
@@ -988,31 +926,19 @@ export default {
    ],
    "tips": [
     {
-     "text": "Prenotate online, sul sito di Bryant Park, prima di partire: anche se l'ingresso è gratis serve il biglietto con l'orario. Prendete una sessione verso le 16.",
+     "text": "Oggi niente pattini: il programma non li prevede. Se i bambini ci tengono, la sessione va prenotata online sul sito di Bryant Park.",
      "when": "always"
     },
     {
-     "text": "La sessione dura 50 minuti. Arrivate all'orario del biglietto: chi è in ritardo il sabato rischia di non entrare.",
-     "when": "arrive"
-    },
-    {
-     "text": "Borse: non si portano sul ghiaccio. Deposito borse $6,24 a pezzo, scarpe gratis; per gli armadietti serve un lucchetto (lo vendono a $6,24).",
-     "when": "arrive"
-    },
-    {
-     "text": "Il sostegno per chi non sa pattinare costa $26: utile per il più piccolo. Il casco è gratis.",
+     "text": "Il mercatino chiude alle 20. Lunedì sera tornate qui con più calma.",
      "when": "always"
     },
     {
-     "text": "In ritardo: niente pattini, giro tra le casette e cioccolata. Il mercatino il sabato chiude alle 20.",
+     "text": "In ritardo: saltatelo, lo vedete lunedì.",
      "when": "late"
     },
     {
-     "text": "Se piove forte la pista può chiudere: controllate il sito prima di andare. Le casette restano aperte.",
-     "when": "rain"
-    },
-    {
-     "text": "Al caldo: la Lodge, il locale con le vetrate accanto alla pista, con bar e posti a sedere.",
+     "text": "Al caldo: la Lodge, il locale con le vetrate accanto alla pista.",
      "when": "tired"
     }
    ],
@@ -1053,7 +979,7 @@ export default {
    "name": "Macy's Herald Square",
    "kind": "optional",
    "start": "17:30",
-   "durationMin": 90,
+   "durationMin": 60,
    "cost": "Gratis",
    "pos": [
     40.75089,
@@ -1073,10 +999,6 @@ export default {
      "when": "arrive"
     },
     {
-     "text": "Santaland è all'8° piano: serve una prenotazione gratuita online, aperta pochi giorni prima; senza è difficile entrare.",
-     "when": "always"
-    },
-    {
      "text": "In ritardo: vetrine fuori e orologio di Minerva, poi dritti a Koreatown, che è a 5 minuti.",
      "when": "late"
     },
@@ -1087,6 +1009,10 @@ export default {
     {
      "text": "Se piove: Macy's è il posto perfetto per aspettare la cena all'asciutto.",
      "when": "rain"
+    },
+    {
+     "text": "Santaland apre il 27 novembre, dopo la vostra partenza: Holiday Lane invece è già aperta.",
+     "when": "always"
     }
    ],
    "steps": [
@@ -1131,11 +1057,10 @@ export default {
     },
     {
      "id": "macys-holiday",
-     "title": "Holiday Lane e Santaland",
-     "where": "Ai piani alti, accanto a Santaland all'8° piano.",
+     "title": "Holiday Lane",
+     "where": "Ai piani alti, chiedete Holiday Lane. Santaland all'8° piano apre il 27 novembre.",
      "look": [
       "Holiday Lane: corridoi di palline e decorazioni di Natale.",
-      "Il trenino North Star Express che porta a Babbo Natale, se avete la prenotazione.",
       "Le decorazioni a forma di New York: palline con taxi, Empire State, pretzel."
      ],
      "tips": [
@@ -1189,7 +1114,7 @@ export default {
    "id": "ktown",
    "name": "Koreatown, cena",
    "kind": "key",
-   "start": "19:00",
+   "start": "18:45",
    "durationMin": 90,
    "cost": "Circa $90 in 4",
    "pos": [
@@ -1258,7 +1183,7 @@ export default {
    "id": "times",
    "name": "Times Square, verso l'hotel",
    "kind": "optional",
-   "start": "20:30",
+   "start": "20:15",
    "durationMin": 30,
    "cost": "Gratis",
    "pos": [
@@ -1323,31 +1248,98 @@ export default {
     "cost": "Gratis",
     "clean": "Buona secondo più guide locali; non verificato di persona"
    }
+  },
+  {
+   "id": "sat-go-hotel",
+   "name": "Rientro in hotel a piedi",
+   "kind": "move",
+   "start": "20:45",
+   "durationMin": 15,
+   "cost": "Gratis",
+   "pos": [
+    40.75561,
+    -73.98861
+   ],
+   "radiusM": 60,
+   "hook": "Dieci minuti a piedi tra le luci dei teatri e siete a letto.",
+   "story": "Il vostro hotel è nel Theater District, il quartiere dei teatri di Broadway: sono una quarantina, quasi tutti tra la 41ª e la 54ª. Quello accanto all'hotel è il Nederlander Theatre, dove per dodici anni è andato in scena il musical Rent.",
+   "look": [
+    "Sulla Settima Avenue: le insegne dei musical sui palazzi.",
+    "Sulla 41ª: l'insegna del teatro accanto all'hotel, con il nome dello spettacolo."
+   ],
+   "tips": [
+    {
+     "text": "Telefono in tasca davanti e zaino davanti in mezzo alla folla di Times Square.",
+     "when": "always"
+    },
+    {
+     "text": "Stanchi: dalla 32ª (Koreatown) all'hotel sono 15–20 minuti a piedi; in taxi 5–10 minuti, ma la sera il traffico è fermo. Meglio a piedi.",
+     "when": "tired"
+    }
+   ],
+   "steps": [
+    {
+     "id": "gohome-7th",
+     "title": "Giù per la Settima",
+     "where": "Da Times Square camminate verso sud sulla Settima Avenue fino alla 41ª.",
+     "look": [
+      "Contate le strade: i cartelli verdi agli angoli scendono 45, 44, 43, 42, 41."
+     ],
+     "tips": [
+      "Alla 42ª c'è l'ingresso della metro Times Sq–42 St: domani si parte da lì."
+     ]
+    },
+    {
+     "id": "gohome-41",
+     "title": "Sulla 41ª, a destra",
+     "where": "Girate a destra sulla 41ª, verso l'Ottava: l'hotel è a metà isolato, al numero 220, accanto al Nederlander Theatre.",
+     "look": [
+      "L'insegna del teatro: leggete il nome dello spettacolo."
+     ],
+     "tips": [
+      "Se vi perdete, mostrate la scheda per il taxi nella pagina Hotel: c'è l'indirizzo in inglese."
+     ]
+    }
+   ],
+   "bagni": {
+    "where": "In hotel.",
+    "cost": "Gratis",
+    "clean": "-"
+   }
   }
  ],
  "walks": [
   {
-   "from": "cp",
+   "from": "sat-go-amnh",
    "to": "amnh",
-   "minutes": 10,
-   "how": "Dal cancello della 77ª su Central Park West andate a nord fino alla 81ª, poi a sinistra: l'ingresso del Rose Center è sul lato sud della via.",
+   "minutes": 30,
+   "how": "Metro C da 42 St–Port Authority fino a 81 St, ingresso diretto nel museo.",
+   "mapsMode": "transit",
+   "tips": []
+  },
+  {
+   "from": "lunch",
+   "to": "sat-go-rock",
+   "minutes": 5,
+   "how": "A piedi fino a Broadway e la 79ª, ingresso della metro 1.",
    "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.77934,
-      -73.97344
-     ],
-     "text": "Naturalists' Gate, il cancello della 77ª: da qui vedete già il museo di fronte."
-    },
-    {
-     "pos": [
-      40.78178,
-      -73.97192
-     ],
-     "text": "All'angolo della 81ª c'è la scala della metro B e C: le pareti della stazione sono decorate con animali e fossili di mosaico."
-    }
-   ]
+   "tips": []
+  },
+  {
+   "from": "sat-go-rock",
+   "to": "rock",
+   "minutes": 25,
+   "how": "Metro 1 da 79 St fino a 50 St, poi a piedi verso est sulla 50ª.",
+   "mapsMode": "transit",
+   "tips": []
+  },
+  {
+   "from": "times",
+   "to": "sat-go-hotel",
+   "minutes": 8,
+   "how": "Settima Avenue verso sud fino alla 41ª, poi a destra.",
+   "mapsMode": "walking",
+   "tips": []
   },
   {
    "from": "amnh",
@@ -1362,25 +1354,6 @@ export default {
       -73.97464
      ],
      "text": "Su Columbus, il palazzo di pietra a onde con le grandi vetrate: è il Gilder Center, la parte nuova del museo, aperta nel 2023."
-    }
-   ]
-  },
-  {
-   "from": "lunch",
-   "to": "rock",
-   "minutes": 30,
-   "how": "A piedi fino a Broadway e la 79ª, metro 1 (rossa) fino a 50 St, poi a piedi verso est sulla 49ª fino al Rockefeller Center.",
-   "mapsMode": "transit",
-   "tips": [
-    {
-     "text": "Il sabato la metro ha spesso lavori: controllate sulla app Maps se la 1 ferma a 50 St. Alternativa: taxi, 15–20 minuti, circa $20–25."
-    },
-    {
-     "pos": [
-      40.75972,
-      -73.97917
-     ],
-     "text": "Camminando sulla 50ª passate davanti all'insegna rossa di Radio City Music Hall."
     }
    ]
   },
@@ -1555,7 +1528,7 @@ export default {
     ]
    },
    "near": [
-    "cp",
+    "amnh",
     "lunch"
    ],
    "note": "273 Columbus Avenue tra la 72ª e la 73ª, qualche tavolino. Apre alle 7: colazione perfetta prima del parco, a 2 minuti dalla metro della 72ª.",
@@ -1587,7 +1560,7 @@ export default {
    },
    "near": [
     "lunch",
-    "cp"
+    "amnh"
    ],
    "note": "167 West 74th Street, seminterrato con la scaletta. Solo da asporto.",
    "rating": {
@@ -1723,7 +1696,7 @@ export default {
     ]
    },
    "near": [
-    "cp",
+    "amnh",
     "lunch"
    ],
    "note": "200 Columbus Avenue alla 69ª: comoda se arrivate in anticipo al parco.",
@@ -2141,20 +2114,17 @@ export default {
  ],
  "missions": [
   {
-   "id": "sat-alice",
-   "stopId": "cp",
-   "type": "describe",
-   "title": "Il dormiglione di bronzo",
-   "read": "Ehi, squadra, sono Vinnie. Un pezzo di chiave l'ho dato in custodia a un tipo che dorme sempre, perfino in mezzo a una festa del tè. È di bronzo ed è piccolissimo. Chi guarda la foto ha cinque secondi, poi la descrive all'altro senza dire nomi di personaggi: solo quanto è grande, che forma ha, cosa tiene tra le zampe e vicino a chi sta. L'altro lo cerca sulla statua. Quando l'avete trovato, toccatelo insieme e ditelo con una voce sola. Se sbagliate, il pezzo resta a me.",
+   "id": "sat-go-fermate",
+   "stopId": "sat-go-amnh",
+   "type": "bet",
+   "title": "Quante fermate?",
+   "read": "Vinnie qui. Io in metro non ci vado, volo sopra. Ma scommetto che non indovinate quante fermate ci sono da qui al museo. Prima di salire decidete insieme un numero e ditelo forte. Poi uno legge ad alta voce il nome di ogni fermata sul cartello, l'altro le conta sulle dita. Se il vostro numero è giusto, il pezzo è vostro.",
    "roles": [
-    "Guarda la foto per cinque secondi e descrive a parole",
-    "Non vede la foto: ascolta e cerca sulla statua"
+    "Legge ad alta voce i nomi delle fermate",
+    "Conta sulle dita e dice quando scendere"
    ],
-   "img": {
-    "src": "img/sat-alice.webp",
-    "credit": "atp tyreseus / Jere Keys from San Francisco, USA, Public domain, via Wikimedia Commons"
-   },
-   "parentHint": "È il Ghiro (Dormouse): un topolino che rosicchia un semino, molto più piccolo degli altri personaggi, in basso nel gruppo. Ingrandite la foto su di lui prima di mostrarla. Intorno ci sono Alice sul fungo con la gatta Dinah, il Cappellaio Matto, il Leprotto, lo Stregatto e un coniglio con l'orologio."
+   "vinnieBet": "Sbagliate il numero",
+   "parentHint": "Con la C: 50 St, 59 St–Columbus Circle, 72 St, 81 St. Sono quattro, si scende alla quarta. Se prendete la 1 da Times Square: 50, 59, 66, 72, 79, cioè cinque."
   },
   {
    "id": "sat-whale",
@@ -2172,6 +2142,19 @@ export default {
     "src": "img/sat-whale.webp",
     "credit": "Roland Arhelger, CC BY-SA 4.0, via Wikimedia Commons"
    }
+  },
+  {
+   "id": "sat-go-porte",
+   "stopId": "sat-go-rock",
+   "type": "bet",
+   "title": "La voce delle porte",
+   "read": "Prima che le porte si chiudano, una voce dice sempre la stessa frase, in inglese. Vinnie scommette che non riuscite a ripeterla insieme, tutta giusta, prima della 50 St. Uno impara la prima metà, l'altro la seconda. All'ultima fermata la dite insieme, una metà dopo l'altra, senza fermarvi.",
+   "roles": [
+    "Impara e dice la prima metà",
+    "Impara e dice la seconda metà"
+   ],
+   "vinnieBet": "Non la ripetete giusta",
+   "parentHint": "La frase è: «Stand clear of the closing doors, please». Prima metà: stand clear of the; seconda: closing doors, please. A volte la dice il conducente con parole sue: vale anche quella."
   },
   {
    "id": "sat-prometheus",
@@ -2204,6 +2187,19 @@ export default {
     "credit": "John Vachon, Public domain, via Wikimedia Commons"
    },
    "parentHint": "Differenze sicure: allora le auto passavano dappertutto, oggi metà piazza è pedonale con sedie e la scalinata rossa; le insegne erano lampadine e scritte dipinte, oggi sono schermi giganti; quasi tutti gli uomini portavano il cappello; le auto e i taxi erano di tanti modelli e colori diversi, non solo gialli."
+  },
+  {
+   "id": "sat-go-teatro",
+   "stopId": "sat-go-hotel",
+   "type": "bet",
+   "title": "Lo spettacolo accanto all'hotel",
+   "read": "Ultima sfida di oggi. Proprio accanto al vostro hotel c'è un teatro di Broadway, con il nome dello spettacolo scritto in grande. Vinnie scommette che non lo leggete prima di arrivare alla porta dell'hotel. Uno guarda le insegne a destra, l'altro a sinistra. Quando lo trovate, leggetelo insieme ad alta voce.",
+   "roles": [
+    "Guarda le insegne a destra",
+    "Guarda le insegne a sinistra"
+   ],
+   "vinnieBet": "Non lo trovate prima della porta",
+   "parentHint": "È il Nederlander Theatre, al 208 West 41st Street, sullo stesso lato dell'hotel. Lo spettacolo in cartellone cambia: leggete l'insegna sopra l'ingresso."
   },
   {
    "id": "sat-bet-dog",

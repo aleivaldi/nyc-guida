@@ -138,6 +138,8 @@ p { margin: 0; }
 .sign-name .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--line); flex: none; }
 .sign-sub { margin-top: 6px; font-size: 16px; color: #c9cdd2; }
 .sign.optional .sign-name { font-size: 26px; }
+.sign.move .sign-name { font-size: 24px; }
+.sign.move .dot { border-radius: 4px; }
 
 .hook { font: 20px/1.35 var(--serif); }
 .look { display: grid; grid-template-columns: 76px 1fr; gap: 4px 12px; align-items: baseline; }
@@ -188,6 +190,8 @@ p { margin: 0; }
 .line-map .optional .node { width: 14px; height: 14px; border-width: 3px; border-color: var(--ink-2); }
 .line-map .name { font-weight: 700; font-size: 19px; line-height: 1.2; padding-left: 8px; }
 .line-map .optional .name { font-weight: 500; font-size: 17px; color: var(--ink-2); }
+.line-map .move .name { font-style: italic; font-size: 15px; }
+.line-map .move .node { border-radius: 3px; }
 .line-map .past { opacity: .45; }
 .line-map .current .node { background: var(--ink); width: 28px; height: 28px; box-shadow: 0 0 0 4px var(--bg), 0 0 0 7px var(--line); }
 .line-map .current .name::after { content: "siete qui"; display: block; font-size: 13px; font-weight: 600; color: var(--line); }

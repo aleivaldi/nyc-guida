@@ -17,7 +17,7 @@ export function renderDay(dayId = ctx.todayId()) {
       const prev = day.stops[i - 1];
       const alt = s.kind === 'choice' && prev?.choiceGroup === s.choiceGroup;
       const cls = [
-        s.kind === 'key' ? 'key' : 'optional',
+        s.kind === 'key' ? 'key' : s.kind === 'move' ? 'optional move' : 'optional',
         live && i < curIdx ? 'past' : '',
         live && i === curIdx ? 'current' : '',
         s.booked ? 'booked' : '',

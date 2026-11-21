@@ -5,72 +5,244 @@ export default {
  "vinnieMorning": "Ehi, squadra. Oggi si va dove la gente passa il tempo a guardare in alto: quadri, soffitti, e un palazzo così alto che i piccioni normali non ci arrivano. Io sì. Tenete gli occhi aperti e pure le orecchie: oggi conta anche quello che si sente.",
  "stops": [
   {
-   "id": "mon-morning",
-   "name": "Mattina vicino all'hotel",
-   "kind": "optional",
-   "start": "08:30",
-   "durationMin": 120,
-   "cost": "Colazione $25–110 in 4, dipende dal posto",
+   "id": "cp",
+   "name": "Central Park dalla 72ª",
+   "kind": "key",
+   "start": "09:00",
+   "durationMin": 75,
+   "cost": "Gratis",
    "pos": [
-    40.75561,
-    -73.98861
+    40.77574,
+    -73.97522
    ],
-   "radiusM": 250,
-   "hook": "Dormite un'ora in più: oggi la prima prenotazione è alle 11.",
-   "story": "Il vostro hotel è attaccato al Nederlander Theatre, dove il musical Rent è andato in scena per dodici anni di fila. Dall'altra parte della Ottava Avenue c'è il palazzo del New York Times, coperto di bastoncini di ceramica bianca. Nel 2008 un uomo l'ha scalato usando quei bastoncini come una scala a pioli: era Alain Robert, lo chiamano lo Spider-Man francese. Quel giorno, poche ore dopo, l'ha fatto anche un secondo scalatore.",
+   "radiusM": 450,
+   "cover": {
+    "img": "img/cp.webp",
+    "credit": "Jakub Hałun, CC BY 4.0, via Wikimedia Commons"
+   },
+   "hook": "Un'ora e un quarto di parco di lunedì mattina, quando è quasi vuoto: un mosaico regalato da Napoli, un angelo, un ponte di ghisa e una statua su cui si può salire.",
+   "story": "Sembra un bosco rimasto lì per caso, ma è quasi tutto costruito: laghi e colline sono stati scavati e modellati a mano dal 1858, dove prima c'erano paludi e baracche. Il mosaico con la scritta Imagine, a Strawberry Fields, l'ha regalato la città di Napoli: è copiato da un mosaico antico di Pompei. La signora dei piccioni di Mamma ho riperso l'aereo dava da mangiare ai suoi uccelli in fondo a questo parco. Vinnie giura che era sua zia.",
    "look": [
-    "Il teatro accanto all'hotel, a sinistra uscendo: l'insegna verticale con il nome Nederlander.",
-    "Attraversate la 41st verso la Ottava Avenue e alzate gli occhi: il palazzo del New York Times è rigato da migliaia di bastoncini bianchi.",
-    "Se passate da Times Square, salite sulle scalinate rosse in fondo alla piazza (all'altezza della 47th): da lì la piazza al mattino è quasi vuota."
+    "Appena entrati dalla 72ª, a pochi passi a destra del sentiero: il cerchio di mosaico bianco e nero con la scritta Imagine. Spesso qualcuno ci lascia fiori.",
+    "Sulla terrazza di Bethesda, al centro della fontana: l'angelo di bronzo con le ali aperte. Poi scendete le scale e alzate gli occhi nel portico: il soffitto è fatto di migliaia di piastrelle colorate.",
+    "Dal centro del Bow Bridge, guardate verso ovest: sopra gli alberi spuntano le due torri del San Remo e, più a sinistra, i tetti a punta del Dakota."
    ],
    "tips": [
     {
-     "text": "Per arrivare al MoMA alle 11 uscite entro le 10:30 a piedi (circa 22 minuti) oppure entro le 10:40 in metro.",
+     "text": "Dall'hotel: metro C da 42 St–Port Authority a 72 St (Central Park West), circa 15 minuti. Uscite e attraversate: l'ingresso del parco è davanti a voi.",
      "when": "always"
     },
     {
-     "text": "Se piove: metro E dalla stazione 42 St–Port Authority (Ottava Avenue angolo 42nd), direzione nord (Uptown/Queens), scendete a 5 Av/53 St, tre fermate. L'uscita è a un isolato dal museo. Si paga toccando il tornello con una carta contactless.",
-     "when": "rain"
+     "text": "Giro consigliato: Strawberry Fields, Bethesda, Alice, poi indietro al Bow Bridge e fuori sulla 77ª. Finite a 5 minuti dal museo invece che dall'altra parte del parco.",
+     "when": "arrive"
     },
     {
-     "text": "Se siete in ritardo: niente colazione seduti. Bagel da portare via e via verso il museo.",
+     "text": "In ritardo: saltate Alice. Da Bethesda andate dritti al Bow Bridge (5 minuti a ovest lungo il lago) e uscite sulla 77ª.",
      "when": "late"
     },
     {
-     "text": "La colazione con i camerieri che cantano (Ellen's Stardust Diner) è sulla strada per il MoMA: vi lascia a 10 minuti a piedi dal museo.",
-     "when": "arrive"
+     "text": "Bagni: alla Loeb Boathouse (sulla riva est del lago) e al chiosco Kerbs Boathouse sul laghetto delle barchette, vicino ad Alice. Quelli di Bethesda d'inverno sono spesso chiusi.",
+     "when": "always"
+    },
+    {
+     "text": "Se piove: Strawberry Fields, poi il portico coperto di Bethesda (ci si ripara e spesso c'è un musicista), Bow Bridge e via verso il museo.",
+     "when": "rain"
+    },
+    {
+     "text": "Panchine con vista: sulla terrazza di Bethesda, rivolte verso il lago. Il sabato mattina il viale è pieno di runner: tenete i bambini sul marciapiede.",
+     "when": "tired"
     }
    ],
+   "steps": [
+    {
+     "id": "cp-straw",
+     "title": "Strawberry Fields",
+     "where": "Ingresso di Central Park West all'altezza della 72ª, dentro di pochi passi.",
+     "look": [
+      "Il mosaico Imagine, a terra: è una copia di un mosaico di Pompei, regalata da Napoli.",
+      "Dall'altra parte della strada, il palazzo scuro con i tetti a punta e i balconi: il Dakota, dove abitava John Lennon.",
+      "Le panchine intorno: ognuna ha una targhetta con una dedica. Fate leggere ai bambini la più strana."
+     ],
+     "tips": [
+      "La mattina presto c'è poca gente: è il momento per la foto dall'alto del mosaico.",
+      "Dal mosaico seguite il sentiero che scende verso est (verso il centro del parco): in 7 minuti siete a Bethesda."
+     ]
+    },
+    {
+     "id": "cp-bethesda",
+     "title": "Terrazza e fontana di Bethesda",
+     "where": "Al centro del parco, all'altezza della 72ª, affacciata sul lago.",
+     "look": [
+      "L'angelo della fontana.",
+      "Il portico sotto la scala con il soffitto di piastrelle.",
+      "Il lago con le barche, dietro la fontana."
+     ],
+     "tips": [
+      "Kevin di Mamma ho riperso l'aereo scappa dai due ladri proprio qui.",
+      "Nella Come d'incanto la principessa Giselle canta e balla tra questa fontana e il Bow Bridge."
+     ],
+     "steps": [
+      {
+       "id": "cp-bethesda-arcade",
+       "title": "Il portico",
+       "where": "Scendete la grande scala dalla strada: il portico è sotto, prima della fontana.",
+       "look": [
+        "Alzate gli occhi: il soffitto è fatto di quasi 16.000 piastrelle colorate, restaurate una per una.",
+        "Le colonne e gli archi: qui il suono rimbomba, e i musicisti lo sanno."
+       ],
+       "tips": [
+        "Si sta all'asciutto anche se piove."
+       ]
+      },
+      {
+       "id": "cp-bethesda-angel",
+       "title": "L'angelo",
+       "where": "Al centro della fontana, sulla piazza davanti al lago.",
+       "look": [
+        "L'angelo tiene un giglio in una mano e benedice l'acqua con l'altra.",
+        "Sotto di lui, quattro angioletti: sono la salute, la purezza, la temperanza e la pace."
+       ],
+       "tips": [
+        "L'ha scolpito Emma Stebbins: fu la prima donna a cui New York affidò una grande opera pubblica."
+       ],
+       "options": [
+        {
+         "label": "Se avete poco tempo",
+         "text": "Foto all'angelo e via verso il Bow Bridge, a ovest lungo la riva."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "cp-alice",
+     "title": "Alice nel paese delle meraviglie",
+     "where": "Lato est, sul laghetto delle barchette (Conservatory Water), all'estremità nord. Da Bethesda: 8 minuti verso est passando dietro la Loeb Boathouse.",
+     "look": [
+      "Alice seduta su un fungo gigante, con la gatta Dinah in grembo.",
+      "Intorno a lei il Cappellaio Matto, il Leprotto, lo Stregatto, un coniglio con l'orologio da taschino e un topolino minuscolo.",
+      "Il bronzo lucidissimo sulle teste e sui funghi: è consumato dalle mani e dalle scarpe di sessant'anni di bambini arrampicati."
+     ],
+     "tips": [
+      "Qui si sale, è fatta apposta: è una delle poche statue di New York su cui si può arrampicarsi.",
+      "La missione di Vinnie è qui."
+     ],
+     "steps": [
+      {
+       "id": "cp-alice-statue",
+       "title": "La statua",
+       "where": "Sul lato nord del laghetto, in mezzo a una piazzetta tonda.",
+       "look": [
+        "Sulle placche di bronzo intorno alla base: frasi del libro e la poesia Jabberwocky, la preferita della signora a cui è dedicata.",
+        "Il nome Margarita inciso e dorato alla base: il marito la fece fare per lei nel 1959."
+       ],
+       "tips": [
+        "La statua è alta più di 3 metri: il più piccolo sale sul fungo basso, il più grande fino ad Alice."
+       ]
+      },
+      {
+       "id": "cp-alice-pond",
+       "title": "Il laghetto delle barchette",
+       "where": "Davanti alla statua.",
+       "look": [
+        "Il laghetto dove in Stuart Little il topolino vince la regata.",
+        "Sul lato ovest del laghetto, la statua di Hans Christian Andersen con il libro aperto e un anatroccolo ai piedi."
+       ],
+       "tips": [
+        "Bagni e caffè caldo al Kerbs Boathouse, il chiosco sul lato est del laghetto."
+       ],
+       "options": [
+        {
+         "label": "Se sono stanchi",
+         "text": "Cioccolata al Kerbs Boathouse e panchina sul laghetto: 10 minuti, poi via al Bow Bridge."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "cp-bow",
+     "title": "Bow Bridge",
+     "where": "Tornate verso ovest lungo il lago (10 minuti): il ponte bianco basso che attraversa il lago verso il bosco.",
+     "look": [
+      "Il ponte è di ghisa, non di pietra: fu il primo così nel parco, finito nel 1862.",
+      "Le decorazioni a spirale e i vasi di ghisa sulla ringhiera.",
+      "Dal centro, verso ovest: le due torri del San Remo sopra gli alberi."
+     ],
+     "tips": [
+      "È lungo 27 metri: in Come d'incanto Giselle ci balla sopra.",
+      "Attraversate: dall'altra parte comincia il Ramble, il bosco del parco."
+     ]
+    },
+    {
+     "id": "cp-exit",
+     "title": "Verso il MoMA",
+     "where": "Dal Bow Bridge tornate alla terrazza di Bethesda e scendete lungo il Mall, il viale dritto con gli olmi, verso sud fino all'uscita della Quinta Avenue alla 59ª. Poi giù per la Quinta fino alla 53ª, a destra: il MoMA è al numero 11. Circa 25–30 minuti.",
+     "look": [
+      "Il Mall: gli olmi formano una galleria sopra il viale, con le statue degli scrittori in fondo.",
+      "All'uscita sulla 59ª: l'hotel Plaza a destra e il cubo di vetro dell'Apple Store a sinistra."
+     ],
+     "tips": [
+      "Se piove o sono stanchi: dal cancello della 72ª su Central Park West prendete la metro C o B fino a 50 St / 47–50 Sts e camminate fino alla 53ª.",
+      "Bagni: quello di Bethesda è chiuso d'inverno. Usate la Loeb Boathouse prima di uscire dal parco."
+     ]
+    }
+   ],
+   "missionId": "sat-alice",
    "nearby": [
     {
      "pos": [
-      40.75548,
-      -73.9883
+      40.77667,
+      -73.97639
      ],
-     "text": "Nederlander Theatre: qui Rent è andato in scena dal 1996 al 2008.",
-     "kind": "curio"
+     "text": "Il Dakota, il palazzo di fronte a Strawberry Fields: ci abitava John Lennon, e ci vivono ancora attori e musicisti.",
+     "kind": "famous"
     },
     {
      "pos": [
-      40.7559,
-      -73.98927
+      40.7747,
+      -73.97271
      ],
-     "text": "Il palazzo del New York Times (Renzo Piano): nel 2008 due persone diverse lo hanno scalato nello stesso giorno, aggrappandosi ai bastoncini di ceramica.",
-     "kind": "curio"
-    },
-    {
-     "pos": [
-      40.75915,
-      -73.98493
-     ],
-     "text": "Le scalinate rosse di Times Square (biglietteria TKTS): sedetevi in cima, avete tutta la piazza davanti.",
+     "text": "La fontana di Cherry Hill, sulla collinetta tra Strawberry Fields e Bethesda: da lì si vede il lago dall'alto.",
      "kind": "view"
+    },
+    {
+     "pos": [
+      40.77533,
+      -73.96874
+     ],
+     "text": "Loeb Boathouse: bagni aperti tutto l'anno e il bar della rimessa delle barche.",
+     "kind": "curio"
+    },
+    {
+     "pos": [
+      40.77421,
+      -73.96715
+     ],
+     "text": "Il laghetto delle barchette: qui Stuart Little vince la regata con la sua barchetta.",
+     "kind": "film"
+    },
+    {
+     "pos": [
+      40.77448,
+      -73.96773
+     ],
+     "text": "Hans Christian Andersen di bronzo, seduto con il libro aperto: ai piedi l'anatroccolo brutto.",
+     "kind": "curio"
+    },
+    {
+     "pos": [
+      40.77576,
+      -73.97177
+     ],
+     "text": "Bow Bridge: Giselle di Come d'incanto ci balla sopra cantando.",
+     "kind": "film"
     }
    ],
    "bagni": {
-    "where": "Nell'hotel o nel locale dove fate colazione.",
-    "cost": "Gratis se consumate",
-    "clean": "Non verificato"
+    "where": "Dal 72° mid-park, quello di Bethesda Terrace è chiuso d'inverno. Aperti tutto l'anno: Loeb Boathouse (74ª–75ª, lato est), Kerbs Boathouse sul laghetto delle barchette (74ª) e il Heckscher Playground (62ª, lato ovest, vicino al parco giochi).",
+    "cost": "Gratis",
+    "clean": "Il Parks Department ha dato una valutazione \"non accettabile\" a un bagno del Loeb Boathouse (data dell'ispezione non verificata). Heckscher è indicato da una guida per famiglie come una scelta ragionevole, ma la pulizia non è verificata."
    }
   },
   {
@@ -878,30 +1050,12 @@ export default {
  ],
  "walks": [
   {
-   "from": "mon-morning",
+   "from": "cp",
    "to": "mon-moma",
-   "minutes": 22,
-   "how": "A piedi: sulla 41st verso est fino alla Sesta Avenue, poi a nord sulla Sesta fino alla 53rd, a destra fino al museo. In metro (pioggia): linea E da 42 St–Port Authority a 5 Av/53 St.",
+   "minutes": 30,
+   "how": "A piedi: lungo il Mall fino alla Quinta e la 59ª, poi giù per la Quinta fino alla 53ª, a destra fino al museo.",
    "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.75367,
-      -73.98367
-     ],
-     "text": "Alla Sesta Avenue, sulla destra, c'è Bryant Park: stasera ci tornate per cena."
-    },
-    {
-     "pos": [
-      40.75981,
-      -73.97928
-     ],
-     "text": "Angolo 50th Street: Radio City Music Hall, con la scritta verticale sull'angolo. Scommessa di Vinnie."
-    },
-    {
-     "text": "Ultimo pezzo sulla 53rd verso est: il museo è sulla sinistra, ingresso al numero 11."
-    }
-   ]
+   "tips": []
   },
   {
    "from": "mon-moma",
@@ -1029,7 +1183,7 @@ export default {
     ]
    },
    "near": [
-    "mon-morning"
+    "cp"
    ],
    "note": "Piccolo, si mangia in piedi o da portare via. 225 West 35th Street, a 8 minuti dall'hotel.",
    "rating": {
@@ -1095,7 +1249,7 @@ export default {
     ]
    },
    "near": [
-    "mon-morning",
+    "cp",
     "mon-moma"
    ],
    "note": "1650 Broadway angolo 51st. Niente prenotazioni: al mattino si entra quasi subito, la sera c'è fila. Da qui al MoMA 10 minuti a piedi.",
@@ -1166,7 +1320,7 @@ export default {
     ]
    },
    "near": [
-    "mon-morning",
+    "cp",
     "mon-bryant"
    ],
    "note": "Sulla 45th Street angolo Broadway. Buono anche per il dolce tornando in hotel la sera.",
@@ -1237,7 +1391,7 @@ export default {
     ]
    },
    "near": [
-    "mon-morning"
+    "cp"
    ],
    "note": "155 West 43rd Street, a 4 minuti dall'hotel. Tavoli e divanetti, comodo con i bambini.",
    "rating": {
@@ -1827,7 +1981,7 @@ export default {
    },
    "near": [
     "mon-bryant",
-    "mon-morning"
+    "cp"
    ],
    "note": "1435 Broadway angolo 40th, a 5 minuti da Bryant Park e a 3 dall'hotel. Si mangia al bancone in piedi.",
    "rating": {
@@ -1894,7 +2048,7 @@ export default {
    },
    "near": [
     "mon-bryant",
-    "mon-morning"
+    "cp"
    ],
    "note": "229 West 43rd Street. Si ordina al banco e si mangia in piedi: veloce.",
    "rating": {
@@ -1910,6 +2064,22 @@ export default {
   }
  ],
  "missions": [
+  {
+   "id": "sat-alice",
+   "stopId": "cp",
+   "type": "describe",
+   "title": "Il dormiglione di bronzo",
+   "read": "Ehi, squadra, sono Vinnie. Un pezzo di chiave l'ho dato in custodia a un tipo che dorme sempre, perfino in mezzo a una festa del tè. È di bronzo ed è piccolissimo. Chi guarda la foto ha cinque secondi, poi la descrive all'altro senza dire nomi di personaggi: solo quanto è grande, che forma ha, cosa tiene tra le zampe e vicino a chi sta. L'altro lo cerca sulla statua. Quando l'avete trovato, toccatelo insieme e ditelo con una voce sola. Se sbagliate, il pezzo resta a me.",
+   "roles": [
+    "Guarda la foto per cinque secondi e descrive a parole",
+    "Non vede la foto: ascolta e cerca sulla statua"
+   ],
+   "img": {
+    "src": "img/sat-alice.webp",
+    "credit": "atp tyreseus / Jere Keys from San Francisco, USA, Public domain, via Wikimedia Commons"
+   },
+   "parentHint": "È il Ghiro (Dormouse): un topolino che rosicchia un semino, molto più piccolo degli altri personaggi, in basso nel gruppo. Ingrandite la foto su di lui prima di mostrarla. Intorno ci sono Alice sul fungo con la gatta Dinah, il Cappellaio Matto, il Leprotto, lo Stregatto e un coniglio con l'orologio."
+  },
   {
    "id": "mon-m-moma",
    "stopId": "mon-moma",
