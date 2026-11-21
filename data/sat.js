@@ -16,7 +16,7 @@ export default {
     -73.98979
    ],
    "radiusM": 100,
-   "hook": "Primo viaggio in metro: quattro fermate sotto l'Ottava Avenue e si sbuca dentro il museo.",
+   "hook": "Primo viaggio in metro, sotto l'Ottava Avenue: si sbuca dentro il museo.",
    "story": "La metro di New York ha aperto nel 1904, funziona giorno e notte e ha quasi 500 stazioni, più di qualsiasi altra metropolitana al mondo. Le linee hanno un colore e una lettera o un numero: oggi prendete la C, blu.",
    "look": [
     "Sulle scale della stazione: i cartelli blu con le lettere A, C, E dentro i cerchi.",
