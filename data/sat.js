@@ -8,8 +8,8 @@ export default {
    "id": "sat-go-amnh",
    "name": "Dall'hotel al Museo, in metro",
    "kind": "move",
-   "start": "09:15",
-   "durationMin": 40,
+   "start": "08:45",
+   "durationMin": 30,
    "cost": "Metro $3 a testa, si paga toccando il lettore OMNY",
    "pos": [
     40.75731,
@@ -25,7 +25,7 @@ export default {
    ],
    "tips": [
     {
-     "text": "Colazione e bagno in hotel prima di uscire: in metro non ci sono bagni.",
+     "text": "Bagno in hotel prima di uscire: in metro non ci sono bagni.",
      "when": "always"
     },
     {
@@ -103,6 +103,50 @@ export default {
     "where": "In metro non ci sono bagni. Fateli in hotel; il primo bagno dopo è dentro il museo.",
     "cost": "Gratis",
     "clean": "-"
+   }
+  },
+  {
+   "id": "sat-belvedere",
+   "name": "Il castello del parco, da fuori",
+   "kind": "optional",
+   "start": "09:15",
+   "durationMin": 25,
+   "cost": "Gratis",
+   "pos": [
+    40.77938,
+    -73.96912
+   ],
+   "radiusM": 120,
+   "hook": "Venti minuti nel parco prima del museo: un piccolo castello su una roccia e uno stagno con le tartarughe.",
+   "story": "Il castello del Belvedere sta sulla seconda roccia più alta del parco: il nome in italiano vuol dire bella vista. Dal 1919 ospita la stazione meteo ufficiale di Central Park: quando alla tv di New York dicono la temperatura di Central Park, viene misurata qui.",
+   "look": [
+    "Il castello di pietra grigia sulla roccia, con la torretta.",
+    "Sotto il castello: il Turtle Pond, lo stagno delle tartarughe.",
+    "Sopra lo stagno: il grande prato del Great Lawn e i palazzi della Quinta in fondo."
+   ],
+   "tips": [
+    {
+     "text": "Il castello apre alle 10, quindi oggi si vede solo da fuori.",
+     "when": "always"
+    },
+    {
+     "text": "Dall'uscita della metro 81 St: entrate nel parco alla 81ª e camminate verso est circa 10 minuti, seguendo i cartelli Belvedere Castle.",
+     "when": "arrive"
+    },
+    {
+     "text": "Alle 9:40 tutti all'ingresso del museo sulla 81ª: tornate per la stessa strada.",
+     "when": "always"
+    },
+    {
+     "text": "In ritardo o freddo: saltatelo e mettetevi in fila al museo.",
+     "when": "late"
+    }
+   ],
+   "steps": [],
+   "bagni": {
+    "where": "Il castello non ha bagni. I più vicini sono al Delacorte Theater, sul lato sud-ovest del Great Lawn, oppure dentro il museo dopo le 10.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
    }
   },
   {
@@ -1311,10 +1355,18 @@ export default {
  "walks": [
   {
    "from": "sat-go-amnh",
+   "to": "sat-belvedere",
+   "minutes": 10,
+   "how": "Dalla metro 81 St entrate nel parco alla 81ª e camminate verso est fino al castello.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sat-belvedere",
    "to": "amnh",
-   "minutes": 30,
-   "how": "Metro C da 42 St–Port Authority fino a 81 St, ingresso diretto nel museo.",
-   "mapsMode": "transit",
+   "minutes": 10,
+   "how": "Tornate verso ovest fino alla 81ª e Central Park West: ingresso del Rose Center sulla 81ª.",
+   "mapsMode": "walking",
    "tips": []
   },
   {
