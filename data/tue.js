@@ -1835,6 +1835,19 @@ export default {
  ],
  "missions": [
   {
+   "id": "tue-valigia",
+   "stopId": "tue-checkout",
+   "type": "bet",
+   "title": "La valigia più pesante",
+   "read": "Ultimo giorno! Prima di consegnare le valigie alla reception, Vinnie scommette che indovinate quale pesa di più senza sollevarle. Ognuno indica una valigia, poi il genitore le alza una per una. Se almeno uno di voi due ha indovinato, il pezzo è vostro. Se no, me lo tengo e lo metto nella valigia più leggera.",
+   "roles": [
+    "Indica la valigia più pesante",
+    "Indica un'altra valigia, o la stessa"
+   ],
+   "vinnieBet": "Sbagliate tutti e due",
+   "parentHint": "Basta sollevarle un attimo. Se avete una bilancia da valigia, pesatele: serve anche per il volo."
+  },
+  {
    "id": "tue-go-fermate",
    "stopId": "tue-go-soho",
    "type": "bet",
@@ -1891,6 +1904,44 @@ export default {
     "src": "img/tue-flatiron.webp",
     "credit": "Tdorante10, CC BY-SA 4.0, via Wikimedia Commons"
    }
+  },
+  {
+   "id": "tue-fermate-ritorno",
+   "stopId": "tue-go-hotel",
+   "type": "bet",
+   "title": "La fermata dell'hotel",
+   "read": "Ultimo giro in metro. Vinnie scommette che non riconoscete la vostra fermata senza guardare il cartello. Uno chiude gli occhi e ascolta la voce che annuncia le fermate, l'altro guarda e tiene il segreto. Quando chi ascolta sente il nome giusto, dice: è questa! Se sbaglia, il pezzo è mio.",
+   "roles": [
+    "Ascolta l'annuncio a occhi chiusi",
+    "Guarda i cartelli e controlla"
+   ],
+   "vinnieBet": "Non riconoscete la fermata",
+   "parentHint": "Si scende a Times Sq–42 St. L'annuncio dice 'Times Square, Forty-Second Street'. Tenete la mano del bambino a occhi chiusi."
+  },
+  {
+   "id": "tue-ultimo",
+   "stopId": "tue-libero",
+   "type": "bet",
+   "title": "L'ultimo ricordo",
+   "read": "Un'ora libera, l'ultima. Vinnie vuole un regalo: ognuno di voi deve trovare un ricordo di New York che costi meno di 5 dollari, o anche gratis, come una cartolina o una foglia di Bryant Park. Avete mezz'ora. Se tutti e due me lo mostrate prima di tornare in hotel, il pezzo è vostro.",
+   "roles": [
+    "Cerca un ricordo sotto i 5 dollari",
+    "Cerca un ricordo gratis"
+   ],
+   "vinnieBet": "Non lo trovate in tempo",
+   "parentHint": "Una cartolina, un biglietto della metro, una foglia, un cioccolatino. Va bene anche una foto speciale."
+  },
+  {
+   "id": "tue-teatro",
+   "stopId": "hotel",
+   "type": "describe",
+   "title": "L'insegna del teatro",
+   "read": "Accanto all'hotel c'è un teatro con l'insegna luminosa. Uno di voi legge ad alta voce il nome dello spettacolo, l'altro cerca nella locandina un personaggio o un disegno e lo descrive. Poi indovinate insieme: di cosa parla lo spettacolo? Se il genitore dice che ci siete andati vicino, il pezzo è vostro.",
+   "roles": [
+    "Legge il nome dello spettacolo",
+    "Descrive la locandina"
+   ],
+   "parentHint": "Il Nederlander Theatre è accanto all'hotel sulla 41ª. Cercate la trama sul telefono per controllare."
   },
   {
    "id": "tue-finale",

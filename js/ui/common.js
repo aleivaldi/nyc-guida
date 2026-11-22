@@ -1,6 +1,7 @@
 import { h } from './dom.js';
 import { ctx } from './ctx.js';
 import { toMin, fmtMin } from '../core/time.js';
+import { mapsPair } from './maps.js';
 
 export const DAY_LETTER = { fri: 'V', sat: 'S', sun: 'D', mon: 'L', tue: 'M' };
 export const DAY_NAME = { fri: 'Venerdì', sat: 'Sabato', sun: 'Domenica', mon: 'Lunedì', tue: 'Martedì' };
@@ -57,3 +58,37 @@ export function distLabel(m) {
 
 const NEAR_KIND = { curio: 'Curiosità', film: 'Set di un film', view: 'La vista', famous: 'Facce note', food: 'Da assaggiare' };
 export function nearKind(k) { return NEAR_KIND[k] ?? 'Curiosità'; }
+
+export function nextStop(day, stop) {
+  const i = day.stops.findIndex((s) => s.id === stop.id);
+  return day.stops.slice(i + 1).find((s) => !(stop.choiceGroup && s.choiceGroup === stop.choiceGroup)) ?? null;
+}
+
+export function prevStop(day, stop) {
+  const i = day.stops.findIndex((s) => s.id === stop.id);
+  return day.stops.slice(0, i).reverse().find((s) => !(stop.choiceGroup && s.choiceGroup === stop.choiceGroup)) ?? null;
+}
+
+export function walkTo(day, from, to) {
+  const w = (day.walks ?? []).find((x) => x.from === from.id && x.to === to.id);
+  const mode = w?.mapsMode ?? (to.kind === 'move' || from.kind === 'move' ? (w ? 'walking' : 'transit') : 'walking');
+  return { w, mode };
+}
+
+export function nextCard(dayId, day, stop) {
+  const next = nextStop(day, stop);
+  if (!next) {
+    const hotel = ctx.COMMON.hotel;
+    return h('div', { class: 'next-card' },
+      h('p', { class: 'label' }, 'Fine della giornata'),
+      h('b', {}, 'Si torna in hotel'),
+      hotel?.pos ? mapsPair(hotel.pos, 'walking') : null);
+  }
+  const { w, mode } = walkTo(day, stop, next);
+  return h('div', { class: 'next-card' },
+    h('p', { class: 'label' }, `Prossima tappa, alle ${next.start}`),
+    h('a', { class: 'next-name', href: `#/stop/${dayId}/${next.id}` }, next.name, ' ›'),
+    w ? h('p', { class: 'next-how' }, `${w.minutes} min. ${w.how}`) : null,
+    mapsPair(next.pos, mode),
+    h('a', { class: 'btn btn-taxi', href: `#/stop/${dayId}/${next.id}` }, 'Vai alla prossima tappa ›'));
+}

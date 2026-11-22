@@ -1,6 +1,7 @@
 import { h, mount } from './dom.js';
 import { ctx } from './ctx.js';
-import { setLine } from './common.js';
+import { setLine, nextStop, walkTo } from './common.js';
+import { mapsPair } from './maps.js';
 import { gameState, kidsChoose } from '../core/game.js';
 
 function flatten(steps, parents = [], out = []) {
@@ -48,17 +49,24 @@ export function renderSteps(dayId, stopId, pathStr) {
     s.steps?.length ? h('p', { class: 'hint' }, `Dentro: ${s.steps.map((c) => c.title).join(', ')}.`) : null);
 
   const last = idx === flat.length - 1;
+  const day = ctx.day(dayId);
+  const next = nextStop(day, stop);
+  if (next && (last || stop.kind === 'move')) {
+    body.append(h('div', { class: 'next-card' },
+      h('p', { class: 'label' }, last ? `Poi: ${next.name}, alle ${next.start}` : `Destinazione: ${next.name}`),
+      mapsPair(next.pos, walkTo(day, stop, next).mode)));
+  }
   const foot = h('div', { class: 'steps-foot' },
     h('button', { class: 'btn', disabled: idx === 0, 'aria-label': 'Indietro', onclick: () => go(idx - 1) }, '‹'),
     last
-      ? h('a', { class: 'btn btn-primary', href: `#/stop/${dayId}/${stopId}` }, 'Fine percorso')
+      ? h('a', { class: 'btn btn-primary', href: next ? `#/stop/${dayId}/${next.id}` : `#/stop/${dayId}/${stopId}` }, next ? `Prossima tappa ›` : 'Fine percorso')
       : h('button', { class: 'btn btn-primary', onclick: () => go(idx + 1) }, s.steps?.length ? 'Entra' : 'Avanti'));
 
   const dots = h('div', { class: 'dots', 'aria-hidden': 'true' },
     flat.filter((f) => f.path.length === 1).map((f) => h('i', { class: f.path[0] === cur.path[0] ? 'on' : '' })));
 
   const screen = h('section', { class: 'steps' }, head, body, dots, foot);
-  swipe(screen, () => !last && go(idx + 1), () => idx > 0 && go(idx - 1));
+  swipe(screen, () => (last ? next && (location.hash = `#/stop/${dayId}/${next.id}`) : go(idx + 1)), () => idx > 0 && go(idx - 1));
   mount(screen);
 }
 

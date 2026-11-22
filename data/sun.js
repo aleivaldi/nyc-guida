@@ -1,7 +1,7 @@
 export default {
  "id": "sun",
  "weekday": 0,
- "title": "Traghetto, Memoriale, Century 21 e il Ponte",
+ "title": "Traghetto, Memoriale, il Ponte e Macy's",
  "vinnieMorning": "Oggi si va per mare, poi sotto i ponti, poi sopra un ponte. Io questi moli li conosco da quando ero un uovo, e il traghetto arancione lo saluto ogni mattina. Se volete riprendervi un pezzo di chiave, guardate bene e contate meglio di me.",
  "stops": [
   {
@@ -1106,18 +1106,18 @@ export default {
    }
   },
   {
-   "id": "home",
-   "name": "Rientro in hotel in metro",
+   "id": "sun-go-macys",
+   "name": "In metro fino a Herald Square",
    "kind": "move",
    "start": "17:00",
-   "durationMin": 35,
+   "durationMin": 30,
    "cost": "Metro $3 a testa con carta contactless",
    "pos": [
     40.71328,
     -74.00698
    ],
    "radiusM": 250,
-   "hook": "Scesi dal ponte, una metro dritta fino a Times Square.",
+   "hook": "Scesi dal ponte, la linea R dritta fino alla 34ª strada: si sbuca davanti alle vetrine di Macy's.",
    "story": "Il municipio di New York, quello bianco nel parco, è del 1812 ed è ancora usato dal sindaco. Sotto il parco c'è una stazione della metro chiusa dal 1945, con lampadari e volte di piastrelle: si vede solo dal finestrino della linea 6, che ci gira dentro per tornare indietro. È il segreto meglio custodito della metro.",
    "look": [
     "Il municipio bianco in fondo al parco, con la statua della Giustizia in cima alla cupola.",
@@ -1126,15 +1126,19 @@ export default {
    ],
    "tips": [
     {
-     "text": "Rientro diretto: linea R alla stazione City Hall, su Broadway, direzione Uptown & Queens, fino a Times Sq–42 St, circa 20 minuti. La W la domenica non c'è. Poi 5 minuti a piedi: l'hotel è al 220 West 41st Street, fra la Settima e l'Ottava.",
+     "text": "Linea R alla stazione City Hall, su Broadway, direzione Uptown & Queens, fino a 34 St–Herald Sq: 8 fermate, circa 20 minuti. Di domenica la W non passa.",
      "when": "always"
     },
     {
-     "text": "Si paga toccando il tornello con la carta contactless o il telefono: $3 a testa, anche i bambini sopra i 112 cm.",
+     "text": "Si paga toccando il tornello con la carta contactless o il telefono: $3 a testa, i bambini sotto i 112 cm gratis.",
      "when": "always"
     },
     {
-     "text": "Stanchi: il taxi da qui all'hotel costa circa $30–40 e ci mette 20–30 minuti nel traffico della domenica sera. La metro R è più veloce.",
+     "text": "Di domenica ci possono essere deviazioni: controllate sul telefono prima di scendere. Alternativa: linee 2 o 3 da Park Place fino a 34 St–Penn Station, poi 5 minuti a piedi verso est.",
+     "when": "arrive"
+    },
+    {
+     "text": "Stanchi: taxi fino a Macy's, circa 20–30 minuti e $25–35.",
      "when": "tired"
     }
    ],
@@ -1163,39 +1167,448 @@ export default {
    },
    "steps": [
     {
-     "id": "home-park",
+     "id": "gm-park",
      "title": "Dal ponte al municipio",
      "where": "Scesi dalla rampa del ponte, attraversate il parco di City Hall verso Broadway.",
      "look": [
       "Il municipio di New York, il palazzo bianco con la cupola dentro il parco."
      ],
      "tips": [
-      "Bagni: il parco non li ha sicuri. Meglio aspettare l'hotel o fermarsi in un bar."
+      "Bagni: il parco non li ha sicuri. Meglio aspettare Macy's."
      ]
     },
     {
-     "id": "home-r",
-     "title": "Linea R alla stazione City Hall",
-     "where": "Ingresso su Broadway, sul lato ovest del parco. Linea R (gialla), direzione Uptown & Queens, fino a Times Sq–42 St.",
+     "id": "gm-r",
+     "title": "Linea R a City Hall",
+     "where": "Ingresso su Broadway, sul lato ovest del parco. Linea R (gialla), direzione Uptown & Queens.",
      "look": [
       "Nella carrozza: cartelli e pubblicità in tante lingue. È la sfida di Vinnie."
      ],
      "tips": [
-      "Sono 8 fermate, circa 20 minuti."
+      "Fermate: Canal St, Prince St, 8 St, 14 St–Union Sq, 23 St, 28 St, 34 St–Herald Sq."
      ]
     },
     {
-     "id": "home-hotel",
-     "title": "Da Times Square all'hotel",
-     "where": "Uscite verso la Settima Avenue e la 41ª o la 42ª. Poi sulla 41ª verso l'Ottava: l'hotel è al 220, accanto al Nederlander Theatre.",
+     "id": "gm-out",
+     "title": "Uscita a Herald Square",
+     "where": "Scendete a 34 St–Herald Sq e seguite i cartelli per la 34th Street e Broadway: Macy's è sopra di voi.",
      "look": [
-      "Times Square di sera, accesa, a un isolato."
+      "Il grande palazzo di mattoni con la stella rossa e le vetrine di Natale."
      ],
      "tips": [
-      "Se cenate fuori, i posti vicini all'hotel sono nella pagina Mangiare."
+      "Uscite in superficie e guardate subito le vetrine su Broadway e sulla 34ª."
      ]
     }
    ]
+  },
+  {
+   "id": "sun-macys",
+   "name": "Macy's Herald Square",
+   "kind": "key",
+   "start": "17:30",
+   "durationMin": 50,
+   "cost": "Gratis",
+   "pos": [
+    40.75089,
+    -73.98926
+   ],
+   "radiusM": 120,
+   "hook": "Il grande magazzino del Miracolo della 34ª strada, con le vetrine di Natale e le scale mobili di legno del 1902.",
+   "story": "Il miracolo della 34ª strada, quello del 1947, è girato davvero qui dentro, durante la parata vera. All'angolo con Broadway c'è un palazzetto basso coperto da una borsa della spesa gigante: nel 1900 un signore comprò quell'angolo per costringere Macy's a pagarlo carissimo, e Macy's costruì il suo palazzo tutto intorno. Le scale mobili di legno sono tra le prime al mondo. Giovedì la parata del Ringraziamento numero 100 parte davanti al museo di storia naturale e finisce proprio qui.",
+   "look": [
+    "Fuori, sulla 34ª e su Broadway: le vetrine di Natale, quest'anno con la storia dell'ippopotamo blu, uno dei primi palloni della parata.",
+    "L'angolo di Broadway e 34ª: il palazzetto con la borsa di Macy's gigante sopra.",
+    "Dentro: le scale mobili con i gradini di legno, ai piani alti."
+   ],
+   "tips": [
+    {
+     "text": "Il sito di Macy's indica la domenica 11–21: c'è tempo. Il piano terra di domenica sera è pieno, salite subito ai piani alti.",
+     "when": "arrive"
+    },
+    {
+     "text": "Alle 18 in punto, sulla piazzetta a nord del negozio, i due fabbri di bronzo dell'orologio di Minerva battono la campana: uscite due minuti prima.",
+     "when": "always"
+    },
+    {
+     "text": "Le scale mobili di legno sono ai piani alti: prendete le scale mobili e salite oltre il quinto piano.",
+     "when": "always"
+    },
+    {
+     "text": "In ritardo: solo vetrine su Broadway e sulla 34ª, poi dritti verso l'Empire State.",
+     "when": "late"
+    },
+    {
+     "text": "Bagni: dentro Macy's, ai piani. Chiedete al personale all'ingresso.",
+     "when": "always"
+    },
+    {
+     "text": "Se piove: restate dentro più a lungo e saltate la camminata sulla Quinta: da Herald Square all'hotel sono 10 minuti a piedi lungo Broadway.",
+     "when": "rain"
+    }
+   ],
+   "steps": [
+    {
+     "id": "macys-windows",
+     "title": "Le vetrine e l'angolo da un milione",
+     "where": "Fuori, sulla 34ª e sull'angolo con Broadway.",
+     "look": [
+      "Le vetrine animate sul lato della 34ª.",
+      "Il palazzetto all'angolo coperto dalla borsa di Macy's: è il Million Dollar Corner.",
+      "La stella rossa di Macy's sull'ingresso."
+     ],
+     "tips": [
+      "Le vetrine si guardano meglio dal marciapiede vicino, con la folla che scorre."
+     ]
+    },
+    {
+     "id": "macys-minerva",
+     "title": "L'orologio di Minerva",
+     "where": "Il triangolo verde a nord di Macy's, dove Broadway incrocia la Sixth Avenue (35ª).",
+     "look": [
+      "Minerva con la lancia, in alto.",
+      "I due fabbri di bronzo con il martello: battono la campana a ogni ora.",
+      "Le civette con gli occhi verdi intorno all'orologio: la sera si illuminano."
+     ],
+     "tips": [
+      "Alle 18 battono sei colpi."
+     ]
+    },
+    {
+     "id": "macys-escalators",
+     "title": "Le scale mobili di legno",
+     "where": "Dentro, sulle scale mobili più vecchie: chiedete wooden escalators e salite verso i piani alti.",
+     "look": [
+      "I gradini di legno a listelli.",
+      "Le pareti strette e il rumore diverso, più forte delle scale moderne.",
+      "Il corrimano: il legno è consumato da più di cento anni di mani."
+     ],
+     "tips": [
+      "Sono ancora in funzione: si salgono e si scendono come le altre."
+     ]
+    },
+    {
+     "id": "macys-holiday",
+     "title": "Holiday Lane",
+     "where": "Ai piani alti, chiedete Holiday Lane. Santaland all'8° piano apre il 27 novembre.",
+     "look": [
+      "Holiday Lane: corridoi di palline e decorazioni di Natale.",
+      "Le decorazioni a forma di New York: palline con taxi, Empire State, pretzel."
+     ],
+     "tips": [
+      "Una pallina di Macy's è il souvenir più leggero da mettere in valigia."
+     ],
+     "options": [
+      {
+       "label": "Se sono stanchi",
+       "text": "Saltate Holiday Lane: vetrine, orologio di Minerva e via a cena."
+      }
+     ]
+    }
+   ],
+   "nearby": [
+    {
+     "pos": [
+      40.7504,
+      -73.9876
+     ],
+     "text": "L'orologio di Minerva sulla piazzetta di Herald Square: due fabbri di bronzo battono la campana ogni ora.",
+     "kind": "curio"
+    },
+    {
+     "pos": [
+      40.75014,
+      -73.98816
+     ],
+     "text": "Il Million Dollar Corner: il palazzetto che Macy's non riuscì mai a comprare, oggi coperto da una borsa gigante.",
+     "kind": "curio"
+    },
+    {
+     "pos": [
+      40.75089,
+      -73.98926
+     ],
+     "text": "Qui dentro è girato Il miracolo della 34ª strada, la versione in bianco e nero del 1947.",
+     "kind": "film"
+    }
+   ],
+   "cover": {
+    "img": "img/macys.webp",
+    "credit": "Don Ramey Logan, CC BY 4.0, via Wikimedia Commons"
+   },
+   "bagni": {
+    "where": "Dentro Macy's: i bagni sono ai piani, può servire salire. Chiedete al personale all'ingresso.",
+    "cost": "Gratis",
+    "clean": "Generalmente affidabili secondo guide locali; non verificato"
+   }
+  },
+  {
+   "id": "sun-empire",
+   "name": "L'Empire State Building visto da sotto",
+   "kind": "optional",
+   "start": "18:20",
+   "durationMin": 15,
+   "cost": "Gratis",
+   "pos": [
+    40.74844,
+    -73.98566
+   ],
+   "radiusM": 120,
+   "hook": "Il grattacielo più famoso del mondo, visto da sotto: la testa all'indietro, e in cima le luci di stasera.",
+   "story": "Fu costruito in poco più di un anno, nel 1930–31, ed è alto 381 metri fino al tetto, 443 con l'antenna. Per quarant'anni è stato il più alto del mondo. Ogni sera la cima cambia colore: per una festa, una squadra o una causa.",
+   "look": [
+    "Dall'angolo della Quinta con la 34ª: la torre a gradoni che si stringe verso l'alto.",
+    "In cima: le luci colorate di stasera e l'antenna.",
+    "L'ingresso sulla Quinta, con le porte dorate e il disegno del palazzo sopra."
+   ],
+   "tips": [
+    {
+     "text": "Da Macy's: sulla 34ª verso est, due isolati fino alla Quinta. Guardate in su prima di attraversare.",
+     "when": "arrive"
+    },
+    {
+     "text": "La vista migliore della cima non è sotto, ma da un isolato più a nord sulla Quinta, alla 35ª o 36ª: si vede tutta la torre.",
+     "when": "always"
+    },
+    {
+     "text": "In ritardo: guardatelo mentre camminate sulla 34ª, senza fermarvi.",
+     "when": "late"
+    }
+   ],
+   "steps": [
+    {
+     "id": "emp-34",
+     "title": "Sulla 34ª verso la Quinta",
+     "where": "Uscite da Macy's sulla 34ª e camminate verso est, verso la Quinta, due isolati.",
+     "look": [
+      "La torre che spunta sopra i palazzi davanti a voi."
+     ],
+     "tips": [
+      "Attraversate solo con il semaforo."
+     ]
+    },
+    {
+     "id": "emp-angolo",
+     "title": "All'angolo con la Quinta",
+     "where": "All'incrocio tra la 34ª e la Quinta siete sotto la torre. Girate a sinistra, verso nord.",
+     "look": [
+      "Le porte dorate dell'ingresso.",
+      "Le luci della cima."
+     ],
+     "tips": [
+      "Per la foto intera camminate fino alla 36ª e voltatevi."
+     ]
+    }
+   ],
+   "bagni": {
+    "where": "Nessun bagno pubblico qui. Usate quelli di Macy's prima di uscire.",
+    "cost": "-",
+    "clean": "-"
+   }
+  },
+  {
+   "id": "sun-fifth",
+   "name": "Quinta Avenue verso la biblioteca",
+   "kind": "move",
+   "start": "18:35",
+   "durationMin": 15,
+   "cost": "Gratis",
+   "pos": [
+    40.75049,
+    -73.98303
+   ],
+   "radiusM": 150,
+   "hook": "Otto isolati a piedi sulla Quinta, dalla 34ª alla 42ª, con le vetrine accese.",
+   "story": "Questo tratto della Quinta un tempo era pieno di case di ricchi: l'Empire State è sorto dove c'era l'hotel Waldorf-Astoria. Oggi sono negozi e uffici, e a Natale le vetrine si accendono una dopo l'altra.",
+   "look": [
+    "I numeri delle vie sui lampioni: dalla 34ª alla 42ª.",
+    "Voltandovi indietro alla 36ª: l'Empire State intero, illuminato.",
+    "In fondo a sinistra: il palazzo bianco con la scalinata e i leoni, la biblioteca."
+   ],
+   "tips": [
+    {
+     "text": "Camminate sul lato ovest della Quinta (a sinistra salendo verso nord): arrivate direttamente davanti ai leoni.",
+     "when": "always"
+    },
+    {
+     "text": "Stanchi: autobus M1–M4 verso nord sulla Quinta, due fermate; $3 a testa.",
+     "when": "tired"
+    },
+    {
+     "text": "In ritardo: saltate la biblioteca e da qui andate dritti in hotel lungo la 40ª verso ovest: 15 minuti.",
+     "when": "late"
+    }
+   ],
+   "steps": [
+    {
+     "id": "f5-start",
+     "title": "Verso nord",
+     "where": "Dall'Empire State girate a sinistra sulla Quinta e salite verso nord, lato ovest.",
+     "look": [
+      "I numeri delle vie che crescono: 35, 36, 37…"
+     ],
+     "tips": []
+    },
+    {
+     "id": "f5-36",
+     "title": "Voltatevi alla 36ª",
+     "where": "All'incrocio con la 36ª fermatevi e guardate indietro.",
+     "look": [
+      "L'Empire State intero, con la cima colorata."
+     ],
+     "tips": [
+      "È il punto migliore per la foto."
+     ]
+    },
+    {
+     "id": "f5-40",
+     "title": "Alla 40ª",
+     "where": "Alla 40ª, sulla sinistra, comincia la biblioteca.",
+     "look": [
+      "Le colonne e la scalinata bianca."
+     ],
+     "tips": []
+    }
+   ],
+   "bagni": {
+    "where": "Lungo la Quinta non ci sono bagni pubblici.",
+    "cost": "-",
+    "clean": "-"
+   }
+  },
+  {
+   "id": "sun-nypl",
+   "name": "New York Public Library",
+   "kind": "optional",
+   "start": "18:50",
+   "durationMin": 15,
+   "cost": "Gratis",
+   "pos": [
+    40.75334,
+    -73.98215
+   ],
+   "radiusM": 70,
+   "hook": "Due leoni di pietra davanti alla biblioteca più famosa di New York: stasera si salutano da fuori.",
+   "story": "I due leoni si chiamano Pazienza e Fortezza: glieli diede il sindaco La Guardia negli anni della Grande Depressione, perché erano le due cose che servivano ai newyorkesi. Nella sala dei bambini, al piano terra, ci sono i pupazzi veri di Christopher Robin: Winnie, Ih-Oh, Pimpi, Kanga e Tigro. Manca Ro: il ragazzo lo perse in un frutteto negli anni Trenta e non fu mai più ritrovato.",
+   "look": [
+    "I due leoni sulla scalinata: Pazienza a sinistra guardando la porta, Fortezza a destra.",
+    "La facciata bianca con le colonne e le statue sopra.",
+    "Dietro, verso la Sesta, le luci di Bryant Park."
+   ],
+   "tips": [
+    {
+     "text": "La domenica la biblioteca è chiusa o apre solo nel primo pomeriggio (le fonti non concordano): alle 18:50 si vedono i leoni e la facciata da fuori. Dentro e Winnie the Pooh: martedì nell'ora libera.",
+     "when": "always"
+    },
+    {
+     "text": "I leoni: Pazienza è a sinistra guardando la porta, verso la 40ª; Fortezza a destra, verso la 42ª.",
+     "when": "arrive"
+    },
+    {
+     "text": "In ritardo: foto con un leone e via verso l'hotel.",
+     "when": "late"
+    }
+   ],
+   "nearby": [
+    {
+     "pos": [
+      40.7529,
+      -73.98175
+     ],
+     "text": "Pazienza, il leone sud. In Ghostbusters i fantasmi cominciano proprio da questa biblioteca.",
+     "kind": "film"
+    },
+    {
+     "pos": [
+      40.75305,
+      -73.98164
+     ],
+     "text": "Fortezza, il leone nord. Qui Carrie del film Sex and the City doveva sposarsi.",
+     "kind": "film"
+    },
+    {
+     "pos": [
+      40.7517,
+      -73.98153
+     ],
+     "text": "Terrazza sul tetto della biblioteca Stavros Niarchos: gratis, 7° piano, vista sulla Quinta e sulla biblioteca.",
+     "kind": "view"
+    }
+   ],
+   "bagni": {
+    "where": "La biblioteca la sera della domenica è chiusa: niente bagni. In hotel tra 10 minuti, oppure nei locali di Bryant Park.",
+    "cost": "-",
+    "clean": "-"
+   }
+  },
+  {
+   "id": "sun-go-hotel",
+   "name": "Da Bryant Park all'hotel, a piedi",
+   "kind": "move",
+   "start": "19:05",
+   "durationMin": 15,
+   "cost": "Gratis",
+   "pos": [
+    40.75367,
+    -73.98367
+   ],
+   "radiusM": 200,
+   "hook": "Si passa dietro la biblioteca, in mezzo alle casette accese di Bryant Park, e in 10 minuti siete in hotel.",
+   "story": "Bryant Park sta sopra un pezzo della biblioteca: sotto il prato ci sono chilometri di scaffali. D'inverno diventa il Winter Village, con la pista di pattinaggio gratuita e le casette di vetro. Lunedì sera ci tornate con calma.",
+   "look": [
+    "La pista di pattinaggio illuminata in mezzo ai grattacieli.",
+    "Le casette di vetro con le luci intorno alla pista.",
+    "Uscendo verso la Sesta: le luci di Times Square in fondo alla 42ª."
+   ],
+   "tips": [
+    {
+     "text": "Entrate in Bryant Park dal retro della biblioteca, attraversatelo fino alla Sesta, poi sulla 41ª o 42ª verso ovest fino all'hotel, al 220 West 41st, tra la Settima e l'Ottava. Circa 10 minuti.",
+     "when": "always"
+    },
+    {
+     "text": "Cena: i posti vicini all'hotel sono nella pagina Mangiare di questa tappa.",
+     "when": "always"
+    },
+    {
+     "text": "Stanchi: niente pista stasera, c'è lunedì; dritti in hotel.",
+     "when": "tired"
+    }
+   ],
+   "steps": [
+    {
+     "id": "gh-park",
+     "title": "Dentro Bryant Park",
+     "where": "Girate intorno alla biblioteca sulla 42ª o sulla 40ª ed entrate nel parco: la pista è al centro.",
+     "look": [
+      "Le casette accese e la pista."
+     ],
+     "tips": [
+      "Lunedì sera è in programma: oggi solo un passaggio."
+     ]
+    },
+    {
+     "id": "gh-sesta",
+     "title": "Verso la Sesta e la Settima",
+     "where": "Uscite dal parco sulla Sesta Avenue, attraversate e proseguite sulla 41ª verso ovest.",
+     "look": [
+      "In fondo alla via, le luci di Times Square."
+     ],
+     "tips": []
+    },
+    {
+     "id": "gh-hotel",
+     "title": "L'hotel",
+     "where": "Attraversata la Settima, l'hotel è sulla 41ª, al numero 220, accanto al Nederlander Theatre.",
+     "look": [
+      "L'insegna luminosa del teatro accanto all'hotel."
+     ],
+     "tips": []
+    }
+   ],
+   "bagni": {
+    "where": "Nel Winter Village i bagni pubblici del parco, sul lato della 42ª: non verificati la domenica sera. Altrimenti l'hotel, a 10 minuti.",
+    "cost": "Gratis",
+    "clean": "Non verificato"
+   }
   }
  ],
  "walks": [
@@ -1255,22 +1668,6 @@ export default {
    ]
   },
   {
-   "from": "bridge",
-   "to": "home",
-   "minutes": 5,
-   "how": "Scesi dalla rampa del ponte, attraversate il parco di City Hall fino a Broadway: la metro R è all'angolo, 400 metri.",
-   "mapsMode": "walking",
-   "tips": [
-    {
-     "pos": [
-      40.71288,
-      -74.00608
-     ],
-     "text": "Il parco di City Hall ha i bagni pubblici vicino alla fontana, se servono prima della metro."
-    }
-   ]
-  },
-  {
    "from": "sun-go-ferry",
    "to": "ferry",
    "minutes": 25,
@@ -1308,6 +1705,54 @@ export default {
    "minutes": 20,
    "how": "Metro A o C fino a High St, poi a piedi in discesa per Old Fulton Street fino al fiume.",
    "mapsMode": "transit",
+   "tips": []
+  },
+  {
+   "from": "bridge",
+   "to": "sun-go-macys",
+   "minutes": 5,
+   "how": "Scesi dalla rampa del ponte, attraversate il parco di City Hall fino a Broadway: la metro R è all'angolo, 400 metri.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sun-go-macys",
+   "to": "sun-macys",
+   "minutes": 20,
+   "how": "Linea R direzione Uptown & Queens fino a 34 St–Herald Sq, 8 fermate.",
+   "mapsMode": "transit",
+   "tips": []
+  },
+  {
+   "from": "sun-macys",
+   "to": "sun-empire",
+   "minutes": 5,
+   "how": "Sulla 34ª verso est fino alla Quinta, due isolati.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sun-empire",
+   "to": "sun-fifth",
+   "minutes": 2,
+   "how": "Girate a sinistra sulla Quinta, verso nord.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sun-fifth",
+   "to": "sun-nypl",
+   "minutes": 12,
+   "how": "Quinta Avenue verso nord, lato ovest, dalla 34ª alla 41ª: i leoni sono sulla scalinata.",
+   "mapsMode": "walking",
+   "tips": []
+  },
+  {
+   "from": "sun-nypl",
+   "to": "sun-go-hotel",
+   "minutes": 3,
+   "how": "Dietro la biblioteca, nel parco: Bryant Park.",
+   "mapsMode": "walking",
    "tips": []
   }
  ],
@@ -1628,7 +2073,7 @@ export default {
     ]
    },
    "near": [
-    "home"
+    "sun-go-hotel"
    ],
    "note": "Broadway angolo 45th Street, 8 minuti dall'hotel. La cheesecake si compra anche da portare via.",
    "rating": {
@@ -1662,7 +2107,7 @@ export default {
     ]
    },
    "near": [
-    "home"
+    "sun-go-hotel"
    ],
    "note": "È dentro una vecchia chiesa. 5 minuti dall'hotel, su 44th Street.",
    "rating": {
@@ -1696,7 +2141,7 @@ export default {
     ]
    },
    "near": [
-    "home"
+    "sun-go-hotel"
    ],
    "note": "Non è cucina italiana, è un'altra cosa: piatti enormi da dividere. Prenotare la domenica sera.",
    "rating": {
@@ -1726,7 +2171,7 @@ export default {
     ]
    },
    "near": [
-    "home"
+    "sun-go-hotel"
    ],
    "note": "Veloce: in 15 minuti avete cenato. 3 minuti dall'hotel.",
    "rating": {
@@ -1752,7 +2197,7 @@ export default {
     -73.9841
    ],
    "near": [
-    "home"
+    "sun-go-hotel"
    ],
    "note": "113 St Marks Place, East Village, tra First Avenue e Avenue A. Dall'hotel servono circa 25 minuti in metro. Orari non chiari: una fonte dice aperto dalle 17, un'altra da mezzogiorno, controllate prima di partire. Il bar PDT dietro la cabina è un cocktail bar di solito su prenotazione: non ho verificato se ammette bambini, quindi qui il gioco è la cabina, non il bar.",
    "buzz": "Hot dog con tante farciture e tater tots molto lodate; locale piccolo e stretto, con vecchi videogiochi.",
@@ -1778,7 +2223,7 @@ export default {
     ]
    },
    "near": [
-    "home"
+    "sun-go-hotel"
    ],
    "note": "Non prende prenotazioni: c'è quasi sempre fila. Broadway angolo 51st Street, 12 minuti dall'hotel.",
    "rating": {
@@ -1805,7 +2250,7 @@ export default {
    ],
    "hours": {},
    "near": [
-    "home"
+    "sun-go-hotel"
    ],
    "note": "Ottava Avenue angolo 44th Street, 4 minuti dall'hotel.",
    "rating": {
@@ -1828,7 +2273,7 @@ export default {
    ],
    "hours": {},
    "near": [
-    "home"
+    "sun-go-hotel"
    ],
    "note": "Broadway angolo 40th Street, 3 minuti dall'hotel: la cena più veloce se sono crollati.",
    "rating": {
@@ -1837,6 +2282,189 @@ export default {
     "source": "Google"
    },
    "buzz": "Tranci sottili e caldi, fila spesso lunga ma rapida; pochi posti, niente bagno: è da asporto."
+  },
+  {
+   "id": "sun-foodgallery",
+   "name": "Food Gallery 32",
+   "type": "food court coreano",
+   "category": "cena",
+   "order": "Kimbap (rotolo di riso), bibimbap, ravioli coreani, pollo fritto coreano: ognuno sceglie il suo banco.",
+   "price": "$50–70 in 4",
+   "pos": [
+    40.74771,
+    -73.98623
+   ],
+   "hours": {
+    "6": [
+     [
+      "11:00",
+      "23:00"
+     ]
+    ]
+   },
+   "near": [
+    "sun-macys"
+   ],
+   "note": "11 West 32nd Street, su più piani. Si ordina ai banchi e ci si siede insieme ai tavoli comuni.",
+   "rating": {
+    "stars": 4.4,
+    "count": 3203,
+    "source": "Google"
+   },
+   "buzz": "Tanti banchi diversi a prezzi contenuti, ognuno sceglie il suo; affollato, rumoroso, trovare posto è difficile.",
+   "img": {
+    "src": "img/food-sat-foodgallery.webp",
+    "credit": "Nightscream, CC BY 3.0, via Wikimedia Commons"
+   }
+  },
+  {
+   "id": "sun-chodanggol",
+   "name": "Cho Dang Gol",
+   "type": "tofu fatto in casa",
+   "category": "cena",
+   "order": "Zuppa di tofu fatto da loro, pancake ai frutti di mare, e il pentolone di ravioli da dividere.",
+   "price": "$80–100 in 4",
+   "pos": [
+    40.75017,
+    -73.98634
+   ],
+   "hours": {
+    "6": [
+     [
+      "12:00",
+      "21:30"
+     ]
+    ]
+   },
+   "near": [
+    "sun-macys"
+   ],
+   "note": "55 West 35th Street, a 3 minuti da Macy's. Segnalato dalla guida Michelin per il rapporto qualità prezzo: il sabato sera c'è attesa.",
+   "rating": {
+    "stars": 4.6,
+    "count": 3291,
+    "source": "Google"
+   },
+   "buzz": "Tofu fatto in casa e porzioni generose; nelle ore di punta mezz'ora di coda, avvisi via SMS."
+  },
+  {
+   "id": "sun-bcd",
+   "name": "BCD Tofu House",
+   "type": "zuppa di tofu coreana",
+   "category": "cena",
+   "order": "Soondubu (zuppa di tofu morbido): una non piccante per i bambini, piccante per i grandi; e un piatto di galbi (costine dolci) da dividere.",
+   "price": "$90–110 in 4",
+   "pos": [
+    40.74751,
+    -73.98606
+   ],
+   "hours": {
+    "6": [
+     [
+      "10:30",
+      "23:59"
+     ]
+    ]
+   },
+   "near": [
+    "sun-macys"
+   ],
+   "note": "5 West 32nd Street. Aperto fino a notte fonda il sabato. Arrivano gratis i banchan e un pesce fritto piccolo.",
+   "rating": {
+    "stars": 4.3,
+    "count": 5029,
+    "source": "Google"
+   },
+   "buzz": "Zuppa di tofu abbondante con piccante a scelta, tanti contorni gratis; coda all'ora di cena: arrivate presto."
+  },
+  {
+   "id": "sun-woorijip",
+   "name": "Woorijip",
+   "type": "cucina casalinga coreana",
+   "category": "cena",
+   "order": "Vaschette già pronte da prendere al banco: kimbap, pancake di verdure, pollo dolce, japchae (spaghetti di patata dolce).",
+   "price": "$40–60 in 4",
+   "pos": [
+    40.74744,
+    -73.98645
+   ],
+   "hours": {
+    "6": [
+     [
+      "10:00",
+      "22:00"
+     ]
+    ]
+   },
+   "near": [
+    "sun-macys"
+   ],
+   "note": "12 West 32nd Street. Si paga alla cassa e si mangia ai tavolini: il più veloce dell'isolato.",
+   "rating": {
+    "stars": 4.5,
+    "count": 3119,
+    "source": "Google"
+   },
+   "buzz": "Piatti casalinghi già pronti, economici e freschi, microonde a disposizione; all'ora di cena posti a sedere scarsi."
+  },
+  {
+   "id": "sun-winter-village",
+   "name": "Casette del Winter Village",
+   "type": "mercatino di Natale",
+   "category": "snack",
+   "order": "Cioccolata calda densa, crêpe, dumpling e churros: girate le casette e scegliete.",
+   "price": "$30–50 in 4",
+   "pos": [
+    40.75407,
+    -73.98425
+   ],
+   "hours": {
+    "6": [
+     [
+      "10:00",
+      "20:00"
+     ]
+    ]
+   },
+   "near": [
+    "sun-nypl",
+    "sun-go-hotel"
+   ],
+   "note": "Circa 180 casette intorno alla pista.",
+   "rating": {
+    "stars": 4.6,
+    "count": 2122,
+    "source": "Google"
+   },
+   "buzz": "Casette belle da girare, cibo e bevande cari; a dicembre e nei weekend la folla rende difficile muoversi.",
+   "img": {
+    "src": "img/food-sat-winter-village.webp",
+    "credit": "Beyond My Ken, CC BY-SA 4.0, via Wikimedia Commons"
+   }
+  },
+  {
+   "id": "sun-ladym",
+   "name": "Lady M",
+   "type": "torte a strati",
+   "category": "snack",
+   "order": "La fetta di Mille Crêpes, venti crêpe sottili con la crema: due fette per quattro.",
+   "price": "$30–45 in 4",
+   "pos": [
+    40.75278,
+    -73.98362
+   ],
+   "hours": {},
+   "near": [
+    "sun-nypl",
+    "sun-go-hotel"
+   ],
+   "note": "36 West 40th Street, di fronte al lato sud di Bryant Park.",
+   "rating": {
+    "stars": 4.1,
+    "count": 1264,
+    "source": "Google"
+   },
+   "buzz": "Mille crêpes delicate e poco dolci; una fetta supera i 10 dollari, locale piccolo con pochi posti."
   }
  ],
  "missions": [
@@ -1868,6 +2496,56 @@ export default {
     "credit": "Cynthia Fascenelli Kirkeby, CC BY-SA 3.0, via Wikimedia Commons"
    },
    "parentHint": "Fiaccola nella mano destra, alzata. Nella sinistra una tavoletta con la data dell'indipendenza americana scritta in numeri romani. La Statua compare a destra circa 10 minuti dopo la partenza da Whitehall."
+  },
+  {
+   "id": "sun-toro",
+   "stopId": "bull",
+   "type": "measure",
+   "title": "Quanto è lungo il toro?",
+   "read": "Vinnie qui. Questo toro di bronzo pesa come tre automobili. Io dico che è lungo come quattro bambini sdraiati in fila. Non ci credete? Decidete insieme un numero di vostri passi, poi uno parte dal muso e l'altro dalla coda, e contate i passi finché vi incontrate. Chi va più vicino, voi o io, si prende il pezzo di chiave.",
+   "roles": [
+    "Parte dal muso e conta i passi",
+    "Parte dalla coda, conta e fa la somma"
+   ],
+   "vinnieBet": "Lungo come quattro bambini sdraiati",
+   "parentHint": "Il toro è lungo circa 4,9 metri: con passi da bambino di 50–60 cm sono 8–10 passi. Quattro bambini sdraiati di 1,30–1,45 m fanno 5,2–5,8 m: Vinnie esagera un po'. C'è spesso coda per le foto: misurate di lato, senza toccare la gente in fila."
+  },
+  {
+   "id": "sun-albero",
+   "stopId": "memorial",
+   "type": "describe",
+   "title": "L'albero che è rimasto",
+   "read": "Qui si parla piano, anche io abbasso la voce. In questa piazza c'è un albero speciale: era qui l'11 settembre 2001, è stato trovato bruciato e con un solo ramo vivo, lo hanno curato e riportato a casa. Lo chiamano l'albero sopravvissuto. Uno di voi legge questo indizio all'altro: è un pero, ha intorno un piccolo recinto basso, e sta tra le due vasche, più vicino a quella sud. Trovatelo insieme senza correre. Quando lo vedete, guardate i rami nuovi e quelli vecchi: sapete distinguerli?",
+   "roles": [
+    "Legge gli indizi e guida",
+    "Cerca l'albero e indica i rami nuovi"
+   ],
+   "parentHint": "Il Survivor Tree è un pero di Callery tra le due vasche, vicino a quella sud, con una piccola recinzione. Si vedono i rami più lisci cresciuti dopo il 2001. Non c'è vincitore da gridare: se lo trovano con calma, vince la squadra. Sui nomi incisi intorno alle vasche a volte c'è una rosa bianca: è il compleanno di quella persona."
+  },
+  {
+   "id": "sun-oculus",
+   "stopId": "sun-pranzo",
+   "type": "describe",
+   "title": "Le costole dell'Oculus",
+   "read": "L'Oculus è bianco e ha tante costole che salgono verso il cielo, come un uccello che apre le ali. Prima di sedervi a mangiare, uno di voi sceglie in segreto un dettaglio in alto, una luce, un cartello o una costola diversa dalle altre, e lo descrive all'altro senza indicarlo. L'altro deve trovarlo con il dito. Poi vi scambiate. Vinnie scommette che vi perdete tra tutte quelle costole.",
+   "roles": [
+    "Sceglie e descrive il dettaglio",
+    "Lo cerca e lo indica"
+   ],
+   "parentHint": "Se mangiate a Brookfield Place invece che all'Oculus, fate la stessa cosa con le palme del Winter Garden. Va bene qualsiasi dettaglio, purché si possa vedere da dove siete."
+  },
+  {
+   "id": "sun-century",
+   "stopId": "century21",
+   "type": "bet",
+   "title": "La firma più economica",
+   "read": "Century 21 è pieno di vestiti e borse firmate con lo sconto. Vinnie scommette che non trovate niente di una marca famosa sotto i 15 dollari. Avete dieci minuti: uno cerca le etichette con il nome della marca, l'altro legge il prezzo sul cartellino. Se trovate una cosa firmata sotto i 15 dollari, il pezzo è vostro. Non serve comprarla!",
+   "roles": [
+    "Cerca la marca famosa sull'etichetta",
+    "Legge il prezzo sul cartellino"
+   ],
+   "vinnieBet": "Niente sotto i 15 dollari",
+   "parentHint": "Calzini, cappelli e piccoli accessori di marca spesso costano meno di 15 dollari, soprattutto al piano degli accessori. Ricordate che al prezzo si aggiunge la tassa di circa il 9%: ma per la scommessa vale il cartellino."
   },
   {
    "id": "sun-go-tunnel",
@@ -1913,16 +2591,79 @@ export default {
   },
   {
    "id": "sun-go-lingue",
-   "stopId": "home",
+   "stopId": "sun-go-macys",
    "type": "bet",
    "title": "Tre lingue in carrozza",
-   "read": "Ultima sfida della domenica. In metro i cartelli e le pubblicità sono scritti in tante lingue, perché a New York si parlano centinaia di lingue. Vinnie scommette che prima di Times Square non trovate tre lingue diverse scritte nella vostra carrozza. Uno cerca, l'altro controlla e tiene il conto.",
+   "read": "In metro i cartelli e le pubblicità sono scritti in tante lingue, perché a New York si parlano centinaia di lingue. Vinnie scommette che prima di Herald Square non trovate tre lingue diverse scritte nella vostra carrozza. Uno cerca, l'altro controlla e tiene il conto.",
    "roles": [
     "Cerca le scritte",
     "Controlla che siano lingue diverse e tiene il conto"
    ],
-   "vinnieBet": "Meno di 3 lingue prima di Times Square",
+   "vinnieBet": "Meno di 3 lingue prima di Herald Square",
    "parentHint": "Gli avvisi della metro sono spesso in inglese e spagnolo; nelle pubblicità si trovano spesso cinese, coreano, russo, bengalese. Valgono tutte, anche se non sapete leggerle: basta riconoscere che è un'altra scrittura o lingua."
+  },
+  {
+   "id": "sun-vetrine",
+   "stopId": "sun-macys",
+   "type": "describe",
+   "title": "La vetrina segreta",
+   "read": "Le vetrine di Natale di Macy's raccontano una storia. Uno di voi sceglie in segreto una vetrina e la descrive all'altro con tre cose: un colore, un personaggio o un animale, e una cosa che si muove. L'altro deve trovare quella vetrina. Poi vi scambiate. Se una volta su due sbagliate, il pezzo lo tengo io, e mi metto in vetrina anche io.",
+   "roles": [
+    "Sceglie la vetrina e dice tre cose",
+    "Cerca la vetrina giusta"
+   ],
+   "parentHint": "Le vetrine sono su Broadway e sulla 34ª. Se c'è tanta gente, fate la sfida sulle vetrine più vicine."
+  },
+  {
+   "id": "sun-piani",
+   "stopId": "sun-empire",
+   "type": "bet",
+   "title": "Quanti piani?",
+   "read": "Guardate su, fino in cima. Vinnie dice che l'Empire State ha 50 piani, non uno di più: io ci sono volato sopra e li ho contati. Ognuno dice un numero ad alta voce, poi il genitore dice quello vero. Chi va più vicino tra voi due e me si prende il pezzo. E già che ci siete: di che colore è la cima stasera?",
+   "roles": [
+    "Dice un numero di piani",
+    "Dice un altro numero e il colore della cima"
+   ],
+   "vinnieBet": "50 piani",
+   "parentHint": "L'Empire State ha 102 piani (86 fino al primo osservatorio, 102 fino al secondo). Il colore della cima cambia ogni sera: non c'è un colore giusto, vale quello che vedete."
+  },
+  {
+   "id": "sun-taxi",
+   "stopId": "sun-fifth",
+   "type": "bet",
+   "title": "Gialli contro neri",
+   "read": "Sulla Quinta passano tantissime auto. Al prossimo semaforo rosso fermatevi un minuto: uno conta i taxi gialli, l'altro le auto nere. Vinnie scommette che vincono le auto nere. Se vincono i taxi gialli, il pezzo è vostro.",
+   "roles": [
+    "Conta i taxi gialli",
+    "Conta le auto nere"
+   ],
+   "vinnieBet": "Vincono le auto nere",
+   "parentHint": "A Manhattan sono tantissime le auto nere con autista (Uber e simili). Fate contare per un minuto esatto con il cronometro del telefono. Chi vince lo decidono i numeri."
+  },
+  {
+   "id": "sun-leoni",
+   "stopId": "sun-nypl",
+   "type": "describe",
+   "title": "Pazienza e Fortezza",
+   "read": "I due leoni della biblioteca si chiamano Pazienza e Fortezza. Ma quale è quale? Vinnie non lo ricorda mai. Indizio: Pazienza guarda verso la 40ª strada, Fortezza verso la 42ª. Uno di voi trova un cartello con il nome della via più vicina, l'altro decide quale leone è Pazienza. Poi mettetevi davanti a Pazienza e fate la vostra faccia più paziente, e davanti a Fortezza la faccia più forte. Foto!",
+   "roles": [
+    "Cerca il cartello della via",
+    "Decide quale leone è Pazienza"
+   ],
+   "parentHint": "Pazienza è il leone sud, a sinistra guardando la porta della biblioteca, verso la 40ª. Fortezza è il leone nord, a destra, verso la 42ª. I cartelli delle vie sono agli angoli della Quinta."
+  },
+  {
+   "id": "sun-cappelli",
+   "stopId": "sun-go-hotel",
+   "type": "bet",
+   "title": "Cappelli da Babbo Natale",
+   "read": "Ultima sfida della domenica. Da qui all'hotel Vinnie scommette che non trovate cinque persone con il cappello rosso di Babbo Natale o con le corna da renna. Uno conta i cappelli rossi, l'altro le corna. Sommate. Se arrivate a cinque prima della porta dell'hotel, il pezzo è vostro.",
+   "roles": [
+    "Conta i cappelli rossi",
+    "Conta le corna da renna"
+   ],
+   "vinnieBet": "Meno di cinque prima dell'hotel",
+   "parentHint": "A fine novembre intorno a Bryant Park e Times Square se ne vedono parecchi, anche sui venditori. Valgono anche i cerchietti e i maglioni con le renne, se volete essere generosi."
   },
   {
    "id": "sun-bet-targhe",

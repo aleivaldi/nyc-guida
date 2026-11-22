@@ -1,7 +1,7 @@
 import { h, mount } from './dom.js';
 import { ctx } from './ctx.js';
-import { setLine, sign, missionFor, nearKind, duration, DAY_NAME } from './common.js';
-import { directionsButton } from './maps.js';
+import { setLine, sign, missionFor, nearKind, duration, DAY_NAME, nextStop, prevStop, nextCard } from './common.js';
+import { mapsPair } from './maps.js';
 import { gameState, kidsChoose } from '../core/game.js';
 import { vinnieIcon } from './now.js';
 import { resumePath } from './steps.js';
@@ -34,9 +34,14 @@ export function renderStop(dayId, stopId) {
     return chip;
   });
 
-  mount(h('article', { class: 'stack' },
+  const prev = prevStop(day, stop);
+  const next = nextStop(day, stop);
+  const page = h('article', { class: 'stack' },
     stop.cover ? h('img', { class: 'cover', src: stop.cover.img, alt: '' }) : null,
-    h('a', { class: 'back', href: `#/day/${dayId}` }, `${DAY_NAME[dayId]}, tutte le tappe`),
+    h('div', { class: 'stop-nav' },
+      prev ? h('a', { class: 'btn btn-quiet', href: `#/stop/${dayId}/${prev.id}`, 'aria-label': `Tappa precedente: ${prev.name}` }, '‹ Prima') : h('span'),
+      h('a', { class: 'back', href: `#/day/${dayId}` }, `${DAY_NAME[dayId]}, tutte`),
+      next ? h('a', { class: 'btn btn-quiet', href: `#/stop/${dayId}/${next.id}`, 'aria-label': `Tappa successiva: ${next.name}` }, 'Dopo ›') : h('span')),
     sign(dayId, stop, { link: false }),
     h('div', { class: 'facts' },
       h('span', {}, stop.cost),
@@ -56,10 +61,25 @@ export function renderStop(dayId, stopId) {
       stop.bagni ? more('Bagni', h('p', {}, stop.bagni.where), h('ul', { class: 'tips' }, h('li', {}, h('b', {}, 'Costo: '), stop.bagni.cost), h('li', {}, h('b', {}, 'Pulizia: '), stop.bagni.clean))) : null,
       stop.nearby?.length ? more('Qui intorno',
         h('ul', { class: 'tips' }, stop.nearby.map((n) => h('li', {}, h('b', { style: { display: 'block', fontSize: '14px', color: 'var(--ink-2)' } }, nearKind(n.kind)), n.text)))) : null),
-    h('div', { class: 'btn-row' },
-      h('a', { class: 'btn', href: `#/food/${dayId}/${stopId}` }, 'Mangiare'),
-      directionsButton(stop.pos)),
-  ));
+    h('div', {}, h('p', { class: 'label' }, stop.kind === 'move' ? 'Punto di partenza' : 'Come arrivare qui'), mapsPair(stop.pos, 'walking')),
+    h('a', { class: 'btn', href: `#/food/${dayId}/${stopId}` }, 'Mangiare qui vicino'),
+    nextCard(dayId, day, stop),
+  );
+  swipe(page, () => next && (location.hash = `#/stop/${dayId}/${next.id}`), () => prev && (location.hash = `#/stop/${dayId}/${prev.id}`));
+  mount(page);
+}
+
+function swipe(el, onLeft, onRight) {
+  let x0 = null;
+  let y0 = null;
+  el.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  el.addEventListener('touchend', (e) => {
+    if (x0 == null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    const dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 90 && Math.abs(dx) > Math.abs(dy) * 2) (dx < 0 ? onLeft : onRight)();
+    x0 = null;
+  });
 }
 
 function choiceBanner(day, stop) {

@@ -2472,6 +2472,19 @@ export default {
    "parentHint": "In basso, al centro del quadro: il paesino. Il campanile appuntito è la cosa più alta tra i tetti, a destra del grande cipresso nero che sale sul lato sinistro."
   },
   {
+   "id": "mon-hamburger",
+   "stopId": "mon-pranzo",
+   "type": "bet",
+   "title": "Il conto dei carretti",
+   "read": "Qui intorno ci sono i carretti che vendono cibo per strada, con il fumo che sale. Prima di sedervi, Vinnie scommette che tra voi e il ristorante non incontrate tre carretti. Uno conta i carretti del cibo, l'altro quelli che vendono altro, come bibite, noccioline o souvenir. Sommate: se arrivate a tre, il pezzo è vostro.",
+   "roles": [
+    "Conta i carretti del cibo",
+    "Conta gli altri carretti"
+   ],
+   "vinnieBet": "Meno di tre carretti",
+   "parentHint": "Intorno al MoMA e sulla Sesta ce ne sono di solito parecchi, soprattutto di cibo halal e noccioline caramellate."
+  },
+  {
    "id": "mon-bet-atlas",
    "stopId": "mon-go-gct",
    "type": "bet",
@@ -2513,6 +2526,31 @@ export default {
    },
    "vinnieBet": "Che vi mettete dal lato sbagliato",
    "parentHint": "Il Chrysler è a est, verso l'East River, a meno di 300 metri. Si vede già dalla prima stanza a specchi al piano 91 (Transcendence 1): mettetevi contro le vetrate del lato est. La foto è verticale e il Chrysler occupa quasi tutta l'altezza."
+  },
+  {
+   "id": "mon-pista",
+   "stopId": "mon-bryant",
+   "type": "bet",
+   "title": "Pattinatori al contrario",
+   "read": "Guardate la pista: tutti i pattinatori girano in tondo. Vinnie scommette che girano nello stesso senso delle lancette dell'orologio. Uno guarda una pattinatrice, l'altro un pattinatore, e seguiteli con il dito per un giro intero. Poi dite insieme: come le lancette o al contrario?",
+   "roles": [
+    "Segue con il dito una pattinatrice",
+    "Segue con il dito un pattinatore"
+   ],
+   "vinnieBet": "Come le lancette dell'orologio",
+   "parentHint": "Nelle piste pubbliche di solito si gira in senso antiorario, cioè al contrario delle lancette. Se stasera girano nell'altro senso, vince Vinnie: decidono i vostri occhi."
+  },
+  {
+   "id": "mon-vetrina-saks",
+   "stopId": "mon-saks",
+   "type": "describe",
+   "title": "New York in vetrina",
+   "read": "Le vetrine di Saks sono come scatole magiche. Uno di voi sceglie in segreto una vetrina e ci cerca un posto di New York che avete visto in questi giorni: un ponte, un parco, un grattacielo, un taxi. Lo descrive senza dire il nome, l'altro deve indovinare il posto e la vetrina. Una volta a testa. Vinnie scommette che non trovate niente che avete già visto.",
+   "roles": [
+    "Sceglie la vetrina e descrive il posto",
+    "Indovina il posto e la vetrina"
+   ],
+   "parentHint": "Se le vetrine non mostrano posti di New York, va bene qualsiasi cosa che i bambini hanno visto durante il viaggio: un animale del museo, una luce, un colore."
   },
   {
    "id": "mon-go-strade",

@@ -38,3 +38,9 @@ function chooser(pos, mode) {
   sheet.addEventListener('click', (e) => { if (e.target === sheet) sheet.remove(); });
   document.body.append(sheet);
 }
+
+export function mapsPair(pos, mode = 'walking') {
+  return h('div', { class: 'btn-row maps-pair' },
+    h('a', { class: 'btn btn-primary', href: directionsUrl(pos, mode, 'google'), target: '_blank', rel: 'noopener' }, 'Google Maps'),
+    h('a', { class: 'btn', href: directionsUrl(pos, mode, 'apple'), target: '_blank', rel: 'noopener' }, 'Mappe Apple'));
+}
