@@ -2498,6 +2498,96 @@ export default {
    "parentHint": "Fiaccola nella mano destra, alzata. Nella sinistra una tavoletta con la data dell'indipendenza americana scritta in numeri romani. La Statua compare a destra circa 10 minuti dopo la partenza da Whitehall."
   },
   {
+   "id": "sun-f-torcia",
+   "stopId": "ferry",
+   "type": "bet",
+   "title": "Cosa tiene in mano?",
+   "read": "Vinnie qui, appollaiato sul parapetto. Io la signora verde la conosco bene: nella mano alzata tiene un cono gelato e nell'altra un telefono. Non ci credete? Quando la statua è vicina, uno guarda la mano alzata e l'altro la mano bassa. Poi dite insieme cosa tiene davvero. Se avete ragione voi, il pezzo è vostro.",
+   "roles": [
+    "Guarda la mano alzata",
+    "Guarda la mano abbassata"
+   ],
+   "vinnieBet": "Un cono gelato e un telefono",
+   "parentHint": "Nella mano destra alzata tiene una fiaccola; nella sinistra una tavola con la data dell'indipendenza americana, 4 luglio 1776, scritta in numeri romani. Ai piedi ci sono catene spezzate, ma dal traghetto non si vedono."
+  },
+  {
+   "id": "sun-f-raggi",
+   "stopId": "ferry",
+   "type": "bet",
+   "title": "I raggi della corona",
+   "read": "La corona della statua ha delle punte che sembrano raggi di sole. Vinnie scommette che sono dieci, come le dita delle mani. Uno conta le punte, l'altro controlla con il telefono, ingrandendo la foto. Se non sono dieci, il pezzo è vostro.",
+   "roles": [
+    "Conta le punte della corona",
+    "Fa una foto e la ingrandisce per controllare"
+   ],
+   "vinnieBet": "Dieci punte",
+   "parentHint": "Le punte della corona sono sette: secondo la spiegazione ufficiale rappresentano i sette mari e i sette continenti. Con lo zoom del telefono si contano bene."
+  },
+  {
+   "id": "sun-f-gabbiani",
+   "stopId": "ferry",
+   "type": "bet",
+   "title": "Gabbiani contro piccioni",
+   "read": "Io sono un piccione, ma qui sull'acqua comandano i gabbiani, quei prepotenti. Vinnie scommette che durante la traversata non vedete più di tre gabbiani che volano dietro al traghetto. Uno guarda a sinistra della scia, l'altro a destra. Sommate. Se sono più di tre, avete vinto voi.",
+   "roles": [
+    "Conta i gabbiani a sinistra",
+    "Conta i gabbiani a destra"
+   ],
+   "vinnieBet": "Tre gabbiani al massimo",
+   "parentHint": "Dietro ai traghetti spesso volano gabbiani, soprattutto vicino ai terminal. Guardate dal ponte posteriore. Contate per tutta l'andata."
+  },
+  {
+   "id": "sun-f-barche",
+   "stopId": "ferry",
+   "type": "bet",
+   "title": "Quante barche?",
+   "read": "Il porto di New York è un'autostrada d'acqua. Vinnie scommette che durante l'andata non vedete dieci barche diverse. Uno conta quelle grandi, come navi e altri traghetti, l'altro quelle piccole, come motoscafi e rimorchiatori. Sommate a St. George.",
+   "roles": [
+    "Conta le barche grandi",
+    "Conta le barche piccole"
+   ],
+   "vinnieBet": "Meno di dieci barche",
+   "parentHint": "Si vedono di solito traghetti arancioni, battelli turistici, rimorchiatori e chiatte. Valgono tutte, anche quelle ferme in lontananza."
+  },
+  {
+   "id": "sun-f-nome",
+   "stopId": "ferry",
+   "type": "bet",
+   "title": "Il nome del traghetto",
+   "read": "Ogni traghetto arancione ha un nome scritto sulla fiancata e dentro, vicino alle scale. Vinnie scommette che il vostro si chiama Vinnie. Uno cerca il nome scritto, l'altro lo legge ad alta voce lettera per lettera. Se non si chiama Vinnie, il pezzo è vostro, e la prossima volta lo chiamano come me.",
+   "roles": [
+    "Cerca il nome del traghetto",
+    "Lo legge lettera per lettera"
+   ],
+   "vinnieBet": "Si chiama Vinnie",
+   "parentHint": "I traghetti portano nomi di persone e luoghi di Staten Island. Il nome è scritto sulla fiancata e spesso su cartelli all'interno. Vince sempre la squadra, se lo trova."
+  },
+  {
+   "id": "sun-f-minuti",
+   "stopId": "ferry",
+   "type": "measure",
+   "title": "Quanto dura il viaggio?",
+   "read": "Prima che il traghetto si stacchi dal molo, decidete insieme quanti minuti ci mette ad arrivare a Staten Island. Vinnie dice quaranta. Uno fa partire il cronometro sul telefono quando il traghetto si muove, l'altro dice stop quando tocca il molo dall'altra parte. Chi va più vicino vince.",
+   "roles": [
+    "Fa partire il cronometro",
+    "Dice stop all'arrivo"
+   ],
+   "vinnieBet": "Quaranta minuti",
+   "parentHint": "La traversata dura circa 25 minuti, secondo il Comune. Il cronometro decide."
+  },
+  {
+   "id": "sun-f-skyline",
+   "stopId": "ferry",
+   "type": "describe",
+   "title": "Il grattacielo più alto",
+   "read": "Al ritorno, lo skyline di Manhattan vi viene incontro. Uno di voi sceglie in segreto un grattacielo e lo descrive all'altro: è alto o basso, ha la punta, di che colore è, è a destra o a sinistra del più alto. L'altro lo indica. Poi vi scambiate. Ultima domanda per tutti e due: qual è il più alto di tutti?",
+   "roles": [
+    "Sceglie e descrive un grattacielo",
+    "Lo trova e lo indica"
+   ],
+   "parentHint": "Il più alto è il One World Trade Center, con l'antenna bianca in cima: 1.776 piedi, cioè 541 metri, come l'anno dell'indipendenza americana. Sedete sul lato verso Manhattan al ritorno."
+  },
+  {
    "id": "sun-toro",
    "stopId": "bull",
    "type": "measure",
@@ -2509,6 +2599,32 @@ export default {
    ],
    "vinnieBet": "Lungo come quattro bambini sdraiati",
    "parentHint": "Il toro è lungo circa 4,9 metri: con passi da bambino di 50–60 cm sono 8–10 passi. Quattro bambini sdraiati di 1,30–1,45 m fanno 5,2–5,8 m: Vinnie esagera un po'. C'è spesso coda per le foto: misurate di lato, senza toccare la gente in fila."
+  },
+  {
+   "id": "sun-t-bambina",
+   "stopId": "bull",
+   "type": "bet",
+   "title": "La bambina senza paura",
+   "read": "Una volta davanti al toro c'era una statua di bambina con le mani sui fianchi che lo fissava. Poi l'hanno spostata. Vinnie scommette che non la trovate: è vicino al palazzo della Borsa, quello con le colonne e la bandiera gigante, a cinque minuti da qui. Uno legge la mappa, l'altro guida. Se la trovate, fatele la stessa posa.",
+   "roles": [
+    "Legge la mappa sul telefono",
+    "Guida e cerca la statua"
+   ],
+   "vinnieBet": "Non la trovate",
+   "parentHint": "La Fearless Girl dal 2018 è davanti alla Borsa di New York, all'angolo di Broad Street e Wall Street, circa 5–7 minuti a piedi. Fa una deviazione: fatela solo se siete in orario."
+  },
+  {
+   "id": "sun-t-parco",
+   "stopId": "bull",
+   "type": "bet",
+   "title": "Il parco più vecchio",
+   "read": "Dietro il toro c'è un piccolo parco con un recinto di ferro nero. Vinnie dice che è nuovo, l'hanno fatto l'anno scorso. Uno conta le punte del recinto su un lato corto, l'altro indovina quanti anni ha il parco: più o meno di cento? Se ha più di cento anni, vince la squadra.",
+   "roles": [
+    "Conta le punte su un lato",
+    "Indovina se ha più o meno di cento anni"
+   ],
+   "vinnieBet": "Il parco è nuovo",
+   "parentHint": "È Bowling Green, il parco pubblico più antico di New York, del 1733. Il recinto di ferro è del 1771: durante la rivoluzione americana tagliarono le corone che stavano in cima alle punte. Si vedono ancora i segni."
   },
   {
    "id": "sun-albero",
@@ -2523,6 +2639,32 @@ export default {
    "parentHint": "Il Survivor Tree è un pero di Callery tra le due vasche, vicino a quella sud, con una piccola recinzione. Si vedono i rami più lisci cresciuti dopo il 2001. Non c'è vincitore da gridare: se lo trovano con calma, vince la squadra. Sui nomi incisi intorno alle vasche a volte c'è una rosa bianca: è il compleanno di quella persona."
   },
   {
+   "id": "sun-m-alberi",
+   "stopId": "memorial",
+   "type": "bet",
+   "title": "Il bosco della piazza",
+   "read": "La piazza del Memoriale è piena di alberi tutti uguali, piantati in file. Senza fare rumore, guardate intorno. Vinnie dice che sono cinquanta. Uno conta gli alberi di una fila, l'altro conta quante file ci sono. Moltiplicate con il genitore, o indovinate: sono più o meno di cento?",
+   "roles": [
+    "Conta gli alberi di una fila",
+    "Conta le file"
+   ],
+   "vinnieBet": "Cinquanta alberi",
+   "parentHint": "Sono circa 400 querce bianche di palude. Non serve contarle tutte: se dicono più di cento, vince la squadra. Parlate a voce bassa."
+  },
+  {
+   "id": "sun-m-lato",
+   "stopId": "memorial",
+   "type": "measure",
+   "title": "Il lato della vasca",
+   "read": "Ogni vasca è un quadrato enorme dove stava una torre. Senza correre, camminate lungo un lato, da un angolo all'altro, contando i passi a bassa voce: uno di voi conta, l'altro cammina accanto e controlla. Vinnie dice che sono venti passi. Chi va più vicino tra voi e Vinnie vince.",
+   "roles": [
+    "Conta i passi a bassa voce",
+    "Cammina accanto e controlla"
+   ],
+   "vinnieBet": "Venti passi",
+   "parentHint": "Ogni vasca ha il lato di circa 60 metri: per un bambino sono circa 100–120 passi. Camminate piano, lungo il parapetto con i nomi, senza appoggiarvi ai nomi."
+  },
+  {
    "id": "sun-oculus",
    "stopId": "sun-pranzo",
    "type": "describe",
@@ -2533,6 +2675,32 @@ export default {
     "Lo cerca e lo indica"
    ],
    "parentHint": "Se mangiate a Brookfield Place invece che all'Oculus, fate la stessa cosa con le palme del Winter Garden. Va bene qualsiasi dettaglio, purché si possa vedere da dove siete."
+  },
+  {
+   "id": "sun-p-palme",
+   "stopId": "sun-pranzo",
+   "type": "bet",
+   "title": "Le palme sotto il vetro",
+   "read": "A Brookfield Place c'è una grande serra di vetro con le palme vere, in mezzo a New York, a novembre. Vinnie scommette che le palme sono meno di dieci. Uno le conta da un lato, l'altro dall'altro. Sommate. Se sono dieci o più, il pezzo è vostro.",
+   "roles": [
+    "Conta le palme da un lato",
+    "Conta le palme dall'altro lato"
+   ],
+   "vinnieBet": "Meno di dieci palme",
+   "parentHint": "Nel Winter Garden di Brookfield Place ci sono sedici palme, se non le hanno cambiate. Se mangiate all'Oculus, fate questa sfida passando dal corridoio sotterraneo verso Brookfield Place."
+  },
+  {
+   "id": "sun-p-conto",
+   "stopId": "sun-pranzo",
+   "type": "bet",
+   "title": "Indovina il conto",
+   "read": "Prima di pagare, ognuno di voi indovina quanto costa tutto il pranzo, in dollari. Vinnie dice cento dollari tondi. Il genitore guarda lo scontrino e dice il prezzo vero. Chi va più vicino tra voi due e Vinnie si prende il pezzo.",
+   "roles": [
+    "Indovina il conto",
+    "Indovina il conto con un altro numero"
+   ],
+   "vinnieBet": "Cento dollari",
+   "parentHint": "A New York ai prezzi si aggiungono circa il 9% di tasse e, al tavolo, la mancia del 18–20%. Usate il totale finale."
   },
   {
    "id": "sun-century",
@@ -2548,6 +2716,31 @@ export default {
    "parentHint": "Calzini, cappelli e piccoli accessori di marca spesso costano meno di 15 dollari, soprattutto al piano degli accessori. Ricordate che al prezzo si aggiunge la tassa di circa il 9%: ma per la scommessa vale il cartellino."
   },
   {
+   "id": "sun-c-ny",
+   "stopId": "century21",
+   "type": "bet",
+   "title": "Il cappello con NY",
+   "read": "Vinnie scommette che in tutto il negozio non trovate un cappello con scritto NY. Uno cerca tra i cappelli, l'altro tra le magliette e le felpe. Il primo che trova la scritta NY chiama l'altro. Avete dieci minuti.",
+   "roles": [
+    "Cerca tra i cappelli",
+    "Cerca tra magliette e felpe"
+   ],
+   "vinnieBet": "Nessun cappello NY",
+   "parentHint": "I cappelli NY degli Yankees si trovano quasi ovunque a New York. Se in questo negozio non ci sono, vale anche una maglietta con la scritta New York."
+  },
+  {
+   "id": "sun-c-strano",
+   "stopId": "century21",
+   "type": "describe",
+   "title": "La cosa più strana",
+   "read": "In un negozio così grande c'è di tutto. Ognuno di voi trova in segreto la cosa più strana del negozio. Poi la descrive all'altro senza dire cos'è: colore, forma, a cosa serve. L'altro deve indovinare. Se indovinate tutti e due, il pezzo è vostro.",
+   "roles": [
+    "Trova e descrive la cosa strana",
+    "Indovina cos'è"
+   ],
+   "parentHint": "Restate insieme ai genitori: concordate un punto di ritrovo, per esempio le scale mobili."
+  },
+  {
    "id": "sun-go-tunnel",
    "stopId": "sun-go-dumbo",
    "type": "bet",
@@ -2559,6 +2752,19 @@ export default {
    ],
    "vinnieBet": "5 minuti",
    "parentHint": "Tra Fulton St e High St è una sola tratta, quasi tutta sotto l'East River: di solito dura intorno a 2–3 minuti. Vince chi si avvicina di più al tempo misurato."
+  },
+  {
+   "id": "sun-d-libri",
+   "stopId": "sun-go-dumbo",
+   "type": "bet",
+   "title": "Libri contro telefoni",
+   "read": "In metro tutti guardano qualcosa. Vinnie scommette che nella vostra carrozza nessuno legge un libro di carta. Uno conta chi legge un libro o un giornale, l'altro chi guarda il telefono. Se trovate almeno un libro, il pezzo è vostro.",
+   "roles": [
+    "Conta libri e giornali",
+    "Conta i telefoni"
+   ],
+   "vinnieBet": "Nessun libro",
+   "parentHint": "Guardate senza fissare le persone. Valgono anche i lettori di libri digitali, se volete essere generosi."
   },
   {
    "id": "sun-arco",
@@ -2577,6 +2783,44 @@ export default {
    "parentHint": "Washington Street all'incrocio con Water Street, guardando verso il fiume. Il grattacielo nell'arco è l'Empire State Building, sotto l'arco del pilone del Manhattan Bridge. Restate sul bordo del marciapiede: le auto passano."
   },
   {
+   "id": "sun-du-giostra",
+   "stopId": "dumbo",
+   "type": "bet",
+   "title": "I cavalli della giostra",
+   "read": "Vicino al fiume c'è una giostra antica chiusa in una scatola di vetro: si chiama Jane's Carousel ed è del 1922. Vinnie scommette che ha venti cavalli. Uno conta i cavalli, l'altro conta le carrozze. Se i cavalli sono più di venti, il pezzo è vostro.",
+   "roles": [
+    "Conta i cavalli",
+    "Conta le carrozze"
+   ],
+   "vinnieBet": "Venti cavalli",
+   "parentHint": "La giostra ha 48 cavalli di legno e 2 carrozze. Gli orari d'inverno non li ho verificati: se è chiusa, contate dal vetro. Il giro costa circa $3 a persona, da verificare."
+  },
+  {
+   "id": "sun-du-binari",
+   "stopId": "dumbo",
+   "type": "bet",
+   "title": "I binari senza treni",
+   "read": "Nelle strade di pietra di DUMBO ci sono binari nell'asfalto. Vinnie dice che sono di un tram che passa ancora. Uno cerca un binario, l'altro lo segue con lo sguardo fino a dove finisce. Poi dite insieme: ci passa ancora qualcosa?",
+   "roles": [
+    "Trova un binario",
+    "Lo segue fino alla fine"
+   ],
+   "vinnieBet": "Ci passa ancora un tram",
+   "parentHint": "Sono i binari della vecchia ferrovia del porto, che portava merci ai magazzini di DUMBO. Non passa più niente da decenni."
+  },
+  {
+   "id": "sun-du-ponti",
+   "stopId": "dumbo",
+   "type": "describe",
+   "title": "Due ponti, due colori",
+   "read": "Da qui si vedono due ponti. Uno di voi descrive il ponte di Brooklyn, quello con le torri di pietra; l'altro descrive il ponte di Manhattan, quello di metallo blu. Dite tre differenze a testa. Se arrivate a sei differenze, il pezzo è vostro.",
+   "roles": [
+    "Descrive il ponte di Brooklyn",
+    "Descrive il ponte di Manhattan"
+   ],
+   "parentHint": "Differenze facili: le torri di pietra con gli archi a punta e quelle di metallo; i cavi che si incrociano; sul ponte di Manhattan passano treni della metro; il colore azzurro; l'età: Brooklyn del 1883, Manhattan del 1909."
+  },
+  {
    "id": "sun-lampioni",
    "stopId": "bridge",
    "type": "measure",
@@ -2588,6 +2832,58 @@ export default {
    ],
    "vinnieBet": "100 passi",
    "parentHint": "Fatela nel primo tratto dopo la torre di Brooklyn, tenendo la destra, dove c'è meno gente. La somma dei due conteggi è il numero vero: vince chi aveva detto il numero più vicino, la squadra o Vinnie."
+  },
+  {
+   "id": "sun-b-archi",
+   "stopId": "bridge",
+   "type": "bet",
+   "title": "Gli archi della torre",
+   "read": "Ogni torre del ponte ha degli archi a punta, come una cattedrale. Vinnie scommette che ogni torre ha quattro archi. Quando siete vicini alla prima torre, uno conta gli archi, l'altro controlla dall'altra parte del ponte. Se non sono quattro, il pezzo è vostro.",
+   "roles": [
+    "Conta gli archi della torre",
+    "Controlla dall'altro lato"
+   ],
+   "vinnieBet": "Quattro archi",
+   "parentHint": "Ogni torre ha due grandi archi a punta, da cui passano le corsie. Le torri sono di granito e calcare, non di ferro."
+  },
+  {
+   "id": "sun-b-pietra",
+   "stopId": "bridge",
+   "type": "bet",
+   "title": "Pietra o ferro?",
+   "read": "Vinnie dice che le torri del ponte sono fatte di ferro, come i cavi. Toccate con gli occhi, non con le mani: uno guarda da vicino la torre, l'altro guarda i cavi. Di cosa sono fatti? Ditelo insieme.",
+   "roles": [
+    "Guarda la torre da vicino",
+    "Guarda i cavi"
+   ],
+   "vinnieBet": "Tutto di ferro",
+   "parentHint": "Le torri sono di pietra: granito e calcare. I cavi sono di acciaio, fatti di migliaia di fili. Il ponte è del 1883."
+  },
+  {
+   "id": "sun-b-bandiera",
+   "stopId": "bridge",
+   "type": "bet",
+   "title": "Le bandiere in cima",
+   "read": "In cima alle torri sventola qualcosa. Vinnie scommette che è una bandiera con un piccione sopra. Uno guarda in cima alla prima torre, l'altro in cima alla seconda. Cosa c'è davvero?",
+   "roles": [
+    "Guarda la prima torre",
+    "Guarda la seconda torre"
+   ],
+   "vinnieBet": "Bandiere con il piccione",
+   "parentHint": "Sulle torri di solito sventolano bandiere americane. Se non ci sono, vince comunque chi descrive bene cosa c'è in cima."
+  },
+  {
+   "id": "sun-b-passi",
+   "stopId": "bridge",
+   "type": "measure",
+   "title": "Il passo più lungo",
+   "read": "Vinnie dice che dall'inizio del ponte alla prima torre ci volete trecento passi. Uno conta i passi, l'altro controlla e tiene il conto ogni cento. Chi va più vicino tra voi e Vinnie si prende il pezzo.",
+   "roles": [
+    "Conta i passi",
+    "Tiene il conto ogni cento"
+   ],
+   "vinnieBet": "Trecento passi",
+   "parentHint": "Dalla rampa di Brooklyn alla prima torre sono circa 300–400 metri secondo dove salite: per un bambino 500–700 passi. Restate a destra, sul passaggio pedonale."
   },
   {
    "id": "sun-go-lingue",
@@ -2603,6 +2899,19 @@ export default {
    "parentHint": "Gli avvisi della metro sono spesso in inglese e spagnolo; nelle pubblicità si trovano spesso cinese, coreano, russo, bengalese. Valgono tutte, anche se non sapete leggerle: basta riconoscere che è un'altra scrittura o lingua."
   },
   {
+   "id": "sun-r-fermate",
+   "stopId": "sun-go-macys",
+   "type": "bet",
+   "title": "Indovina le fermate",
+   "read": "Prima di salire sulla R decidete quante fermate ci sono fino a Herald Square. Vinnie dice cinque. Uno legge il nome di ogni fermata, l'altro conta sulle dita. Chi va più vicino vince.",
+   "roles": [
+    "Legge il nome delle fermate",
+    "Conta sulle dita"
+   ],
+   "vinnieBet": "Cinque fermate",
+   "parentHint": "Da City Hall a 34 St–Herald Sq con la R sono circa 8 fermate: Canal St, Prince St, 8 St, 14 St–Union Sq, 23 St, 28 St, 34 St. Controllate il percorso sulla cartina in carrozza: di domenica può cambiare."
+  },
+  {
    "id": "sun-vetrine",
    "stopId": "sun-macys",
    "type": "describe",
@@ -2613,6 +2922,44 @@ export default {
     "Cerca la vetrina giusta"
    ],
    "parentHint": "Le vetrine sono su Broadway e sulla 34ª. Se c'è tanta gente, fate la sfida sulle vetrine più vicine."
+  },
+  {
+   "id": "sun-mc-scale",
+   "stopId": "sun-macys",
+   "type": "bet",
+   "title": "La scala di legno",
+   "read": "Dentro Macy's c'è una scala mobile molto speciale. Vinnie scommette che è tutta di metallo come quelle dell'aeroporto. Salite ai piani alti: uno guarda i gradini, l'altro i corrimano. Se trovate il legno, vince la squadra.",
+   "roles": [
+    "Guarda i gradini",
+    "Guarda i corrimano e i lati"
+   ],
+   "vinnieBet": "Tutta di metallo",
+   "parentHint": "Le scale mobili di legno storiche sono ai piani alti, più o meno dal 6° in su. Se una è chiusa, provate un piano più su."
+  },
+  {
+   "id": "sun-mc-minerva",
+   "stopId": "sun-macys",
+   "type": "bet",
+   "title": "La campana delle 18",
+   "read": "Alle 18 in punto, sulla piazzetta di fronte a Macy's, due fabbri di bronzo battono una campana sotto una statua. Vinnie dice che la battono una volta sola. Uno conta i colpi, l'altro guarda quale fabbro colpisce per primo. Se i colpi sono più di uno, il pezzo è vostro.",
+   "roles": [
+    "Conta i colpi",
+    "Guarda quale fabbro colpisce"
+   ],
+   "vinnieBet": "Un colpo solo",
+   "parentHint": "L'orologio di Minerva è a Herald Square, la piazzetta a nord del negozio, tra Broadway e la Sesta. I fabbri colpiscono la campana allo scoccare dell'ora: contate voi i colpi, non ho verificato quanti sono. Arrivate due minuti prima."
+  },
+  {
+   "id": "sun-mc-angolo",
+   "stopId": "sun-macys",
+   "type": "describe",
+   "title": "Il palazzetto testardo",
+   "read": "All'angolo di Broadway e della 34ª c'è un palazzetto basso, coperto da una grande borsa della spesa di Macy's. Un signore, tanti anni fa, comprò quell'angolo per non farlo avere a Macy's. Uno trova il palazzetto, l'altro descrive cosa c'è disegnato sulla borsa gigante. Se lo trovate, il pezzo è vostro.",
+   "roles": [
+    "Trova il palazzetto",
+    "Descrive la borsa gigante"
+   ],
+   "parentHint": "È il Million Dollar Corner, all'angolo sud-est di Broadway e 34ª. Macy's ha costruito il suo palazzo tutto intorno."
   },
   {
    "id": "sun-piani",
@@ -2628,6 +2975,31 @@ export default {
    "parentHint": "L'Empire State ha 102 piani (86 fino al primo osservatorio, 102 fino al secondo). Il colore della cima cambia ogni sera: non c'è un colore giusto, vale quello che vedete."
   },
   {
+   "id": "sun-e-altezza",
+   "stopId": "sun-empire",
+   "type": "bet",
+   "title": "Alto come cosa?",
+   "read": "Vinnie dice che l'Empire State è alto come cento piccioni uno sopra l'altro. Sciocchezze, direte voi. Allora indovinate in metri: uno dice un numero, l'altro un altro. Il genitore dice quello vero. Chi va più vicino vince.",
+   "roles": [
+    "Dice un numero in metri",
+    "Dice un altro numero"
+   ],
+   "vinnieBet": "Cento piccioni, cioè 30 metri",
+   "parentHint": "È alto 381 metri fino al tetto e 443 con l'antenna. Valgono tutte e due le risposte."
+  },
+  {
+   "id": "sun-e-kingkong",
+   "stopId": "sun-empire",
+   "type": "describe",
+   "title": "Lo scimmione",
+   "read": "In un film famoso uno scimmione gigante sale fino in cima a questo grattacielo. Uno di voi guarda la cima e descrive dove si sarebbe aggrappato: sull'antenna, sui gradini, alle finestre. L'altro disegna con il dito nell'aria la sua salita. Poi vi scambiate. Se Vinnie ride, il pezzo è vostro.",
+   "roles": [
+    "Descrive dove si aggrappa",
+    "Disegna la salita nell'aria"
+   ],
+   "parentHint": "È King Kong, del 1933. Non c'è una risposta giusta: è una sfida di fantasia, vince la squadra se tutti e due partecipano."
+  },
+  {
    "id": "sun-taxi",
    "stopId": "sun-fifth",
    "type": "bet",
@@ -2639,6 +3011,32 @@ export default {
    ],
    "vinnieBet": "Vincono le auto nere",
    "parentHint": "A Manhattan sono tantissime le auto nere con autista (Uber e simili). Fate contare per un minuto esatto con il cronometro del telefono. Chi vince lo decidono i numeri."
+  },
+  {
+   "id": "sun-q-isolati",
+   "stopId": "sun-fifth",
+   "type": "bet",
+   "title": "Quanti isolati?",
+   "read": "Dall'Empire State alla biblioteca camminate sulla Quinta. Vinnie scommette che sono venti isolati. Uno legge il numero della via a ogni incrocio, l'altro conta gli incroci. Chi ha ragione?",
+   "roles": [
+    "Legge il numero della via",
+    "Conta gli incroci"
+   ],
+   "vinnieBet": "Venti isolati",
+   "parentHint": "Dalla 34ª alla 42ª sono otto isolati, circa 650 metri."
+  },
+  {
+   "id": "sun-q-bandiere",
+   "stopId": "sun-fifth",
+   "type": "bet",
+   "title": "Le bandiere sui palazzi",
+   "read": "Sulla Quinta molti palazzi hanno bandiere sopra l'ingresso. Vinnie scommette che non trovate tre bandiere di paesi diversi. Uno cerca a destra, l'altro a sinistra.",
+   "roles": [
+    "Cerca le bandiere a destra",
+    "Cerca le bandiere a sinistra"
+   ],
+   "vinnieBet": "Meno di tre paesi",
+   "parentHint": "Valgono anche le bandiere dei negozi se sono di un paese. Se non le riconoscete, descrivetele e controllate dopo sul telefono."
   },
   {
    "id": "sun-leoni",
@@ -2653,6 +3051,19 @@ export default {
    "parentHint": "Pazienza è il leone sud, a sinistra guardando la porta della biblioteca, verso la 40ª. Fortezza è il leone nord, a destra, verso la 42ª. I cartelli delle vie sono agli angoli della Quinta."
   },
   {
+   "id": "sun-n-gradini",
+   "stopId": "sun-nypl",
+   "type": "bet",
+   "title": "I gradini dei leoni",
+   "read": "Vinnie dice che la scalinata della biblioteca ha cento gradini. Uno li conta salendo, l'altro li conta scendendo. Se avete lo stesso numero e non sono cento, il pezzo è vostro.",
+   "roles": [
+    "Conta salendo",
+    "Conta scendendo"
+   ],
+   "vinnieBet": "Cento gradini",
+   "parentHint": "Non ho verificato il numero esatto: contano i bambini. Se i due numeri sono diversi, ricontate insieme."
+  },
+  {
    "id": "sun-cappelli",
    "stopId": "sun-go-hotel",
    "type": "bet",
@@ -2664,6 +3075,32 @@ export default {
    ],
    "vinnieBet": "Meno di cinque prima dell'hotel",
    "parentHint": "A fine novembre intorno a Bryant Park e Times Square se ne vedono parecchi, anche sui venditori. Valgono anche i cerchietti e i maglioni con le renne, se volete essere generosi."
+  },
+  {
+   "id": "sun-h-cioccolata",
+   "stopId": "sun-go-hotel",
+   "type": "bet",
+   "title": "La cioccolata più cara",
+   "read": "Nelle casette di Bryant Park vendono cioccolata calda. Vinnie scommette che una tazza costa più di dieci dollari. Uno cerca una casetta con la cioccolata, l'altro legge il prezzo sul cartello. Se costa meno di dieci dollari, il pezzo è vostro.",
+   "roles": [
+    "Trova la casetta con la cioccolata",
+    "Legge il prezzo"
+   ],
+   "vinnieBet": "Più di dieci dollari",
+   "parentHint": "Nei mercatini di New York la cioccolata calda costa spesso tra 6 e 10 dollari. Non serve comprarla."
+  },
+  {
+   "id": "sun-h-schermi",
+   "stopId": "sun-go-hotel",
+   "type": "bet",
+   "title": "Gli schermi di Times Square",
+   "read": "Dalla Sesta Avenue, guardando verso ovest lungo la 42ª, si vedono le luci di Times Square. Vinnie scommette che da qui non contate cinque schermi giganti. Uno conta quelli a destra, l'altro quelli a sinistra.",
+   "roles": [
+    "Conta gli schermi a destra",
+    "Conta gli schermi a sinistra"
+   ],
+   "vinnieBet": "Meno di cinque schermi",
+   "parentHint": "Da Bryant Park verso Times Square si vedono diversi schermi accesi sopra i palazzi. Attraversate solo con il semaforo."
   },
   {
    "id": "sun-bet-targhe",

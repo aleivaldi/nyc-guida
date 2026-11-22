@@ -104,7 +104,7 @@ export function renderMission(id) {
   const line = result ? ctx.store.get('lastLine') : null;
 
   mount(h('section', { class: 'vinnie stack' },
-    h('a', { class: 'back', href: '#/vinnie' }, stop ? `Vinnie, ${stop.name}` : 'Vinnie'),
+    h('a', { class: 'back', href: stop ? `#/stop/${m.dayId}/${m.stopId}` : '#/vinnie' }, stop ? `‹ ${stop.name}` : '‹ Vinnie'),
     h('h1', {}, m.title),
     h('p', { class: 'hint' }, `${TYPE_LABEL[m.type] ?? ''}. Leggetelo ad alta voce.`),
     h('p', { class: 'read' }, m.read),
@@ -118,7 +118,18 @@ export function renderMission(id) {
     h('div', { class: 'result' },
       h('button', { class: 'btn btn-taxi', 'aria-pressed': String(result === 'team'), onclick: () => set('team') }, 'Vince la squadra'),
       h('button', { class: 'btn', 'aria-pressed': String(result === 'vinnie'), onclick: () => set('vinnie') }, 'Vince Vinnie')),
+    nextHere(m, st.results),
   ));
+}
+
+function nextHere(m, results) {
+  if (!m.stopId) return null;
+  const same = (ctx.day(m.dayId).missions ?? []).filter((x) => x.stopId === m.stopId);
+  const i = same.findIndex((x) => x.id === m.id);
+  const nxt = same.slice(i + 1).find((x) => !results[x.id]) ?? same.find((x) => x.id !== m.id && !results[x.id]);
+  return nxt
+    ? h('a', { class: 'btn btn-taxi', href: `#/mission/${nxt.id}` }, `Altra sfida qui: ${nxt.title} ›`)
+    : h('a', { class: 'btn', href: `#/stop/${m.dayId}/${m.stopId}` }, 'Torna alla tappa');
 }
 
 function photo(img) {

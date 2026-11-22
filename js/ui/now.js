@@ -68,7 +68,7 @@ function lateBanner(day, stop, minutes, live) {
 }
 
 function kidsRow(dayId, stop) {
-  const m = missionFor(dayId, stop.id) ?? walkingBet(dayId);
+  const m = missionFor(dayId, stop.id, gameState(ctx.raw).results) ?? walkingBet(dayId);
   if (!m) return null;
   const done = gameState(ctx.raw).results[m.id];
   return h('a', { class: 'kids', href: `#/mission/${m.id}` },

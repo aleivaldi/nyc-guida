@@ -47,8 +47,13 @@ export function sign(dayId, stop, { link = true } = {}) {
   h('div', { class: 'sign-sub' }, sub));
 }
 
-export function missionFor(dayId, stopId) {
-  return (ctx.day(dayId).missions ?? []).find((m) => m.stopId === stopId);
+export function missionsFor(dayId, stopId) {
+  return (ctx.day(dayId).missions ?? []).filter((m) => m.stopId === stopId);
+}
+
+export function missionFor(dayId, stopId, results = null) {
+  const all = missionsFor(dayId, stopId);
+  return (results && all.find((m) => !results[m.id])) ?? all[0];
 }
 
 export function distLabel(m) {

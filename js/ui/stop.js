@@ -1,6 +1,6 @@
 import { h, mount } from './dom.js';
 import { ctx } from './ctx.js';
-import { setLine, sign, missionFor, nearKind, duration, DAY_NAME, nextStop, prevStop, nextCard } from './common.js';
+import { setLine, sign, missionsFor, nearKind, duration, DAY_NAME, nextStop, prevStop, nextCard } from './common.js';
 import { mapsPair } from './maps.js';
 import { gameState, kidsChoose } from '../core/game.js';
 import { vinnieIcon } from './now.js';
@@ -17,7 +17,8 @@ export function renderStop(dayId, stopId) {
   const stop = ctx.stop(dayId, stopId);
   if (!stop) { location.hash = `#/day/${dayId}`; return; }
   setLine(dayId);
-  const mission = missionFor(dayId, stopId);
+  const missions = missionsFor(dayId, stopId);
+  const results = gameState(ctx.raw).results;
   const tips = stop.tips ?? [];
   const base = tips.filter((t) => !t.when || t.when === 'always' || t.when === 'arrive');
   const tipList = h('ul', { class: 'tips' }, base.map((t) => h('li', {}, t.text)));
@@ -53,8 +54,10 @@ export function renderStop(dayId, stopId) {
     h('div', {}, h('p', { class: 'label' }, 'Cosa guardare davvero'),
       h('div', { class: 'look' }, stop.look.map((l, i) => [h('span', { class: 'k' }, ['Primo', 'Poi', 'E poi'][i] ?? ''), h('span', { class: 'v' }, l)]))),
     stop.steps?.length ? h('a', { class: 'btn btn-primary', href: `#/steps/${dayId}/${stopId}/${resumePath(stopId)}` }, 'Percorso passo passo') : null,
-    mission ? h('a', { class: 'kids', href: `#/mission/${mission.id}` }, vinnieIcon(),
-      h('span', {}, gameState(ctx.raw).results[mission.id] ? `Fatta: ${mission.title}` : mission.title)) : null,
+    missions.length ? h('div', { class: 'stack', style: { gap: '8px' } },
+      missions.length > 1 ? h('p', { class: 'label', style: { margin: 0 } }, `Sfide di Vinnie qui: ${missions.filter((m) => results[m.id]).length} fatte su ${missions.length}`) : null,
+      missions.map((m) => h('a', { class: 'kids', href: `#/mission/${m.id}` }, vinnieIcon(),
+        h('span', {}, results[m.id] ? `Fatta: ${m.title}` : m.title)))) : null,
     h('div', {},
       more('La storia', h('p', { class: 'story' }, stop.story)),
       tips.length ? more('Dritte', chips.length ? h('div', { class: 'pills', style: { marginBottom: '10px' } }, chips) : null, tipList) : null,
