@@ -44,6 +44,12 @@ export function renderSteps(dayId, stopId, pathStr) {
     s.where ? h('p', { class: 'where' }, s.where) : null,
     s.look?.length ? h('ol', {}, s.look.map((l) => h('li', {}, l))) : null,
     s.tips?.length ? h('ul', { class: 'tips' }, s.tips.map((t) => h('li', {}, t))) : null,
+    ...(s.missionIds ?? (s.missionId ? [s.missionId] : [])).map((id) => {
+      const m = (ctx.day(dayId).missions ?? []).find((x) => x.id === id);
+      if (!m) return null;
+      const done = gameState(ctx.raw).results[id];
+      return h('a', { class: 'btn btn-taxi', href: `#/mission/${id}` }, done ? `Fatta: ${m.title}` : `Sfida di Vinnie: ${m.title} ›`);
+    }),
     stop.choiceGroup && idx === firstOptionIdx(flat) ? prize(s.options) : null,
     s.options?.length ? h('div', { style: { display: 'grid', gap: '8px' } }, s.options.map((o) => h('div', { class: 'option' }, h('b', {}, o.label), o.text))) : null,
     s.steps?.length ? h('p', { class: 'hint' }, `Dentro: ${s.steps.map((c) => c.title).join(', ')}.`) : null);

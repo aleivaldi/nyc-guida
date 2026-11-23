@@ -54,10 +54,7 @@ export function renderStop(dayId, stopId) {
     h('div', {}, h('p', { class: 'label' }, 'Cosa guardare davvero'),
       h('div', { class: 'look' }, stop.look.map((l, i) => [h('span', { class: 'k' }, ['Primo', 'Poi', 'E poi'][i] ?? ''), h('span', { class: 'v' }, l)]))),
     stop.steps?.length ? h('a', { class: 'btn btn-primary', href: `#/steps/${dayId}/${stopId}/${resumePath(stopId)}` }, 'Percorso passo passo') : null,
-    missions.length ? h('div', { class: 'stack', style: { gap: '8px' } },
-      missions.length > 1 ? h('p', { class: 'label', style: { margin: 0 } }, `Sfide di Vinnie qui: ${missions.filter((m) => results[m.id]).length} fatte su ${missions.length}`) : null,
-      missions.map((m) => h('a', { class: 'kids', href: `#/mission/${m.id}` }, vinnieIcon(),
-        h('span', {}, results[m.id] ? `Fatta: ${m.title}` : m.title)))) : null,
+    missions.length ? missionBlock(dayId, stop, missions, results) : null,
     h('div', {},
       more('La storia', h('p', { class: 'story' }, stop.story)),
       tips.length ? more('Dritte', chips.length ? h('div', { class: 'pills', style: { marginBottom: '10px' } }, chips) : null, tipList) : null,
@@ -103,4 +100,20 @@ function choiceBanner(day, stop) {
 
 function more(title, ...content) {
   return h('details', { class: 'more' }, h('summary', {}, title), ...content);
+}
+
+function missionBlock(dayId, stop, missions, results) {
+  const done = missions.filter((m) => results[m.id]).length;
+  const link = (m) => h('a', { class: 'kids', href: `#/mission/${m.id}` }, vinnieIcon(), h('span', {}, results[m.id] ? `Fatta: ${m.title}` : m.title));
+  if (missions.length <= 5) {
+    return h('div', { class: 'stack', style: { gap: '8px' } },
+      missions.length > 1 ? h('p', { class: 'label', style: { margin: 0 } }, `Sfide di Vinnie qui: ${done} fatte su ${missions.length}`) : null,
+      missions.map(link));
+  }
+  const first = missions.find((m) => !results[m.id]) ?? missions[0];
+  return h('div', { class: 'stack', style: { gap: '8px' } },
+    h('p', { class: 'label', style: { margin: 0 } }, `${missions.length} sfide di Vinnie qui, ${done} fatte`),
+    stop.steps?.length ? h('a', { class: 'btn btn-taxi', href: `#/steps/${dayId}/${stop.id}/${ctx.store.get(`steps:${stop.id}`) ?? '0'}` }, 'Percorso passo passo con le sfide ›') : null,
+    link(first),
+    h('details', {}, h('summary', {}, 'Tutte le sfide'), h('div', { class: 'stack', style: { gap: '8px', marginTop: '8px' } }, missions.map(link))));
 }

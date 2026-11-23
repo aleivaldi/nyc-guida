@@ -415,6 +415,10 @@ export default {
    ],
    "tips": [
     {
+     "text": "Aprite il Percorso dentro questa tappa: 21 opere in ordine, ognuna con una sfida di Vinnie. Le ★ sono le imperdibili.",
+     "when": "always"
+    },
+    {
      "text": "Appena entrati salite subito al quinto piano: le opere famose sono quasi tutte lì. Poi scendete piano per piano.",
      "when": "arrive"
     },
@@ -435,7 +439,7 @@ export default {
      "when": "tired"
     },
     {
-     "text": "Se siete in ritardo, fate solo il quinto piano: sale 501, 502, 515 e 517. Warhol, elicottero e giardino si saltano.",
+     "text": "Se siete in ritardo, fate solo le opere ★ del quinto piano e Warhol al quarto.",
      "when": "late"
     },
     {
@@ -464,30 +468,31 @@ export default {
     },
     {
      "id": "moma-5",
-     "title": "Quinto piano: i quadri famosi",
-     "where": "Quinto piano, collezione dal 1880 al 1940 (gallerie Alfred H. Barr). Partite da qui perché a mezzogiorno la folla cresce.",
+     "title": "Quinto piano: il percorso dei capolavori",
+     "where": "Quinto piano, collezione dal 1880 al 1940. Seguite il percorso nell'ordine: ogni opera ha una sfida di Vinnie. Quelle con la stella ★ sono le imperdibili.",
      "look": [
-      "Notte stellata (sala 501)",
-      "Les Demoiselles d'Avignon di Picasso (sala 502)",
-      "Ninfee di Monet (sala 515) e orologi molli di Dalí (sala 517)"
+      "Notte stellata, Demoiselles, Danza, Ninfee, Dalí, Mondrian: le sei ★.",
+      "Le altre se avete tempo: Rousseau, Chagall, Boccioni, Magritte, Frida, Hopper.",
+      "Pausa a metà percorso: Terrace 5."
      ],
      "tips": [
-      "Le sale sono numerate sullo stipite della porta: seguite i numeri 501, 502, poi 515 e 517."
+      "Il MoMA sposta spesso le opere o le presta ad altri musei: se una non c'è, saltatela senza perdere tempo.",
+      "Le sale sono numerate sullo stipite della porta."
      ],
      "options": [
       {
-       "label": "Se c'è folla davanti alla Notte stellata",
-       "text": "Andate prima alle Ninfee (sala 515), tornate dopo un quarto d'ora."
+       "label": "Se avete solo 45 minuti",
+       "text": "Solo le ★: Notte stellata, Demoiselles, Danza, Ninfee, Dalí, Mondrian, poi Warhol al quarto piano."
       },
       {
-       "label": "Se avete solo 30 minuti",
-       "text": "Notte stellata, orologi molli, Ninfee. Stop."
+       "label": "Se c'è folla davanti alla Notte stellata",
+       "text": "Andate prima alle Ninfee e tornate dopo un quarto d'ora."
       }
      ],
      "steps": [
       {
        "id": "moma-501",
-       "title": "Sala 501 · La Notte stellata",
+       "title": "★ 1 · La Notte stellata, Van Gogh",
        "where": "Quinto piano, sala 501, nelle prime sale della collezione.",
        "look": [
         "Il cipresso nero a sinistra che sale come una fiamma.",
@@ -495,13 +500,16 @@ export default {
         "Il paesino in basso con il campanile appuntito: è la parte che Van Gogh ha inventato."
        ],
        "tips": [
-        "Non mettetevi al centro dove si accalcano tutti: avvicinatevi di lato, si vede meglio lo spessore del colore.",
-        "Qui c'è la missione di Vinnie: fatela da un pò lontano, non serve stare in prima fila."
+        "Non mettetevi al centro dove si accalcano tutti: avvicinatevi di lato, si vede meglio lo spessore del colore."
+       ],
+       "missionIds": [
+        "mon-m-moma",
+        "mon-mo-stelle"
        ]
       },
       {
        "id": "moma-502",
-       "title": "Sala 502 · Les Demoiselles d'Avignon",
+       "title": "★ 2 · Les Demoiselles d'Avignon, Picasso",
        "where": "Quinto piano, sala 502, accanto alla 501.",
        "look": [
         "Le due donne a destra hanno la faccia come una maschera.",
@@ -510,11 +518,80 @@ export default {
        ],
        "tips": [
         "Domanda per i bambini: quante donne ci sono? Sono cinque, ma una è nascosta a metà."
+       ],
+       "missionIds": [
+        "mon-mo-donne"
+       ]
+      },
+      {
+       "id": "moma-rousseau",
+       "title": "3 · La zingara addormentata, Rousseau",
+       "where": "Quinto piano, nelle sale vicine a Picasso. Se non la trovate, chiedete a un guardiano: \"Where is The Sleeping Gypsy?\"",
+       "look": [
+        "Un leone che annusa una donna addormentata nel deserto, sotto la luna.",
+        "Accanto a lei: un mandolino e una brocca d'acqua.",
+        "Il leone ha la coda alzata: è arrabbiato o curioso?"
+       ],
+       "tips": [
+        "Henri Rousseau faceva il doganiere e non aveva mai visto un deserto: lo dipinse con la fantasia, nel 1897."
+       ],
+       "missionIds": [
+        "mon-mo-leone"
+       ]
+      },
+      {
+       "id": "moma-matisse",
+       "title": "★ 4 · La Danza, Matisse",
+       "where": "Quinto piano, sale di Matisse. Se non la trovate, chiedete a un guardiano: \"Where is Dance by Matisse?\"",
+       "look": [
+        "Un cerchio di persone che ballano tenendosi per mano.",
+        "Solo tre colori grandi: il cielo, il prato e i corpi.",
+        "Una mano non tocca quella del vicino: trovate il buco nel cerchio."
+       ],
+       "tips": [
+        "È enorme, quasi 4 metri: guardatela da lontano, poi avvicinatevi."
+       ],
+       "missionIds": [
+        "mon-mo-danza",
+        "mon-mo-buco"
+       ]
+      },
+      {
+       "id": "moma-chagall",
+       "title": "5 · Io e il villaggio, Chagall",
+       "where": "Quinto piano. Se non la trovate, chiedete a un guardiano: \"Where is I and the Village?\"",
+       "look": [
+        "Un uomo con la faccia verde e una mucca che si guardano negli occhi.",
+        "Dentro la testa della mucca: una donna che munge.",
+        "In alto: case e una persona capovolte."
+       ],
+       "tips": [
+        "Chagall lo dipinse a Parigi nel 1911, ricordando il paesino russo dove era cresciuto."
+       ],
+       "missionIds": [
+        "mon-mo-sottosopra"
+       ]
+      },
+      {
+       "id": "moma-boccioni",
+       "title": "6 · L'uomo che corre nel vento, Boccioni",
+       "where": "Quinto piano, una scultura di bronzo su un piedistallo, spesso al centro di una sala. Se non la trovate, chiedete a un guardiano: \"Where is Unique Forms of Continuity in Space?\"",
+       "look": [
+        "Una figura che cammina a grandi passi, senza braccia.",
+        "Il bronzo sembra tirato indietro dal vento, come una bandiera.",
+        "Due piedi su due blocchetti."
+       ],
+       "tips": [
+        "È di Umberto Boccioni, italiano, del 1913. La trovate anche sulla moneta italiana da 20 centesimi!"
+       ],
+       "missionIds": [
+        "mon-mo-camminata",
+        "mon-mo-moneta"
        ]
       },
       {
        "id": "moma-515",
-       "title": "Sala 515 · Le Ninfee di Monet",
+       "title": "★ 7 · Le Ninfee, Monet",
        "where": "Quinto piano, sala 515: una sala intera solo per loro.",
        "look": [
         "Tre tele una accanto all'altra, insieme quasi 13 metri.",
@@ -523,11 +600,14 @@ export default {
        ],
        "tips": [
         "C'è una panca in mezzo alla sala: cinque minuti seduti qui rimettono in piedi tutti."
+       ],
+       "missionIds": [
+        "mon-mo-ninfee"
        ]
       },
       {
        "id": "moma-517",
-       "title": "Sala 517 · Gli orologi molli di Dalí",
+       "title": "★ 8 · Gli orologi molli, Dalí",
        "where": "Quinto piano, sala 517.",
        "look": [
         "La dimensione: più o meno un foglio di quaderno.",
@@ -536,6 +616,74 @@ export default {
        ],
        "tips": [
         "Spesso c'è una piccola coda: un minuto davanti basta, poi lasciate il posto."
+       ],
+       "missionIds": [
+        "mon-mo-orologi"
+       ]
+      },
+      {
+       "id": "moma-magritte",
+       "title": "9 · Il falso specchio, Magritte",
+       "where": "Quinto piano, sale dei surrealisti, vicino a Dalí. Se non la trovate, chiedete a un guardiano: \"Where is The False Mirror?\"",
+       "look": [
+        "Un occhio gigante che riempie tutto il quadro.",
+        "Dentro l'iride: il cielo azzurro con le nuvole.",
+        "La pupilla nera al centro, come un sole spento."
+       ],
+       "tips": [
+        "È un quadro piccolo: avvicinatevi."
+       ],
+       "missionIds": [
+        "mon-mo-occhio"
+       ]
+      },
+      {
+       "id": "moma-frida",
+       "title": "10 · Autoritratto con i capelli corti, Frida Kahlo",
+       "where": "Quinto piano. Se non la trovate, chiedete a un guardiano: \"Where is Frida Kahlo?\"",
+       "look": [
+        "Frida seduta su una sedia gialla, con un vestito da uomo.",
+        "In mano tiene un paio di forbici.",
+        "Per terra, ciocche di capelli dappertutto."
+       ],
+       "tips": [
+        "Il quadro è piccolo e spesso c'è gente: un minuto basta. In alto c'è una scritta con le note di una canzone."
+       ],
+       "missionIds": [
+        "mon-mo-forbici"
+       ]
+      },
+      {
+       "id": "moma-mondrian",
+       "title": "★ 11 · Broadway Boogie Woogie, Mondrian",
+       "where": "Quinto piano, verso la fine della collezione. Se non la trovate, chiedete a un guardiano: \"Where is Broadway Boogie Woogie?\"",
+       "look": [
+        "Righe gialle che si incrociano come le strade di Manhattan.",
+        "Quadratini rossi, blu e grigi lungo le righe, come taxi e semafori.",
+        "Qualche quadrato più grande, come un palazzo."
+       ],
+       "tips": [
+        "Mondrian arrivò a New York nel 1940 e si innamorò delle strade a griglia e del jazz: questo quadro è la città vista dall'alto."
+       ],
+       "missionIds": [
+        "mon-mo-taxi",
+        "mon-mo-griglia"
+       ]
+      },
+      {
+       "id": "moma-hopper",
+       "title": "12 · Gas, Hopper",
+       "where": "Quinto o quarto piano: il MoMA a volte la sposta. Se non la trovate, chiedete a un guardiano: \"Where is Gas by Edward Hopper?\"",
+       "look": [
+        "Un distributore di benzina con le pompe rosse, al tramonto.",
+        "Un uomo solo che sistema una pompa.",
+        "La strada che sparisce nel bosco scuro."
+       ],
+       "tips": [
+        "Hopper dipingeva l'America silenziosa: chiedete ai bambini che ora è, secondo loro."
+       ],
+       "missionIds": [
+        "mon-mo-pompe"
        ]
       },
       {
@@ -554,27 +702,118 @@ export default {
      ]
     },
     {
-     "id": "moma-4",
-     "title": "Quarto piano: le zuppe di Warhol",
-     "where": "Quarto piano, collezione dal 1940 al 1970. Le zuppe Campbell risultano in sala 412: se non le vedete, chiedete \"Campbell's Soup Cans?\" a un guardiano.",
+     "id": "moma-4p",
+     "title": "Quarto piano: pop art e schizzi",
+     "where": "Quarto piano, collezione dal 1940 al 1970. Scendete con le scale mobili.",
      "look": [
-      "Sono 32 tele, una per ogni gusto di zuppa che si vendeva nel 1962.",
-      "Leggete i gusti sulle etichette: cercate Clam Chowder, la zuppa di vongole.",
-      "Sembrano stampate ma sono dipinte a mano: guardate da vicino i bordi delle lettere."
+      "Pollock e Warhol sono le ★.",
+      "Le zuppe, i panini giganti e il fumetto: le opere preferite dai bambini."
      ],
      "tips": [
-      "Gioco veloce: ognuno sceglie la zuppa che non assaggerebbe mai."
+      "Se sono stanchi: solo Warhol e i cheeseburger, poi giù in giardino."
      ],
-     "options": [
+     "steps": [
       {
-       "label": "Se sono stanchi",
-       "text": "Saltate il quarto piano e andate dritti al giardino."
+       "id": "moma-pollock",
+       "title": "★ 13 · Gli schizzi di Pollock",
+       "where": "Quarto piano, collezione dal 1940 al 1970. Se non la trovate, chiedete a un guardiano: \"Where is Jackson Pollock?\"",
+       "look": [
+        "Un quadro enorme coperto di schizzi e righe di colore.",
+        "Pollock metteva la tela per terra e ci girava intorno, sgocciolando la vernice.",
+        "Cercate se ci sono impronte di mani."
+       ],
+       "tips": [
+        "Il MoMA ha più quadri di Pollock: in Number 1A, 1948 ci sono le sue impronte delle mani in alto."
+       ],
+       "missionIds": [
+        "mon-mo-impronte"
+       ]
+      },
+      {
+       "id": "moma-johns",
+       "title": "14 · La bandiera, Jasper Johns",
+       "where": "Quarto piano. Se non la trovate, chiedete a un guardiano: \"Where is Flag by Jasper Johns?\"",
+       "look": [
+        "Una bandiera americana, ma dipinta con la cera e pezzi di giornale sotto.",
+        "Da vicino si vedono le lettere dei giornali tra le strisce.",
+        "Le stelle bianche sul quadrato blu."
+       ],
+       "tips": [
+        "È del 1954–55: guardate bene quante stelle ha."
+       ],
+       "missionIds": [
+        "mon-mo-stelle48"
+       ]
+      },
+      {
+       "id": "moma-4",
+       "title": "★ 15 · Le zuppe di Warhol",
+       "where": "Quarto piano. Le zuppe Campbell risultano in sala 412: se non le vedete, chiedete \"Campbell's Soup Cans?\" a un guardiano.",
+       "look": [
+        "Sono tele una per ogni gusto di zuppa che si vendeva nel 1962.",
+        "Leggete i gusti sulle etichette: cercate Clam Chowder, la zuppa di vongole.",
+        "Sembrano stampate ma sono dipinte a mano: guardate da vicino i bordi delle lettere."
+       ],
+       "tips": [
+        "Gioco veloce: ognuno sceglie la zuppa che non assaggerebbe mai."
+       ],
+       "missionIds": [
+        "mon-mo-zuppe"
+       ]
+      },
+      {
+       "id": "moma-lichtenstein",
+       "title": "16 · La ragazza nel mare, Lichtenstein",
+       "where": "Quarto piano, vicino a Warhol. Se non la trovate, chiedete a un guardiano: \"Where is Drowning Girl?\"",
+       "look": [
+        "Una ragazza che piange tra le onde, come in un fumetto.",
+        "Il fumetto con le parole, in alto.",
+        "La pelle è fatta di tanti puntini rossi, come nei giornalini."
+       ],
+       "tips": [
+        "Fate un passo indietro alla volta: a un certo punto i puntini spariscono."
+       ],
+       "missionIds": [
+        "mon-mo-puntini"
+       ]
+      },
+      {
+       "id": "moma-oldenburg",
+       "title": "17 · I cheeseburger giganti, Oldenburg",
+       "where": "Quarto piano, nelle sale della pop art. Se non la trovate, chiedete a un guardiano: \"Where is Two Cheeseburgers, with Everything?\"",
+       "look": [
+        "Due panini con formaggio, cetrioli e tutto il resto, più grandi del vero.",
+        "Il colore lucido, come una vernice.",
+        "Le gocce di salsa che colano."
+       ],
+       "tips": [
+        "Non si toccano, neanche se sembrano veri!"
+       ],
+       "missionIds": [
+        "mon-mo-panino"
+       ]
+      },
+      {
+       "id": "moma-wyeth",
+       "title": "18 · Il mondo di Christina, Wyeth",
+       "where": "Quarto piano. Se non la trovate, chiedete a un guardiano: \"Where is Christina's World?\"",
+       "look": [
+        "Una ragazza in un prato secco che guarda verso una casa in cima alla collina.",
+        "Il vestito rosa e i capelli mossi dal vento.",
+        "La casa grigia e il fienile più in là."
+       ],
+       "tips": [
+        "Opera facoltativa: se siete stanchi saltatela."
+       ],
+       "missionIds": [
+        "mon-mo-christina"
+       ]
       }
      ]
     },
     {
      "id": "moma-3",
-     "title": "Terzo piano: design e l'elicottero",
+     "title": "19 · Terzo piano: l'elicottero",
      "where": "Terzo piano, gallerie di architettura e design. Il catalogo del museo indica l'elicottero Bell-47D1 esposto al terzo piano: chiedete \"the helicopter\" ai guardiani.",
      "look": [
       "L'elicottero appeso: una bolla trasparente per il pilota e una coda fatta di tubi, come un traliccio.",
@@ -589,20 +828,41 @@ export default {
        "label": "Se avete 10 minuti",
        "text": "Solo l'elicottero, poi giù in giardino."
       }
+     ],
+     "missionIds": [
+      "mon-mo-elicottero"
      ]
     },
     {
      "id": "moma-giardino",
-     "title": "Giardino delle sculture",
+     "title": "20 · Giardino delle sculture e la capra di Picasso",
      "where": "Piano terra: dalla hall si esce nel giardino. Aperto se il tempo lo permette.",
      "look": [
       "La grande statua di Balzac di Rodin: un gigante avvolto in un mantello.",
       "La vasca lunga con le statue che si specchiano.",
-      "Alzate gli occhi: i grattacieli tutto intorno, da qui sembrano vicinissimi."
+      "Alzate gli occhi: i grattacieli tutto intorno, da qui sembrano vicinissimi.",
+      "La capra di Picasso: cercate la pancia fatta con un cesto di vimini."
      ],
      "tips": [
       "Qui si può mangiare uno snack nelle zone indicate, non nelle sale.",
       "Uscite dal museo dalla hall: siete già a due minuti dal carretto halal della 53rd."
+     ],
+     "missionIds": [
+      "mon-mo-capra"
+     ]
+    },
+    {
+     "id": "moma-fine",
+     "title": "21 · Il quadro della squadra",
+     "where": "Prima di uscire, nella hall o in giardino.",
+     "look": [
+      "Ripensate a tutte le opere che avete visto."
+     ],
+     "tips": [
+      "Ultima sfida: votate il quadro preferito."
+     ],
+     "missionIds": [
+      "mon-mo-preferito"
      ]
     }
    ],
@@ -2428,6 +2688,19 @@ export default {
    "parentHint": "È il Dakota, all'angolo tra Central Park West e la 72ª, sul lato nord-ovest. Il nome è scritto sopra l'ingresso su 72nd Street. Se non lo trovate, il pezzo va a Vinnie."
   },
   {
+   "id": "mon-c-fermate",
+   "stopId": "mon-go-cp",
+   "type": "bet",
+   "title": "Quante fermate fino al parco?",
+   "read": "Prima di salire sulla C, ognuno dice quante fermate ci sono fino alla 72ª. Vinnie dice dieci. Uno legge i nomi delle fermate, l'altro conta sulle dita.",
+   "roles": [
+    "Legge i nomi delle fermate",
+    "Conta sulle dita"
+   ],
+   "vinnieBet": "Dieci fermate",
+   "parentHint": "Con la C da 42 St: 50 St, 59 St–Columbus Circle, 72 St. Sono tre. Di lunedì mattina dovrebbe essere regolare, ma controllate."
+  },
+  {
    "id": "sat-alice",
    "stopId": "cp",
    "type": "describe",
@@ -2444,6 +2717,57 @@ export default {
    "parentHint": "È il Ghiro (Dormouse): un topolino che rosicchia un semino, molto più piccolo degli altri personaggi, in basso nel gruppo. Ingrandite la foto su di lui prima di mostrarla. Intorno ci sono Alice sul fungo con la gatta Dinah, il Cappellaio Matto, il Leprotto, lo Stregatto e un coniglio con l'orologio."
   },
   {
+   "id": "mon-cp-imagine",
+   "stopId": "cp",
+   "type": "describe",
+   "title": "Il cerchio bianco e nero",
+   "read": "A Strawberry Fields c'è un cerchio di mosaico per terra con una parola al centro. Uno di voi lo guarda e descrive il disegno all'altro, che ha gli occhi chiusi, senza dire la parola. L'altro poi apre gli occhi e deve leggere la parola. Se la descrizione era buona, il pezzo è vostro.",
+   "roles": [
+    "Descrive il mosaico",
+    "Ascolta a occhi chiusi e poi legge"
+   ],
+   "parentHint": "La parola è Imagine, per John Lennon. Il mosaico è una copia di uno romano di Pompei. Parlate a voce bassa: è un luogo di ricordo."
+  },
+  {
+   "id": "mon-cp-angelo",
+   "stopId": "cp",
+   "type": "bet",
+   "title": "Cosa tiene l'angelo?",
+   "read": "Sulla fontana di Bethesda c'è un angelo di bronzo con le ali aperte. Vinnie dice che in mano tiene un ombrello, perché sotto c'è l'acqua. Uno guarda la mano sinistra, l'altro la destra. Cosa tiene davvero?",
+   "roles": [
+    "Guarda la mano sinistra",
+    "Guarda la mano destra"
+   ],
+   "vinnieBet": "Un ombrello",
+   "parentHint": "L'Angelo delle Acque tiene in una mano un giglio; l'altra mano è aperta, come se benedicesse l'acqua. È di Emma Stebbins, del 1873: la prima donna a ricevere un incarico così grande a New York."
+  },
+  {
+   "id": "mon-cp-ponte",
+   "stopId": "cp",
+   "type": "bet",
+   "title": "Ponte di pietra o di ferro?",
+   "read": "Il Bow Bridge sembra di pietra bianca. Vinnie dice che è di pietra, sicuro. Uno guarda le decorazioni a spirale, l'altro bussa piano con le nocche sulla ringhiera. Pietra o ferro?",
+   "roles": [
+    "Guarda le decorazioni",
+    "Bussa piano sulla ringhiera"
+   ],
+   "vinnieBet": "Di pietra",
+   "parentHint": "È di ghisa, cioè ferro fuso, dipinto di bianco: è del 1862. Bussando suona un po' vuoto, non come la pietra."
+  },
+  {
+   "id": "mon-cp-volta",
+   "stopId": "cp",
+   "type": "bet",
+   "title": "Le piastrelle del soffitto",
+   "read": "Sotto la terrazza di Bethesda c'è un portico con il soffitto fatto di piastrelle colorate. Vinnie dice che sono cento. Uno conta le piastrelle di una fila, l'altro conta le file. Sono più o meno di mille?",
+   "roles": [
+    "Conta le piastrelle di una fila",
+    "Conta le file"
+   ],
+   "vinnieBet": "Cento piastrelle",
+   "parentHint": "Sono migliaia di piastrelle di ceramica: se dicono più di mille, vince la squadra."
+  },
+  {
    "id": "mon-go-shakespeare",
    "stopId": "mon-go-moma",
    "type": "describe",
@@ -2454,6 +2778,32 @@ export default {
     "Cammina avanti e cerca la statua"
    ],
    "parentHint": "È William Shakespeare, all'estremità sud del Mall (Literary Walk), il primo gruppo di statue che si incontra in fondo al viale venendo da Bethesda. Lì vicino ci sono anche Cristoforo Colombo e, seduti, Robert Burns e Walter Scott."
+  },
+  {
+   "id": "mon-q-pomona",
+   "stopId": "mon-go-moma",
+   "type": "bet",
+   "title": "La dea della fontana",
+   "read": "Davanti all'hotel Plaza c'è una fontana con una statua di donna in cima. Vinnie dice che tiene in mano un telefono per fotografare i turisti. Uno guarda le mani, l'altro guarda cosa porta in testa o sulle braccia. Cosa tiene davvero?",
+   "roles": [
+    "Guarda le mani",
+    "Guarda il resto della statua"
+   ],
+   "vinnieBet": "Un telefono",
+   "parentHint": "È Pomona, la dea romana dei frutti: tiene un cesto di frutta. La fontana si chiama Pulitzer Fountain."
+  },
+  {
+   "id": "mon-q-prezzo",
+   "stopId": "mon-go-moma",
+   "type": "bet",
+   "title": "Il prezzo più alto",
+   "read": "Sulla Quinta tra la 57ª e la 53ª ci sono le vetrine più care del mondo. Vinnie scommette che non trovate un prezzo scritto sopra i diecimila dollari. Uno guarda le vetrine a destra, l'altro a sinistra.",
+   "roles": [
+    "Guarda a destra",
+    "Guarda a sinistra"
+   ],
+   "vinnieBet": "Niente sopra i 10.000 dollari",
+   "parentHint": "Molte vetrine di lusso non mostrano i prezzi: se non trovano prezzi scritti, vince Vinnie. Gioiellerie e orologerie a volte li espongono."
   },
   {
    "id": "mon-m-moma",
@@ -2472,6 +2822,312 @@ export default {
    "parentHint": "In basso, al centro del quadro: il paesino. Il campanile appuntito è la cosa più alta tra i tetti, a destra del grande cipresso nero che sale sul lato sinistro."
   },
   {
+   "id": "mon-mo-stelle",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Quante stelle?",
+   "read": "Vinnie qui. Io la notte dormo, ma Van Gogh no: ha dipinto un cielo pieno di stelle. Scommetto che sono venti. Uno conta le stelle, l'altro conta i giri del vento nel cielo, quelle spirali. Se le stelle non sono venti, il pezzo è vostro.",
+   "roles": [
+    "Conta le stelle",
+    "Conta le spirali del vento"
+   ],
+   "vinnieBet": "Venti stelle",
+   "parentHint": "Le stelle sono 11, più la luna in alto a destra. Le grandi spirali al centro sono una o due, a seconda di come le contate."
+  },
+  {
+   "id": "mon-mo-donne",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Quante signore?",
+   "read": "In questo quadro di Picasso ci sono delle signore fatte di triangoli. Vinnie scommette che sono tre. Uno le conta da sinistra, l'altro da destra. Poi cercate insieme la fetta di melone. Se le signore non sono tre e trovate il melone, il pezzo è vostro.",
+   "roles": [
+    "Conta da sinistra",
+    "Conta da destra e cerca il melone"
+   ],
+   "vinnieBet": "Tre signore",
+   "parentHint": "Le donne sono cinque. La fetta di melone è nella natura morta in basso al centro."
+  },
+  {
+   "id": "mon-mo-leone",
+   "stopId": "mon-moma",
+   "type": "describe",
+   "title": "Cosa succede dopo?",
+   "read": "Il leone annusa la donna che dorme. Vinnie ha paura e non guarda. Uno di voi descrive tutto quello che c'è vicino alla donna, l'altro deve trovarlo. Poi inventate insieme, in una frase, cosa succede un secondo dopo. Se Vinnie si tranquillizza, il pezzo è vostro.",
+   "roles": [
+    "Descrive gli oggetti vicino alla donna",
+    "Li trova e inventa il finale"
+   ],
+   "parentHint": "Accanto alla donna ci sono un mandolino e una brocca. Il leone non le fa niente: nel quadro sembra solo curioso. Va bene qualsiasi finale gentile."
+  },
+  {
+   "id": "mon-mo-danza",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Quanti ballerini?",
+   "read": "Questi ballano in cerchio e non si fermano mai. Vinnie dice che sono quattro, come i giocatori di una partita a carte. Uno conta i ballerini, l'altro conta i colori del quadro. Se i ballerini non sono quattro, il pezzo è vostro.",
+   "roles": [
+    "Conta i ballerini",
+    "Conta i colori"
+   ],
+   "vinnieBet": "Quattro ballerini",
+   "parentHint": "I ballerini sono cinque. I colori principali sono tre: blu del cielo, verde del prato, rosa dei corpi."
+  },
+  {
+   "id": "mon-mo-buco",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Il buco nel cerchio",
+   "read": "Nel cerchio della Danza c'è un punto dove due mani non si toccano. Vinnie scommette che non lo trovate in trenta secondi. Uno fa partire il cronometro, l'altro cerca. Poi fate la stessa posa dei ballerini, senza disturbare nessuno.",
+   "roles": [
+    "Fa partire il cronometro",
+    "Cerca le mani che non si toccano"
+   ],
+   "vinnieBet": "Non lo trovate in 30 secondi",
+   "parentHint": "Le mani staccate sono in basso a sinistra, davanti: il ballerino in primo piano allunga il braccio verso quello vicino senza riuscire a prenderlo."
+  },
+  {
+   "id": "mon-mo-sottosopra",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Il mondo capovolto",
+   "read": "In questo quadro qualcuno è a testa in giù. Vinnie dice che è tutto dritto, siete voi a essere storti. Uno cerca le persone a testa in giù, l'altro le case a testa in giù. Se ne trovate almeno una a testa, il pezzo è vostro.",
+   "roles": [
+    "Cerca le persone capovolte",
+    "Cerca le case capovolte"
+   ],
+   "vinnieBet": "Tutto dritto",
+   "parentHint": "In alto a destra ci sono una donna capovolta e alcune case capovolte, accanto a un uomo con la falce. C'è anche una mucca dentro la testa della mucca grande."
+  },
+  {
+   "id": "mon-mo-camminata",
+   "stopId": "mon-moma",
+   "type": "describe",
+   "title": "Cammina come la statua",
+   "read": "Questa statua di bronzo cammina contro il vento. Uno di voi guarda bene la statua e poi la imita, fermo come una statua. L'altro fa il giudice: cosa somiglia e cosa no? Poi vi scambiate. Se il giudice dà almeno 7 su 10 a tutti e due, il pezzo è vostro.",
+   "roles": [
+    "Imita la statua",
+    "Fa il giudice e dà il voto"
+   ],
+   "parentHint": "Senza braccia, una gamba avanti e una indietro, il busto spinto in avanti. Attenzione a non urtare il piedistallo né le persone."
+  },
+  {
+   "id": "mon-mo-moneta",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "La statua nel portafoglio",
+   "read": "Vinnie ha un segreto: questa statua è anche nel vostro portafoglio, se avete degli euro. Uno cerca tra le monete, l'altro controlla quale moneta è. Se la trovate, vince la squadra. Se non avete euro, vince Vinnie.",
+   "roles": [
+    "Cerca tra le monete",
+    "Controlla quale moneta è"
+   ],
+   "vinnieBet": "Non l'avete in tasca",
+   "parentHint": "È sul retro della moneta italiana da 20 centesimi. Se non avete monete italiane, mostrate la foto sul telefono e date comunque il pezzo alla squadra, se volete."
+  },
+  {
+   "id": "mon-mo-ninfee",
+   "stopId": "mon-moma",
+   "type": "measure",
+   "title": "Quanto è lungo lo stagno?",
+   "read": "Le Ninfee occupano una parete intera. Vinnie dice che sono lunghe dieci dei vostri passi. Senza avvicinarvi troppo, uno cammina lungo tutta la parete a un metro di distanza, contando i passi, l'altro controlla. Chi va più vicino tra voi e Vinnie vince.",
+   "roles": [
+    "Cammina e conta i passi",
+    "Controlla e dice il numero finale"
+   ],
+   "vinnieBet": "Dieci passi",
+   "parentHint": "Le tre tele insieme sono lunghe quasi 13 metri: per un bambino sono circa 20–25 passi. Non camminate davanti a chi guarda: fatelo dietro, vicino alle panche."
+  },
+  {
+   "id": "mon-mo-orologi",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Quanti orologi?",
+   "read": "Dalí ha fatto sciogliere degli orologi come gelati al sole. Vinnie dice che sono due. Uno conta gli orologi molli, l'altro cerca un orologio duro e chiuso. Poi cercate insieme gli insetti. Se gli orologi sono più di due, il pezzo è vostro.",
+   "roles": [
+    "Conta gli orologi molli",
+    "Cerca l'orologio chiuso e gli insetti"
+   ],
+   "vinnieBet": "Due orologi",
+   "parentHint": "Gli orologi sono quattro: tre molli e uno arancione chiuso, coperto di formiche. Su uno degli orologi molli c'è anche una mosca."
+  },
+  {
+   "id": "mon-mo-occhio",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Cosa c'è nell'occhio?",
+   "read": "Questo è un occhio gigante. Vinnie dice che dentro c'è un pianeta. Uno di voi guarda il colore dell'iride, l'altro guarda cosa c'è dentro. Ditelo insieme: un pianeta o altro?",
+   "roles": [
+    "Guarda il colore",
+    "Guarda cosa c'è dentro"
+   ],
+   "vinnieBet": "Un pianeta",
+   "parentHint": "Dentro l'iride c'è un cielo azzurro con le nuvole bianche; la pupilla è un cerchio nero."
+  },
+  {
+   "id": "mon-mo-forbici",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Cosa tiene in mano Frida?",
+   "read": "Frida si è appena tagliata i capelli. Vinnie scommette che in mano tiene un pettine. Uno guarda le mani, l'altro conta le ciocche di capelli per terra: sono più o meno di dieci?",
+   "roles": [
+    "Guarda cosa tiene in mano",
+    "Conta le ciocche per terra"
+   ],
+   "vinnieBet": "Un pettine",
+   "parentHint": "Tiene un paio di forbici. Le ciocche per terra sono molte più di dieci."
+  },
+  {
+   "id": "mon-mo-taxi",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "I taxi di Mondrian",
+   "read": "Questo quadro è New York vista dall'alto, come la vedo io. Vinnie scommette che il colore più usato è il blu. Uno guarda le righe, l'altro i quadratini. Qual è il colore che c'è di più?",
+   "roles": [
+    "Guarda le righe",
+    "Guarda i quadratini"
+   ],
+   "vinnieBet": "Il blu",
+   "parentHint": "Il colore più presente è il giallo delle righe, come i taxi e le strade. Rossi, blu e grigi sono i quadratini."
+  },
+  {
+   "id": "mon-mo-griglia",
+   "stopId": "mon-moma",
+   "type": "describe",
+   "title": "Il percorso sulla griglia",
+   "read": "Uno di voi sceglie in segreto un quadratino rosso e descrive come arrivarci con il dito partendo dall'angolo in basso a sinistra: su, destra, su, come un taxi. L'altro segue le indicazioni con il dito nell'aria, senza toccare il quadro. Ci siete arrivati?",
+   "roles": [
+    "Dà le indicazioni da taxista",
+    "Segue il percorso con il dito"
+   ],
+   "parentHint": "Restate a un passo dal quadro e non toccatelo. Se arrivano al quadratino giusto, vince la squadra."
+  },
+  {
+   "id": "mon-mo-pompe",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Le pompe di benzina",
+   "read": "Vinnie dice che questo distributore ha cinque pompe rosse. Uno conta le pompe, l'altro cerca la luce accesa più forte. Se le pompe non sono cinque, il pezzo è vostro.",
+   "roles": [
+    "Conta le pompe rosse",
+    "Cerca la luce più forte"
+   ],
+   "vinnieBet": "Cinque pompe",
+   "parentHint": "Le pompe sono tre. La luce più forte è sotto la tettoia del distributore e nella vetrina della casetta."
+  },
+  {
+   "id": "mon-mo-impronte",
+   "stopId": "mon-moma",
+   "type": "describe",
+   "title": "Le mani di Pollock",
+   "read": "Pollock dipingeva saltando intorno alla tela per terra. In uno dei suoi quadri ha lasciato le impronte delle mani. Uno cerca le impronte, l'altro sceglie un colore e segue con lo sguardo una riga fino a dove finisce. Se trovate le impronte, il pezzo è vostro.",
+   "roles": [
+    "Cerca le impronte delle mani",
+    "Segue una riga di colore"
+   ],
+   "parentHint": "Le impronte sono in Number 1A, 1948, in alto a destra. Se è esposto solo un altro quadro di Pollock, la squadra vince se segue una riga per almeno dieci secondi senza perderla."
+  },
+  {
+   "id": "mon-mo-stelle48",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Le stelle della bandiera",
+   "read": "La bandiera americana ha cinquanta stelle: lo sanno tutti. Vinnie scommette che anche questa ne ha cinquanta. Uno conta le stelle per righe, l'altro le righe. Moltiplicate o contate tutto. Se non sono cinquanta, il pezzo è vostro.",
+   "roles": [
+    "Conta le stelle di una riga",
+    "Conta le righe"
+   ],
+   "vinnieBet": "Cinquanta stelle",
+   "parentHint": "La bandiera di Jasper Johns è del 1954–55: le stelle sono 48, sei righe da otto, perché Alaska e Hawaii non erano ancora stati americani."
+  },
+  {
+   "id": "mon-mo-zuppe",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Quante zuppe?",
+   "read": "Vinnie scommette che le lattine di zuppa sono cinquanta. Uno conta le lattine di una riga, l'altro conta le righe. Poi cercate la zuppa di vongole, Clam Chowder.",
+   "roles": [
+    "Conta le lattine di una riga",
+    "Conta le righe e cerca le vongole"
+   ],
+   "vinnieBet": "Cinquanta lattine",
+   "parentHint": "Le tele sono 32, in quattro righe da otto. Se la disposizione è diversa, contatele tutte."
+  },
+  {
+   "id": "mon-mo-puntini",
+   "stopId": "mon-moma",
+   "type": "measure",
+   "title": "Quando spariscono i puntini?",
+   "read": "Da vicino la ragazza è fatta di puntini rossi. Da lontano diventano pelle. Uno sta vicino al quadro, a un passo, e poi fa passi indietro contando ad alta voce; l'altro gli dice stop quando i puntini spariscono per lui. Vinnie dice due passi.",
+   "roles": [
+    "Fa i passi indietro",
+    "Dice stop quando i puntini spariscono"
+   ],
+   "vinnieBet": "Due passi",
+   "parentHint": "Di solito servono più di due passi, dipende dalla vista. Non urtate le persone dietro. I puntini si chiamano Ben-Day, come nei fumetti stampati."
+  },
+  {
+   "id": "mon-mo-panino",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Si mangia?",
+   "read": "Vinnie ha fame e vuole mordere i cheeseburger. Scommette che sono veri. Uno guarda il formaggio, l'altro guarda il pane. Sono veri o finti? E di cosa sono fatti, secondo voi?",
+   "roles": [
+    "Guarda il formaggio",
+    "Guarda il pane"
+   ],
+   "vinnieBet": "Sono veri",
+   "parentHint": "Sono finti: Claes Oldenburg li fece nel 1962 con tela imbevuta di gesso e poi dipinta con smalto. Non si toccano."
+  },
+  {
+   "id": "mon-mo-christina",
+   "stopId": "mon-moma",
+   "type": "describe",
+   "title": "La casa in cima",
+   "read": "Christina guarda una casa lontana. Uno di voi descrive tutto quello che si vede a destra di lei, l'altro tutto quello che si vede a sinistra. Poi indovinate: perché guarda la casa?",
+   "roles": [
+    "Descrive il lato destro",
+    "Descrive il lato sinistro"
+   ],
+   "parentHint": "A destra in alto c'è la casa grigia; a sinistra un fienile e altri edifici. La vera Christina non poteva camminare e si muoveva trascinandosi: si può raccontare con delicatezza."
+  },
+  {
+   "id": "mon-mo-elicottero",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Dove si siede il pilota?",
+   "read": "In questo museo c'è un elicottero vero. Vinnie scommette che il pilota si siede nella coda. Uno guarda la bolla trasparente, l'altro conta le pale del rotore. Dove si siede il pilota?",
+   "roles": [
+    "Guarda la bolla",
+    "Conta le pale"
+   ],
+   "vinnieBet": "Nella coda",
+   "parentHint": "Il pilota si siede nella bolla trasparente davanti. Le pale del rotore principale sono due. Se l'elicottero non è esposto, la squadra vince trovando un oggetto di design che ha anche a casa."
+  },
+  {
+   "id": "mon-mo-capra",
+   "stopId": "mon-moma",
+   "type": "describe",
+   "title": "La capra fatta di cose",
+   "read": "Nel giardino c'è una capra di bronzo che Picasso ha fatto con oggetti trovati, come in un gioco: un cesto, un vaso, una foglia. Uno di voi cerca la pancia, l'altro cerca la schiena. Di cosa erano fatte, secondo voi?",
+   "roles": [
+    "Cerca la pancia",
+    "Cerca la schiena"
+   ],
+   "parentHint": "Picasso usò un cesto di vimini per la pancia, una foglia di palma per la schiena e dei vasi per le mammelle, poi fece fondere tutto in bronzo. Se il giardino è chiuso, guardatela dall'alto da Terrace 5."
+  },
+  {
+   "id": "mon-mo-preferito",
+   "stopId": "mon-moma",
+   "type": "bet",
+   "title": "Il quadro della squadra",
+   "read": "Ultima sfida del museo. Ognuno di voi sceglie in segreto il suo quadro preferito di oggi. Vinnie scommette che avete scelto lo stesso. Al tre ditelo insieme. Se sono diversi, ognuno ha un minuto per convincere l'altro. Se uno cambia idea, il pezzo è vostro.",
+   "roles": [
+    "Dice il suo preferito",
+    "Dice il suo preferito"
+   ],
+   "vinnieBet": "Avete scelto lo stesso",
+   "parentHint": "Non c'è una risposta giusta. Se scelgono lo stesso, vince Vinnie; se discutono bene, vince la squadra."
+  },
+  {
    "id": "mon-hamburger",
    "stopId": "mon-pranzo",
    "type": "bet",
@@ -2483,6 +3139,31 @@ export default {
    ],
    "vinnieBet": "Meno di tre carretti",
    "parentHint": "Intorno al MoMA e sulla Sesta ce ne sono di solito parecchi, soprattutto di cibo halal e noccioline caramellate."
+  },
+  {
+   "id": "mon-p-conto",
+   "stopId": "mon-pranzo",
+   "type": "bet",
+   "title": "Indovina il conto",
+   "read": "Prima di pagare, ognuno di voi indovina quanto costa tutto il pranzo, in dollari. Vinnie dice centoventi. Il genitore guarda lo scontrino. Chi va più vicino vince.",
+   "roles": [
+    "Indovina il conto",
+    "Indovina un altro numero"
+   ],
+   "vinnieBet": "Centoventi dollari",
+   "parentHint": "Usate il totale con tasse (circa 9%) e, al tavolo, la mancia."
+  },
+  {
+   "id": "mon-p-tenda",
+   "stopId": "mon-pranzo",
+   "type": "describe",
+   "title": "L'hamburger nascosto",
+   "read": "Se andate al Burger Joint, l'ingresso è nascosto nella hall di un hotel elegante, dietro una tenda. Uno di voi trova il segnale che indica la porta, l'altro lo descrive senza dire hamburger. Se lo trovate senza chiedere, il pezzo è vostro.",
+   "roles": [
+    "Cerca il segnale",
+    "Lo descrive senza dire la parola vietata"
+   ],
+   "parentHint": "Il segnale è un piccolo hamburger luminoso al neon, vicino a una tenda nella hall. Se mangiate altrove, la squadra vince descrivendo il carretto con il fumo più grande."
   },
   {
    "id": "mon-bet-atlas",
@@ -2498,6 +3179,32 @@ export default {
    "parentHint": "La statua di Atlante, davanti all'International Building del Rockefeller Center, Quinta Avenue tra 51st e 50th, lato destro scendendo verso sud, di fronte a St. Patrick's. È alta più di 4 metri e regge una sfera fatta di anelli (una sfera armillare: il cielo, non la Terra)."
   },
   {
+   "id": "mon-g-albero",
+   "stopId": "mon-go-gct",
+   "type": "bet",
+   "title": "L'albero del Rockefeller",
+   "read": "Al Rockefeller Center hanno già montato l'albero di Natale, ancora spento. Vinnie dice che è alto come una casa di due piani. Uno guarda l'albero, l'altro conta quanti voi uno sopra l'altro ci vorrebbero per arrivare in cima. Più o meno di dieci?",
+   "roles": [
+    "Guarda l'albero",
+    "Conta quanti bambini in fila"
+   ],
+   "vinnieBet": "Alto come una casa di due piani",
+   "parentHint": "L'albero di solito è alto tra 20 e 25 metri: servono più di quindici bambini uno sopra l'altro. L'accensione è di solito a inizio dicembre."
+  },
+  {
+   "id": "mon-g-scritta",
+   "stopId": "mon-go-gct",
+   "type": "bet",
+   "title": "Le lettere rosse",
+   "read": "Sulla Sesta Avenue c'è un teatro con il nome scritto in verticale in lettere rosse. Vinnie scommette che sono più di venti lettere. Uno legge il nome, l'altro conta le lettere.",
+   "roles": [
+    "Legge il nome",
+    "Conta le lettere"
+   ],
+   "vinnieBet": "Più di venti lettere",
+   "parentHint": "È Radio City Music Hall. RADIO CITY sono 9 lettere, con MUSIC HALL 18."
+  },
+  {
    "id": "mon-m-gct",
    "stopId": "mon-gct",
    "type": "message",
@@ -2509,6 +3216,45 @@ export default {
    ],
    "vinnieBet": "Che non capite la parola al primo colpo",
    "parentHint": "Piano di sotto (Dining Concourse), davanti all'ingresso dell'Oyster Bar: lo spazio basso a volta con quattro pilastri. Gli angoli giusti sono in diagonale, non uno di fronte all'altro. Parole facili: stelle, ninfee, piccione, specchio."
+  },
+  {
+   "id": "mon-gc-facce",
+   "stopId": "mon-gct",
+   "type": "bet",
+   "title": "Le facce dell'orologio",
+   "read": "Al centro della sala grande c'è un orologio d'oro sopra il chiosco. Vinnie dice che ha due facce, come una moneta. Uno gira intorno al chiosco e le conta, l'altro guarda cosa c'è in cima all'orologio.",
+   "roles": [
+    "Conta le facce",
+    "Guarda cosa c'è in cima"
+   ],
+   "vinnieBet": "Due facce",
+   "parentHint": "Le facce sono quattro, una per lato. In cima c'è una ghianda dorata, il simbolo della famiglia Vanderbilt."
+  },
+  {
+   "id": "mon-gc-cielo",
+   "stopId": "mon-gct",
+   "type": "bet",
+   "title": "Il cielo al contrario",
+   "read": "Il soffitto è un cielo blu con le costellazioni d'oro. Vinnie scommette che è dipinto giusto, come si vede da terra. Uno cerca la costellazione dei Pesci o del Granchio, l'altro controlla con un'app del cielo o chiede al genitore. È giusto o al contrario?",
+   "roles": [
+    "Cerca la costellazione",
+    "Controlla se è al contrario"
+   ],
+   "vinnieBet": "Dipinto giusto",
+   "parentHint": "Il cielo è dipinto al contrario, come se lo si guardasse da fuori. Si dice che fu un errore; la versione ufficiale è che sia il cielo visto da Dio."
+  },
+  {
+   "id": "mon-gc-ghiande",
+   "stopId": "mon-gct",
+   "type": "bet",
+   "title": "Le ghiande dappertutto",
+   "read": "La famiglia che costruì la stazione aveva come simbolo la ghianda. Vinnie scommette che non ne trovate cinque in tutta la stazione. Uno cerca sui lampadari, l'altro sui muri e sull'orologio.",
+   "roles": [
+    "Cerca sui lampadari",
+    "Cerca su muri e orologio"
+   ],
+   "vinnieBet": "Meno di cinque ghiande",
+   "parentHint": "Le ghiande sono sui lampadari, sull'orologio e in molte decorazioni: se ne trovate cinque è facile, vince la squadra."
   },
   {
    "id": "mon-m-summit",
@@ -2528,6 +3274,44 @@ export default {
    "parentHint": "Il Chrysler è a est, verso l'East River, a meno di 300 metri. Si vede già dalla prima stanza a specchi al piano 91 (Transcendence 1): mettetevi contro le vetrate del lato est. La foto è verticale e il Chrysler occupa quasi tutta l'altezza."
   },
   {
+   "id": "mon-s-palloncini",
+   "stopId": "mon-summit",
+   "type": "bet",
+   "title": "I palloncini d'argento",
+   "read": "Nella stanza Affinity galleggiano tanti palloncini d'argento. Vinnie scommette che sono più di mille. Uno conta quelli che toccano il soffitto in un angolo, l'altro quelli che toccano terra.",
+   "roles": [
+    "Conta quelli in alto",
+    "Conta quelli in basso"
+   ],
+   "vinnieBet": "Più di mille",
+   "parentHint": "Il numero esatto non l'ho verificato: vince la squadra se il suo conto dà meno di mille, oppure se si accorgono che non si possono contare tutti. Si possono spingere piano, non scoppiare."
+  },
+  {
+   "id": "mon-s-taxi",
+   "stopId": "mon-summit",
+   "type": "bet",
+   "title": "Le formiche gialle",
+   "read": "Dalla scatola di vetro sopra il vuoto guardate giù, tra i piedi. Vinnie dice che i taxi gialli là sotto sono più delle auto nere. Uno conta i taxi gialli per un minuto, l'altro le auto nere.",
+   "roles": [
+    "Conta i taxi gialli",
+    "Conta le auto nere"
+   ],
+   "vinnieBet": "Più taxi gialli",
+   "parentHint": "Su Madison Avenue passano entrambi; decide il conteggio. Se qualcuno ha paura dell'altezza, si gioca dal bordo."
+  },
+  {
+   "id": "mon-s-chrysler",
+   "stopId": "mon-summit",
+   "type": "describe",
+   "title": "Il grattacielo con le squame",
+   "read": "Da quassù si vedono due grattacieli famosi. Uno di voi descrive il Chrysler Building, quello con la punta a squame argentate; l'altro descrive l'Empire State. Poi indovinate: quale è più vicino?",
+   "roles": [
+    "Descrive il Chrysler",
+    "Descrive l'Empire State"
+   ],
+   "parentHint": "Il Chrysler è a est, vicinissimo, a un isolato e mezzo; l'Empire State è a sud, a circa 800 metri."
+  },
+  {
    "id": "mon-pista",
    "stopId": "mon-bryant",
    "type": "bet",
@@ -2539,6 +3323,32 @@ export default {
    ],
    "vinnieBet": "Come le lancette dell'orologio",
    "parentHint": "Nelle piste pubbliche di solito si gira in senso antiorario, cioè al contrario delle lancette. Se stasera girano nell'altro senso, vince Vinnie: decidono i vostri occhi."
+  },
+  {
+   "id": "mon-b-giostra",
+   "stopId": "mon-bryant",
+   "type": "bet",
+   "title": "Gli animali della giostra",
+   "read": "Le Carrousel di Bryant Park non ha solo cavalli. Vinnie scommette che ci sono solo cavalli. Uno conta i cavalli, l'altro cerca un animale diverso.",
+   "roles": [
+    "Conta i cavalli",
+    "Cerca un animale diverso"
+   ],
+   "vinnieBet": "Solo cavalli",
+   "parentHint": "La giostra ha animali di vario tipo, tra cui conigli, gatti, una rana e altri: verificate sul posto. Un giro costa pochi dollari."
+  },
+  {
+   "id": "mon-b-casette",
+   "stopId": "mon-bryant",
+   "type": "bet",
+   "title": "Le casette di vetro",
+   "read": "Intorno alla pista ci sono tante casette. Vinnie scommette che non trovate una casetta che vende qualcosa di italiano. Uno cerca da un lato, l'altro dall'altro.",
+   "roles": [
+    "Cerca su un lato",
+    "Cerca sull'altro"
+   ],
+   "vinnieBet": "Niente di italiano",
+   "parentHint": "Nei mercatini spesso ci sono pasta, cannoli o dolci italiani: valgono anche prodotti che si dicono italiani."
   },
   {
    "id": "mon-vetrina-saks",
@@ -2553,6 +3363,19 @@ export default {
    "parentHint": "Se le vetrine non mostrano posti di New York, va bene qualsiasi cosa che i bambini hanno visto durante il viaggio: un animale del museo, una luce, un colore."
   },
   {
+   "id": "mon-sk-colori",
+   "stopId": "mon-saks",
+   "type": "bet",
+   "title": "I colori delle luci",
+   "read": "Stasera la facciata di Saks si accende con le luci. Vinnie scommette che le luci sono di un colore solo. Uno conta i colori, l'altro conta i fiocchi di neve o le forme che compaiono.",
+   "roles": [
+    "Conta i colori",
+    "Conta le forme"
+   ],
+   "vinnieBet": "Un colore solo",
+   "parentHint": "Lo spettacolo di luci di solito cambia colore più volte. Se stasera non c'è, contate i colori delle vetrine."
+  },
+  {
    "id": "mon-go-strade",
    "stopId": "mon-go-hotel",
    "type": "bet",
@@ -2564,6 +3387,18 @@ export default {
    ],
    "vinnieBet": "Almeno uno sbagliato",
    "parentHint": "49th forty-ninth, 48th forty-eighth, 47th forty-seventh, 46th forty-sixth, 45th forty-fifth, 44th forty-fourth, 43rd forty-third, 42nd forty-second, 41st forty-first."
+  },
+  {
+   "id": "mon-h-radio",
+   "stopId": "mon-go-hotel",
+   "type": "describe",
+   "title": "Radio City di notte",
+   "read": "Passando davanti a Radio City Music Hall, uno di voi descrive l'insegna illuminata senza dire il nome: colore, forma, cosa c'è scritto. L'altro deve dirlo quando la vede. Ultima sfida descrittiva della giornata.",
+   "roles": [
+    "Descrive l'insegna",
+    "La riconosce e dice il nome"
+   ],
+   "parentHint": "L'insegna è verticale, rossa, sull'angolo della Sesta e la 50ª. Se fate un'altra strada, descrivete la luce più grande che vedete."
   },
   {
    "id": "mon-bet-radio",

@@ -127,9 +127,13 @@ function nextHere(m, results) {
   const same = (ctx.day(m.dayId).missions ?? []).filter((x) => x.stopId === m.stopId);
   const i = same.findIndex((x) => x.id === m.id);
   const nxt = same.slice(i + 1).find((x) => !results[x.id]) ?? same.find((x) => x.id !== m.id && !results[x.id]);
-  return nxt
-    ? h('a', { class: 'btn btn-taxi', href: `#/mission/${nxt.id}` }, `Altra sfida qui: ${nxt.title} ›`)
-    : h('a', { class: 'btn', href: `#/stop/${m.dayId}/${m.stopId}` }, 'Torna alla tappa');
+  const stop = ctx.stop(m.dayId, m.stopId);
+  const path = ctx.store.get(`steps:${m.stopId}`);
+  const inRoute = stop?.steps?.length && path != null && JSON.stringify(stop.steps).includes(`"${m.id}"`);
+  return h('div', { class: 'stack', style: { gap: '8px' } },
+    inRoute ? h('a', { class: 'btn btn-primary', href: `#/steps/${m.dayId}/${m.stopId}/${path}` }, '‹ Torna al percorso') : null,
+    nxt ? h('a', { class: 'btn btn-taxi', href: `#/mission/${nxt.id}` }, `Altra sfida qui: ${nxt.title} ›`)
+      : h('a', { class: 'btn', href: `#/stop/${m.dayId}/${m.stopId}` }, 'Torna alla tappa'));
 }
 
 function photo(img) {
