@@ -1,5 +1,5 @@
 export const PRECACHE = {
- "version": "da8f148901fb",
+ "version": "93efc40360ea",
  "files": [
   "./",
   "css/app.css",
