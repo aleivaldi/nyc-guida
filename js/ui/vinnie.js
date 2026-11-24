@@ -2,6 +2,7 @@ import { h, mount, svg } from './dom.js';
 import { ctx } from './ctx.js';
 import { gameState, recordResult, setNames, score, rolesFor, isFinished } from '../core/game.js';
 import { DAY_NAME } from './common.js';
+import { mapsPair } from './maps.js';
 
 const store = () => ctx.raw;
 const TYPE_LABEL = {
@@ -33,7 +34,8 @@ export function renderVinnie() {
       h('ul', { class: 'mission-list' }, today.map((m) => h('li', {},
         h('a', { href: `#/mission/${m.id}` }, m.title,
           h('span', { class: 'st' }, st.results[m.id] === 'team' ? 'vinta' : st.results[m.id] === 'vinnie' ? 'a Vinnie' : TYPE_LABEL[m.type] ?? '')))))),
-    ctx.nextFreeBet(st.results) ? h('a', { class: 'btn btn-taxi', href: `#/mission/${ctx.nextFreeBet(st.results).id}` }, 'Una scommessa al volo') : null,
+    h('a', { class: 'btn btn-taxi', href: '#/vicino' }, 'Sfide vicino a me'),
+    ctx.nextFreeBet(st.results) ? h('a', { class: 'btn btn-quiet', href: `#/mission/${ctx.nextFreeBet(st.results).id}` }, 'Una scommessa al volo') : null,
     h('button', { class: 'btn btn-quiet', onclick: renderNames }, st.names ? `Squadra: ${st.names.join(' e ')}` : 'Scrivete i nomi della squadra'),
     h('a', { class: 'btn btn-quiet', href: '#/credits' }, 'Crediti delle foto'),
   ));
@@ -94,6 +96,7 @@ export function renderMission(id) {
   const result = st.results[id];
   const hint = h('p', { class: 'hint', hidden: true }, m.parentHint);
   const stop = m.stopId ? ctx.stop(m.dayId, m.stopId) : null;
+  const free = !stop && (m.pos || !m.dayId);
 
   const set = (w) => {
     recordResult(store(), id, result === w ? null : w);
@@ -104,7 +107,7 @@ export function renderMission(id) {
   const line = result ? ctx.store.get('lastLine') : null;
 
   mount(h('section', { class: 'vinnie stack' },
-    h('a', { class: 'back', href: stop ? `#/stop/${m.dayId}/${m.stopId}` : '#/vinnie' }, stop ? `‹ ${stop.name}` : '‹ Vinnie'),
+    h('a', { class: 'back', href: stop ? `#/stop/${m.dayId}/${m.stopId}` : free ? '#/vicino' : '#/vinnie' }, stop ? `‹ ${stop.name}` : free ? '‹ Sfide vicino a me' : '‹ Vinnie'),
     h('h1', {}, m.title),
     h('p', { class: 'hint' }, `${TYPE_LABEL[m.type] ?? ''}. Leggetelo ad alta voce.`),
     h('p', { class: 'read' }, m.read),
@@ -113,6 +116,7 @@ export function renderMission(id) {
       h('b', {}, cap(first)), h('span', {}, m.roles[0]),
       h('b', {}, cap(second)), h('span', {}, m.roles[1])) : null,
     m.vinnieBet ? h('p', { class: 'speech' }, m.vinnieBet) : null,
+    m.pos ? h('div', {}, h('p', { class: 'label' }, `Dove: ${m.area}`), mapsPair(m.pos, 'walking')) : null,
     m.parentHint ? h('div', {}, h('button', { class: 'chip', onclick: (e) => { hint.hidden = !hint.hidden; e.currentTarget.setAttribute('aria-pressed', String(!hint.hidden)); } }, 'Aiuto per il genitore'), hint) : null,
     line ? h('p', { class: 'speech' }, line) : null,
     h('div', { class: 'result' },
@@ -123,7 +127,9 @@ export function renderMission(id) {
 }
 
 function nextHere(m, results) {
-  if (!m.stopId) return null;
+  if (!m.stopId) {
+    return (m.pos || !m.dayId) ? h('a', { class: 'btn btn-taxi', href: '#/vicino' }, 'Altre sfide vicino a me ›') : null;
+  }
   const same = (ctx.day(m.dayId).missions ?? []).filter((x) => x.stopId === m.stopId);
   const i = same.findIndex((x) => x.id === m.id);
   const nxt = same.slice(i + 1).find((x) => !results[x.id]) ?? same.find((x) => x.id !== m.id && !results[x.id]);

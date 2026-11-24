@@ -1,4 +1,5 @@
 import { DAYS, COMMON } from '../../data/index.js';
+import VICINO from '../../data/vicino.js';
 import { nyNow, tripDayId, toMin } from '../core/time.js';
 import { locateStop, activeStops } from '../core/schedule.js';
 import { safeStorage } from '../core/storage.js';
@@ -87,9 +88,11 @@ export const ctx = {
       .sort((a, b) => a.d - b.d);
   },
 
+  allBets() { return [...(COMMON.bets ?? []), ...VICINO]; },
+
   allMissions(results = {}) {
     const day = DAYS.flatMap((d) => (d.missions ?? []).map((m) => ({ ...m, dayId: d.id })));
-    const extra = (COMMON.bets ?? []).filter((b) => results[b.id]).map((b) => ({ ...b, dayId: null }));
+    const extra = this.allBets().filter((b) => results[b.id]).map((b) => ({ ...b, dayId: null }));
     return [...day, ...extra];
   },
 
@@ -97,12 +100,28 @@ export const ctx = {
     const list = this.allMissions(results);
     const i = list.findIndex((m) => m.id === id);
     if (i >= 0) return { m: list[i], i };
-    const bet = (COMMON.bets ?? []).find((b) => b.id === id);
+    const bet = this.allBets().find((b) => b.id === id);
     return bet ? { m: { ...bet, dayId: null }, i: list.length } : null;
   },
 
   nextFreeBet(results = {}) {
-    return (COMMON.bets ?? []).find((b) => !results[b.id]) ?? null;
+    return this.allBets().find((b) => !b.pos && !results[b.id]) ?? null;
+  },
+
+  // Tutte le sfide con un luogo (proprie o della tappa) e quelle valide ovunque.
+  missionsWithPlace() {
+    const placed = [];
+    const anywhere = [];
+    DAYS.forEach((d) => (d.missions ?? []).forEach((m) => {
+      const st = m.stopId ? d.stops.find((s) => s.id === m.stopId) : null;
+      if (st?.pos) placed.push({ m: { ...m, dayId: d.id }, pos: st.pos, area: st.name });
+      else anywhere.push({ m: { ...m, dayId: d.id }, area: 'Ovunque' });
+    }));
+    this.allBets().forEach((b) => {
+      if (b.pos) placed.push({ m: { ...b, dayId: null }, pos: b.pos, area: b.area });
+      else anywhere.push({ m: { ...b, dayId: null }, area: 'Ovunque' });
+    });
+    return { placed, anywhere };
   },
 };
 

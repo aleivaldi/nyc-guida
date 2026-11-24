@@ -1,0 +1,48 @@
+import { h, mount } from './dom.js';
+import { ctx, requestPosition } from './ctx.js';
+import { gameState } from '../core/game.js';
+import { distanceM } from '../core/geo.js';
+import { distLabel } from './common.js';
+
+const TYPE_LABEL = {
+  describe: 'Descrivi e cerca', 'photo-spot': 'Dov\'era il fotografo', 'then-now': 'Cos\'è cambiato',
+  measure: 'Misura di squadra', message: 'Il messaggio', bet: 'Scommessa',
+};
+const PAGE = 12;
+let shown = PAGE;
+let shownAny = 8;
+
+function row(m, sub, results) {
+  return h('li', {}, h('a', { href: `#/mission/${m.id}`, style: { display: 'block' } },
+    h('span', { style: { display: 'block' } }, m.title),
+    h('span', { class: 'st', style: { display: 'block', margin: 0 } }, `${sub} · ${TYPE_LABEL[m.type] ?? 'Sfida'}${results[m.id] ? ' · fatta' : ''}`)));
+}
+
+export function renderVicino() {
+  document.documentElement.style.setProperty('--line', 'var(--taxi)');
+  const results = gameState(ctx.raw).results;
+  const gps = ctx.pos && Date.now() - ctx.posAt < 15 * 60 * 1000;
+  const todayId = ctx.todayId();
+  const fallback = ctx.origin(todayId);
+  const origin = gps ? ctx.pos : fallback.pos;
+  const { placed, anywhere } = ctx.missionsWithPlace();
+
+  const near = placed
+    .filter((x) => !results[x.m.id])
+    .map((x) => ({ ...x, d: distanceM(origin, x.pos) }))
+    .sort((a, b) => a.d - b.d);
+  const free = anywhere.filter((x) => !results[x.m.id]);
+
+  const where = gps ? 'Dalla vostra posizione' : `Senza posizione: parto dalla tappa in programma`;
+  mount(h('section', { class: 'vinnie stack' },
+    h('a', { class: 'back', href: '#/vinnie' }, '‹ Vinnie'),
+    h('h1', {}, 'Sfide vicino a me'),
+    h('p', { class: 'hint' }, `${where}. Le più vicine in alto.`),
+    gps ? null : h('button', { class: 'btn btn-taxi', onclick: () => { requestPosition(renderVicino); renderVicino(); } }, 'Usa la mia posizione'),
+    h('ul', { class: 'mission-list' }, near.slice(0, shown).map(({ m, area, d }) => row(m, `${area}, ${distLabel(d)}`, results))),
+    shown < near.length ? h('button', { class: 'btn', onclick: () => { shown += PAGE; renderVicino(); } }, `Mostra altre (${near.length - shown})`) : null,
+    h('p', { class: 'label' }, 'Valgono ovunque'),
+    h('ul', { class: 'mission-list' }, free.slice(0, shownAny).map(({ m }) => row(m, 'Ovunque', results))),
+    shownAny < free.length ? h('button', { class: 'btn', onclick: () => { shownAny += 10; renderVicino(); } }, `Altre sfide da strada (${free.length - shownAny})`) : null,
+  ));
+}

@@ -28,7 +28,7 @@ export function render() {
 }
 
 function markTab(path) {
-  const tab = path === '/' ? 'now' : path.startsWith('/vinnie') || path.startsWith('/mission') ? 'vinnie' : 'day';
+  const tab = path === '/' ? 'now' : path.startsWith('/vinnie') || path.startsWith('/vicino') || path.startsWith('/mission') ? 'vinnie' : 'day';
   document.querySelectorAll('.tabs a').forEach((a) => {
     if (a.dataset.tab === tab) a.setAttribute('aria-current', 'page');
     else a.removeAttribute('aria-current');

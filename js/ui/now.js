@@ -30,6 +30,7 @@ export function renderNow() {
       h('p', { class: 'hook' }, stop.hook),
       h('div', { class: 'look' }, h('span', { class: 'k' }, 'Guarda'), h('span', { class: 'v' }, stop.look[0])),
       kidsRow(dayId, stop),
+      h('a', { class: 'chip', href: '#/vicino', style: { alignSelf: 'start', textDecoration: 'none' } }, 'Sfide vicino a me ›'),
       around(dayId, stop, origin)),
     nextBlock(dayId, day, stop, next, origin),
   ));

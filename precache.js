@@ -1,5 +1,5 @@
 export const PRECACHE = {
- "version": "056c61ef13f9",
+ "version": "da8f148901fb",
  "files": [
   "./",
   "css/app.css",
@@ -10,6 +10,7 @@ export const PRECACHE = {
   "data/sat.js",
   "data/sun.js",
   "data/tue.js",
+  "data/vicino.js",
   "icons/apple-touch-icon.png",
   "icons/icon-192.png",
   "icons/icon-512.png",
@@ -113,6 +114,7 @@ export const PRECACHE = {
   "js/ui/router.js",
   "js/ui/steps.js",
   "js/ui/stop.js",
+  "js/ui/vicino.js",
   "js/ui/vinnie.js",
   "manifest.webmanifest",
   "robots.txt"

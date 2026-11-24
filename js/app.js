@@ -7,6 +7,7 @@ import { renderSteps } from './ui/steps.js';
 import { renderFood } from './ui/food.js';
 import { renderVinnie, renderMission, renderCredits } from './ui/vinnie.js';
 import { renderInfo } from './ui/info.js';
+import { renderVicino } from './ui/vicino.js';
 
 route('/', renderNow);
 route('/day', () => renderDay());
@@ -15,6 +16,7 @@ route('/stop/:day/:stop', renderStop);
 route('/steps/:day/:stop/:path', renderSteps);
 route('/food/:day/:stop', renderFood);
 route('/vinnie', renderVinnie);
+route('/vicino', renderVicino);
 route('/mission/:id', renderMission);
 route('/credits', renderCredits);
 route('/info', renderInfo);
