@@ -14,10 +14,11 @@ let shown = PAGE;
 let shownAny = 8;
 let shownSee = 5;
 
-function row(m, sub, results) {
-  return h('li', {}, h('a', { href: `#/mission/${m.id}`, style: { display: 'block' } },
+function row(m, sub, results, pos) {
+  return h('li', { style: { display: 'grid', gap: '6px' } }, h('a', { href: `#/mission/${m.id}`, style: { display: 'block' } },
     h('span', { style: { display: 'block' } }, m.title),
-    h('span', { class: 'st', style: { display: 'block', margin: 0 } }, `${sub} · ${TYPE_LABEL[m.type] ?? 'Sfida'}${results[m.id] ? ' · fatta' : ''}`)));
+    h('span', { class: 'st', style: { display: 'block', margin: 0 } }, `${sub} · ${TYPE_LABEL[m.type] ?? 'Sfida'}${results[m.id] ? ' · fatta' : ''}`)),
+    pos ? mapsPair(pos, 'walking') : null);
 }
 
 export function renderVicino() {
@@ -54,7 +55,7 @@ export function renderVicino() {
       mapsPair(n.pos, 'walking')))),
     shownSee < see.length ? h('button', { class: 'btn', onclick: () => { shownSee += 5; renderVicino(); } }, `Altre cose da vedere (${see.length - shownSee})`) : null,
     h('p', { class: 'label' }, 'Sfide di Vinnie'),
-    h('ul', { class: 'mission-list' }, near.slice(0, shown).map(({ m, area, d }) => row(m, `${area}, ${distLabel(d)}`, results))),
+    h('ul', { class: 'mission-list' }, near.slice(0, shown).map(({ m, area, d, pos }) => row(m, `${area}, ${distLabel(d)}`, results, pos))),
     shown < near.length ? h('button', { class: 'btn', onclick: () => { shown += PAGE; renderVicino(); } }, `Mostra altre (${near.length - shown})`) : null,
     h('p', { class: 'label' }, 'Valgono ovunque'),
     h('ul', { class: 'mission-list' }, free.slice(0, shownAny).map(({ m }) => row(m, 'Ovunque', results))),
