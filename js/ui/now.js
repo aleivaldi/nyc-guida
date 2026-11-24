@@ -30,7 +30,7 @@ export function renderNow() {
       h('p', { class: 'hook' }, stop.hook),
       h('div', { class: 'look' }, h('span', { class: 'k' }, 'Guarda'), h('span', { class: 'v' }, stop.look[0])),
       kidsRow(dayId, stop),
-      h('a', { class: 'chip', href: '#/vicino', style: { alignSelf: 'start', textDecoration: 'none' } }, 'Sfide vicino a me ›'),
+      sfideVicine(origin),
       around(dayId, stop, origin)),
     nextBlock(dayId, day, stop, next, origin),
   ));
@@ -89,16 +89,36 @@ export function vinnieIcon() {
   return i;
 }
 
+function sfideVicine(origin) {
+  const results = gameState(ctx.raw).results;
+  const list = ctx.missionsWithPlace().placed
+    .filter((x) => !results[x.m.id])
+    .map((x) => ({ ...x, d: distanceM(origin.pos, x.pos) }))
+    .sort((a, b) => a.d - b.d)
+    .slice(0, 5);
+  if (!list.length) return null;
+  return h('div', {},
+    h('p', { class: 'label' }, 'Sfide di Vinnie qui vicino'),
+    h('div', { class: 'strip' },
+      list.map(({ m, area, d }) => h('a', { class: 'near-card', href: `#/mission/${m.id}`, style: { textDecoration: 'none', color: 'inherit' } },
+        h('b', {}, `${area}, ${distLabel(d)}`), m.title)),
+      h('a', { class: 'near-card', href: '#/vicino', style: { textDecoration: 'none', color: 'inherit', flexBasis: '45%' } }, h('b', {}, 'Tutte'), 'Sfide e cose da vedere ›')));
+}
+
 function around(dayId, stop, origin) {
   const day = ctx.day(dayId);
+  const seen = new Set();
   const items = [
-    ...(stop.nearby ?? []).map((n) => ({ ...n, label: nearKind(n.kind), text: n.text })),
+    ...ctx.DAYS.flatMap((d) => d.stops.flatMap((s) => s.nearby ?? []))
+      .filter((n) => n.pos && !seen.has(n.text) && seen.add(n.text))
+      .map((n) => ({ ...n, label: nearKind(n.kind), text: n.text })),
     ...(day.food ?? []).map((f) => ({ pos: f.pos, label: `${f.type}, ${f.name}`, text: f.order, food: true })),
   ];
-  const close = ctx.near(origin.pos, items, 500).slice(0, 5);
+  let close = ctx.near(origin.pos, items, 700).slice(0, 6);
+  if (!close.length) close = ctx.near(origin.pos, items).slice(0, 4);
   if (!close.length) return null;
   return h('div', {},
-    h('p', { class: 'label' }, 'Intorno a voi'),
+    h('p', { class: 'label' }, 'Da vedere qui intorno'),
     h('div', { class: 'strip' }, close.map(({ it, d }) => h(it.food ? 'a' : 'div', {
       class: it.pos ? 'near-card has-maps' : 'near-card', href: it.food ? `#/food/${dayId}/${stop.id}` : null, style: it.food ? { textDecoration: 'none' } : null,
     }, h('b', {}, origin.gps ? `${it.label}, ${distLabel(d)}` : it.label), it.text, it.pos ? mapsPair(it.pos, 'walking') : null))));
