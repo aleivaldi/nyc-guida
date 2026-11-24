@@ -60,7 +60,7 @@ export function renderStop(dayId, stopId) {
       tips.length ? more('Dritte', chips.length ? h('div', { class: 'pills', style: { marginBottom: '10px' } }, chips) : null, tipList) : null,
       stop.bagni ? more('Bagni', h('p', {}, stop.bagni.where), h('ul', { class: 'tips' }, h('li', {}, h('b', {}, 'Costo: '), stop.bagni.cost), h('li', {}, h('b', {}, 'Pulizia: '), stop.bagni.clean))) : null,
       stop.nearby?.length ? more('Qui intorno',
-        h('ul', { class: 'tips' }, stop.nearby.map((n) => h('li', {}, h('b', { style: { display: 'block', fontSize: '14px', color: 'var(--ink-2)' } }, nearKind(n.kind)), n.text)))) : null),
+        h('ul', { class: 'tips' }, stop.nearby.map((n) => h('li', {}, h('b', { style: { display: 'block', fontSize: '14px', color: 'var(--ink-2)' } }, nearKind(n.kind)), n.text, n.pos ? mapsPair(n.pos, 'walking') : null)))) : null),
     h('div', {}, h('p', { class: 'label' }, stop.kind === 'move' ? 'Punto di partenza' : 'Come arrivare qui'), mapsPair(stop.pos, 'walking')),
     h('a', { class: 'btn', href: `#/food/${dayId}/${stopId}` }, 'Mangiare qui vicino'),
     nextCard(dayId, day, stop),

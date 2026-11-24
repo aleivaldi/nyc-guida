@@ -5,7 +5,7 @@ import { toMin, fmtMin } from '../core/time.js';
 import { lateness } from '../core/schedule.js';
 import { distanceM, bearingDeg, walkMin } from '../core/geo.js';
 import { sunsetMin } from '../core/sun.js';
-import { directionsButton } from './maps.js';
+import { directionsButton, mapsPair } from './maps.js';
 import { gameState } from '../core/game.js';
 
 export function renderNow() {
@@ -100,8 +100,8 @@ function around(dayId, stop, origin) {
   return h('div', {},
     h('p', { class: 'label' }, 'Intorno a voi'),
     h('div', { class: 'strip' }, close.map(({ it, d }) => h(it.food ? 'a' : 'div', {
-      class: 'near-card', href: it.food ? `#/food/${dayId}/${stop.id}` : null, style: it.food ? { textDecoration: 'none' } : null,
-    }, h('b', {}, origin.gps ? `${it.label}, ${distLabel(d)}` : it.label), it.text))));
+      class: it.pos ? 'near-card has-maps' : 'near-card', href: it.food ? `#/food/${dayId}/${stop.id}` : null, style: it.food ? { textDecoration: 'none' } : null,
+    }, h('b', {}, origin.gps ? `${it.label}, ${distLabel(d)}` : it.label), it.text, it.pos ? mapsPair(it.pos, 'walking') : null))));
 }
 
 function nextBlock(dayId, day, stop, next, origin) {
