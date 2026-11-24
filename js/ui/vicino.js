@@ -21,7 +21,7 @@ function row(m, sub, results, pos) {
     pos ? mapsPair(pos, 'walking') : null);
 }
 
-export function renderVicino() {
+export function renderVicino(sec) {
   document.documentElement.style.setProperty('--line', 'var(--taxi)');
   const results = gameState(ctx.raw).results;
   const gps = ctx.pos && Date.now() - ctx.posAt < 15 * 60 * 1000;
@@ -47,18 +47,19 @@ export function renderVicino() {
     h('a', { class: 'back', href: '#/vinnie' }, '‹ Vinnie'),
     h('h1', {}, 'Sfide vicino a me'),
     h('p', { class: 'hint' }, `${where}. Le più vicine in alto.`),
-    gps ? null : h('button', { class: 'btn btn-taxi', onclick: () => { requestPosition(renderVicino); renderVicino(); } }, 'Usa la mia posizione'),
-    h('p', { class: 'label' }, 'Da vedere qui intorno'),
+    gps ? null : h('button', { class: 'btn btn-taxi', onclick: () => { requestPosition(renderVicino); renderVicino(sec); } }, 'Usa la mia posizione'),
+    h('p', { class: 'label', id: 'vedere' }, 'Da vedere qui intorno'),
     h('div', { class: 'stack', style: { gap: '10px' } }, see.slice(0, shownSee).map(({ n, d }) => h('div', { class: 'next-card' },
       h('p', { class: 'label' }, `${nearKind(n.kind)}, ${distLabel(d)}`),
       h('p', { style: { margin: 0 } }, n.text),
       mapsPair(n.pos, 'walking')))),
-    shownSee < see.length ? h('button', { class: 'btn', onclick: () => { shownSee += 5; renderVicino(); } }, `Altre cose da vedere (${see.length - shownSee})`) : null,
+    shownSee < see.length ? h('button', { class: 'btn', onclick: () => { shownSee += 5; renderVicino(sec); } }, `Altre cose da vedere (${see.length - shownSee})`) : null,
     h('p', { class: 'label' }, 'Sfide di Vinnie'),
     h('ul', { class: 'mission-list' }, near.slice(0, shown).map(({ m, area, d, pos }) => row(m, `${area}, ${distLabel(d)}`, results, pos))),
-    shown < near.length ? h('button', { class: 'btn', onclick: () => { shown += PAGE; renderVicino(); } }, `Mostra altre (${near.length - shown})`) : null,
+    shown < near.length ? h('button', { class: 'btn', onclick: () => { shown += PAGE; renderVicino(sec); } }, `Mostra altre (${near.length - shown})`) : null,
     h('p', { class: 'label' }, 'Valgono ovunque'),
     h('ul', { class: 'mission-list' }, free.slice(0, shownAny).map(({ m }) => row(m, 'Ovunque', results))),
-    shownAny < free.length ? h('button', { class: 'btn', onclick: () => { shownAny += 10; renderVicino(); } }, `Altre sfide da strada (${free.length - shownAny})`) : null,
+    shownAny < free.length ? h('button', { class: 'btn', onclick: () => { shownAny += 10; renderVicino(sec); } }, `Altre sfide da strada (${free.length - shownAny})`) : null,
   ));
+  if (sec === 'vedere') document.getElementById('vedere')?.scrollIntoView();
 }

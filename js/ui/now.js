@@ -32,6 +32,9 @@ export function renderNow() {
       kidsRow(dayId, stop),
       sfideVicine(origin),
       around(dayId, stop, origin)),
+    h('div', { class: 'btn-row' },
+      h('a', { class: 'btn btn-taxi', href: '#/vicino' }, 'Sfide vicino a me'),
+      h('a', { class: 'btn', href: '#/vicino/vedere' }, 'Da vedere vicino')),
     nextBlock(dayId, day, stop, next, origin),
   ));
 }
